@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Local dev tooling (preview server lives outside this folder anyway)
+.claude/
+
+# Large unused source image — the hero uses the optimized assets/hero-team.jpg
+assets/cherrydeck-rMILC1PIwM0-unsplash.jpg
+
+# Node (future-proofing for the planned Next.js rebuild)
+node_modules/
+.next/
+.env
+.env.local
+.env.*.local

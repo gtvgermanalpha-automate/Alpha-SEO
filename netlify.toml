@@ -1,0 +1,14 @@
+# Netlify configuration — Alpha Digital Solutions SEO site.
+# Hand-authored static site (no build step). Serve the repo root and rewrite the
+# root URL "/" to the SPA entry (seo.html) so the homepage loads at the canonical
+# root (https://alphadigitalsol.com/). All other assets (/style.css, /script.js,
+# /assets/*, /robots.txt, /sitemap.xml) are served directly.
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/seo.html"
+  status = 200
+  force = true

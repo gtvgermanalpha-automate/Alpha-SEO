@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Alpha Digital Solutions sitemap.
+  The site is a single-URL JavaScript SPA, so there is one canonical,
+  independently-indexable URL. To get every "page" indexed separately,
+  move to path-based routing with server-side rendering / prerendering
+  (see Master-Context "future work"), then add a <url> entry per route.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://alphadigitalsol.com/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
