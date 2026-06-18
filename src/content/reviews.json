@@ -1,0 +1,56 @@
+{
+  "eyebrow": "Accredited & reviewed",
+  "title": "Qualified, regulated and trusted",
+  "intro": "Every client is looked after by qualified Chartered Certified Accountants, registered with ACCA body.",
+  "rating": { "score": "5.0", "outOf": "5", "count": 57, "platform": "Google" },
+  "reviews": [
+    {
+      "name": "Ahsan Qaisar",
+      "date": "18 February 2026",
+      "rating": 5,
+      "image": "",
+      "initials": "AQ",
+      "quote": "Absolute professionals. The entire team is a solid 10 out of 10."
+    },
+    {
+      "name": "Carlo Colombo",
+      "date": "7 April 2026",
+      "rating": 5,
+      "image": "",
+      "initials": "CC",
+      "quote": "Filled our taxes perfectly and were always on top of things."
+    },
+    {
+      "name": "Happy Sammy",
+      "date": "28 January 2026",
+      "rating": 5,
+      "image": "",
+      "initials": "HS",
+      "quote": "Professionally constructed and reliable. Good communication and helpful."
+    },
+    {
+      "name": "Moderna Coronet",
+      "date": "3 July 2025",
+      "rating": 5,
+      "image": "",
+      "initials": "MC",
+      "quote": "Great service, impeccable. Thank you Mohsin, you are a life saver!"
+    },
+    {
+      "name": "Silver Spindle",
+      "date": "10 June 2025",
+      "rating": 5,
+      "image": "",
+      "initials": "SS",
+      "quote": "Always found them to be professional. Our company needs are well looked after."
+    },
+    {
+      "name": "Ionela Ionela",
+      "date": "24 June 2025",
+      "rating": 5,
+      "image": "",
+      "initials": "II",
+      "quote": "Very respectful and very quick to help. Highly recommend."
+    }
+  ]
+}

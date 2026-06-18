@@ -1,0 +1,38 @@
+{
+  "name": "MMR Accountants",
+  "shortName": "MMR",
+  "companyNumber": "12345678",
+  "pillars": [
+    "Tax",
+    "Advisory",
+    "Payroll"
+  ],
+  "url": "https://www.mmraccountants.co.uk",
+  "description": "MMR Accountants are chartered accountants helping UK limited companies, contractors and growing businesses with cloud bookkeeping, proactive tax planning, payroll and year-round advice — all on transparent fixed monthly fees.",
+  "heroImage": "",
+  "logoLinear": "/brand/logo-linear.png",
+  "logoCircular": "/brand/logo-linear.png",
+  "contact": {
+    "phone": "+44 161 222 3120",
+    "phoneDisplay": "0161 222 3120",
+    "email": "info@mmraccountants.co.uk",
+    "addressLine": "57 Cheetham Hill Road",
+    "city": "Manchester",
+    "postcode": "M4 4FS",
+    "hours": "Mon–Sat, 9:00am – 6:00pm"
+  },
+  "offices": [
+    {
+      "city": "Manchester",
+      "addressLine": "57 Cheetham Hill Road",
+      "postcode": "M4 4FS",
+      "phone": "+44 161 222 3120",
+      "phoneDisplay": "0161 222 3120"
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/mmr-accountants",
+    "twitter": "https://twitter.com/mmraccountants",
+    "facebook": "https://www.facebook.com/mmraccountants"
+  }
+}

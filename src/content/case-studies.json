@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "ecommerce-vat-recovery",
+    "title": "How we cut a Manchester e-commerce brand's VAT bill by 22%",
+    "client": "A Manchester e-commerce retailer",
+    "industry": "E-commerce & Retail",
+    "date": "2025-09-15",
+    "image": "/illustrations/ecommerce.svg",
+    "imageAlt": "Illustration of an online retail business",
+    "summary": "A fast-growing online retailer was overpaying VAT across multiple channels. We restructured their VAT scheme and reclaimed overpaid input tax.",
+    "results": [
+      "22% reduction in annual VAT liability",
+      "£18,400 of overpaid input VAT reclaimed",
+      "Multi-channel sales reconciled and Making Tax Digital ready"
+    ],
+    "metaTitle": "E-commerce VAT Case Study",
+    "metaDescription": "How MMR Accountants restructured a Manchester e-commerce retailer's VAT and reclaimed overpaid input tax — a 22% reduction in VAT liability.",
+    "body": [
+      "## The challenge",
+      "The client was selling across their own website, Amazon and eBay, with VAT handled inconsistently across channels. Input VAT on fees and shipping was being missed, and they were unsure whether the Flat Rate Scheme still suited them.",
+      "## What we did",
+      "We reviewed twelve months of multi-channel sales, moved them off the Flat Rate Scheme to standard VAT accounting, and built a reconciliation process that captured input VAT on every marketplace fee.",
+      "## The result",
+      "Within one quarter the client's effective VAT rate fell by **22%**, and we reclaimed **£18,400** of previously missed input VAT. Their books are now Making Tax Digital ready, with VAT returns filed automatically each quarter.",
+      "Thinking about your own VAT position? [Get in touch](/contact) for a free review."
+    ]
+  },
+  {
+    "slug": "contractor-ir35-restructure",
+    "title": "Helping an IT contractor stay IR35-compliant and keep more take-home",
+    "client": "An IT contractor",
+    "industry": "Contractors & Freelancers",
+    "date": "2025-11-20",
+    "image": "/illustrations/contractors.svg",
+    "imageAlt": "Illustration of a contractor working on a laptop",
+    "summary": "An IT contractor was worried about IR35 after a contract review. We assessed their status, restructured their company and optimised their salary and dividend split.",
+    "results": [
+      "Confirmed outside-IR35 status with documented evidence",
+      "Optimised salary and dividend split for tax efficiency",
+      "Quarterly check-ins to stay compliant as contracts change"
+    ],
+    "metaTitle": "Contractor IR35 Case Study",
+    "metaDescription": "How MMR Accountants assessed an IT contractor's IR35 status, restructured their company and optimised take-home pay while staying compliant.",
+    "body": [
+      "## The challenge",
+      "After a client-side contract review, the contractor was unsure whether their engagement fell inside or outside IR35, and whether a limited company was still the right structure.",
+      "## What we did",
+      "We carried out a full IR35 status assessment, reviewed the working practices and contract, and documented the evidence supporting an outside-IR35 determination. We then optimised the salary and dividend split for the new tax year.",
+      "## The result",
+      "The contractor now has a clear, documented IR35 position and an efficient pay structure, with quarterly check-ins so their status stays current as contracts change.",
+      "Worried about IR35? [Talk to us](/contact) about a status review."
+    ]
+  }
+]

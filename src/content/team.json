@@ -1,0 +1,27 @@
+{
+  "heading": "Meet the team",
+  "intro": "Chartered-standard accountants and advisers who take the time to understand your business and your numbers.",
+  "members": [
+    {
+      "name": "Add a name",
+      "role": "Founder & Principal Accountant",
+      "image": "",
+      "imageAlt": "",
+      "bio": "Add a short bio in the CMS — background, qualifications (e.g. ACCA), and what they help clients with."
+    },
+    {
+      "name": "Add a name",
+      "role": "Tax Adviser",
+      "image": "",
+      "imageAlt": "",
+      "bio": "Add a short bio for this team member in the CMS."
+    },
+    {
+      "name": "Add a name",
+      "role": "Client Manager",
+      "image": "",
+      "imageAlt": "",
+      "bio": "Add a short bio for this team member in the CMS."
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "services": [
+    {
+      "slug": "bookkeeping",
+      "art": "bookkeeping",
+      "icon": "BookOpen",
+      "title": "Bookkeeping & Annual Accounts",
+      "description": "Real-time books kept tidy every week, with year-end accounts filed accurately and well ahead of deadline.",
+      "points": ["Cloud bookkeeping", "Year-end accounts", "Companies House filing"]
+    },
+    {
+      "slug": "tax-planning",
+      "art": "tax",
+      "icon": "Receipt",
+      "title": "Tax Planning & Returns",
+      "description": "Forward-looking corporation and personal tax planning that keeps more of your profit where it belongs — with you.",
+      "points": ["Corporation tax", "Self assessment", "Dividend strategy"]
+    },
+    {
+      "slug": "vat",
+      "art": "vat",
+      "icon": "Percent",
+      "title": "VAT & Making Tax Digital",
+      "description": "MTD-compliant VAT handled end to end — the right scheme, accurate returns and never a missed submission.",
+      "points": ["VAT registration", "Quarterly returns", "Scheme reviews"]
+    },
+    {
+      "slug": "payroll",
+      "art": "payroll",
+      "icon": "Users",
+      "title": "Payroll & Pensions",
+      "description": "Fully managed RTI payroll and auto-enrolment so your team is paid correctly and on time, every single month.",
+      "points": ["RTI payroll", "Auto-enrolment", "Payslips & P60s"]
+    },
+    {
+      "slug": "company-formation",
+      "art": "formation",
+      "icon": "Building2",
+      "title": "Company Formation & Secretarial",
+      "description": "Start right with fast company set-up, registered office and confirmation statements handled on your behalf.",
+      "points": ["Company set-up", "Registered office", "Confirmation statements"]
+    },
+    {
+      "slug": "advisory",
+      "art": "advisory",
+      "icon": "TrendingUp",
+      "title": "Business Advisory & Growth",
+      "description": "Management accounts, cash-flow forecasting and a dedicated adviser who helps you make confident decisions.",
+      "points": ["Management accounts", "Cash-flow forecasts", "Growth strategy"]
+    }
+  ],
+  "industries": [
+    { "slug": "contractors", "icon": "Laptop", "title": "Contractors & Freelancers", "description": "IR35-aware advice and take-home that works." },
+    { "slug": "ecommerce", "icon": "ShoppingCart", "title": "E-commerce & Retail", "description": "Multi-channel sales, stock and VAT, simplified." },
+    { "slug": "startups", "icon": "Rocket", "title": "Startups & Tech", "description": "Investor-ready accounts and R&D tax relief." },
+    { "slug": "landlords", "icon": "Home", "title": "Landlords & Property", "description": "Portfolio structuring and property tax planning." },
+    { "slug": "hospitality", "icon": "UtensilsCrossed", "title": "Hospitality", "description": "Tight margins managed with clear weekly numbers." },
+    { "slug": "healthcare", "icon": "Stethoscope", "title": "Healthcare & Locums", "description": "Specialist support for medical professionals." },
+    { "slug": "construction", "icon": "HardHat", "title": "Construction & CIS", "description": "CIS deductions and subcontractor returns handled." },
+    { "slug": "creative", "icon": "Palette", "title": "Creative & Agencies", "description": "Project profitability and cash flow you can see." }
+  ],
+  "whyPoints": [
+    {
+      "icon": "Award",
+      "title": "ACCA Qualified",
+      "description": "Chartered-standard, ACCA-qualified accountants held to the highest professional and ethical standards."
+    },
+    {
+      "icon": "BadgePoundSterling",
+      "title": "Transparent Pricing",
+      "description": "Fixed monthly fees agreed up front — no hourly billing, no hidden charges and no surprise invoices."
+    },
+    {
+      "icon": "UserRound",
+      "title": "Dedicated Accountant",
+      "description": "A named accountant who knows your business by name and is only ever a phone call away."
+    },
+    {
+      "icon": "Zap",
+      "title": "Fast Turnaround",
+      "description": "Accounts and returns delivered ahead of deadline, with a reply to every question within one business day."
+    },
+    {
+      "icon": "MapPin",
+      "title": "UK Business Specialists",
+      "description": "Deep expertise in UK tax, IR35, VAT and CIS, supporting established businesses the length of the country."
+    }
+  ],
+  "valueProps": [
+    {
+      "slug": "proactive-tax-planning",
+      "art": "tax",
+      "title": "Proactive tax planning",
+      "description": "We don't simply file your taxes — we plan ahead all year to legally lower your bill and keep more profit where it belongs."
+    },
+    {
+      "slug": "advisory-partnership",
+      "art": "advisory",
+      "title": "Advice that compounds",
+      "description": "A dedicated adviser who turns your numbers into confident decisions on pricing, cash flow and growth."
+    }
+  ],
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Free discovery call",
+      "description": "We learn about your business, your goals and your numbers — then give you a clear, no-obligation quote.",
+      "icon": "PhoneCall"
+    },
+    {
+      "step": "02",
+      "title": "Seamless onboarding",
+      "description": "We handle the switch from your old accountant, set up your cloud software and get everything in order.",
+      "icon": "Settings2"
+    },
+    {
+      "step": "03",
+      "title": "We manage the numbers",
+      "description": "Bookkeeping, tax, payroll and deadlines run quietly in the background while you focus on the business.",
+      "icon": "LineChart"
+    },
+    {
+      "step": "04",
+      "title": "You grow with insight",
+      "description": "Regular reviews and proactive advice keep you ahead — so every decision is backed by real data.",
+      "icon": "Sparkles"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How much do your accountancy services cost?",
+      "answer": "Every business is different, so we build a fixed monthly package around exactly what you need — accounts, tax, payroll, VAT and advice. You will always know the price before you commit, with no hidden hourly charges. Most limited company packages start from a clear, affordable monthly fee."
+    },
+    {
+      "question": "Is it difficult to switch from my current accountant?",
+      "answer": "Not at all. We handle the entire move for you. With your permission we contact your previous accountant, request your records under standard professional clearance, and transfer everything across. The process is paperless and usually takes just a few days."
+    },
+    {
+      "question": "Which cloud accounting software do you use?",
+      "answer": "We are partners with the leading platforms including Xero, QuickBooks, FreeAgent and Sage. We will recommend the best fit for your business, set it up, migrate your data and train you on the parts you want to use yourself."
+    },
+    {
+      "question": "Do you work with businesses outside London?",
+      "answer": "Yes. We support clients right across the UK. Because everything runs in the cloud, you get the same proactive service whether you are around the corner or in another city — by video call, phone and email."
+    },
+    {
+      "question": "Will I have a dedicated accountant?",
+      "answer": "Always. You are introduced to a named, qualified accountant who looks after your account year-round and gets to know your business. You will not be passed between a call centre or a different person each time you get in touch."
+    },
+    {
+      "question": "Are you regulated and insured?",
+      "answer": "Yes. MMR Accountants is a chartered practice held to strict professional standards, and we carry full professional indemnity insurance for your complete peace of mind."
+    }
+  ],
+  "partners": ["Companies House", "HMRC", "Xero", "QuickBooks", "FreeAgent", "Sage"],
+  "businessTypes": [
+    "Limited company",
+    "Sole trader",
+    "Contractor / freelancer",
+    "Partnership / LLP",
+    "Startup",
+    "Landlord",
+    "Other"
+  ]
+}

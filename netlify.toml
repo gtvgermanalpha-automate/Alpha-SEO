@@ -1,14 +1,15 @@
-# Netlify configuration — Alpha Digital Solutions SEO site.
-# Hand-authored static site (no build step). Serve the repo root and rewrite the
-# root URL "/" to the SPA entry (seo.html) so the homepage loads at the canonical
-# root (https://alphadigitalsol.com/). All other assets (/style.css, /script.js,
-# /assets/*, /robots.txt, /sitemap.xml) are served directly.
+# Netlify configuration for the MMR Accountants Next.js site.
+# Netlify auto-detects Next.js and installs its Next Runtime (@netlify/plugin-nextjs),
+# which handles SSR, next/image optimisation and the generated OG image for you.
+# This file pins the build command and Node version for reproducible builds.
 
 [build]
-  publish = "."
+  command = "npm run build"
 
-[[redirects]]
-  from = "/"
-  to = "/seo.html"
-  status = 200
-  force = true
+[build.environment]
+  NODE_VERSION = "22"
+
+# Event-triggered + serverless functions. submission-created.mjs sends the
+# contact-form auto-reply (dormant until RESEND_API_KEY is set — see FORMS.md).
+[functions]
+  directory = "netlify/functions"

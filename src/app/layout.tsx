@@ -1,0 +1,158 @@
+import type { Metadata, Viewport } from "next";
+import { Inter, Manrope } from "next/font/google";
+import { siteConfig } from "@/lib/content";
+import { SiteChrome } from "@/components/SiteChrome";
+import { jsonLd } from "@/lib/jsonLd";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [
+    "accountants UK",
+    "chartered accountants",
+    "tax advisory",
+    "private equity accountants",
+    "limited company accountants",
+    "contractor accountants",
+    "Xero accountants",
+    "tax planning UK",
+    "VAT returns",
+    "Making Tax Digital",
+    "payroll services",
+    "MMR Accountants",
+  ],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
+  category: "Finance",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  name: siteConfig.name,
+  description: siteConfig.description,
+  url: siteConfig.url,
+  email: siteConfig.contact.email,
+  telephone: siteConfig.contact.phone,
+  areaServed: "GB",
+  priceRange: "£££",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.contact.addressLine,
+    addressLocality: siteConfig.contact.city,
+    postalCode: siteConfig.contact.postcode,
+    addressCountry: "GB",
+  },
+  openingHours: "Mo-Sa 09:00-18:00",
+  sameAs: Object.values(siteConfig.social),
+};
+
+// WebSite + SearchAction enables the Google Sitelinks Search Box (eligibility is
+// Google's call; this is the markup + a working /search?q= endpoint we control).
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteConfig.url}/search?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en-GB"
+      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-full bg-white text-ink">
+        {/* Mark JS as available before content paints, so CSS scroll-reveals
+            stay hidden only when they can actually be animated (no flash, and
+            content is visible if JS is off). */}
+        <script
+          dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }}
+        />
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to content
+        </a>
+        <SiteChrome>{children}</SiteChrome>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: jsonLd(websiteSchema) }}
+        />
+        {/* Scroll reveals — plain vanilla (not a React effect), so it runs the
+            same way it does on the working reference site and on iOS Safari.
+            IntersectionObserver toggles .is-visible; setTimeout is a hard
+            fallback so nothing ever stays hidden / un-animated. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var S='[data-reveal],[data-reveal-stagger],[data-reveal-line]';function r(e){e.classList.add('is-visible')}function init(){var els=[].slice.call(document.querySelectorAll(S));if(!els.length)return;if('IntersectionObserver' in window){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){r(x.target);io.unobserve(x.target)}})},{threshold:0.14,rootMargin:'0px 0px -40px 0px'});els.forEach(function(e){io.observe(e)})}else{els.forEach(r);return}function sweep(){var vh=window.innerHeight;els.forEach(function(e){if(!e.classList.contains('is-visible')&&e.getBoundingClientRect().top<vh*0.9)r(e)})}var t=false;window.addEventListener('scroll',function(){if(t)return;t=true;requestAnimationFrame(function(){sweep();t=false})},{passive:true});sweep();setTimeout(sweep,1500)}document.readyState!=='loading'?init():document.addEventListener('DOMContentLoaded',init)})();",
+          }}
+        />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,152 @@
+{
+  "pages": [
+    {
+      "slug": "privacy-policy",
+      "crumb": "Privacy Policy",
+      "title": "Privacy Policy",
+      "intro": "How MMR Accountants collects, uses and protects your personal information, and the rights you have over it.",
+      "updated": "Last reviewed: June 2026",
+      "metaTitle": "Privacy Policy",
+      "metaDescription": "How MMR Accountants collects, uses, shares and protects your personal data under UK data-protection law — and how to exercise your rights.",
+      "sections": [
+        {
+          "heading": "Who we are",
+          "body": [
+            "MMR Accountants operates from our office in Manchester and is the data controller responsible for the personal information collected through this website and in the course of providing our services. If you have any questions about this policy or how we handle your data, email us at info@mmraccountants.co.uk."
+          ]
+        },
+        {
+          "heading": "Information we collect",
+          "body": ["We collect personal information in two ways:"],
+          "bullets": [
+            "Information you give us — your name, email address, telephone number, business details and anything else you include when you contact us, request a quote, or become a client.",
+            "Information we collect automatically — your IP address, browser type, the pages you visit and similar technical data, gathered through cookies and website analytics."
+          ]
+        },
+        {
+          "heading": "How we use your information",
+          "body": [
+            "We use your personal information to respond to your enquiries and prepare a quote; to deliver our accountancy, tax, payroll and advisory services; to meet our legal and regulatory obligations, including anti-money-laundering checks and filings with HMRC and Companies House; and to operate, secure and improve our website.",
+            "Our lawful bases for processing are your consent, the performance of a contract with you, compliance with a legal obligation, and our legitimate interest in running and promoting our practice."
+          ]
+        },
+        {
+          "heading": "Sharing your information",
+          "body": [
+            "We never sell your personal information. We share it only where necessary — with HMRC, Companies House and our professional regulators; with the cloud accounting software providers we use to deliver your service; and with professional advisers where required. Anyone who processes data on our behalf is bound by strict confidentiality and data-protection obligations."
+          ]
+        },
+        {
+          "heading": "How long we keep it",
+          "body": [
+            "We keep personal information only for as long as necessary for the purposes set out above. Client and tax records are retained for the periods required by law and by our professional bodies — generally at least six years."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "body": [
+            "Under UK data-protection law you have the right to access, correct, erase, restrict or object to our use of your personal information, and the right to data portability. To exercise any of these rights, email info@mmraccountants.co.uk.",
+            "You also have the right to complain to the Information Commissioner's Office (ICO) at ico.org.uk if you are unhappy with how we have handled your data."
+          ]
+        },
+        {
+          "heading": "Cookies, security and changes",
+          "body": [
+            "Our website uses cookies — please see our Cookie Policy for details. We use appropriate technical and organisational measures to keep your information secure. We may update this policy from time to time; the date above shows when it was last reviewed."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "terms",
+      "crumb": "Terms",
+      "title": "Terms of Use",
+      "intro": "The terms on which you may use the MMR Accountants website. Our services to clients are governed separately by our engagement letter.",
+      "updated": "Last reviewed: June 2026",
+      "metaTitle": "Terms of Use",
+      "metaDescription": "The terms governing your use of the MMR Accountants website, including intellectual property, disclaimers and limitation of liability.",
+      "sections": [
+        {
+          "heading": "About these terms",
+          "body": [
+            "These terms govern your use of the MMR Accountants website. By using the site you accept them in full. The professional services we provide to clients are governed separately by our engagement letter, not by these website terms."
+          ]
+        },
+        {
+          "heading": "Using our website",
+          "body": [
+            "You may use this website for lawful purposes only. You must not misuse it, attempt to gain unauthorised access to it, or use it in any way that could damage or impair the site or another user's enjoyment of it."
+          ]
+        },
+        {
+          "heading": "Information, not advice",
+          "body": [
+            "The content on this website is provided for general information only and does not constitute professional, financial, tax or legal advice. You should not act on it without taking specific advice for your own circumstances. We accept no liability for any loss arising from reliance on the website's content."
+          ]
+        },
+        {
+          "heading": "Intellectual property",
+          "body": [
+            "All content on this website — including text, graphics, logos and design — belongs to MMR Accountants or its licensors and is protected by copyright. You may not reproduce, distribute or republish it without our written permission."
+          ]
+        },
+        {
+          "heading": "Links and third parties",
+          "body": [
+            "Where we link to third-party websites we do so for convenience only; we are not responsible for their content, availability or privacy practices."
+          ]
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": [
+            "This website is provided \"as is\" and \"as available\". To the fullest extent permitted by law, we exclude all liability for any loss or damage arising from your use of, or inability to use, the site. Nothing in these terms limits our liability where it would be unlawful to do so."
+          ]
+        },
+        {
+          "heading": "Governing law and changes",
+          "body": [
+            "These terms are governed by the laws of England and Wales, and any disputes are subject to the exclusive jurisdiction of the English courts. We may update these terms from time to time. If you have any questions, contact us at info@mmraccountants.co.uk."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "cookies",
+      "crumb": "Cookies",
+      "title": "Cookie Policy",
+      "intro": "What cookies are, how MMR Accountants uses them, and how you can manage them.",
+      "updated": "Last reviewed: June 2026",
+      "metaTitle": "Cookie Policy",
+      "metaDescription": "How the MMR Accountants website uses cookies — the types we use, why we use them, and how to manage or disable them.",
+      "sections": [
+        {
+          "heading": "What are cookies?",
+          "body": [
+            "Cookies are small text files placed on your device when you visit a website. They help the site work, remember your preferences, and tell us how the site is being used so we can improve it."
+          ]
+        },
+        {
+          "heading": "How we use cookies",
+          "body": ["We use cookies to:"],
+          "bullets": [
+            "Make the website function correctly (strictly necessary cookies that cannot be switched off).",
+            "Understand how visitors use the site — for example which pages are most popular — through analytics cookies, so we can improve it.",
+            "Remember choices you make to give you a better browsing experience."
+          ]
+        },
+        {
+          "heading": "Managing cookies",
+          "body": [
+            "You can control and delete cookies through your browser settings. Please note that blocking some cookies may affect how this website works. For more information on managing cookies, see aboutcookies.org or your browser's help pages."
+          ]
+        },
+        {
+          "heading": "Third-party cookies and changes",
+          "body": [
+            "Some cookies may be set by third-party services we use, such as website analytics providers, which have their own privacy and cookie policies. We may update this policy as our use of cookies changes. Questions? Email info@mmraccountants.co.uk."
+          ]
+        }
+      ]
+    }
+  ]
+}
