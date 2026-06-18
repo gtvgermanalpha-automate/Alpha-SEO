@@ -14,41 +14,54 @@
        bronze* = Accent Orange   navy* = Primary Dark   blue* = Light Blue
      ------------------------------------------------------------ */
 
-  /* Primary dark (#24282B) — ink / text + dark surfaces */
-  --color-ink: #24282b;
-  --color-ink-soft: #3a3f43;
+  /* ------------------------------------------------------------
+     ALPHA DIGITAL SOLUTIONS palette (Phase 2 rebrand).
+     Light/airy: Luster White canvas · Aster Flower Blue surfaces ·
+     Habañero accent · warm Ink text. Token NAMES kept (bronze/accent/
+     navy/blue) so utilities re-skin; VALUES are Alpha's:
+       bronze/accent = Habañero   navy/ink = warm Ink (dark, for TEXT)
+       aster = Aster Flower Blue (brand surface, via .bg-brand-blue*)
+     ------------------------------------------------------------ */
 
-  /* Warm accent orange (#EE5935) — utility name kept as `bronze`. NOW DEMOTED:
-     used only for the solid CTA buttons and a few small warm pops. */
-  --color-bronze: #ee5935;
-  --color-bronze-400: #f47a60;
-  --color-bronze-500: #ee5935;
-  --color-bronze-600: #d8472a;
-  --color-bronze-700: #b5381f;
-  --color-bronze-50: #fdeee9;
+  /* Warm Ink (#1C1A17) — body text, headings, genuinely-dark elements */
+  --color-ink: #1c1a17;
+  --color-ink-soft: #4a453c;
 
-  /* Navy-blue accent — the PRIMARY accent across the site (eyebrows, icons,
-     hovers, checkmarks, links, illustrations). Harmonises with the hero/footer
-     brand-blue gradient. */
-  --color-accent: #1d66ba;
-  --color-accent-400: #5a93d6;
-  --color-accent-500: #1d66ba;
-  --color-accent-600: #17538f;
-  --color-accent-700: #134d92;
-  --color-accent-50: #eef4fc;
+  /* Habañero (#F98513) — solid CTA buttons + warm accent fills. Utility `bronze`. */
+  --color-bronze: #f98513;
+  --color-bronze-400: #fba04d;
+  --color-bronze-500: #f98513;
+  --color-bronze-600: #e0700a;
+  --color-bronze-700: #b85510;
+  --color-bronze-50: #fef1e4;
 
-  /* Dark brand surfaces (#24282B) — utility name kept as `navy` */
-  --color-navy: #24282b;
-  --color-navy-700: #16191b;
+  /* Accent = deep Habañero — eyebrows, links, icons, checkmarks. Deep enough to
+     read as TEXT on cream/white (bright orange would fail contrast). */
+  --color-accent: #c0590a;
+  --color-accent-400: #f98513;
+  --color-accent-500: #c0590a;
+  --color-accent-600: #a34a08;
+  --color-accent-700: #8a3f07;
+  --color-accent-50: #fef1e4;
 
-  /* Light blue accent (#ECF5FE) — utility name kept as `blue` */
-  --color-blue: #ecf5fe;
-  --color-blue-300: #cfe6fb;
+  /* `navy`/`ink` kept DARK = warm Ink, because text-navy/text-ink are used for
+     copy + headings. Brand surfaces are aster-blue (see .bg-brand-blue below). */
+  --color-navy: #1c1a17;
+  --color-navy-700: #0f0e0c;
 
-  /* Neutrals — cool gray text, border gray, light-gray surfaces */
-  --color-muted: #545a60;
-  --color-line: #e5e7eb;
-  --color-cream: #f5f7fa;
+  /* Aster Flower Blue (#9BACD8) — the brand SURFACE colour (hero/footer/hovers) */
+  --color-aster: #9bacd8;
+  --color-aster-600: #8294c2;
+  --color-aster-50: #eaeef7;
+
+  /* Light aster tint (utility `blue`) — soft section fills */
+  --color-blue: #eaeef7;
+  --color-blue-300: #c7d2e8;
+
+  /* Neutrals — warm muted text, warm border, Luster White page surface */
+  --color-muted: #6b6459;
+  --color-line: #e4ded3;
+  --color-cream: #f4f1ec;
 
   /* Decorative motion */
   --animate-float-slow: floatY 12s ease-in-out infinite;
@@ -65,8 +78,8 @@
    Base
    ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #24282b;
+  --background: #f4f1ec;
+  --foreground: #1c1a17;
 }
 
 html {
@@ -76,7 +89,7 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #f4f1ec;
   color: var(--foreground);
   font-family: var(--font-sans);
   font-feature-settings: "cv11", "ss01";
@@ -134,9 +147,9 @@ h4 {
 /* Soft multi-point mesh gradient */
 .bg-mesh {
   background-image:
-    radial-gradient(38% 50% at 12% 18%, rgba(236, 245, 254, 0.75), transparent 62%),
-    radial-gradient(36% 46% at 88% 8%, rgba(207, 230, 251, 0.5), transparent 60%),
-    radial-gradient(46% 60% at 78% 92%, rgba(29, 102, 186, 0.07), transparent 66%);
+    radial-gradient(38% 50% at 12% 18%, rgba(155, 172, 216, 0.28), transparent 62%),
+    radial-gradient(36% 46% at 88% 8%, rgba(199, 210, 232, 0.32), transparent 60%),
+    radial-gradient(46% 60% at 78% 92%, rgba(249, 133, 19, 0.06), transparent 66%);
 }
 
 /* Faint dot grid, masked so it fades at the edges */
@@ -149,24 +162,24 @@ h4 {
 
 /* Soft radial vignette/glow used behind hero + CTAs */
 .bg-radial-bronze {
-  background: radial-gradient(60% 55% at 70% 30%, rgba(238, 89, 53, 0.1), transparent 70%);
+  background: radial-gradient(60% 55% at 70% 30%, rgba(249, 133, 19, 0.12), transparent 70%);
 }
 
 /* Deep brand-blue surfaces (hero · CTA band · footer), matching the blue hero.
    `.bg-brand-blue` is the vivid hero gradient; `.bg-brand-blue-deep` is a darker
    variant for the footer so light text keeps enough contrast. */
 .bg-brand-blue {
-  background-color: #134d92;
-  background-image: radial-gradient(85% 120% at 12% 0%, #2f86d8 0%, #1d66ba 46%, #134d92 100%);
+  background-color: #9bacd8;
+  background-image: radial-gradient(85% 120% at 12% 0%, #b6c3e4 0%, #9bacd8 48%, #8a9ccb 100%);
 }
 .bg-brand-blue-deep {
-  background-color: #0e3a6e;
-  background-image: radial-gradient(120% 130% at 50% 0%, #1a5895 0%, #103f73 52%, #0c3158 100%);
+  background-color: #8294c2;
+  background-image: radial-gradient(120% 130% at 50% 0%, #9bacd8 0%, #8a9ccb 52%, #7889ba 100%);
 }
 
 /* Faint white dot-grid overlay for the blue surfaces, masked to fade at the edges. */
 .bg-brand-dotgrid {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(28, 26, 23, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
   -webkit-mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, #000 25%, transparent 100%);
   mask-image: radial-gradient(ellipse 95% 85% at 50% 35%, #000 25%, transparent 100%);
