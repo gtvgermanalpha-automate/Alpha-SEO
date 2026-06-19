@@ -24,7 +24,7 @@ export function AnimatedCounter({
   const reduce = useReducedMotion();
 
   const format = (n: number) =>
-    `${prefix}${n.toLocaleString("en-GB", {
+    `${prefix}${n.toLocaleString("en-CA", {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
     })}${suffix}`;

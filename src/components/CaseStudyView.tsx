@@ -31,10 +31,10 @@ export function CaseStudyView({ study }: { study: CaseStudy }) {
     description: study.metaDescription,
     ...(study.date ? { datePublished: study.date, dateModified: study.date } : {}),
     articleSection: study.industry,
-    ...(study.image ? { image: `${siteConfig.url}${study.image}` } : {}),
+    ...(study.image ? { image: study.image.startsWith("http") ? study.image : `${siteConfig.url}${study.image}` } : {}),
     author: { "@type": "Organization", name: siteConfig.name },
     publisher: {
-      "@type": "AccountingService",
+      "@type": "ProfessionalService",
       name: siteConfig.name,
       url: siteConfig.url,
       telephone: siteConfig.contact.phone,

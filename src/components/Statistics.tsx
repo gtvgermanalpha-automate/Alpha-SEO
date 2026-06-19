@@ -34,7 +34,7 @@ export function Statistics() {
                 {inView ? (
                   reduce ? (
                     <span>
-                      {s.end.toLocaleString("en-GB")}
+                      {s.end.toLocaleString("en-CA")}
                       {s.suffix}
                     </span>
                   ) : (

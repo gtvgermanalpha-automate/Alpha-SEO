@@ -86,10 +86,10 @@ export function DetailPageView({ page }: { page: DetailPage }) {
     name: page.title,
     description: page.metaDescription,
     serviceType: page.crumb,
-    areaServed: "GB",
+    areaServed: ["CA", "US", "GB", "AU"],
     url,
     provider: {
-      "@type": "AccountingService",
+      "@type": "ProfessionalService",
       name: siteConfig.name,
       url: siteConfig.url,
       telephone: siteConfig.contact.phone,

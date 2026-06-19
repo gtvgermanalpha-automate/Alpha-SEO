@@ -3,7 +3,7 @@
  * in src/content/seo.json (canonical, robots noindex/nofollow, OG/Twitter
  * title/description/image) flow through automatically.
  *
- * Title/description stay the page's OWN values (so the "%s | MMR Accountants"
+ * Title/description stay the page's OWN values (so the "%s | Alpha Digital Solutions"
  * template still applies); OG/Twitter fall back to them when not overridden.
  * A robots block is emitted ONLY when overriding — Next replaces the robots
  * object per route, so when present it must be complete; when absent the page
@@ -45,7 +45,7 @@ export function buildMetadata(route: string, opts: BuildMetadataOpts = {}): Meta
   const ogBase = {
     url: `${siteConfig.url}${route === "/" ? "" : route}`,
     siteName: siteConfig.name,
-    locale: "en_GB",
+    locale: "en_CA",
     ...(ogTitle ? { title: ogTitle } : {}),
     ...(ogDescription ? { description: ogDescription } : {}),
     ...(ogImage ? { images: [ogImage] } : {}),

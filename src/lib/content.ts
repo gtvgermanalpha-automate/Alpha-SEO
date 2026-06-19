@@ -72,10 +72,10 @@ export const businessTypes: string[] = sectionsData.businessTypes;
 
 /** Animated counters in the “Trusted by UK Businesses” band */
 export const trustStats = [
-  { value: 1200, suffix: "+", label: "UK businesses supported" },
-  { value: 4.6, suffix: "M", prefix: "£", label: "In tax legally saved for clients", decimals: 1 },
-  { value: 15, suffix: "+", label: "Years of chartered experience" },
-  { value: 98, suffix: "%", label: "Client retention, year on year" },
+  { value: 312, suffix: "%", prefix: "+", label: "Peak organic traffic growth" },
+  { value: 247, suffix: "", label: "Editorial links earned" },
+  { value: 84, suffix: "", label: "Local markets launched" },
+  { value: 24, suffix: "h", label: "Response on every email" },
 ] as const;
 
 /** Regulators & software platforms — trust badges under the hero. (Professional-
@@ -85,10 +85,10 @@ export const partners: string[] = sectionsData.partners;
 
 /** Headline statistics — animated with react-countup on scroll */
 export const stats = [
-  { end: 5000, suffix: "+", label: "Tax returns filed" },
-  { end: 98, suffix: "%", label: "Client retention" },
-  { end: 15, suffix: "+", label: "Years of experience" },
-  { end: 1000, suffix: "+", label: "Businesses supported" },
+  { end: 312, suffix: "%", label: "Peak organic traffic growth" },
+  { end: 247, suffix: "", label: "Editorial links earned" },
+  { end: 84, suffix: "", label: "Local markets launched" },
+  { end: 24, suffix: "h", label: "Email response time" },
 ] as const;
 
 /* ============================================================

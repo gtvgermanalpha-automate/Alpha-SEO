@@ -123,10 +123,10 @@ export function BlogPostView({ post }: { post: BlogPost }) {
     datePublished: post.date,
     dateModified: post.date,
     articleSection: post.category,
-    ...(post.image ? { image: `${siteConfig.url}${post.image}` } : {}),
+    ...(post.image ? { image: post.image.startsWith("http") ? post.image : `${siteConfig.url}${post.image}` } : {}),
     author: { "@type": "Organization", name: post.author },
     publisher: {
-      "@type": "AccountingService",
+      "@type": "ProfessionalService",
       name: siteConfig.name,
       url: siteConfig.url,
       telephone: siteConfig.contact.phone,

@@ -21,24 +21,24 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    default: `${siteConfig.name} — Premium SEO Agency in Toronto`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
-    "accountants UK",
-    "chartered accountants",
-    "tax advisory",
-    "private equity accountants",
-    "limited company accountants",
-    "contractor accountants",
-    "Xero accountants",
-    "tax planning UK",
-    "VAT returns",
-    "Making Tax Digital",
-    "payroll services",
-    "MMR Accountants",
+    "SEO agency Toronto",
+    "technical SEO",
+    "on-page SEO",
+    "off-page SEO",
+    "link building",
+    "local SEO",
+    "SEO audit",
+    "content strategy",
+    "Core Web Vitals",
+    "Answer Engine Optimisation",
+    "organic growth",
+    "Alpha Digital Solutions",
   ],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -46,15 +46,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    locale: "en_GB",
+    locale: "en_CA",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    title: `${siteConfig.name} — Premium SEO Agency in Toronto`,
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    title: `${siteConfig.name} — Premium SEO Agency in Toronto`,
     description: siteConfig.description,
   },
   robots: {
@@ -62,34 +62,51 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
-  category: "Finance",
+  category: "Marketing",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#f4f1ec",
   width: "device-width",
   initialScale: 1,
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": "AccountingService",
+  "@type": ["ProfessionalService", "LocalBusiness"],
+  "@id": `${siteConfig.url}/#organization`,
   name: siteConfig.name,
   description: siteConfig.description,
   url: siteConfig.url,
   email: siteConfig.contact.email,
   telephone: siteConfig.contact.phone,
-  areaServed: "GB",
-  priceRange: "£££",
+  image: `${siteConfig.url}/opengraph-image`,
+  priceRange: "$$$",
+  areaServed: ["CA", "US", "GB", "AU"],
   address: {
     "@type": "PostalAddress",
     streetAddress: siteConfig.contact.addressLine,
     addressLocality: siteConfig.contact.city,
+    addressRegion: "ON",
     postalCode: siteConfig.contact.postcode,
-    addressCountry: "GB",
+    addressCountry: "CA",
   },
-  openingHours: "Mo-Sa 09:00-18:00",
-  sameAs: Object.values(siteConfig.social),
+  geo: { "@type": "GeoCoordinates", latitude: 43.6532, longitude: -79.3832 },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+  knowsAbout: [
+    "Technical SEO",
+    "On-Page SEO & Content",
+    "Off-Page SEO & Link Building",
+    "Local SEO",
+    "Reddit & Community Visibility",
+    "Answer Engine Optimisation",
+  ],
+  sameAs: Object.values(siteConfig.social).filter(Boolean),
 };
 
 // WebSite + SearchAction enables the Google Sitelinks Search Box (eligibility is
@@ -116,7 +133,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en-GB"
+      lang="en-CA"
       className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >

@@ -9,21 +9,21 @@
 //
 // Environment variables (Site configuration → Environment variables):
 //   RESEND_API_KEY      – required to send. Create one at https://resend.com.
-//   AUTOREPLY_FROM      – verified sender, e.g. "MMR Accountants <hello@mmraccountants.co.uk>".
+//   AUTOREPLY_FROM      – verified sender, e.g. "Alpha Digital Solutions <hello@alphadigitalsol.com>".
 //                         Requires a verified domain in Resend; falls back to
 //                         Resend's shared test sender until you set it.
 //   AUTOREPLY_REPLY_TO  – where the visitor's reply goes (default below).
 //   AUTOREPLY_BCC       – optional: silently copy the firm on every auto-reply.
 
-const BRAND = "MMR Accountants";
-const PHONE = "0161 222 3120";
-const WEBSITE = "https://www.mmraccountants.co.uk";
-const DEFAULT_REPLY_TO = "info@mmraccountants.co.uk";
+const BRAND = "Alpha Digital Solutions";
+const PHONE = "+1 647 365 0782";
+const WEBSITE = "https://alphadigitalsol.com";
+const DEFAULT_REPLY_TO = "contact@alphadigitalsol.com";
 
 // Brand palette (kept inline — email clients ignore external/<style> CSS).
-const NAVY = "#24282B";
-const ORANGE = "#EE5935";
-const LIGHT = "#ECF5FE";
+const NAVY = "#1C1A17";
+const ORANGE = "#F98513";
+const LIGHT = "#F4F1EC";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const esc = (s) =>
@@ -59,7 +59,7 @@ export const handler = async (event) => {
   const text = [
     `Hi ${firstName},`,
     "",
-    `Thanks for getting in touch with ${BRAND}. We've received your enquiry and one of our accountants will be in touch within one business day.`,
+    `Thanks for getting in touch with ${BRAND}. We've received your enquiry and a senior strategist will be in touch within one business day.`,
     "",
     message ? `For your records, here's what you sent us:\n"${message}"` : "",
     "",
@@ -123,8 +123,8 @@ function renderHtml({ firstName, message }) {
         <tr><td style="padding:32px 32px 8px;">
           <h1 style="margin:0 0 14px;font:700 22px/1.3 Arial,sans-serif;color:${NAVY};">Thanks, ${esc(firstName)} — message received</h1>
           <p style="margin:0 0 16px;font:400 15px/1.7 Arial,sans-serif;color:#3f454b;">
-            We've received your enquiry and one of our accountants will be in touch
-            <strong>within one business day</strong>. We look forward to helping your business thrive.
+            We've received your enquiry and a senior strategist will be in touch
+            <strong>within one business day</strong>. We look forward to helping your organic growth compound.
           </p>
         </td></tr>
         ${quote}
