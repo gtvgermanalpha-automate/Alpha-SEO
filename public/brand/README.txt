@@ -1,32 +1,31 @@
-Official accreditation logos
-============================
+SEO tool & platform logos
+=========================
 
-The ICAEW, ACCA and AAT marks shown on the site are currently typographic
-reconstructions (in src/components/ui/brands.tsx). To display the official
-artwork, drop the licensed files here and switch them on.
+public/brand/tools/ holds the real vendor SVGs for the platforms Alpha works in.
+They render in the "tools we work with" strip on the home page and are listed in
+TOOL_LOGOS in src/components/ui/brands.tsx.
 
-1. Add the files to this folder (public/brand/). SVG is preferred; transparent
-   PNG at 2x is fine. Suggested names:
+  google-search-console.svg   Google Search Console
+  google-analytics.svg        Google Analytics (GA4)
+  ahrefs.svg                  Ahrefs
+  semrush.svg                 Semrush
+  pagespeed-insights.svg      PageSpeed Insights
+  lighthouse.svg              Lighthouse
+  looker.svg                  Looker Studio
+  bing.svg                    Bing Webmaster Tools
+  wordpress.svg               WordPress
+  openai.svg                  OpenAI (ChatGPT)
+  perplexity.svg              Perplexity
+  google-gemini.svg           Gemini
 
-     icaew.svg   – ICAEW "Chartered Accountants" lockup
-     acca.svg    – ACCA logo
-     aat.svg     – AAT logo
-
-2. Switch each one on in src/components/ui/brands.tsx by setting its path in the
-   OFFICIAL_ASSETS map, e.g.:
-
-     const OFFICIAL_ASSETS = {
-       icaew: "/brand/icaew.svg",
-       acca:  "/brand/acca.svg",
-       aat:   "/brand/aat.svg",
-     };
-
-   Any entry left as `null` keeps the current reconstruction.
-
-The component renders the file at a sensible default height (h-10/h-12); the
-images are sized with object-contain so any aspect ratio displays cleanly.
-
-Note on usage rights: only upload artwork you are entitled to use. Professional
-bodies publish brand/member-logo guidelines (ICAEW, ACCA, AAT) — follow them for
-sizing, clear space and colour. Google's mark on the reviews card already uses
-Google's official four-colour artwork and needs no file here.
+Notes
+-----
+- These are third-party trademarks shown nominatively ("tools we use"), NOT an
+  endorsement or partnership claim. Do not imply a partner / certified status
+  the business doesn't genuinely hold.
+- Some marks are single-colour / white-filled (e.g. openai.svg) and are meant to
+  sit on a tinted or dark chip, or under the grayscale -> colour hover treatment.
+  Handle the background where they render (see TrustedBy).
+- Google's four-colour "G" + wordmark on the reviews card use Google's official
+  artwork (Google 1.png + the inline GoogleG mark) and are backed by a real
+  Google Business Profile.

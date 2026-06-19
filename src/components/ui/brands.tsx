@@ -1,20 +1,16 @@
 import { type SVGProps } from "react";
 
 /**
- * Accreditation + platform marks.
+ * Brand & platform marks used across the site.
  *
- * NOTE: the ICAEW / ACCA / AAT marks below are clean typographic RECONSTRUCTIONS
- * for layout fidelity — they are NOT the official logos. To show the real
- * artwork, drop the licensed file into `public/brand/` and set its path in
- * OFFICIAL_ASSETS below; the component then renders that file instead of the
- * reconstruction. Leave a value as `null` to keep the reconstruction.
- * See public/brand/README.txt for the expected filenames.
+ * - Google "G" + wordmark: official Google artwork, used nominatively on the
+ *   reviews card (backed by a real Google Business Profile). Keep these exact.
+ * - TOOL_LOGOS: the SEO platforms & tools Alpha works in, shown in the "tools
+ *   we work with" strip. Real vendor SVGs live in public/brand/tools/. Shown
+ *   nominatively — NOT a partnership/endorsement claim. Some marks (e.g.
+ *   openai.svg) are single-colour / white-filled and need a tinted/dark chip or
+ *   the grayscale→colour treatment; handle that where they render (TrustedBy).
  */
-const OFFICIAL_ASSETS: Record<"icaew" | "acca" | "aat", string | null> = {
-  icaew: "/brand/ICAEW.png",
-  acca: "/brand/ACCA.png",
-  aat: "/brand/AAT.png",
-};
 
 /** Google "G" — official four-colour mark. */
 export function GoogleG(props: SVGProps<SVGSVGElement>) {
@@ -52,62 +48,22 @@ export function GoogleWordmark({ className = "" }: { className?: string }) {
   );
 }
 
-/** ICAEW — Chartered Accountants lockup. */
-export function IcaewLogo({ className = "" }: { className?: string }) {
-  if (OFFICIAL_ASSETS.icaew) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return (
-      <img
-        src={OFFICIAL_ASSETS.icaew}
-        alt="ICAEW Chartered Accountants"
-        className={`h-12 w-auto object-contain ${className}`}
-      />
-    );
-  }
-  return (
-    <span className={`flex flex-col items-center justify-center ${className}`} aria-label="ICAEW Chartered Accountants">
-      <span className="font-display text-2xl font-extrabold tracking-[0.04em] text-[#2b2b2b]">ICAEW</span>
-      <span className="mt-1 text-[0.5rem] font-bold uppercase leading-none tracking-[0.2em] text-[#7a7672]">
-        Chartered Accountants
-      </span>
-    </span>
-  );
-}
+/** A SEO platform/tool logo shown in the "tools we work with" strip. */
+export type ToolLogo = { name: string; src: string };
 
-/** ACCA — red mark + "Think Ahead". */
-export function AccaLogo({ className = "" }: { className?: string }) {
-  if (OFFICIAL_ASSETS.acca) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return (
-      <img src={OFFICIAL_ASSETS.acca} alt="ACCA" className={`h-12 w-auto object-contain ${className}`} />
-    );
-  }
-  return (
-    <span className={`flex items-center gap-2.5 ${className}`} aria-label="ACCA Think Ahead">
-      <span className="grid h-10 w-10 place-items-center rounded-[3px] bg-[#E4002B] text-[0.62rem] font-extrabold leading-none tracking-tight text-white">
-        ACCA
-      </span>
-      <span className="font-display text-base font-bold leading-tight text-[#2b2b2b]">
-        Think
-        <br />
-        Ahead
-      </span>
-    </span>
-  );
-}
-
-/** AAT — green wordmark. */
-export function AatLogo({ className = "" }: { className?: string }) {
-  if (OFFICIAL_ASSETS.aat) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={OFFICIAL_ASSETS.aat} alt="AAT" className={`h-10 w-auto object-contain ${className}`} />;
-  }
-  return (
-    <span
-      className={`font-display text-[2.1rem] font-extrabold lowercase leading-none tracking-[-0.03em] text-[#5fb246] ${className}`}
-      aria-label="AAT"
-    >
-      aat
-    </span>
-  );
-}
+/** The 12 platforms Alpha works in — real vendor SVGs in public/brand/tools/.
+ *  Order mirrors the home marquee (search → analytics → research → CMS → AI). */
+export const TOOL_LOGOS: ToolLogo[] = [
+  { name: "Google Search Console", src: "/brand/tools/google-search-console.svg" },
+  { name: "Google Analytics", src: "/brand/tools/google-analytics.svg" },
+  { name: "Ahrefs", src: "/brand/tools/ahrefs.svg" },
+  { name: "Semrush", src: "/brand/tools/semrush.svg" },
+  { name: "PageSpeed Insights", src: "/brand/tools/pagespeed-insights.svg" },
+  { name: "Lighthouse", src: "/brand/tools/lighthouse.svg" },
+  { name: "Looker Studio", src: "/brand/tools/looker.svg" },
+  { name: "Bing Webmaster Tools", src: "/brand/tools/bing.svg" },
+  { name: "WordPress", src: "/brand/tools/wordpress.svg" },
+  { name: "OpenAI", src: "/brand/tools/openai.svg" },
+  { name: "Perplexity", src: "/brand/tools/perplexity.svg" },
+  { name: "Gemini", src: "/brand/tools/google-gemini.svg" },
+];

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /* ============================================================
-   MMR Accountants — Premium UK accountancy
-   White base · Dark #24282B surfaces · Orange #EE5935 accent · Light-blue accents
-   Headings: Manrope ExtraBold · Body: Inter
+   Alpha Digital Solutions — Premium SEO agency (Toronto)
+   Luster White #F4F1EC base · Ink #1C1A17 text · Habañero #F98513 accent · Aster-blue surfaces
+   Headings: Montserrat ExtraBold · Body: Open Sans
    ============================================================ */
 @theme {
   /* ------------------------------------------------------------
@@ -68,10 +68,10 @@
   --animate-float-med: floatXY 9s ease-in-out infinite;
 }
 
-/* Fonts come from next/font (Inter + Manrope) */
+/* Fonts come from next/font (Montserrat + Open Sans) */
 @theme inline {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), var(--font-open-sans), ui-sans-serif, sans-serif;
 }
 
 /* ============================================================
@@ -98,7 +98,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modern Manrope heading system — strong hierarchy, tight tracking */
+/* Modern Montserrat heading system — strong hierarchy, tight tracking */
 h1,
 h2,
 .font-display {

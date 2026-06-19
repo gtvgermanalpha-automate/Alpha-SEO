@@ -1,18 +1,18 @@
-import { siteConfig } from "@/lib/content";
-
 type Tone = "dark" | "light";
 type Size = "sm" | "md" | "lg";
 
-const sizes: Record<Size, { mmr: string; rule: string; acc: string; pillars: string }> = {
-  sm: { mmr: "text-xl", rule: "h-6", acc: "text-[0.58rem]", pillars: "text-[0.48rem]" },
-  md: { mmr: "text-2xl", rule: "h-8", acc: "text-[0.64rem]", pillars: "text-[0.52rem]" },
-  lg: { mmr: "text-4xl", rule: "h-12", acc: "text-[0.8rem]", pillars: "text-[0.62rem]" },
+const sizes: Record<Size, { word: string; rule: string; desc: string }> = {
+  sm: { word: "text-xl", rule: "h-6", desc: "text-[0.5rem]" },
+  md: { word: "text-2xl", rule: "h-8", desc: "text-[0.55rem]" },
+  lg: { word: "text-4xl", rule: "h-12", desc: "text-[0.7rem]" },
 };
 
 /**
- * MMR Accountants horizontal lockup — Didone wordmark, bronze rule,
- * tracked "ACCOUNTANTS" and "TAX | ADVISORY | PAYROLL".
- * Typographic rebuild of the brand mark; swap in the supplied asset later if desired.
+ * Alpha Digital Solutions horizontal lockup — "Alpha" wordmark, an accent
+ * keyline, and a tracked "DIGITAL / SOLUTIONS" descriptor. Fully typographic
+ * (no image dependency) so it recolours by context: ink on light surfaces,
+ * white on dark. Header/Footer swap in `settings.logoLinear` artwork when that
+ * field is set; this lockup is the default and the dark-surface mark.
  */
 export function Logo({
   tone = "dark",
@@ -23,53 +23,38 @@ export function Logo({
   size?: Size;
   className?: string;
 }) {
-  // Use the uploaded linear brand logo on light surfaces. It's a blue mark, so the
-  // typographic white lockup is kept for dark surfaces (e.g. the footer falls back).
-  if (siteConfig.logoLinear && tone !== "light") {
-    const h = size === "lg" ? "h-12" : size === "sm" ? "h-7" : "h-9";
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={siteConfig.logoLinear} alt={siteConfig.name} className={`${h} w-auto object-contain ${className}`} />;
-  }
-
   const s = sizes[size];
-  const main = tone === "light" ? "text-white" : "text-ink";
-  const sub = tone === "light" ? "text-white/85" : "text-ink";
+  const word = tone === "light" ? "text-white" : "text-ink";
+  const sub = tone === "light" ? "text-white/80" : "text-muted";
 
   return (
-    <span className={`inline-flex items-center gap-3 ${className}`}>
+    <span className={`inline-flex items-center gap-3 ${className}`} aria-label="Alpha Digital Solutions">
       <span
-        className={`font-display font-extrabold leading-none ${s.mmr} ${main}`}
+        className={`font-display font-extrabold leading-none ${s.word} ${word}`}
         style={{ letterSpacing: "-0.02em" }}
       >
-        MMR
+        Alpha
       </span>
-      <span className={`w-px ${s.rule} bg-bronze/60`} aria-hidden />
-      <span className="flex flex-col gap-1">
+      <span className={`w-px ${s.rule} bg-accent/70`} aria-hidden />
+      <span className="flex flex-col gap-0.5">
         <span
-          className={`font-sans font-semibold uppercase ${s.acc} ${sub}`}
-          style={{ letterSpacing: "0.3em" }}
+          className={`font-sans font-bold uppercase ${s.desc} ${word}`}
+          style={{ letterSpacing: "0.28em" }}
         >
-          Accountants
+          Digital
         </span>
         <span
-          className={`flex items-center gap-1.5 font-sans font-medium uppercase ${s.pillars} ${
-            tone === "light" ? "text-white/70" : "text-muted"
-          }`}
-          style={{ letterSpacing: "0.18em" }}
+          className={`font-sans font-semibold uppercase ${s.desc} ${sub}`}
+          style={{ letterSpacing: "0.28em" }}
         >
-          {siteConfig.pillars.map((p, i) => (
-            <span key={p} className="flex items-center gap-1.5">
-              {i > 0 && <span className="text-bronze">|</span>}
-              {p}
-            </span>
-          ))}
+          Solutions
         </span>
       </span>
     </span>
   );
 }
 
-/** Compact MMR-only mark (favicon / chat avatar / small spots). */
+/** Compact "Alpha" mark (favicon / avatar / small spots). */
 export function LogoMark({
   tone = "dark",
   className = "",
@@ -84,7 +69,7 @@ export function LogoMark({
       } ${className}`}
       style={{ letterSpacing: "-0.02em" }}
     >
-      MMR
+      Alpha
     </span>
   );
 }

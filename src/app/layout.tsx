@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import { siteConfig } from "@/lib/content";
 import { SiteChrome } from "@/components/SiteChrome";
 import { jsonLd } from "@/lib/jsonLd";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["500", "600", "700", "800"],
   display: "swap",
@@ -117,7 +117,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${inter.variable} ${manrope.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full bg-white text-ink">

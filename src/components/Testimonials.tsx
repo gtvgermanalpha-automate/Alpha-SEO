@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { GoogleG, GoogleWordmark, AccaLogo } from "@/components/ui/brands";
+import { GoogleG, GoogleWordmark } from "@/components/ui/brands";
 import { googleReviewsUrl, reviews, reviewsMeta } from "@/lib/content";
 
 const avatarTones = [
@@ -42,31 +42,14 @@ export function Testimonials() {
     <section
       id="testimonials"
       className="relative scroll-mt-24 overflow-hidden border-b border-line bg-white py-20 sm:py-28"
-      aria-label="Accreditations and client reviews"
+      aria-label="Client reviews"
     >
       <Container>
-        {/* Single ACCA statement */}
+        {/* Section intro */}
         <Reveal className="mx-auto max-w-3xl px-3 text-center">
           <h2 className="text-balance font-display text-2xl font-bold leading-[1.32] text-ink sm:text-[1.95rem] sm:leading-snug lg:text-[2.25rem] lg:leading-[1.28]">
             {t.intro}
           </h2>
-        </Reveal>
-
-        {/* ACCA accreditation + relevant credentials */}
-        <Reveal delay={0.05}>
-          <div className="mt-11 flex flex-col items-center gap-5">
-            <AccaLogo />
-            <div className="flex flex-wrap items-center justify-center gap-2.5">
-              {["Chartered Certified Accountants", "ACCA-regulated", "Fully insured", "Ethical oversight"].map((c) => (
-                <span
-                  key={c}
-                  className="rounded-full border border-line bg-cream/60 px-3.5 py-1.5 text-xs font-semibold text-ink/70"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
         </Reveal>
 
         {/* Rating summary — distinct horizontal card */}
