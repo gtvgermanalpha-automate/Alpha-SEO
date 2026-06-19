@@ -1,130 +1,102 @@
 {
   "hero": {
-    "eyebrow": "Chartered accountants · Trusted UK-wide",
-    "headlineLead": "Expert accounting for",
-    "headlineAccent": "UK businesses",
-    "paragraph": "From proactive tax planning to fully-managed payroll, MMR gives established UK companies a cloud-first finance team — fixed monthly fees, a dedicated chartered accountant, and advice that helps you keep more of what you earn.",
-    "pillars": ["Fixed monthly fees", "Your own accountant", "Switch in days"],
-    "primaryCta": "Book a Free Consultation",
-    "secondaryCta": "Explore Services",
-    "ratingScore": "4.9/5",
-    "ratingLabel": "by 1,200+ clients",
-    "badge": "ACCA Qualified"
+    "eyebrow": "Better rankings, measured",
+    "headlineLead": "Better rankings.",
+    "headlineAccent": "More traffic.",
+    "paragraph": "We're a full-service SEO agency: on-page, off-page, link placements, local SEO and Reddit visibility. Results-driven work, delivered with weekly reporting.",
+    "pillars": ["White-hat only", "Senior-led team", "Weekly reporting", "No lock-in"],
+    "primaryCta": "Explore services",
+    "secondaryCta": "See case studies",
+    "ratingScore": "5.0",
+    "ratingLabel": "client-rated",
+    "badge": "White-hat, senior-led"
   },
   "trustedBy": {
-    "eyebrow": "Accredited, regulated & integrated with the platforms you trust"
-  },
-  "approach": {
-    "heading": {
-      "eyebrow": "How we help",
-      "title": "More than compliance — a partner in your growth",
-      "subtitle": "Filing on time is the bare minimum. We go further: planning ahead, watching your numbers in real time, and giving you advice that actually moves the needle."
-    }
+    "eyebrow": "Operating across the industry's leading SEO stack"
   },
   "services": {
     "heading": {
-      "eyebrow": "What we do",
-      "title": "Full-service accountancy, expertly handled",
-      "subtitle": "From everyday bookkeeping to board-level advice, MMR covers every number your business needs — so nothing slips and no deadline is missed."
+      "eyebrow": "Our services",
+      "title": "Five ways we help your business grow",
+      "subtitle": "Five strategic pillars, one growth engine — each running as its own focused engagement, all under one accountable team."
     },
-    "ctaText": "Not sure which services you need? We'll help you decide.",
-    "ctaButton": "Book a Consultation"
+    "ctaText": "Not sure where to start? Share your domain and goals — we'll recommend the right mix.",
+    "ctaButton": "Talk to a strategist"
   },
   "why": {
     "heading": {
-      "eyebrow": "Why MMR",
-      "title": "Why established businesses choose MMR",
-      "subtitle": "Chartered-standard expertise with genuinely human service — no jargon, no surprise bills, and an adviser who actually picks up the phone."
+      "eyebrow": "Why Alpha",
+      "title": "Why ambitious brands choose Alpha",
+      "subtitle": "Senior-led, white-hat SEO with transparent reporting and no lock-in — results over hype, with every step documented."
     },
-    "ctaText": "See for yourself why our clients stay with us year after year.",
-    "ctaButton": "Talk to an Accountant"
-  },
-  "industries": {
-    "heading": {
-      "eyebrow": "Industries we serve",
-      "title": "Specialist knowledge for your sector",
-      "subtitle": "We speak your industry's language. From IR35 for contractors to CIS for construction, you get advice shaped around how your business actually works."
-    }
+    "ctaText": "See exactly how we work, end to end.",
+    "ctaButton": "Our process"
   },
   "process": {
     "heading": {
       "eyebrow": "How we work",
-      "title": "Getting started is refreshingly simple",
-      "subtitle": "Four straightforward steps take you from first hello to a finance function that just runs — with no admin headache and no downtime."
+      "title": "Our process, end to end",
+      "subtitle": "The same five-step approach on every project — clear deliverables and weekly updates. We sell results, not promises."
     }
   },
   "faq": {
     "heading": {
-      "eyebrow": "FAQ",
-      "title": "Questions, answered",
+      "eyebrow": "Common questions",
+      "title": "Frequently asked",
       "subtitle": "Everything you might want to know before getting in touch. Can't find your answer? We're only a message away."
     },
     "stillHaveTitle": "Still have a question?",
-    "stillHaveText": "Book a free, no-obligation call and we'll talk through exactly how MMR can help your business.",
-    "stillHaveCta": "Get in Touch"
+    "stillHaveText": "Book a free, no-obligation call and we'll talk through exactly how Alpha can help your organic growth.",
+    "stillHaveCta": "Get in touch"
   },
   "cta": {
     "eyebrow": "Get started",
-    "title": "Ready to work with an accountant who's genuinely on your side?",
-    "subtitle": "Book a free, no-obligation consultation and we'll show you exactly how MMR can help — with a clear fixed-fee quote and no pressure.",
-    "primaryCta": "Book a Free Consultation"
+    "title": "Ready to compound your organic growth?",
+    "subtitle": "Tell us about your domain and goals — we'll come back within 24 business hours with the highest-impact moves for the next 90 days.",
+    "primaryCta": "Start the conversation"
   },
   "contact": {
     "eyebrow": "Get in touch",
-    "title": "Let's talk numbers",
-    "subtitle": "Tell us a little about your business and we'll come back with a clear, fixed-fee quote — usually within one business day. No pressure, no jargon.",
-    "accepting": "Accepting new clients this quarter",
+    "title": "Let's talk about your organic growth",
+    "subtitle": "Tell us about your domain, your goals and where you are today. A senior strategist responds within 24 business hours.",
+    "accepting": "Booking new engagements this quarter",
     "labels": { "call": "Call us", "email": "Email us", "visit": "Visit us", "hours": "Opening hours" }
   },
   "footer": {
-    "blurb": "Chartered-standard accountants helping UK businesses keep more of what they earn — with proactive advice and transparent fixed fees.",
-    "cta": "Book a Consultation",
-    "columns": { "services": "Services", "quickLinks": "Quick Links", "contact": "Get in touch" },
-    "disclaimer": "A firm of accountants regulated for a range of investment business activities; ACCA-registered. Content on this website is for general guidance only and does not constitute professional advice.",
+    "blurb": "A focused SEO partner for ambitious brands — technical engineering, content authority and editorial link development, under one accountable team.",
+    "cta": "Get a free audit",
+    "columns": { "services": "SEO Pillars", "quickLinks": "Company", "contact": "Get in touch" },
+    "disclaimer": "Alpha Digital Solutions is an SEO & digital marketing agency based in Toronto, Ontario. Content on this website is for general guidance only and does not constitute professional advice.",
     "legal": ["Privacy Policy", "Terms", "Cookies"]
   },
   "pages": {
     "services": {
       "crumb": "Services",
-      "title": "Accountancy services for UK businesses",
-      "subtitle": "Everything your business needs to stay compliant and grow — from everyday bookkeeping to board-level advice, all under one transparent monthly fee.",
-      "metaTitle": "Accountancy Services",
-      "metaDescription": "Bookkeeping, tax planning, VAT & Making Tax Digital, payroll, company formation and business advisory — full-service accountancy for UK businesses on fixed monthly fees."
-    },
-    "whyMmr": {
-      "crumb": "Why MMR",
-      "title": "Why businesses choose MMR",
-      "subtitle": "Chartered expertise with genuinely human service — no jargon, no surprise bills, and an adviser who actually picks up the phone.",
-      "metaTitle": "Why MMR",
-      "metaDescription": "Fixed monthly fees, your own named accountant, proactive advice and a chartered, fully-insured practice. See why 1,200+ UK businesses trust MMR Accountants."
-    },
-    "industries": {
-      "crumb": "Industries",
-      "title": "Specialist accountants for your industry",
-      "subtitle": "We speak your sector's language — from IR35 for contractors to CIS for construction — with advice shaped around how your business actually works.",
-      "metaTitle": "Industries We Serve",
-      "metaDescription": "Specialist accountants for contractors, e-commerce, startups, landlords, hospitality, healthcare, construction (CIS) and creative agencies across the UK."
+      "title": "Five SEO pillars. One growth engine.",
+      "subtitle": "Each pillar runs as its own focused engagement. Explore any service to see the full scope — what's included, how it works, and what you receive.",
+      "metaTitle": "SEO Services",
+      "metaDescription": "Five SEO pillars under one accountable team: technical & performance, on-page & content, off-page authority, local growth, and Reddit & community visibility with AEO."
     },
     "howWeWork": {
-      "crumb": "How We Work",
-      "title": "How we work with you",
-      "subtitle": "Switching to MMR is refreshingly simple. Four straightforward steps take you from first hello to a finance function that just runs.",
-      "metaTitle": "How We Work",
-      "metaDescription": "From a free discovery call to seamless onboarding and proactive, cloud-first support — see how MMR Accountants works with you in four simple steps."
+      "crumb": "Process",
+      "title": "Our process, end to end",
+      "subtitle": "Forensic audit, strategy, sprint-based execution and transparent reporting — with pre-approval on every change and no lock-in.",
+      "metaTitle": "Our SEO Process",
+      "metaDescription": "How Alpha works: forensic audit, strategy, sprint-based execution and transparent weekly reporting — with pre-approval on every change and no lock-in."
     },
     "faq": {
       "crumb": "FAQ",
       "title": "Frequently asked questions",
-      "subtitle": "Everything you might want to know before getting in touch. Can't find your answer? We're only a message away.",
-      "metaTitle": "FAQ",
-      "metaDescription": "Answers to common questions about MMR Accountants — pricing, switching accountants, cloud software, dedicated accountants and our chartered, insured practice."
+      "subtitle": "Answers on timelines, pricing, reporting and how we work — before you ever get in touch.",
+      "metaTitle": "SEO FAQ",
+      "metaDescription": "Common questions about working with Alpha Digital Solutions — SEO timelines, pricing, reporting, guarantees and taking over from another agency."
     },
     "contact": {
       "crumb": "Contact",
-      "title": "Contact MMR Accountants",
-      "subtitle": "Speak to a chartered accountant who actually picks up the phone. We're here Monday to Saturday and reply to every enquiry within one business day.",
-      "metaTitle": "Contact Us",
-      "metaDescription": "Get a free, fixed-fee quote from MMR Accountants. Call 0161 222 3120, email info@mmraccountants.co.uk, or send us a message — we reply within one business day."
+      "title": "Let's talk about your organic growth",
+      "subtitle": "Book a free SEO audit or talk to a senior strategist. Toronto-based, 24-hour email response, no obligation.",
+      "metaTitle": "Contact & Free SEO Audit",
+      "metaDescription": "Book a free SEO audit or talk to a senior strategist at Alpha Digital Solutions. Toronto-based, with a 24-hour email response and no obligation."
     }
   }
 }

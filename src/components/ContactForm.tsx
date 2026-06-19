@@ -141,8 +141,8 @@ export function ContactForm() {
         </span>
         <h3 className="mt-6 font-display text-2xl text-ink">Thank you — message received</h3>
         <p className="mt-3 max-w-sm text-sm text-muted">
-          One of our accountants will be in touch within one business day. We look forward to
-          helping your business thrive.
+          A senior strategist will be in touch within one business day. We look forward to
+          helping your organic growth compound.
         </p>
         <button
           type="button"
@@ -200,7 +200,7 @@ export function ContactForm() {
             name="email"
             type="email"
             autoComplete="email"
-            placeholder="jane@company.co.uk"
+            placeholder="jane@company.com"
             aria-invalid={!!errors.email}
             aria-describedby={errors.email ? "email-error" : undefined}
             className={fieldClass}
@@ -208,13 +208,13 @@ export function ContactForm() {
         </Field>
 
         <Field label="Phone (optional)" htmlFor="phone">
-          <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="07123 456789" className={fieldClass} />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+1 647 555 0123" className={fieldClass} />
         </Field>
 
-        <Field label="Business type" htmlFor="businessType">
+        <Field label="Primary focus area" htmlFor="businessType">
           <select id="businessType" name="businessType" defaultValue="" className={fieldClass}>
             <option value="" disabled>
-              Select an option
+              Select a focus area
             </option>
             {businessTypes.map((b) => (
               <option key={b} value={b}>
@@ -250,7 +250,7 @@ export function ContactForm() {
             className="mt-0.5 h-5 w-5 shrink-0 rounded-none border-line accent-accent focus-visible:outline-none"
           />
           <span>
-            I agree to MMR Accountants contacting me about my enquiry. We&apos;ll never share your details.
+            I agree to Alpha Digital Solutions contacting me about my enquiry. We&apos;ll never share your details.
           </span>
         </label>
         {errors.consent && (

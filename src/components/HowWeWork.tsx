@@ -34,7 +34,7 @@ export function HowWeWork() {
 
         <div className="relative mt-16">
           {/* Connector line (desktop) */}
-          <div className="absolute left-[12.5%] right-[12.5%] top-9 hidden h-0.5 lg:block" aria-hidden>
+          <div className="absolute left-[10%] right-[10%] top-9 hidden h-0.5 lg:block" aria-hidden>
             <div className="h-full w-full rounded-full bg-line" />
             <div
               data-reveal-line=""
@@ -42,7 +42,7 @@ export function HowWeWork() {
             />
           </div>
 
-          <ol data-reveal-stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <ol data-reveal-stagger className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
             {processSteps.map((step) => (
               <Step key={step.step} step={step} />
             ))}

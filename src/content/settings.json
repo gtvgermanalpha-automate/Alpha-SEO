@@ -1,38 +1,40 @@
 {
-  "name": "MMR Accountants",
-  "shortName": "MMR",
-  "companyNumber": "12345678",
+  "name": "Alpha Digital Solutions",
+  "shortName": "Alpha",
+  "companyNumber": "",
   "pillars": [
-    "Tax",
-    "Advisory",
-    "Payroll"
+    "Technical SEO",
+    "On-Page SEO",
+    "Off-Page SEO",
+    "Local SEO",
+    "Reddit & Community"
   ],
-  "url": "https://www.mmraccountants.co.uk",
-  "description": "MMR Accountants are chartered accountants helping UK limited companies, contractors and growing businesses with cloud bookkeeping, proactive tax planning, payroll and year-round advice — all on transparent fixed monthly fees.",
+  "url": "https://alphadigitalsol.com",
+  "description": "Alpha Digital Solutions is a Toronto SEO agency engineering measurable organic growth — technical SEO, on-page and content, off-page authority, local SEO and Reddit/AEO visibility, under one accountable team.",
   "heroImage": "",
   "logoLinear": "",
   "logoCircular": "",
   "contact": {
-    "phone": "+44 161 222 3120",
-    "phoneDisplay": "0161 222 3120",
-    "email": "info@mmraccountants.co.uk",
-    "addressLine": "57 Cheetham Hill Road",
-    "city": "Manchester",
-    "postcode": "M4 4FS",
-    "hours": "Mon–Sat, 9:00am – 6:00pm"
+    "phone": "+1 647 365 0782",
+    "phoneDisplay": "+1 647 365 0782",
+    "email": "contact@alphadigitalsol.com",
+    "addressLine": "Suite 785, 1/2-145, Unit 5, Church Street",
+    "city": "Toronto",
+    "postcode": "M5B 1Y4",
+    "hours": "Mon–Fri, 9am–6pm EST"
   },
   "offices": [
     {
-      "city": "Manchester",
-      "addressLine": "57 Cheetham Hill Road",
-      "postcode": "M4 4FS",
-      "phone": "+44 161 222 3120",
-      "phoneDisplay": "0161 222 3120"
+      "city": "Toronto",
+      "addressLine": "Suite 785, 1/2-145, Unit 5, Church Street",
+      "postcode": "M5B 1Y4",
+      "phone": "+1 647 365 0782",
+      "phoneDisplay": "+1 647 365 0782"
     }
   ],
   "social": {
-    "linkedin": "https://www.linkedin.com/company/mmr-accountants",
-    "twitter": "https://twitter.com/mmraccountants",
-    "facebook": "https://www.facebook.com/mmraccountants"
+    "linkedin": "",
+    "twitter": "",
+    "facebook": ""
   }
 }

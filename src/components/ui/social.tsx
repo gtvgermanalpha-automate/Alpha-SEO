@@ -34,5 +34,7 @@ export const socialLinks = [
   { icon: LinkedInIcon, href: siteConfig.social.linkedin, label: "LinkedIn" },
   { icon: XIcon, href: siteConfig.social.twitter, label: "X (Twitter)" },
   { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
-  { icon: WhatsAppIcon, href: `https://wa.me/442034758210`, label: "WhatsApp" },
-];
+  { icon: WhatsAppIcon, href: "https://wa.me/16473650782", label: "WhatsApp" },
+  // Only render socials with a real destination — empty settings (no profile yet)
+  // are dropped rather than linking to "".
+].filter((s) => typeof s.href === "string" && s.href.trim() !== "");

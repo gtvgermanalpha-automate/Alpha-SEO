@@ -1,165 +1,150 @@
 {
   "services": [
     {
-      "slug": "bookkeeping",
+      "slug": "technical-seo",
       "art": "bookkeeping",
-      "icon": "BookOpen",
-      "title": "Bookkeeping & Annual Accounts",
-      "description": "Real-time books kept tidy every week, with year-end accounts filed accurately and well ahead of deadline.",
-      "points": ["Cloud bookkeeping", "Year-end accounts", "Companies House filing"]
+      "icon": "Settings2",
+      "title": "Technical SEO & Performance",
+      "description": "We fix the hidden technical issues that hold your site back from ranking — Core Web Vitals, crawl architecture, indexation and schema. The engineering foundation every other ranking signal depends on.",
+      "points": ["Full site audits", "Core Web Vitals", "Schema markup", "Site architecture"]
     },
     {
-      "slug": "tax-planning",
-      "art": "tax",
-      "icon": "Receipt",
-      "title": "Tax Planning & Returns",
-      "description": "Forward-looking corporation and personal tax planning that keeps more of your profit where it belongs — with you.",
-      "points": ["Corporation tax", "Self assessment", "Dividend strategy"]
-    },
-    {
-      "slug": "vat",
-      "art": "vat",
-      "icon": "Percent",
-      "title": "VAT & Making Tax Digital",
-      "description": "MTD-compliant VAT handled end to end — the right scheme, accurate returns and never a missed submission.",
-      "points": ["VAT registration", "Quarterly returns", "Scheme reviews"]
-    },
-    {
-      "slug": "payroll",
-      "art": "payroll",
-      "icon": "Users",
-      "title": "Payroll & Pensions",
-      "description": "Fully managed RTI payroll and auto-enrolment so your team is paid correctly and on time, every single month.",
-      "points": ["RTI payroll", "Auto-enrolment", "Payslips & P60s"]
-    },
-    {
-      "slug": "company-formation",
-      "art": "formation",
-      "icon": "Building2",
-      "title": "Company Formation & Secretarial",
-      "description": "Start right with fast company set-up, registered office and confirmation statements handled on your behalf.",
-      "points": ["Company set-up", "Registered office", "Confirmation statements"]
-    },
-    {
-      "slug": "advisory",
+      "slug": "on-page-seo",
       "art": "advisory",
-      "icon": "TrendingUp",
-      "title": "Business Advisory & Growth",
-      "description": "Management accounts, cash-flow forecasting and a dedicated adviser who helps you make confident decisions.",
-      "points": ["Management accounts", "Cash-flow forecasts", "Growth strategy"]
+      "icon": "BookOpen",
+      "title": "On-Page SEO & Content Strategy",
+      "description": "Content that ranks well and actually converts. Bring your own keywords or commission the full strategy — keyword mapping, content-gap analysis, optimised landing pages and metadata.",
+      "points": ["Keyword mapping", "Content gap analysis", "Landing pages", "Metadata & titles"]
+    },
+    {
+      "slug": "off-page-seo",
+      "art": "vat",
+      "icon": "Award",
+      "title": "Off-Page SEO & Authority",
+      "description": "Authority earned the durable way — editorial backlinks from real publications, data-led digital PR and brand mentions across the open web. No PBNs; every link earned and defensible.",
+      "points": ["Editorial backlinks", "Digital PR", "Brand mentions", "Link-gap analysis"]
+    },
+    {
+      "slug": "local-seo",
+      "art": "formation",
+      "icon": "MapPin",
+      "title": "Local SEO & Regional Growth",
+      "description": "Be the first business people see when they search nearby. Google Business Profile, local citations, geo-targeted pages and review velocity — own the local pack in every market you serve.",
+      "points": ["Google Business Profile", "Local citations", "Geo-targeted pages", "Review velocity"]
+    },
+    {
+      "slug": "reddit-community",
+      "art": "tax",
+      "icon": "MessagesSquare",
+      "title": "Reddit & Community Visibility",
+      "description": "Buyers research on Reddit, Quora and niche forums long before Google — and AI assistants quote those threads back. We earn your brand an authentic presence there, plus Answer Engine Optimisation.",
+      "points": ["Reddit & forums", "Quora answers", "Community building", "AEO / AI citations"]
     }
-  ],
-  "industries": [
-    { "slug": "contractors", "icon": "Laptop", "title": "Contractors & Freelancers", "description": "IR35-aware advice and take-home that works." },
-    { "slug": "ecommerce", "icon": "ShoppingCart", "title": "E-commerce & Retail", "description": "Multi-channel sales, stock and VAT, simplified." },
-    { "slug": "startups", "icon": "Rocket", "title": "Startups & Tech", "description": "Investor-ready accounts and R&D tax relief." },
-    { "slug": "landlords", "icon": "Home", "title": "Landlords & Property", "description": "Portfolio structuring and property tax planning." },
-    { "slug": "hospitality", "icon": "UtensilsCrossed", "title": "Hospitality", "description": "Tight margins managed with clear weekly numbers." },
-    { "slug": "healthcare", "icon": "Stethoscope", "title": "Healthcare & Locums", "description": "Specialist support for medical professionals." },
-    { "slug": "construction", "icon": "HardHat", "title": "Construction & CIS", "description": "CIS deductions and subcontractor returns handled." },
-    { "slug": "creative", "icon": "Palette", "title": "Creative & Agencies", "description": "Project profitability and cash flow you can see." }
   ],
   "whyPoints": [
     {
-      "icon": "Award",
-      "title": "ACCA Qualified",
-      "description": "Chartered-standard, ACCA-qualified accountants held to the highest professional and ethical standards."
-    },
-    {
-      "icon": "BadgePoundSterling",
-      "title": "Transparent Pricing",
-      "description": "Fixed monthly fees agreed up front — no hourly billing, no hidden charges and no surprise invoices."
+      "icon": "ShieldCheck",
+      "title": "White-hat only",
+      "description": "Every link earned and every change documented — built to survive algorithm updates, not chase them. No PBNs, no shortcuts, no risk to your domain."
     },
     {
       "icon": "UserRound",
-      "title": "Dedicated Accountant",
-      "description": "A named accountant who knows your business by name and is only ever a phone call away."
+      "title": "Senior-led team",
+      "description": "A senior strategist runs your account from day one — not a junior handed a checklist. Direct access to the person doing the work, no layers in between."
+    },
+    {
+      "icon": "LineChart",
+      "title": "Transparent reporting",
+      "description": "Live Looker Studio dashboards refreshed weekly, plus a monthly executive readout. You see the same numbers we do, at the same time."
     },
     {
       "icon": "Zap",
-      "title": "Fast Turnaround",
-      "description": "Accounts and returns delivered ahead of deadline, with a reply to every question within one business day."
+      "title": "24-hour response",
+      "description": "A reply to every email within one business day, one dedicated point of contact, and pre-approval on every change before it ships."
     },
     {
-      "icon": "MapPin",
-      "title": "UK Business Specialists",
-      "description": "Deep expertise in UK tax, IR35, VAT and CIS, supporting established businesses the length of the country."
-    }
-  ],
-  "valueProps": [
-    {
-      "slug": "proactive-tax-planning",
-      "art": "tax",
-      "title": "Proactive tax planning",
-      "description": "We don't simply file your taxes — we plan ahead all year to legally lower your bill and keep more profit where it belongs."
-    },
-    {
-      "slug": "advisory-partnership",
-      "art": "advisory",
-      "title": "Advice that compounds",
-      "description": "A dedicated adviser who turns your numbers into confident decisions on pricing, cash flow and growth."
+      "icon": "Award",
+      "title": "Results over hype",
+      "description": "We sell outcomes, not promises — measurable organic growth tied back to pipeline. NDA-ready, 30-day rolling, no long lock-in."
     }
   ],
   "processSteps": [
     {
       "step": "01",
-      "title": "Free discovery call",
-      "description": "We learn about your business, your goals and your numbers — then give you a clear, no-obligation quote.",
-      "icon": "PhoneCall"
-    },
-    {
-      "step": "02",
-      "title": "Seamless onboarding",
-      "description": "We handle the switch from your old accountant, set up your cloud software and get everything in order.",
+      "title": "Audit",
+      "description": "We start with a full site audit — technical health, on-page gaps, content depth, link profile and what your competitors are doing differently.",
       "icon": "Settings2"
     },
     {
+      "step": "02",
+      "title": "Strategy",
+      "description": "From audit to roadmap. We identify the keywords worth targeting, map the content needed, and prioritise what will move the needle fastest.",
+      "icon": "Lightbulb"
+    },
+    {
       "step": "03",
-      "title": "We manage the numbers",
-      "description": "Bookkeeping, tax, payroll and deadlines run quietly in the background while you focus on the business.",
-      "icon": "LineChart"
+      "title": "Implementation",
+      "description": "We fix what's broken, ship what's needed and earn the links — with weekly updates so you see everything as it happens.",
+      "icon": "Zap"
     },
     {
       "step": "04",
-      "title": "You grow with insight",
-      "description": "Regular reviews and proactive advice keep you ahead — so every decision is backed by real data.",
-      "icon": "Sparkles"
+      "title": "Measurement",
+      "description": "Live Looker Studio dashboards refreshed weekly and monthly performance reviews. You see what is working and what isn't.",
+      "icon": "LineChart"
+    },
+    {
+      "step": "05",
+      "title": "Scale",
+      "description": "Once results start showing, we double down on what is working, refresh what is slipping, and look for adjacent wins.",
+      "icon": "TrendingUp"
     }
   ],
   "faqs": [
     {
-      "question": "How much do your accountancy services cost?",
-      "answer": "Every business is different, so we build a fixed monthly package around exactly what you need — accounts, tax, payroll, VAT and advice. You will always know the price before you commit, with no hidden hourly charges. Most limited company packages start from a clear, affordable monthly fee."
+      "question": "How long until I see meaningful results from SEO?",
+      "answer": "Most engagements see early technical wins in 30–60 days (indexation, vitals, crawl-budget) and meaningful traffic compounding from month four onward. Significant pipeline impact typically lands between months six and nine — earlier on sites with strong technical fundamentals, later on sites with deep historical debt. We map a realistic timeline during the audit phase."
     },
     {
-      "question": "Is it difficult to switch from my current accountant?",
-      "answer": "Not at all. We handle the entire move for you. With your permission we contact your previous accountant, request your records under standard professional clearance, and transfer everything across. The process is paperless and usually takes just a few days."
+      "question": "What size of business do you typically work with?",
+      "answer": "Our retainers fit best with funded startups (post Series A) through mid-market and enterprise. The common factor is treating SEO as a strategic channel rather than a tactical cost — measurable revenue attribution, executive sponsorship and a willingness to build for the long term."
     },
     {
-      "question": "Which cloud accounting software do you use?",
-      "answer": "We are partners with the leading platforms including Xero, QuickBooks, FreeAgent and Sage. We will recommend the best fit for your business, set it up, migrate your data and train you on the parts you want to use yourself."
+      "question": "How do your engagements and pricing work?",
+      "answer": "Most programmes run as monthly retainers scoped against your audit findings — typically $5k–$25k/month depending on technical scope, content volume and authority targets. Standalone audits and one-off migrations are offered as fixed-scope engagements. Every quote is bespoke and follows the discovery call."
     },
     {
-      "question": "Do you work with businesses outside London?",
-      "answer": "Yes. We support clients right across the UK. Because everything runs in the cloud, you get the same proactive service whether you are around the corner or in another city — by video call, phone and email."
+      "question": "Do you guarantee specific keyword rankings?",
+      "answer": "No reputable SEO agency does — and any who claim to should be avoided. What we do guarantee is methodology, transparency and reporting rigour. Our retainers include defined deliverables, sprint cadence and live dashboard access so progress against the strategy is visible at all times."
     },
     {
-      "question": "Will I have a dedicated accountant?",
-      "answer": "Always. You are introduced to a named, qualified accountant who looks after your account year-round and gets to know your business. You will not be passed between a call centre or a different person each time you get in touch."
+      "question": "Can you take over from another SEO agency?",
+      "answer": "Yes — and it's a common starting point. We begin with a forensic audit of prior work, identify gaps, retain anything compounding well, and rebuild the rest. Transition plans include access handovers, asset inventories and risk reviews so nothing breaks during the swap."
     },
     {
-      "question": "Are you regulated and insured?",
-      "answer": "Yes. MMR Accountants is a chartered practice held to strict professional standards, and we carry full professional indemnity insurance for your complete peace of mind."
+      "question": "What reporting and tooling will I get access to?",
+      "answer": "A custom Looker Studio dashboard pulling Search Console, GA4, your CRM and our internal rank-tracking — refreshed daily. Monthly executive readouts cover narrative, attribution and next-sprint priorities. You also get direct access to the senior strategist running your account."
     }
   ],
-  "partners": ["Companies House", "HMRC", "Xero", "QuickBooks", "FreeAgent", "Sage"],
+  "partners": [
+    "Google Search Console",
+    "Google Analytics",
+    "Ahrefs",
+    "Semrush",
+    "PageSpeed Insights",
+    "Lighthouse",
+    "Looker Studio",
+    "Bing Webmaster Tools",
+    "WordPress",
+    "OpenAI",
+    "Perplexity",
+    "Gemini"
+  ],
   "businessTypes": [
-    "Limited company",
-    "Sole trader",
-    "Contractor / freelancer",
-    "Partnership / LLP",
-    "Startup",
-    "Landlord",
-    "Other"
+    "Technical SEO health",
+    "Content & topical authority",
+    "Backlink profile & authority",
+    "Local SEO & multi-location",
+    "Full-funnel organic strategy"
   ]
 }

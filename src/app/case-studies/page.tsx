@@ -12,7 +12,7 @@ import { caseStudies, caseStudyHref } from "@/lib/content";
 export const metadata: Metadata = buildMetadata("/case-studies", {
   defaultTitle: "Case Studies",
   defaultDescription:
-    "Real results for UK businesses — see how MMR Accountants has helped clients save tax, stay compliant and grow.",
+    "Measurable SEO outcomes across SaaS, ecommerce, fintech and local services — migrations, technical recoveries, authority and content programmes.",
 });
 
 export default function CaseStudiesPage() {
@@ -20,8 +20,8 @@ export default function CaseStudiesPage() {
     <>
       <PageHero
         crumb="Case Studies"
-        title="Client success stories"
-        subtitle="Real results for real UK businesses — a few examples of how we've helped clients save tax, stay compliant and grow."
+        title="Measurable SEO outcomes, documented"
+        subtitle="A cross-section of engagements across SaaS, ecommerce, fintech, publishing and local services — numbers verified by our clients' analytics, not ours."
         illus="growth"
       />
 

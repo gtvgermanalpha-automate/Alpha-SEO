@@ -8,8 +8,8 @@ import { CustomSchema } from "@/components/CustomSchema";
 import { team } from "@/lib/content";
 
 export const metadata: Metadata = buildMetadata("/team", {
-  defaultTitle: "Team",
-  defaultDescription: "Meet the chartered-standard accountants and advisers behind MMR Accountants.",
+  defaultTitle: "About Alpha",
+  defaultDescription: "A senior-led, white-hat SEO agency in Toronto — humble, results-over-hype, NDA-ready, with a 30-day rolling commitment and no lock-in.",
 });
 
 function initials(name: string): string {
@@ -24,7 +24,7 @@ function initials(name: string): string {
 export default function TeamPage() {
   return (
     <>
-      <PageHero crumb="Team" title={team.heading} subtitle={team.intro} illus="advisory" />
+      <PageHero crumb="About" title={team.heading} subtitle={team.intro} illus="advisory" />
 
       <section className="relative overflow-hidden bg-white py-16 sm:py-20">
         <BackgroundFX variant="subtle" />

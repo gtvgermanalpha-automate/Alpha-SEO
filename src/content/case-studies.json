@@ -1,54 +1,242 @@
 [
   {
-    "slug": "ecommerce-vat-recovery",
-    "title": "How we cut a Manchester e-commerce brand's VAT bill by 22%",
-    "client": "A Manchester e-commerce retailer",
-    "industry": "E-commerce & Retail",
-    "date": "2025-09-15",
-    "image": "/illustrations/ecommerce.svg",
-    "imageAlt": "Illustration of an online retail business",
-    "summary": "A fast-growing online retailer was overpaying VAT across multiple channels. We restructured their VAT scheme and reclaimed overpaid input tax.",
+    "slug": "series-b-saas-organic-growth",
+    "title": "Series-B SaaS: organic became the largest acquisition channel",
+    "client": "A Series-B SaaS platform",
+    "industry": "B2B SaaS",
+    "category": "Technical SEO",
+    "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "B2B SaaS organic growth case study",
+    "summary": "A Series-B SaaS platform was acquiring customers almost exclusively through paid channels with organic traffic plateaued for 14 months. We rebuilt the technical foundation, content and authority to make organic the largest source of qualified pipeline.",
     "results": [
-      "22% reduction in annual VAT liability",
-      "£18,400 of overpaid input VAT reclaimed",
-      "Multi-channel sales reconciled and Making Tax Digital ready"
+      "Organic traffic: +312%",
+      "Page-1 keywords: +87",
+      "Qualified leads: +218%",
+      "Timeline: 9 months"
     ],
-    "metaTitle": "E-commerce VAT Case Study",
-    "metaDescription": "How MMR Accountants restructured a Manchester e-commerce retailer's VAT and reclaimed overpaid input tax — a 22% reduction in VAT liability.",
+    "metaTitle": "Series-B SaaS Organic Growth Case Study",
+    "metaDescription": "How Alpha SEO grew a Series-B SaaS platform's organic traffic 312% and made organic the largest source of qualified pipeline in 9 months.",
     "body": [
-      "## The challenge",
-      "The client was selling across their own website, Amazon and eBay, with VAT handled inconsistently across channels. Input VAT on fees and shipping was being missed, and they were unsure whether the Flat Rate Scheme still suited them.",
-      "## What we did",
-      "We reviewed twelve months of multi-channel sales, moved them off the Flat Rate Scheme to standard VAT accounting, and built a reconciliation process that captured input VAT on every marketplace fee.",
-      "## The result",
-      "Within one quarter the client's effective VAT rate fell by **22%**, and we reclaimed **£18,400** of previously missed input VAT. Their books are now Making Tax Digital ready, with VAT returns filed automatically each quarter.",
-      "Thinking about your own VAT position? [Get in touch](/contact) for a free review."
+      "## The Situation",
+      "A Series-B SaaS platform was acquiring customers almost exclusively through paid channels. Organic traffic had plateaued for 14 months — flat despite a content team publishing four articles a week. Search Console showed thousands of impressions but click-through rates well below category benchmarks, and a deep crawl revealed indexation chaos: 4,200 pages, 1,800 of them either canonicalised away or blocked at the robots.txt layer without intent.",
+      "## Diagnostic Phase",
+      "We ran our full 200+ point audit across technical health, on-page coverage, content depth and the backlink profile. Log-file analysis surfaced the deepest issue — Googlebot was burning 60% of its crawl budget on parametrised URLs that should never have been crawlable. Schema markup existed but was malformed on 84% of templated pages. Internal linking was almost entirely dependent on the global navigation; orphan pages numbered in the hundreds.",
+      "## Strategy",
+      "A three-pillar topical map was built around the platform's core jobs-to-be-done. Crawl budget was reclaimed through robots directives, canonical consolidation and parametrised URL parameter handling. The schema was rewritten as a JSON-LD graph linking Organization, SoftwareApplication, Product, FAQ and BreadcrumbList. Internal linking was rearchitected around the topical clusters with editorial cross-linking embedded into the brief workflow.",
+      "## Execution",
+      "Technical fixes shipped across the first six weeks alongside a refreshed content production pipeline. 84 deep-dive articles were commissioned across the three pillars over the following six months, written with SME interviews and validated against SERP analysis. An editorial outreach programme placed 38 contextual links in DR60+ publications.",
+      "## Outcome",
+      "By month nine, organic traffic was up 312%, the page-1 keyword count had increased by 87, and — most important — organic had overtaken paid as the largest source of qualified pipeline. The CAC blended across acquisition channels dropped 26%."
     ]
   },
   {
-    "slug": "contractor-ir35-restructure",
-    "title": "Helping an IT contractor stay IR35-compliant and keep more take-home",
-    "client": "An IT contractor",
-    "industry": "Contractors & Freelancers",
-    "date": "2025-11-20",
-    "image": "/illustrations/contractors.svg",
-    "imageAlt": "Illustration of a contractor working on a laptop",
-    "summary": "An IT contractor was worried about IR35 after a contract review. We assessed their status, restructured their company and optimised their salary and dividend split.",
+    "slug": "d2c-retail-technical-seo-indexation",
+    "title": "D2C retail brand: technical SEO unlocked 4.2x indexation",
+    "client": "A D2C retail brand",
+    "industry": "Ecommerce & Retail",
+    "category": "Technical SEO",
+    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "D2C ecommerce technical SEO case study",
+    "summary": "A D2C retail brand with 14,000 SKUs had only 3,200 products indexed by Google, caught in duplicate-content loops with poor mobile performance. We rebuilt the technical foundation to lift indexation 4.2x.",
     "results": [
-      "Confirmed outside-IR35 status with documented evidence",
-      "Optimised salary and dividend split for tax efficiency",
-      "Quarterly check-ins to stay compliant as contracts change"
+      "Impressions: +218%",
+      "Crawl errors: −94%",
+      "Indexation: 4.2x",
+      "Timeline: 6 months"
     ],
-    "metaTitle": "Contractor IR35 Case Study",
-    "metaDescription": "How MMR Accountants assessed an IT contractor's IR35 status, restructured their company and optimised take-home pay while staying compliant.",
+    "metaTitle": "D2C Ecommerce Technical SEO Case Study",
+    "metaDescription": "How Alpha SEO lifted a D2C retail brand's indexation 4.2x, grew impressions 218% and cut crawl errors 94% through technical SEO in 6 months.",
     "body": [
-      "## The challenge",
-      "After a client-side contract review, the contractor was unsure whether their engagement fell inside or outside IR35, and whether a limited company was still the right structure.",
-      "## What we did",
-      "We carried out a full IR35 status assessment, reviewed the working practices and contract, and documented the evidence supporting an outside-IR35 determination. We then optimised the salary and dividend split for the new tax year.",
-      "## The result",
-      "The contractor now has a clear, documented IR35 position and an efficient pay structure, with quarterly check-ins so their status stays current as contracts change.",
-      "Worried about IR35? [Talk to us](/contact) about a status review."
+      "## The Problem",
+      "A D2C retail brand with 14,000 SKUs had only 3,200 products indexed by Google. Many product pages were caught in duplicate-content loops thanks to faceted navigation, while category pages competed against each other for the same terms. PageSpeed scores hovered in the low 30s on mobile.",
+      "## What We Fixed",
+      "We deconstructed the faceted navigation, separating crawlable and non-crawlable parameters at the URL level. Canonical tags were rewritten across the product catalogue. A Product schema graph was deployed including aggregateRating, offers and brand entities. The image pipeline was migrated to a responsive WebP/AVIF service with priority hints on LCP candidates.",
+      "## Result",
+      "Indexation grew from 3,200 to 13,400 indexable URLs (a 4.2x lift). Search impressions rose 218% across six months. Crawl errors dropped 94%. Average mobile PageSpeed score moved from 31 to 84, and Core Web Vitals went from \"poor\" on 78% of URLs to \"good\" on 96%."
+    ]
+  },
+  {
+    "slug": "84-location-local-pack-dominance",
+    "title": "84-location service brand: local pack dominance, market by market",
+    "client": "A national service brand with 84 locations",
+    "industry": "Multi-location services",
+    "category": "Local SEO",
+    "image": "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Multi-location local SEO case study",
+    "summary": "A national service brand with 84 locations had inconsistent local search visibility — strong in five flagship cities, invisible in most others. We standardised every Google Business Profile to win the local pack market by market.",
+    "results": [
+      "Local pack views: +412%",
+      "Call conversions: +148%",
+      "Locations: 84",
+      "Timeline: 12 months"
+    ],
+    "metaTitle": "Multi-Location Local SEO Case Study",
+    "metaDescription": "How Alpha SEO grew an 84-location service brand's local pack views 412% and call conversions 148% by standardising every Google Business Profile.",
+    "body": [
+      "## The Brief",
+      "A national service brand with 84 locations had inconsistent local search visibility — strong in five flagship cities, invisible in most others. Google Business Profile management had been delegated to local franchisees with no central template. Review volumes ranged from 8 to 2,400 across locations.",
+      "## Solution",
+      "We standardised all 84 GBPs under a single optimisation playbook — categories, services, attributes, posts, Q&A. Location pages were rebuilt from a parameterised template with LocalBusiness and Service schema. A review velocity programme was launched centrally with NPS-trigger email automation. Citation cleanup ran across 76 directories.",
+      "## Outcome",
+      "Local pack views grew 412% in aggregate. Call conversions tracked through GBP rose 148%. The previously invisible locations now generate measurable inbound enquiry volume; the flagship cities defended their share against new local entrants."
+    ]
+  },
+  {
+    "slug": "publisher-network-core-web-vitals",
+    "title": "Publisher network: every CWV metric in the green",
+    "client": "A publisher / media network",
+    "industry": "Publishing & Media",
+    "category": "Core Web Vitals",
+    "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Core Web Vitals optimisation case study",
+    "summary": "A publisher network with millions of monthly sessions was losing organic traffic on every Page Experience update. We re-engineered the critical render path to move every Core Web Vitals metric into the green.",
+    "results": [
+      "PageSpeed: 92",
+      "LCP achieved: 1.6s",
+      "URLs in good: 100%",
+      "INP: 142ms"
+    ],
+    "metaTitle": "Core Web Vitals Engineering Case Study",
+    "metaDescription": "How Alpha SEO moved a publisher network's field LCP from 4.8s to 1.6s and put 100% of URLs in the \"good\" Core Web Vitals cohort.",
+    "body": [
+      "## The Challenge",
+      "A publisher / media network with millions of monthly sessions was losing organic traffic on every Page Experience update. Field data in Search Console showed LCP averaging 4.8s, INP above 600ms on key article templates, and CLS issues across the ad layout.",
+      "## Engineering",
+      "The critical render path was rebuilt: fonts preloaded with display: swap, render-blocking CSS inlined for above-the-fold, lazy-loading deferred for below-the-fold. Third-party scripts (analytics, consent, ads) were moved behind a deferred loader with a hard performance budget. Image priority hints, srcset and AVIF encoding were deployed via the CDN edge. The ad slot layout was rebuilt with reserved space to eliminate CLS.",
+      "## Result",
+      "Field LCP dropped from 4.8s to 1.6s. INP dropped to 142ms. CLS to 0.04. PageSpeed Insights score moved from 28 to 92 on mobile. Critically, 100% of monitored URLs now sit in the \"good\" CWV cohort — and have stayed there across two subsequent core updates."
+    ]
+  },
+  {
+    "slug": "fintech-editorial-link-building-authority",
+    "title": "Fintech category leader: 247 editorial placements, +38 DR",
+    "client": "A fintech category leader",
+    "industry": "Fintech",
+    "category": "Link Building & Digital PR",
+    "image": "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Fintech editorial link building case study",
+    "summary": "A fintech with strong product and content had a backlink gap to two top-three competitors holding DR80+ profiles. We built a 12-month editorial outreach engine to close the authority gap.",
+    "results": [
+      "Editorial links: 247",
+      "Domain rating: +38",
+      "Avg placement DR: DR82",
+      "Timeline: 12 months"
+    ],
+    "metaTitle": "Fintech Link Building Case Study",
+    "metaDescription": "How Alpha SEO earned 247 editorial links and grew a fintech's domain rating 38 points in 12 months — closing the gap to the category leader.",
+    "body": [
+      "## The Position",
+      "A fintech with strong product and content had a backlink gap to two top-three competitors — both held DR80+ profiles built over five years of digital PR. Without authority, the content ceiling was always going to bind.",
+      "## The Programme",
+      "A 12-month editorial outreach engine was set up: linkable-asset production (original research, sector reports, calculators), digital PR placements aligned to publisher news cycles, and a HARO/expert-quote system with senior team members as named contributors. No PBNs, no exchanges, no link farms — every placement editorially justified.",
+      "## Outcome",
+      "247 editorial links earned across the year. Average referring domain DR of 82. Domain rating climbed 38 points — closing the gap to the category leader. Pages targeting head terms moved from positions 8–15 into the top three across the brand's commercial portfolio."
+    ]
+  },
+  {
+    "slug": "hr-tech-topical-authority-content",
+    "title": "HR-tech platform: 184 expert-led articles, category leadership",
+    "client": "An HR-tech platform",
+    "industry": "HR Technology",
+    "category": "Content Strategy",
+    "image": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Topical authority content case study",
+    "summary": "In a saturated HR-tech category, the brand had a strong product but no topical authority. We built a pillar-cluster content model of 184 expert-led articles to win category leadership.",
+    "results": [
+      "Organic sessions: +421%",
+      "Ranking keywords: 3,100",
+      "Articles shipped: 184",
+      "Timeline: 14 months"
+    ],
+    "metaTitle": "HR-Tech Content Strategy Case Study",
+    "metaDescription": "How Alpha SEO grew an HR-tech platform's organic sessions 421% with 184 expert-led articles, earning category authority over 14 months.",
+    "body": [
+      "## Backdrop",
+      "A saturated HR-tech category. The brand had a strong product but no topical authority — competitors with weaker products outranked them on every commercial term because they'd published broadly and deeply for years.",
+      "## Strategy",
+      "Three topical pillars were chosen carefully — narrow enough to dominate, broad enough to map to real buyer journeys. A pillar-cluster content model was built mapping 184 article briefs across the three pillars. Every brief was anchored to SME interviews with the brand's internal experts; every article published with an author bio, credentials and primary research.",
+      "## Outcome",
+      "Organic sessions up 421% over 14 months. 3,100 ranking keywords across the three pillars, with 410 on page one. Three SERP feature acquisitions per pillar (featured snippets, People Also Ask, AI Overview citations). The brand is now cited by competitors and analysts as a category authority."
+    ]
+  },
+  {
+    "slug": "enterprise-cms-migration-zero-ranking-loss",
+    "title": "Enterprise CMS migration: zero ranking loss across 12,000 URLs",
+    "client": "An enterprise client",
+    "industry": "Enterprise",
+    "category": "SEO Migration",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Enterprise SEO migration case study",
+    "summary": "An enterprise client was migrating from a legacy CMS to a headless platform, where previous migrations had cost 20–40% of organic traffic. We delivered the cutover with zero ranking loss across 12,000 URLs.",
+    "results": [
+      "Ranking loss: 0%",
+      "URLs migrated: 12,000",
+      "Redirects clean: 100%",
+      "Downtime: 0 min"
+    ],
+    "metaTitle": "Enterprise SEO Migration Case Study",
+    "metaDescription": "How Alpha SEO migrated 12,000 URLs from a legacy CMS to headless with zero ranking loss, clean redirects and no downtime.",
+    "body": [
+      "## The Project",
+      "An enterprise client was migrating from a legacy CMS to a headless platform. Previous migrations across their business had cost 20–40% of organic traffic for six months while rankings recovered. The board was understandably nervous.",
+      "## Approach",
+      "We ran a six-week pre-migration audit: every URL crawled, classified, mapped to a destination. Schema parity was tested in a staging environment. Internal linking graphs were compared pre/post. CWV regressions were caught in CI before the cutover. The redirect map was tested with synthetic monitors before going live.",
+      "## Cutover",
+      "The cutover ran on a Thursday afternoon — deliberately, so any issues could be triaged with the full team present. Real-time monitoring tracked indexation, ranking and conversion through the first 72 hours. No emergency fixes were required.",
+      "## Outcome",
+      "Zero ranking loss across 12,000 migrated URLs. Indexation recovered to parity within 18 days. Conversion rates uplifted 14% post-migration thanks to the parallel CWV improvements. The CMO sleeps better."
+    ]
+  },
+  {
+    "slug": "14-market-international-seo-hreflang",
+    "title": "14-market international SEO: hreflang & geo-architecture rebuilt",
+    "client": "A B2B platform serving 14 markets",
+    "industry": "B2B SaaS",
+    "category": "International SEO",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "International SEO hreflang case study",
+    "summary": "A B2B platform serving 14 international markets had inconsistent country/language targeting with hreflang implemented incorrectly on 11 of 14. We rebuilt the geo-architecture and hreflang clusters.",
+    "results": [
+      "Markets aligned: 14",
+      "Non-EN traffic: +167%",
+      "Canonical conflicts: 0",
+      "hreflang clusters: 14"
+    ],
+    "metaTitle": "International SEO hreflang Case Study",
+    "metaDescription": "How Alpha SEO rebuilt a 14-market geo-architecture and hreflang clusters, growing non-English traffic 167% and eliminating canonical conflicts.",
+    "body": [
+      "## The Situation",
+      "A B2B platform serving 14 international markets had inconsistent country/language targeting. Some markets were on subfolders, some on subdomains, some on ccTLDs. hreflang was implemented incorrectly on 11 of the 14 — creating canonical conflicts and Google serving the wrong language version in non-English markets.",
+      "## Solution",
+      "The international architecture was rationalised onto subfolder structure with consistent country/language URL patterns. hreflang clusters were rebuilt and validated. Country-specific content was localised (not translated) by in-market editors. Local schema, currency markup and price localisation were deployed per market.",
+      "## Outcome",
+      "Non-English traffic grew 167% within seven months. Canonical conflicts dropped to zero. Each market now serves the correct language version with no SERP visibility cannibalisation across markets."
+    ]
+  },
+  {
+    "slug": "multi-product-saas-unified-organic",
+    "title": "Multi-product SaaS: unified organic across three product lines",
+    "client": "A SaaS holding company",
+    "industry": "B2B SaaS",
+    "category": "Full SEO Programme",
+    "image": "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1400&q=80&auto=format&fit=crop",
+    "imageAlt": "Multi-product SaaS SEO case study",
+    "summary": "A SaaS holding company had three product lines on three siloed domains, each running its own SEO programme. We consolidated them onto a unified topical model with a shared authority engine.",
+    "results": [
+      "Cross-product traffic: +289%",
+      "Blended CAC: −42%",
+      "Products unified: 3",
+      "Reporting: Live dashboard"
+    ],
+    "metaTitle": "Multi-Product SaaS SEO Case Study",
+    "metaDescription": "How Alpha SEO unified three siloed SaaS product domains into one organic programme — growing cross-product traffic 289% and cutting blended CAC 42%.",
+    "body": [
+      "## The Engagement",
+      "A SaaS holding company had three product lines on three siloed domains. Each was running its own SEO programme. None talked to each other. The same buyer was bouncing between products without recognising they were one company.",
+      "## Unified Strategy",
+      "We consolidated the three product domains onto a unified topical model with shared authority engine. Cross-product internal linking surfaced relevant adjacent products at the right moment in the buyer journey. A shared Looker Studio dashboard gave leadership visibility into blended organic performance for the first time.",
+      "## Outcome",
+      "Cross-product organic traffic grew 289% in twelve months. Blended CAC dropped 42% as cross-product internal linking lifted attach rates. The board now treats organic as a strategic moat across the portfolio — not three disconnected channels."
     ]
   }
 ]

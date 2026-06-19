@@ -37,71 +37,38 @@ export const detailHref = (kind: DetailKind, slug: string) => `/${SEGMENT[kind]}
 
 /** Lucide icon name per slug (all present in ui/Icon.tsx). */
 const ICONS: Record<string, string> = {
-  bookkeeping: "BookOpen",
-  "tax-planning": "Receipt",
-  vat: "Percent",
-  payroll: "Users",
-  "company-formation": "Building2",
-  advisory: "TrendingUp",
-  contractors: "Laptop",
-  ecommerce: "ShoppingCart",
-  startups: "Rocket",
-  landlords: "Home",
-  hospitality: "UtensilsCrossed",
-  healthcare: "Stethoscope",
-  construction: "HardHat",
-  creative: "Palette",
-  "proactive-tax-planning": "Receipt",
-  "advisory-partnership": "LineChart",
+  "technical-seo": "Settings2",
+  "on-page-seo": "BookOpen",
+  "off-page-seo": "Award",
+  "local-seo": "MapPin",
+  "reddit-community": "MessagesSquare",
 };
 
 /** Concise breadcrumb / related-card label per slug (the long SEO H1 stays in `title`). */
 const SHORT_LABEL: Record<string, string> = {
-  bookkeeping: "Bookkeeping & Accounts",
-  "tax-planning": "Tax Planning & Returns",
-  vat: "VAT & Making Tax Digital",
-  payroll: "Payroll & Pensions",
-  "company-formation": "Company Formation",
-  advisory: "Business Advisory",
-  contractors: "Contractors & Freelancers",
-  ecommerce: "E-commerce & Retail",
-  startups: "Startups & Tech",
-  landlords: "Landlords & Property",
-  hospitality: "Hospitality",
-  healthcare: "Healthcare & Locums",
-  construction: "Construction & CIS",
-  creative: "Creative & Agencies",
-  "proactive-tax-planning": "Proactive Tax Planning",
-  "advisory-partnership": "Advisory & Growth",
+  "technical-seo": "Technical SEO",
+  "on-page-seo": "On-Page SEO",
+  "off-page-seo": "Off-Page SEO",
+  "local-seo": "Local SEO",
+  "reddit-community": "Community & AEO",
 };
 
 /** Internal links per page (SEO + navigation). Hrefs resolve to real detail pages. */
 const RELATED: Record<string, string[]> = {
-  bookkeeping: ["/services/vat", "/services/tax-planning"],
-  "tax-planning": ["/services/vat", "/services/advisory", "/how-we-help/proactive-tax-planning"],
-  vat: ["/services/bookkeeping", "/industries/construction", "/industries/ecommerce"],
-  payroll: ["/services/bookkeeping", "/industries/hospitality", "/industries/construction"],
-  "company-formation": ["/services/bookkeeping", "/services/tax-planning", "/industries/startups"],
-  advisory: ["/services/tax-planning", "/how-we-help/advisory-partnership", "/industries/startups"],
-  contractors: ["/services/tax-planning", "/services/company-formation", "/services/payroll"],
-  ecommerce: ["/services/vat", "/services/bookkeeping", "/services/advisory"],
-  startups: ["/services/advisory", "/services/company-formation", "/services/tax-planning"],
-  landlords: ["/services/tax-planning", "/how-we-help/proactive-tax-planning", "/services/advisory"],
-  hospitality: ["/services/payroll", "/services/vat", "/services/bookkeeping"],
-  healthcare: ["/services/tax-planning", "/services/payroll", "/services/company-formation"],
-  construction: ["/services/vat", "/services/payroll", "/services/tax-planning"],
-  creative: ["/services/advisory", "/services/tax-planning", "/services/vat"],
-  "proactive-tax-planning": ["/services/tax-planning", "/services/vat", "/services/advisory"],
-  "advisory-partnership": ["/services/advisory", "/services/tax-planning", "/industries/startups"],
+  "technical-seo": ["/services/on-page-seo", "/services/off-page-seo"],
+  "on-page-seo": ["/services/technical-seo", "/services/off-page-seo"],
+  "off-page-seo": ["/services/on-page-seo", "/services/reddit-community"],
+  "local-seo": ["/services/technical-seo", "/services/on-page-seo"],
+  "reddit-community": ["/services/off-page-seo", "/services/on-page-seo"],
 };
 
 /** slug → concise label, used to label related links by their href. */
 const labelBySlug = SHORT_LABEL;
 const slugFromHref = (href: string) => href.split("/").pop() ?? href;
 
-/** Drop any trailing " | MMR" / " | MMR Accountants" — layout's title template
- *  appends " | MMR Accountants" once, so the JSON suffix would double it up. */
-const stripBrand = (t: string) => t.replace(/\s*\|\s*MMR(?:\s+Accountants)?\s*$/i, "").trim();
+/** Drop any trailing " | Alpha" / " | Alpha Digital Solutions" — layout's title
+ *  template appends " | Alpha Digital Solutions" once, so a JSON suffix doubles up. */
+const stripBrand = (t: string) => t.replace(/\s*\|\s*Alpha(?:\s+Digital\s+Solutions)?\s*$/i, "").trim();
 
 function build(raw: RawDetail[], kind: DetailKind): DetailPage[] {
   return raw.map((r) => ({

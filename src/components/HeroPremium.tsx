@@ -82,7 +82,7 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
                 <div aria-hidden className="absolute inset-x-6 bottom-2 top-8 rounded-[45%] bg-white/40 blur-3xl" />
                 <Image
                   src={cutoutSrc}
-                  alt="MMR chartered accountant at work"
+                  alt="Alpha SEO specialist reviewing search analytics"
                   width={1536}
                   height={1024}
                   priority
@@ -100,7 +100,7 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
                 <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl shadow-navy-700/20 ring-1 ring-ink/5">
                   <Image
                     src="/hero.jpg"
-                    alt="An accountant reviewing financial dashboards at their desk"
+                    alt="A specialist reviewing search-analytics dashboards"
                     width={1536}
                     height={1024}
                     priority

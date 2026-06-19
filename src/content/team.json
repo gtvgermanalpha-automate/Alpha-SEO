@@ -1,27 +1,34 @@
 {
-  "heading": "Meet the team",
-  "intro": "Chartered-standard accountants and advisers who take the time to understand your business and your numbers.",
+  "heading": "A senior-led SEO team in Toronto",
+  "intro": "Alpha Digital Solutions is a senior-led, white-hat SEO agency based in Toronto. We tailor our process to each client's goals — results over hype, with every change pre-approved and every step documented. NDA-ready, 30-day rolling, no lock-in.",
   "members": [
     {
-      "name": "Add a name",
-      "role": "Founder & Principal Accountant",
+      "name": "Strategy & technical SEO",
+      "role": "Audits, Core Web Vitals & architecture",
       "image": "",
       "imageAlt": "",
-      "bio": "Add a short bio in the CMS — background, qualifications (e.g. ACCA), and what they help clients with."
+      "bio": "Runs the forensic audit and the technical roadmap — crawlability, indexation, schema, performance and migration safety — and is your senior point of contact from day one."
     },
     {
-      "name": "Add a name",
-      "role": "Tax Adviser",
+      "name": "Content & on-page",
+      "role": "Keyword mapping, briefs & landing pages",
       "image": "",
       "imageAlt": "",
-      "bio": "Add a short bio for this team member in the CMS."
+      "bio": "Owns topical mapping, SME-led briefs and on-page optimisation — pages engineered to rank for the search engine and convert the human reading them."
     },
     {
-      "name": "Add a name",
-      "role": "Client Manager",
+      "name": "Authority & digital PR",
+      "role": "Editorial links & brand mentions",
       "image": "",
       "imageAlt": "",
-      "bio": "Add a short bio for this team member in the CMS."
+      "bio": "Leads outreach, linkable-asset production and data-led digital PR — every placement editorial, every link earned and defensible. No PBNs, no shortcuts."
+    },
+    {
+      "name": "Local & community",
+      "role": "Local SEO, Reddit & AEO",
+      "image": "",
+      "imageAlt": "",
+      "bio": "Handles Google Business Profiles, citations and review velocity, plus authentic Reddit and community presence and Answer Engine Optimisation for AI citations."
     }
   ]
 }

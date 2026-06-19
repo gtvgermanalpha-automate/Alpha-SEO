@@ -14,7 +14,7 @@ import { LeadPopup } from "@/components/LeadPopup";
 import { CustomSchema } from "@/components/CustomSchema";
 
 export const metadata = buildMetadata("/", {
-  defaultTitle: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+  defaultTitle: `${siteConfig.name} — Premium SEO Agency in Toronto`,
   defaultDescription: siteConfig.description,
   absoluteTitle: true,
 });

@@ -1,631 +1,404 @@
 [
   {
-    "slug": "bookkeeping",
-    "metaTitle": "Bookkeeping & Year-End Accounts | MMR",
-    "metaDescription": "Bookkeeping and year-end accounts for UK companies and sole traders. Cloud books kept MTD-ready and Companies House accounts filed early on fixed monthly fees.",
-    "eyebrow": "Accounts & compliance",
-    "title": "Bookkeeping and Year-End Accounts",
-    "intro": "Tidy, real-time books and accurate year-end accounts, prepared and filed well ahead of deadline by your own named accountant.",
+    "slug": "technical-seo",
+    "metaTitle": "Technical SEO & Performance",
+    "metaDescription": "Site audits, Core Web Vitals, crawl architecture, indexation and schema markup — the engineering foundation that lets every other SEO effort compound.",
+    "eyebrow": "Pillar 01 · Technical foundation",
+    "title": "Fixing the hidden technical issues that hold your site back from ranking.",
+    "intro": "The engineering layer of SEO. If search engines can't crawl, render or trust your pages, no amount of content will save you — so this is where we start.",
     "highlights": [
-      "Cloud bookkeeping kept MTD-ready",
-      "Bank feeds reconciled regularly",
-      "Year-end statutory accounts prepared",
-      "Companies House and HMRC filing handled",
-      "Confirmation statement (CS01) submitted",
-      "FRS 105 and FRS 102 1A reporting",
-      "Records kept for at least 6 years"
+      "200+ point site audit",
+      "Core Web Vitals (LCP, INP, CLS)",
+      "Schema markup & structured data",
+      "Site architecture & internal linking",
+      "Crawl budget & indexation",
+      "JavaScript SEO & rendering",
+      "Migration safety",
+      "International & hreflang"
     ],
     "sections": [
       {
-        "heading": "Bookkeeping and year-end accounts, handled end to end",
+        "heading": "What technical SEO actually is — and why it decides everything else.",
         "body": [
-          "Good year-end accounts start with good bookkeeping. We keep your records up to date through the year in cloud software, reconcile your bank feeds and tidy the detail as we go, so there is no scramble when your year end arrives.",
-          "When it does, we prepare your statutory accounts, agree them with you and file with Companies House and HMRC on your behalf. Because the underlying numbers are already clean, your accounts are usually ready weeks ahead of the deadline rather than days."
-        ],
+          "Technical SEO is the engineering work that decides whether your content ever has a chance to rank: crawlability, indexation, schema, rendering, performance, internal linking, hreflang and migration safety — the unsexy infrastructure layer most agencies skip.",
+          "We start every engagement with a forensic audit. Then we prioritise by impact, ship fixes in tight sprints, and lock everything in with CI guardrails so it doesn't regress next quarter."
+        ]
+      },
+      {
+        "heading": "Every technical engagement covers eight layers.",
+        "body": ["From crawl to render, here is the scope we work through:"],
         "bullets": [
-          "Regular reconciliation of bank, card and payment feeds",
-          "Purchase and sales records kept in order",
-          "Year-end statutory accounts prepared and explained",
-          "Filing with both Companies House and HMRC"
+          "200+ point site audit — a crawl-level diagnostic of technical health, on-page coverage, content depth and backlink profile, with a prioritised fix roadmap.",
+          "Core Web Vitals — field-data analysis of LCP, INP and CLS, fix deployment and Lighthouse CI guardrails so performance doesn't regress in production.",
+          "Schema & structured data — JSON-LD graphs (Organization, Product, Article, FAQ, BreadcrumbList) deployed and validated, with rich-result eligibility tracked.",
+          "Site architecture & internal linking — crawlable URL structure, a contextual internal-linking graph, breadcrumbs, faceted-navigation rules and pagination.",
+          "Crawl budget & indexation — log-file analysis, robots directives, canonical consolidation and sitemap engineering to reclaim budget wasted on parametrised URLs.",
+          "JavaScript SEO & rendering — SSR / hybrid audits and hydration analysis, validating that critical content reaches the rendered HTML, not just the client DOM.",
+          "Migration safety — pre-migration crawls, redirect mapping, schema parity and rollback playbooks, so you migrate platforms without losing a single ranking.",
+          "International & hreflang — multi-market URL architecture, correct hreflang clusters and localised content alignment for clean signals in every region."
         ]
       },
       {
-        "heading": "Companies House and HMRC deadlines we keep you ahead of",
-        "body": [
-          "Limited companies have several fixed deadlines, and the penalties for missing them are automatic. We track every date for you and build the work backwards from it, so nothing is left to the last minute.",
-          "A quick note on first accounts: a brand-new company's first set is due 21 months after the date of incorporation, after which the usual nine-month deadline applies each year."
-        ],
+        "heading": "Our technical engagement cadence.",
+        "body": ["A predictable rhythm from diagnosis to lock-in:"],
         "bullets": [
-          "Annual accounts to Companies House: normally within 9 months of the accounting reference date",
-          "First accounts: within 21 months of incorporation",
-          "Company Tax Return (CT600) to HMRC: within 12 months of the year end",
-          "Corporation tax payable: 9 months and 1 day after the year end",
-          "Confirmation statement (CS01): at least once a year"
+          "01 Crawl & diagnose — a full crawl with Screaming Frog and Sitebulb, log-file analysis, Core Web Vitals field data and schema validation, output as a 30–40 page diagnostic.",
+          "02 Prioritise by impact — every finding scored by impact, effort and confidence, then stack-ranked into a 90-day roadmap your team can actually execute.",
+          "03 Implement in sprints — two-week sprints with weekly check-ins; we ship the fixes ourselves or hand engineering-grade tickets to your team.",
+          "04 Verify & lock in — Lighthouse CI guardrails, performance budgets and schema validation in your deploys, so the gains don't quietly disappear next quarter."
         ]
       },
       {
-        "heading": "The right reporting standard for a small company",
-        "body": [
-          "Most owner-managed companies report under the standards written for smaller businesses, which keep the accounts proportionate and the public record concise. The right choice depends on your size and what you are comfortable putting on file.",
-          "We assess which framework fits, prepare your accounts to that standard, and use filleted or abridged options where appropriate to keep commercially sensitive detail off the public record."
-        ],
+        "heading": "Concrete deliverables.",
+        "body": ["What you actually receive:"],
         "bullets": [
-          "FRS 105 for micro-entities",
-          "FRS 102 Section 1A for small companies",
-          "Filleted or abridged accounts where available"
-        ]
-      },
-      {
-        "heading": "Cloud bookkeeping that stays MTD-ready",
-        "body": [
-          "We run your books in market-leading cloud software — Xero, QuickBooks, Sage or FreeAgent — so your numbers are live, backed up and available wherever you are.",
-          "Keeping everything digital also means your records stay Making Tax Digital ready, so as MTD continues to expand you are already set up the way HMRC expects rather than playing catch-up later."
-        ]
-      },
-      {
-        "heading": "A modernising Companies House and your records",
-        "body": [
-          "Companies House is being modernised under the Economic Crime and Corporate Transparency Act, with measures such as identity verification and a move towards software-only filing being phased in. We keep on top of these changes so your filings stay compliant as the rules bed in.",
-          "Underpinning all of it is good record-keeping. Business records generally need to be kept for at least six years, and keeping them in the cloud means they are organised, secure and easy to retrieve if HMRC ever asks."
-        ]
-      },
-      {
-        "heading": "Sole traders and the self-employed",
-        "body": [
-          "You do not need to be a limited company to get the same care. If you are a sole trader, we keep your records in order through the year and prepare the accounts that feed straight into your Self Assessment return.",
-          "That means a clear picture of how the business is doing, accounts that stand up to scrutiny, and no last-minute panic when the tax return is due."
+          "A comprehensive technical audit document (30–40 page PDF plus a live doc).",
+          "A prioritised 90-day fix roadmap in your tool (Linear, Jira or Notion).",
+          "Implementation by our team, or engineering-grade tickets handed to yours.",
+          "A Lighthouse CI configuration committed to your repository.",
+          "Production-ready schema JSON-LD templates.",
+          "A crawl-budget and indexation monitoring dashboard.",
+          "A monthly executive readout with before / after metrics."
         ]
       }
     ],
     "faqs": [
       {
-        "question": "When are my limited company accounts due at Companies House?",
-        "answer": "Private limited companies normally file their annual accounts within nine months of the accounting reference date. A company's very first accounts are different — they are due 21 months after the date of incorporation. We track both dates and file ahead of them."
+        "question": "How long does a technical engagement take?",
+        "answer": "A diagnostic audit takes 2–3 weeks. Implementation runs in two-week sprints — quick wins ship in the first 30 days, larger architectural fixes over 3–6 months depending on scope and your engineering team's capacity."
       },
       {
-        "question": "What is the difference between my accounts and my Company Tax Return?",
-        "answer": "They are two separate obligations. Your annual accounts go to Companies House, while your Company Tax Return (CT600) goes to HMRC within 12 months of your year end. Note that corporation tax itself is payable earlier — 9 months and 1 day after the year end."
+        "question": "Do you implement, or just advise?",
+        "answer": "Both — your choice. We can ship every fix ourselves (PRs to your repo, deploys to staging), or hand off engineering-grade tickets for your team to action. Most clients pick a mix: we own the harder fixes, they own the routine ones."
       },
       {
-        "question": "How long do I need to keep my business records?",
-        "answer": "Business records must generally be kept for at least six years. Keeping them in cloud accounting software makes this straightforward, as everything is stored securely, organised by year and easy to retrieve if HMRC requests it."
+        "question": "Can you handle a platform migration?",
+        "answer": "Yes — migrations are a specialty. Pre-migration crawls, redirect mapping, schema parity testing and rollback playbooks. We've shipped 12,000-URL migrations with zero ranking loss."
       },
       {
-        "question": "Do I have to put my full accounts on the public record?",
-        "answer": "Not always. Many small companies and micro-entities report under FRS 102 Section 1A or FRS 105 and can use filleted or abridged accounts, which keep some commercially sensitive detail off the public file. We advise on the right approach for your business."
-      },
-      {
-        "question": "Can you take over the bookkeeping I am doing myself?",
-        "answer": "Yes. We can take the whole thing off your hands or support you to keep doing the parts you enjoy. Either way we set up your cloud software, get the records clean and keep them MTD-ready throughout the year."
+        "question": "What tools do you use?",
+        "answer": "Screaming Frog, Sitebulb, Search Console, Ahrefs, Lighthouse CI, BigQuery for log-file analysis, schema validators and PageSpeed Insights. We bring our own licences; you don't pay extra."
       }
     ]
   },
   {
-    "slug": "tax-planning",
-    "metaTitle": "Corporation Tax & Self Assessment | MMR",
-    "metaDescription": "Corporation tax and Self Assessment planning for UK companies and directors. Proactive advice on dividends, allowances and deadlines on fixed monthly fees.",
-    "eyebrow": "Tax & advisory",
-    "title": "Tax Planning & Returns",
-    "intro": "Forward-looking corporation tax and Self Assessment advice that keeps you compliant and helps you keep more of your profit — planned all year, not just filed at the deadline.",
+    "slug": "on-page-seo",
+    "metaTitle": "On-Page SEO & Content Strategy",
+    "metaDescription": "Keyword mapping, content-gap analysis, optimised landing pages and metadata. Bring your own keywords or commission a full-scale content strategy.",
+    "eyebrow": "Pillar 02 · Content & on-page",
+    "title": "Content that ranks well — and actually turns visitors into customers.",
+    "intro": "Good content doesn't rank by accident. We engineer search intent, semantic depth, internal linking and metadata to make every page work both ways: for the search engine, and for the human reading it.",
     "highlights": [
-      "Corporation tax returns prepared and filed",
-      "Self Assessment for directors and the self-employed",
-      "Salary and dividend planning for shareholders",
-      "Marginal relief reviewed where profits fall in the band",
-      "Capital allowances and full expensing claimed",
-      "Pension contributions used as a planning lever",
-      "Every deadline tracked for you"
+      "Keyword mapping & topical clusters",
+      "Content-gap analysis",
+      "Optimised landing pages",
+      "Metadata & heading architecture",
+      "E-E-A-T signal engineering",
+      "Featured-snippet & AI-overview targeting",
+      "Bring your own keywords, or full strategy"
     ],
     "sections": [
       {
-        "heading": "Corporation tax and Self Assessment, planned year-round",
+        "heading": "On-page is where SEO meets the reader.",
         "body": [
-          "Filing a return is the easy part. The value is in the planning we do before your year end, when there is still time to act — reviewing how profit is taxed, how it is drawn and which allowances apply.",
-          "We look after the corporation tax for your company and the Self Assessment for you personally, joining the two up so decisions made in the business make sense for you as an individual too. This is general guidance rather than advice on your specific circumstances."
+          "Modern ranking systems evaluate pages on semantic depth, entity coverage, internal-linking signals and how well the content matches search intent — not on keyword density. We engineer all of that.",
+          "Whether you bring your own keyword list or commission the full strategy, we model your topical universe, build the content map, and ship pages that earn rankings and convert."
         ]
       },
       {
-        "heading": "How corporation tax is charged in 2025/26",
-        "body": [
-          "The rate your company pays depends on its profit. Companies with profits in the band between the two thresholds pay an effective marginal rate of around 26.5%, which is why managing the timing of income and costs can matter.",
-          "We calculate your position, apply marginal relief where it is due and make sure the return reflects every allowance you are entitled to."
-        ],
+        "heading": "Two ways to engage — your call.",
+        "body": ["Choose the level of involvement that fits your team:"],
         "bullets": [
-          "Main rate of 25% on profits of £250,000 or more",
-          "Small profits rate of 19% on profits of £50,000 or less",
-          "Marginal relief between £50,000 and £250,000 (an effective marginal rate of around 26.5%)",
-          "Corporation tax payable 9 months and 1 day after the year end",
-          "CT600 filed within 12 months of the year end"
+          "Bring your own keywords — have an in-house team or research already? We handle optimisation, writing and on-page execution against your existing targets, no duplicated effort.",
+          "Full-scale strategy — hands-off? We handle it all: keyword research, intent classification, topical maps, roadmap, briefs and execution. You stay in the loop; we own the strategy."
         ]
       },
       {
-        "heading": "Self Assessment deadlines and payments on account",
-        "body": [
-          "If you are a director, landlord or sole trader, you will usually need to file a Self Assessment return. The deadlines are fixed and the penalties automatic, so we keep you ahead of every one.",
-          "Many people are caught out by payments on account — advance instalments towards next year's bill. We calculate these in advance so there are no surprises in January or July."
-        ],
+        "heading": "Every on-page engagement covers six layers.",
+        "body": ["The scope behind a page that ranks and converts:"],
         "bullets": [
-          "Register for Self Assessment by 5 October after the tax year",
-          "File online and pay by 31 January",
-          "Payments on account due 31 January and 31 July",
-          "The UK tax year runs 6 April to 5 April"
+          "Keyword mapping & topical clusters — an intent-classified keyword universe mapped into pillar/cluster models that compound authority over time.",
+          "Content-gap analysis — where competitors rank that you don't, and the topics you should own, modelled against your domain-authority profile.",
+          "Optimised landing pages — SME-led briefs, on-brief writing, expert review and semantic optimisation. Pages that read like an expert wrote them, because one did.",
+          "Metadata & heading architecture — title tags, meta descriptions, H1–H4 structure, semantic HTML and structured data, every signal tuned for relevance.",
+          "E-E-A-T signal engineering — author bios, credentials, citations, original research and imagery: every E-E-A-T signal Google looks for, deliberately built in.",
+          "Featured-snippet & AI-overview targeting — structured answers, scannable formats and question-first content engineered to be cited by AI Overviews and snippets."
         ]
       },
       {
-        "heading": "Salary and dividend planning for director-shareholders",
-        "body": [
-          "If you own and run your company, how you pay yourself makes a real difference. We model the mix of salary and dividends to suit your circumstances, factoring in your allowances and the relevant dividend tax rates.",
-          "In most cases a considered blend of salary and dividends is more efficient than either alone — but the right answer depends on your wider income, which is exactly what we work through with you."
-        ],
+        "heading": "Our content engagement cadence.",
+        "body": ["A repeatable rhythm from map to compounding asset:"],
         "bullets": [
-          "Dividend allowance of £500",
-          "Dividend tax rates of 8.75% (basic), 33.75% (higher) and 39.35% (additional)",
-          "Personal allowance of £12,570, tapered above £100,000",
-          "Higher-rate threshold of £50,270"
+          "01 Topical mapping — your full keyword universe modelled, classified by intent and organised into clusters tied to commercial priority.",
+          "02 Content calendar — a 90-day publishing schedule prioritised by impact and feasibility; quick wins first, foundational content alongside.",
+          "03 Brief, write, review — SME-led briefs, on-brief writing, internal expert review and on-brand editing. Every piece signed off before publish.",
+          "04 Refresh & compound — existing content audited and refreshed quarterly; stale pieces rewritten or retired, compounding pages amplified."
         ]
       },
       {
-        "heading": "Allowances on equipment, vehicles and investment",
-        "body": [
-          "If your business invests in equipment, the right capital allowances can give you valuable relief in the year you spend. We make sure qualifying purchases are claimed correctly and timed to your advantage.",
-          "For companies, full expensing offers a 100% first-year allowance on qualifying new plant and machinery, alongside the Annual Investment Allowance for a broader range of assets."
-        ],
+        "heading": "Concrete deliverables.",
+        "body": ["What you actually receive:"],
         "bullets": [
-          "Annual Investment Allowance of £1,000,000",
-          "Full expensing: 100% first-year allowance on qualifying new plant and machinery (companies)"
-        ]
-      },
-      {
-        "heading": "Pensions as a planning lever",
-        "body": [
-          "Pension contributions are one of the most effective tools available to business owners, letting you extract profit tax-efficiently while building for the future.",
-          "We factor pension planning into your wider profit-extraction strategy so it works together with your salary, dividends and allowances rather than in isolation."
+          "A full keyword-universe document (1,000–10,000 terms, classified by intent and value).",
+          "A topical cluster map (pillar plus supporting clusters, visualised).",
+          "A 90-day content roadmap with prioritisation rationale.",
+          "SME-led content briefs for every piece.",
+          "Production-ready written content, in your CMS and your voice.",
+          "On-page optimisation of all key landing pages, plus an E-E-A-T audit.",
+          "A monthly performance readout with ranking and traffic data."
         ]
       }
     ],
     "faqs": [
       {
-        "question": "What rate of corporation tax will my company pay?",
-        "answer": "It depends on your profit. The small profits rate of 19% applies to profits of £50,000 or less, the main rate of 25% applies to profits of £250,000 or more, and profits in between attract marginal relief — an effective marginal rate of around 26.5%."
+        "question": "Do you write the content yourselves?",
+        "answer": "Yes. We have in-house writers across most B2B and consumer verticals, plus a vetted network of subject-matter experts for specialised fields (legal, medical, finance). Every piece is briefed by a senior strategist and reviewed before publish."
       },
       {
-        "question": "When do I have to pay my corporation tax?",
-        "answer": "Corporation tax is payable 9 months and 1 day after the end of your accounting period. That is earlier than the deadline for filing the return itself, which is 12 months after your year end, so it pays to plan the cash ahead of time."
+        "question": "How much content do you produce per month?",
+        "answer": "Typical retainers ship 4–12 long-form articles per month plus optimisation of existing pages. Higher volume is possible for content-led businesses — we've run programmes shipping 30+ pieces a month with full editorial review."
       },
       {
-        "question": "What are payments on account for Self Assessment?",
-        "answer": "Payments on account are advance instalments towards your next tax bill, usually due on 31 January and 31 July. They catch a lot of people out in their first year of self-employment, so we calculate them in advance and explain exactly what to expect."
+        "question": "What if I already have a content team?",
+        "answer": "Then 'bring your own keywords' is the right path. We supply the strategy, briefs, SEO optimisation and final review; your writers do the writing. Many clients use this model and love the leverage."
       },
       {
-        "question": "Is it better to pay myself in salary or dividends?",
-        "answer": "For most director-shareholders a blend of the two is more efficient than either on its own, taking account of the personal allowance, the £500 dividend allowance and the dividend tax rates. The right mix depends on your wider income, which we model with you."
-      },
-      {
-        "question": "Can my company claim tax relief when it buys equipment?",
-        "answer": "Usually, yes. The Annual Investment Allowance gives relief on up to £1,000,000 of qualifying spend, and companies can also use full expensing — a 100% first-year allowance on qualifying new plant and machinery. We make sure purchases are claimed correctly and timed well."
+        "question": "How do you target AI Overviews?",
+        "answer": "Question-first structure, scannable formatting, clear factual statements, schema markup and authority signals from off-page. We treat AI-overview citation as a distinct objective — overlapping with traditional SEO, but not identical."
       }
     ]
   },
   {
-    "slug": "vat",
-    "metaTitle": "VAT Returns & Making Tax Digital | MMR",
-    "metaDescription": "VAT returns and Making Tax Digital handled end to end for UK businesses. The right scheme, accurate quarterly returns and no missed deadlines, on fixed fees.",
-    "eyebrow": "Accounts & compliance",
-    "title": "VAT & Making Tax Digital",
-    "intro": "MTD-compliant VAT handled from registration to filing — the right scheme for your business, accurate returns, and never a missed submission.",
+    "slug": "off-page-seo",
+    "metaTitle": "Off-Page SEO & Authority",
+    "metaDescription": "White-hat link building, digital PR and brand mentions that build durable domain authority — no spam, no PBNs, no shortcuts.",
+    "eyebrow": "Pillar 03 · Authority & links",
+    "title": "Authority earned through links the whole web can vouch for.",
+    "intro": "Rankings follow trust. We build yours the durable way — editorial backlinks from real publications, data-led digital PR, and brand mentions across the open web. Every link earned, every link defensible.",
     "highlights": [
-      "VAT registration and deregistration advice",
-      "MTD-compatible digital record-keeping",
-      "Scheme reviews to suit your business",
-      "Quarterly VAT returns prepared and filed",
-      "CIS domestic reverse charge handled",
-      "Postponed VAT accounting for imports",
-      "OSS and IOSS for EU B2C sales"
+      "Editorial backlinks (DR50+)",
+      "Digital PR campaigns",
+      "Brand mentions & entity building",
+      "Competitor link-gap analysis",
+      "Linkable-asset production",
+      "Toxic-link cleanup & disavow"
     ],
     "sections": [
       {
-        "heading": "VAT returns and Making Tax Digital, end to end",
+        "heading": "Links are still the web's strongest vote of confidence.",
         "body": [
-          "VAT is one of the easiest taxes to get wrong and one of the most costly when you do. We take care of the whole cycle — keeping the digital records, preparing each return, checking it and filing it on time.",
-          "Because your books are already in MTD-compatible software, the return is a by-product of bookkeeping that is already done, not a separate quarterly headache."
+          "Google's core ranking systems still lean heavily on the quality and relevance of the sites that link to you. Great content can be perfect on the page and still never rank if no authoritative site vouches for it.",
+          "We don't buy links, run PBNs or trade placements. We earn editorial coverage through outreach, original research and digital PR — the kind of authority that survives algorithm updates instead of getting penalised by the next one.",
+          "Looking for Reddit, forum and community visibility, or AI-citation (AEO) work? That now lives in its own pillar — Reddit & Community Visibility."
         ]
       },
       {
-        "heading": "Do you need to register for VAT?",
-        "body": [
-          "You must register once your taxable turnover crosses the threshold on a rolling 12-month basis, but in some cases registering voluntarily before that point makes sense. We monitor your turnover so you register at the right time, neither late nor unnecessarily early.",
-          "If your turnover falls, deregistration may be an option too, and we advise on whether it is worth it."
-        ],
+        "heading": "Every authority engagement covers six channels.",
+        "body": ["The scope behind a stronger, defensible profile:"],
         "bullets": [
-          "Registration threshold: £90,000 of taxable turnover (rolling 12 months) since 1 April 2024",
-          "Deregistration threshold: £88,000",
-          "Advice on voluntary registration where it benefits you"
+          "Editorial backlinks — placements on DR50+ publications in your sector through outreach only. No PBNs, no exchanges; every link earned and defensible.",
+          "Digital PR campaigns — data-led campaigns (original research, surveys, indices) engineered to earn coverage at scale; we've landed 30+ tier-1 placements per campaign.",
+          "Brand mentions & entity building — even unlinked mentions strengthen entity recognition; we earn both linked placements and mentions across the open web.",
+          "Competitor link-gap analysis — we map which domains link to the sites outranking you, then prioritise the realistic, high-impact targets to close the gap.",
+          "Linkable-asset production — original research, sector reports, calculators and data tools that editors actually want to cite, built to attract links for years.",
+          "Toxic-link cleanup & disavow — we audit your profile, identify toxic links and manage the disavow file in Search Console. A clean, growing, defensible profile."
         ]
       },
       {
-        "heading": "Getting the rates and the scheme right",
-        "body": [
-          "Not everything you sell is necessarily taxed at the standard rate, and applying the wrong rate is a common and expensive mistake. We make sure each supply is treated correctly across the full range of VAT rates.",
-          "We also review which VAT scheme suits you. The right scheme can simplify your admin or improve your cash flow, and the best fit changes as a business grows."
-        ],
+        "heading": "Our link & PR engagement cadence.",
+        "body": ["How authority gets built, month over month:"],
         "bullets": [
-          "Standard rate of 20%",
-          "Reduced rate of 5%",
-          "Zero-rated supplies at 0%",
-          "Exempt supplies",
-          "Standard, Flat Rate, Cash Accounting, Annual Accounting and retail or margin schemes"
+          "01 Audit & link gap — benchmark your backlink profile against the competitors ranking above you; identify toxic links to clean and the realistic gap to close.",
+          "02 Asset & story creation — build the linkable assets and PR angles editors want to cover: original data, research and resources worth a placement.",
+          "03 Editorial outreach — targeted, relationship-led outreach to relevant publications and journalists. Quality over volume, always relevant, never spam.",
+          "04 Measure & report — monthly tracking of placements earned, domain-rating movement and brand mentions, with the ranking impact tied back to the work."
         ]
       },
       {
-        "heading": "Making Tax Digital is mandatory for VAT",
-        "body": [
-          "Making Tax Digital for VAT has applied to all VAT-registered businesses since April 2022. That means keeping digital records and filing through MTD-compatible software — paper records and manual submissions are no longer allowed.",
-          "We keep you fully compliant by running your VAT inside cloud software that meets HMRC's requirements, with a clear digital trail from transaction to return."
-        ]
-      },
-      {
-        "heading": "VAT return deadlines",
-        "body": [
-          "Most businesses file VAT returns quarterly. The return and any payment are due one month and seven days after the period ends, and we make sure both are dealt with comfortably ahead of time.",
-          "We diarise every period for you, so there is no risk of a default and no last-minute rush to pull figures together."
-        ],
+        "heading": "Concrete deliverables.",
+        "body": ["What you actually receive:"],
         "bullets": [
-          "VAT returns are usually quarterly",
-          "Return and payment due 1 month and 7 days after the period ends"
-        ]
-      },
-      {
-        "heading": "Construction, imports and EU sales",
-        "body": [
-          "Some sectors and transactions need special handling. If you work in construction, the VAT domestic reverse charge applies to most CIS services and changes how VAT is accounted for between contractors and subcontractors — we deal with this routinely.",
-          "We also handle the VAT side of trade beyond the UK, using postponed VAT accounting for imports and the OSS and IOSS schemes for EU business-to-consumer sales."
-        ],
-        "bullets": [
-          "VAT domestic reverse charge for most construction (CIS) services",
-          "Postponed VAT accounting for imports",
-          "OSS and IOSS for EU B2C sales"
+          "A competitor link-gap analysis with a prioritised target list.",
+          "Linkable-asset production (original research, sector reports, tools).",
+          "Monthly editorial placements (typically 4–12, depending on tier).",
+          "Digital PR campaigns (1–2 per quarter, data-led for scale).",
+          "Brand-mention monitoring across the open web.",
+          "A monthly authority report (domain-rating change, placements, mentions).",
+          "Disavow management for any toxic legacy links."
         ]
       }
     ],
     "faqs": [
       {
-        "question": "When do I have to register for VAT?",
-        "answer": "You must register once your taxable turnover exceeds £90,000 on a rolling 12-month basis, the threshold in place since 1 April 2024. Some businesses also choose to register voluntarily below that level. We monitor your turnover so you register at exactly the right time."
+        "question": "Do you guarantee a certain number of links?",
+        "answer": "We target ranges (typically 4–12 editorial placements per month, scaling with retainer size) but don't guarantee specific links — outreach work is inherently editorial. What we do guarantee is outreach volume, asset quality and full reporting transparency."
       },
       {
-        "question": "What does Making Tax Digital mean for my VAT?",
-        "answer": "Making Tax Digital for VAT has been mandatory for all VAT-registered businesses since April 2022. You must keep digital records and file through MTD-compatible software. We run your VAT in cloud software that meets HMRC's requirements, keeping you fully compliant."
+        "question": "How is this different from cheap link packages?",
+        "answer": "Cheap packages sell volume from PBNs and link farms — the exact footprint Google penalises. We earn editorial placements on real publications through outreach and digital PR. Slower, but the links actually move rankings and don't put you at risk."
       },
       {
-        "question": "When are my VAT returns and payments due?",
-        "answer": "VAT returns are usually filed quarterly, with the return and any payment due one month and seven days after the period ends. We diarise every period and prepare your return ahead of time so nothing is ever late."
+        "question": "How long until links move my rankings?",
+        "answer": "Authority compounds. The first placements land within weeks, but ranking impact typically shows over 3–6 months as the profile strengthens and Google re-evaluates trust. It's a durable investment, not a quick spike."
       },
       {
-        "question": "Which VAT scheme is right for my business?",
-        "answer": "It depends on your size, sector and cash flow. Options include the Standard, Flat Rate, Cash Accounting and Annual Accounting schemes, plus retail and margin schemes for some businesses. We review the choices and recommend the one that genuinely suits you."
-      },
-      {
-        "question": "How does VAT work for construction businesses?",
-        "answer": "The VAT domestic reverse charge applies to most construction services within the CIS, which changes how VAT is accounted for between contractors and subcontractors rather than being charged in the usual way. We handle this for construction clients as a matter of routine."
+        "question": "What about toxic or negative-SEO links?",
+        "answer": "Included. We audit your backlink profile, identify toxic links (PBNs, spammy directories, irrelevant low-quality sites) and manage the disavow file in Search Console. Clean profile, growing profile, defensible profile."
       }
     ]
   },
   {
-    "slug": "payroll",
-    "metaTitle": "Payroll Services & Auto-Enrolment | MMR",
-    "metaDescription": "Fully managed payroll services and auto-enrolment for UK employers. RTI submissions, payslips, P60s and pensions handled correctly every payday, on fixed fees.",
-    "eyebrow": "Accounts & compliance",
-    "title": "Payroll & Pensions",
-    "intro": "Fully managed RTI payroll and workplace pensions, so your team is paid correctly and on time every payday — and every submission to HMRC and your pension provider is handled for you.",
+    "slug": "local-seo",
+    "metaTitle": "Local SEO & Regional Growth",
+    "metaDescription": "Google Business Profile, local citations, geo-targeted landing pages and review velocity to win the map pack and nearby searches.",
+    "eyebrow": "Pillar 04 · Local & regional",
+    "title": "The first business people see when they search in their area.",
+    "intro": "For local businesses and multi-location brands, the Google local pack is the real estate that converts. We engineer your local footprint so you own it — in every city, every neighbourhood, every search.",
     "highlights": [
-      "RTI payroll run on or before each payday",
-      "FPS and EPS submissions to HMRC",
-      "Auto-enrolment set up and managed",
-      "Payslips, P60s, P45s and P11Ds produced",
-      "Employment Allowance claimed where eligible",
-      "Statutory pay administered through payroll",
-      "Declaration of compliance to The Pensions Regulator",
-      "payroll"
+      "Google Business Profile",
+      "Local citations & directories",
+      "Geo-targeted landing pages",
+      "Review-velocity programme",
+      "Multi-location templating",
+      "Local schema markup"
     ],
     "sections": [
       {
-        "heading": "Payroll services and auto-enrolment, fully managed",
+        "heading": "Local pack visibility, engineered for scale.",
         "body": [
-          "Payroll has to be right every single time, because your team notices immediately if it is not. We run your payroll each pay period, calculate the deductions, produce the payslips and report everything to HMRC on your behalf.",
-          "Alongside it we manage your workplace pension duties, so two of the most repetitive and rule-bound parts of running a business simply happen in the background."
+          "Whether you're a single-location service business or a multi-location brand with 80+ sites, the principles are the same — but the templating discipline matters massively when you scale.",
+          "We clean up Google Business Profiles, manage citations, write geo-targeted landing pages and run review-velocity programmes, so every market you serve sees you in the local pack."
         ]
       },
       {
-        "heading": "Real Time Information reporting to HMRC",
-        "body": [
-          "PAYE is operated in real time, which means HMRC expects to hear from you every time you pay your people, not just at year end. We make the required submissions on schedule, every period.",
-          "We send a Full Payment Submission on or before each payday and an Employer Payment Summary where one is needed, keeping your PAYE account accurate and up to date."
-        ],
+        "heading": "Every local engagement covers six layers.",
+        "body": ["The scope behind owning your local search:"],
         "bullets": [
-          "Full Payment Submission (FPS) on or before each payday",
-          "Employer Payment Summary (EPS) submitted where needed",
-          "Your PAYE position kept reconciled with HMRC"
+          "Google Business Profile — full setup or optimisation: categories, services, attributes, posts, Q&A and photos. Every signal Google rewards, configured properly.",
+          "Local citations & directories — audit, cleanup and consistent NAP across 50+ key directories. The unsexy backbone of local visibility.",
+          "Geo-targeted landing pages — localised content per market, not boilerplate, built from a parameterised template so 84 locations don't need 84 hand-crafted pages.",
+          "Review-velocity programme — automated, NPS-triggered review requests, response templates and a strategy for driving review volume the right way.",
+          "Multi-location templating — for multi-site brands: one template that adapts per location, central content control, decentralised reviews and photos. Scales to 100+.",
+          "Local schema markup — LocalBusiness, Service, OpeningHours and GeoCoordinates, so Google understands every detail of every location."
         ]
       },
       {
-        "heading": "Workplace pensions and auto-enrolment",
-        "body": [
-          "Every employer has automatic enrolment duties, and they do not stop once staff are enrolled. We assess your workforce, enrol those who qualify and keep the scheme running correctly.",
-          "Eligible jobholders are those aged 22 to State Pension age earning over £10,000. We manage contributions, the three-yearly re-enrolment cycle and the declaration of compliance to The Pensions Regulator."
-        ],
+        "heading": "Our local engagement cadence.",
+        "body": ["From audit to per-market tracking:"],
         "bullets": [
-          "Eligible jobholders: aged 22 to State Pension age earning over £10,000",
-          "Minimum total contribution of 8% of qualifying earnings, with the employer paying at least 3%",
-          "Qualifying earnings band for 2025/26: £6,240 to £50,270",
-          "Re-enrolment every three years",
-          "Declaration of compliance to The Pensions Regulator"
+          "01 Local audit — every location audited for GBP completeness, citation consistency, review profile and on-site signals, output as a per-location scorecard.",
+          "02 Standardise & clean — one playbook applied across every location; NAP fixed everywhere, GBPs aligned, foundations made consistent before optimisation.",
+          "03 Optimise & localise — geo-targeted landing pages deployed, GBP signals optimised, review velocity started and local link signals activated.",
+          "04 Track & refine — per-location rank tracking, local-pack monitoring and call & direction conversion tracking, with a monthly readout per market."
         ]
       },
       {
-        "heading": "Employer National Insurance and the Employment Allowance",
-        "body": [
-          "Employing people carries an employer National Insurance cost, and getting the reliefs right keeps that cost in check. We calculate your employer NIC accurately each period.",
-          "Where your business is eligible we claim the Employment Allowance, which reduces your employer Class 1 National Insurance bill."
-        ],
+        "heading": "Concrete deliverables.",
+        "body": ["What you actually receive:"],
         "bullets": [
-          "Employer (secondary) Class 1 NIC rate of 15% from 6 April 2025",
-          "Secondary threshold of £5,000",
-          "Employment Allowance of up to £10,500 from April 2025"
-        ]
-      },
-      {
-        "heading": "Payslips, P60s and the statutory paperwork",
-        "body": [
-          "There is a steady stream of documents an employer must produce, and your people have legal rights to some of them. We generate them all accurately and on time.",
-          "From the payslip every worker is entitled to, through to year-end and leaver paperwork and benefits reporting, it is all taken care of."
-        ],
-        "bullets": [
-          "Payslips — a legal right for every worker",
-          "P60 at the end of each tax year",
-          "P45 for leavers",
-          "P11D for benefits in kind"
-        ]
-      },
-      {
-        "heading": "Statutory pay and the National Living Wage",
-        "body": [
-          "Sick pay, maternity pay and other statutory payments are fiddly to calculate and easy to get wrong. We administer statutory pay such as SSP and SMP straight through your payroll so the right amounts reach the right people.",
-          "We also help you stay on the right side of the National Minimum and Living Wage, which is reviewed each April, so your pay rates remain compliant as the rates change."
+          "A per-location local audit scorecard.",
+          "Google Business Profile setup / optimisation for every location.",
+          "A citation audit plus a 50-directory cleanup and submission.",
+          "Geo-targeted landing-page templates (parameterised, scalable).",
+          "A review-velocity programme (NPS-triggered automation) and response templates.",
+          "LocalBusiness and Service schema deployed.",
+          "A monthly per-location dashboard (calls, directions, local-pack visibility)."
         ]
       }
     ],
     "faqs": [
       {
-        "question": "Which employees do I have to enrol in a workplace pension?",
-        "answer": "Eligible jobholders — those aged 22 to State Pension age earning over £10,000 — must be automatically enrolled. The minimum total contribution is 8% of qualifying earnings, of which the employer pays at least 3%. We assess your team and manage the whole process."
+        "question": "Do you work with multi-location brands?",
+        "answer": "Yes — it's our sweet spot. We've shipped programmes covering 84-location service brands and multi-market businesses. The templating discipline at scale is what separates good local SEO from manual chaos."
       },
       {
-        "question": "Can I reduce my employer National Insurance bill?",
-        "answer": "Often, yes. Many businesses can claim the Employment Allowance, worth up to £10,500 from April 2025, which reduces your employer Class 1 National Insurance. We check your eligibility and apply the claim through your payroll automatically."
+        "question": "How long until local rankings move?",
+        "answer": "Local SEO moves faster than national SEO in most cases. GBP optimisation wins can appear in 2–4 weeks, citation cleanup compounds over 1–3 months, and local-pack penetration in competitive markets typically takes 3–6 months of sustained work."
       },
       {
-        "question": "What payroll documents do I need to give my staff?",
-        "answer": "Every worker has a legal right to a payslip. You also need to provide a P60 after each tax year, a P45 when someone leaves, and a P11D where benefits in kind apply. We produce all of these accurately and on time as part of the service."
+        "question": "Do you handle review responses?",
+        "answer": "We set up templates and a response process, but generally have your local teams respond, since they know the customer context best. We audit responses quarterly to keep tone and policy aligned."
       },
       {
-        "question": "Do you handle statutory sick and maternity pay?",
-        "answer": "Yes. Statutory payments such as SSP and SMP are administered through your payroll, so they are calculated correctly and paid through the normal pay run. We also help you keep pay rates in line with the National Living Wage, which is reviewed each April."
-      },
-      {
-        "question": "test faq",
-        "answer": "test faq"
+        "question": "Can you help with a new market entry?",
+        "answer": "Yes. New-market launches typically take 8–12 weeks to set up properly: GBP creation, citation submission, landing-page deployment and review-velocity rollout. We've supported launches into 10+ new cities."
       }
     ]
   },
   {
-    "slug": "company-formation",
-    "metaTitle": "Company Formation & Secretarial | MMR",
-    "metaDescription": "Company formation and company secretarial services in the UK. Same-day incorporation, registered office and confirmation statements, kept fully compliant.",
-    "eyebrow": "Tax & advisory",
-    "title": "Company Formation & Secretarial",
-    "intro": "Start right and stay compliant — fast incorporation at Companies House, the right structure for your plans, and ongoing company secretarial work handled on your behalf.",
+    "slug": "reddit-community",
+    "metaTitle": "Reddit & Community Visibility + AEO",
+    "metaDescription": "Authentic presence on Reddit, Quora and industry communities, plus Answer Engine Optimisation so your brand surfaces inside AI overviews.",
+    "eyebrow": "Pillar 05 · Community & AEO",
+    "title": "Be the brand communities trust — and the source AI actually cites.",
+    "intro": "Today's buyers research on Reddit, Quora and niche forums long before they reach Google — and AI assistants quote those threads back as answers. We earn your brand an authentic, high-intent presence in the communities that matter.",
     "highlights": [
-      "Same-day online incorporation",
-      "Guidance on the right business structure",
-      "Registered office and registered email set up",
-      "PSC register and statutory registers maintained",
-      "Annual confirmation statement filed",
-      "Corporation Tax, PAYE and VAT registrations",
-      "Support with identity verification under ECCTA"
+      "Reddit presence",
+      "Quora & forum answers",
+      "Community building & AMAs",
+      "Answer Engine Optimisation (AEO)",
+      "Brand sentiment & reputation",
+      "AI-citation optimisation"
     ],
     "sections": [
       {
-        "heading": "Company formation and company secretarial, done properly",
+        "heading": "Where your next customers research — and where AI gets its answers.",
         "body": [
-          "Getting your company set up correctly from day one saves a great deal of correction later. We incorporate your company at Companies House — usually same day online — with the details and documents arranged the right way.",
-          "From there we look after the ongoing secretarial obligations that come with running a limited company, so the statutory side is never something you have to remember."
+          "Buyers trust people over brands. Before they ever click a search result they're reading Reddit threads, scanning Quora answers and lurking in niche communities — and those same spaces are what ChatGPT, Claude, Perplexity and Google's AI Overviews pull from.",
+          "Our real-time placement programme makes your brand a genuinely useful, trusted voice in those conversations — so you influence buyers at the research stage and become the source AI cites, not the brand it forgets."
         ]
       },
       {
-        "heading": "Choosing the right structure first",
-        "body": [
-          "A limited company is not automatically the best vehicle for everyone, and the right structure depends on your plans, your risk and how you want to be taxed. Before we form anything, we help you choose with your eyes open.",
-          "We talk you through the trade-offs between operating as a sole trader, a limited company or a partnership or LLP, so the structure fits the business you actually intend to build."
-        ],
+        "heading": "Every community engagement covers six areas.",
+        "body": ["The scope behind an authentic, cited presence:"],
         "bullets": [
-          "Sole trader",
-          "Limited company",
-          "Partnership or LLP"
+          "Reddit presence — value-led participation in the subreddits your buyers actually read. Genuine contributions that build trust; never spam, never link drops.",
+          "Quora & forum answers — expert answers on Quora and the specialised forums in your niche: evergreen content that ranks, gets read for years and feeds AI answers.",
+          "Community building & AMAs — long-term presence-building: becoming a known, trusted name in industry spaces, including hosted AMAs and expert sessions where they fit.",
+          "Answer Engine Optimisation — structured, factual, citable content tested across ChatGPT, Claude, Perplexity and AI Overviews for citation eligibility.",
+          "Brand sentiment & reputation — monitoring what communities say about you, surfacing issues early and steering the conversation with genuine, helpful engagement.",
+          "AI-citation optimisation — we seed and structure the content AI tools prefer to quote, then track when and where your brand actually gets cited."
         ]
       },
       {
-        "heading": "What goes into incorporating a company",
-        "body": [
-          "Incorporation involves more than just a name. There are several decisions and details to settle, and the rules on some of them have tightened recently.",
-          "Note that your registered office must now be an appropriate address — a PO box accommodation address is no longer acceptable — and a registered email address has been required since March 2024. We make sure each element is correct from the outset."
-        ],
+        "heading": "Our community engagement cadence.",
+        "body": ["How a trusted presence is built, the right way:"],
         "bullets": [
-          "Company name",
-          "Registered office at an appropriate address (no PO box accommodation addresses)",
-          "Registered email address (required since March 2024)",
-          "SIC code",
-          "Directors and shareholders",
-          "Share capital",
-          "Articles of association (often model articles)"
+          "01 Community mapping — we find the subreddits, Quora topics, forums and AI surfaces where your audience researches, prioritised by relevance and citation behaviour.",
+          "02 Voice & profile setup — credible author accounts and expert bios, plus the genuinely useful assets and answers that earn trust instead of triggering moderators.",
+          "03 Authentic engagement — consistent, value-first contributions over months. We build a real reputation — the only thing communities and their moderators reward.",
+          "04 Track AI citations — weekly checks across ChatGPT, Claude, Perplexity and Google AI Overviews for your priority queries, reported monthly."
         ]
       },
       {
-        "heading": "Statutory registers and the confirmation statement",
-        "body": [
-          "Once a company exists, the law requires it to keep certain records and to confirm its details to Companies House each year. We maintain these for you so they are always accurate and up to date.",
-          "That includes keeping your People with Significant Control register and your other statutory registers in order, and filing your annual confirmation statement on time."
-        ],
+        "heading": "Concrete deliverables.",
+        "body": ["What you actually receive:"],
         "bullets": [
-          "People with Significant Control (PSC) register maintained",
-          "Statutory registers kept up to date",
-          "Annual confirmation statement filed"
-        ]
-      },
-      {
-        "heading": "Identity verification under the new rules",
-        "body": [
-          "The Economic Crime and Corporate Transparency Act is introducing identity verification for directors and people with significant control as part of a wider effort to improve the reliability of the public register.",
-          "We keep across how and when these requirements apply, and help your directors and PSCs meet them, so your company stays compliant as the regime is rolled out."
-        ]
-      },
-      {
-        "heading": "Registering for the right taxes",
-        "body": [
-          "A new company usually has tax registrations to deal with soon after it is formed, and missing them creates problems quickly. We handle the registrations that apply to you.",
-          "New companies register for Corporation Tax, and we add PAYE and VAT registrations where they are relevant — so you are set up correctly with HMRC from the start, not scrambling later."
-        ],
-        "bullets": [
-          "Corporation Tax registration",
-          "PAYE registration where you employ staff",
-          "VAT registration where relevant"
+          "A community target map (subreddits, Quora topics, forums and AI surfaces, prioritised).",
+          "A real-time placement programme (Reddit, Quora, forums — authentic and value-led).",
+          "Expert answers and community contributions on an agreed monthly cadence.",
+          "An AEO audit plus structured-content recommendations for AI-citation eligibility.",
+          "Brand-sentiment monitoring across priority communities.",
+          "A monthly AI-citation report (ChatGPT, Claude, Perplexity, AI Overviews)."
         ]
       }
     ],
     "faqs": [
       {
-        "question": "How long does it take to form a limited company?",
-        "answer": "Incorporation at Companies House is usually completed the same day when done online. We gather the details, prepare the documents correctly and register the company for you, then deal with the Corporation Tax registration that follows."
+        "question": "How is this different from link building?",
+        "answer": "Link building is transactional: secure a placement, move on. Community visibility is presence-building — we contribute genuinely useful answers in the spaces your audience lives, over months, until the brand becomes a known voice that AI tools cite."
       },
       {
-        "question": "Should I trade as a sole trader or a limited company?",
-        "answer": "It depends on your plans, your appetite for risk and how you want to be taxed. A limited company offers limited liability and can be more tax-efficient at certain profit levels, but it carries more admin. We talk through the options before you commit."
+        "question": "Isn't posting in communities just spam?",
+        "answer": "Done badly, yes — and communities and their moderators punish it instantly. We work the opposite way: genuinely helpful contributions, disclosed where required, value first. The brand mention is the by-product of being useful, not the goal of the post."
       },
       {
-        "question": "Can I use my home or a PO box as my registered office?",
-        "answer": "Your registered office must now be an appropriate address where documents can be acknowledged, and PO box accommodation addresses are no longer acceptable. A registered email address is also required. We make sure your details meet the current rules."
+        "question": "Can you actually track AI Overview citations?",
+        "answer": "Yes. We run weekly citation checks across ChatGPT, Claude, Perplexity and Google AI Overviews for your priority queries and report trends monthly. It's an emerging discipline, and we're at the leading edge of it."
       },
       {
-        "question": "What is the confirmation statement and how often is it due?",
-        "answer": "The confirmation statement confirms your company's key details to Companies House and must be filed at least once a year. We maintain your statutory registers, including the PSC register, and file the statement on time on your behalf."
-      },
-      {
-        "question": "What is changing with identity verification at Companies House?",
-        "answer": "Under the Economic Crime and Corporate Transparency Act, identity verification is being introduced for directors and people with significant control. We keep across how the requirements apply and help your directors and PSCs meet them as the rules take effect."
-      }
-    ]
-  },
-  {
-    "slug": "advisory",
-    "metaTitle": "Business Advisory & Cash Flow Forecasting | MMR",
-    "metaDescription": "Business advisory and cash flow forecasting for ambitious UK businesses. Management accounts, virtual FD support, budgeting and funding readiness on fixed fees.",
-    "eyebrow": "Tax & advisory",
-    "title": "Business Advisory & Growth",
-    "intro": "Numbers that drive decisions, not just compliance — management accounts, cash-flow forecasting and a dedicated adviser who helps you grow with confidence.",
-    "highlights": [
-      "Monthly or quarterly management accounts and KPIs",
-      "Cash-flow forecasting and scenario planning",
-      "Virtual finance director support",
-      "Budgeting and target-setting",
-      "Funding and investor readiness",
-      "Pricing, margin and benchmarking analysis",
-      "Profit-extraction and remuneration planning"
-    ],
-    "sections": [
-      {
-        "heading": "Business advisory and cash flow forecasting that earns its keep",
-        "body": [
-          "Compliance tells you what already happened. Advisory is about what happens next — using your numbers to make better decisions while there is still time to influence the result.",
-          "We work alongside you with regular management information and a forward view of your cash, so you are running the business on real data rather than gut feel and the latest bank balance."
-        ]
-      },
-      {
-        "heading": "Management accounts and the numbers that matter",
-        "body": [
-          "A set of year-end accounts arrives too late to change anything. Management accounts give you the picture while it is still useful, focused on the handful of measures that actually move your business.",
-          "We produce them monthly or quarterly and talk you through what they mean, agreeing the KPIs that matter most to you so every report answers a question you actually care about."
-        ],
-        "bullets": [
-          "Monthly or quarterly management accounts",
-          "KPIs tailored to your business",
-          "A plain-English review, not just a spreadsheet"
-        ]
-      },
-      {
-        "heading": "Cash flow, budgets and planning for what-ifs",
-        "body": [
-          "Profitable businesses still fail when they run out of cash. We build a forward view of yours so you can see what is coming and act before a squeeze becomes a problem.",
-          "Pairing a budget with scenario planning lets you stress-test the big decisions — a new hire, a price change, a quiet quarter — before you commit to them."
-        ],
-        "bullets": [
-          "Cash-flow forecasting",
-          "Budgeting and target-setting",
-          "Scenario planning for the big decisions"
-        ]
-      },
-      {
-        "heading": "A finance director, without the full-time cost",
-        "body": [
-          "Plenty of growing businesses need finance leadership but are not ready to employ a finance director. Our virtual and outsourced FD support gives you that senior input when you need it.",
-          "It means a seasoned head for the big calls — pricing, investment, funding and strategy — on terms that suit a business at your stage."
-        ]
-      },
-      {
-        "heading": "Funding, investment and growth decisions",
-        "body": [
-          "Whether you are approaching a lender or an investor, the quality of your numbers shapes the outcome. We help you get ready and put your case in the best possible light.",
-          "From business plans and forecasts to weighing up capital investment using allowances such as the Annual Investment Allowance and full expensing, we help you make the case and the call with confidence.",
-          "Where it looks relevant, we will also flag R&D tax relief so a potential claim is not left on the table."
-        ],
-        "bullets": [
-          "Funding and investor readiness",
-          "Business plans and forecasts",
-          "Capital investment decisions using the Annual Investment Allowance (£1,000,000) and full expensing",
-          "Signposting R&D tax relief where relevant"
-        ]
-      },
-      {
-        "heading": "Pricing, margins and getting paid properly",
-        "body": [
-          "Small changes to pricing and margin often do more for profit than chasing extra sales. We dig into where you actually make money and where you quietly lose it.",
-          "Through benchmarking, pricing reviews and margin analysis — alongside profit-extraction and remuneration planning — we help you keep more of the value you create."
-        ],
-        "bullets": [
-          "Benchmarking against your sector",
-          "Pricing and margin analysis",
-          "Profit-extraction and remuneration planning"
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "question": "What is the difference between management accounts and year-end accounts?",
-        "answer": "Year-end accounts look backwards and are produced for compliance, often months after the event. Management accounts are produced monthly or quarterly to give you a timely, decision-ready view of performance, focused on the KPIs that matter most to your business."
-      },
-      {
-        "question": "Why does cash flow forecasting matter if my business is profitable?",
-        "answer": "Profit and cash are not the same thing, and profitable businesses can still run short of cash. A forward-looking cash-flow forecast shows what is coming so you can plan around tax payments, hires and quieter periods before they cause a problem."
-      },
-      {
-        "question": "What does a virtual finance director actually do?",
-        "answer": "A virtual FD gives you senior finance input without the cost of a full-time hire. That typically means help with the bigger decisions — pricing, budgeting, funding, investment and strategy — supported by the regular management information we prepare for you."
-      },
-      {
-        "question": "Can you help us get ready to raise funding?",
-        "answer": "Yes. We help with the numbers lenders and investors expect to see, including business plans, forecasts and clear management accounts. We also help you weigh investment decisions and, where relevant, signpost reliefs such as R&D tax relief."
-      },
-      {
-        "question": "How do you help improve our profit?",
-        "answer": "We look at where you genuinely make and lose money through benchmarking, pricing reviews and margin analysis, then combine that with profit-extraction and remuneration planning. The aim is to help you keep more of the value the business creates."
+        "question": "Which communities will you target?",
+        "answer": "Only the ones your buyers actually use. During mapping we identify the highest-intent subreddits, Quora topics and niche forums for your sector, then prioritise by relevance, activity and how often AI tools cite them."
       }
     ]
   }

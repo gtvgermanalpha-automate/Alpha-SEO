@@ -129,7 +129,7 @@ export function DetailPageView({ page }: { page: DetailPage }) {
             <p className="eyebrow text-accent">{page.eyebrow}</p>
             <h2 className="mt-3 font-display text-2xl text-ink sm:text-3xl">What&apos;s involved</h2>
             <p className="mt-4 text-[0.95rem] leading-relaxed text-muted">
-              Here&apos;s exactly what&apos;s involved — and how your own named accountant handles each part for you.
+              Here&apos;s exactly what&apos;s involved — and how our senior team handles each part for you.
             </p>
           </div>
 

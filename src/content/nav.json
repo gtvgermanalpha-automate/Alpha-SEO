@@ -5,95 +5,35 @@
       "href": "/services",
       "mega": [
         {
-          "label": "Accounts & Compliance",
-          "icon": "BookOpen",
-          "items": [
-            { "title": "Bookkeeping & Annual Accounts", "description": "Tidy books and year-end accounts, filed early.", "icon": "BookOpen", "href": "/services/bookkeeping" },
-            { "title": "VAT & Making Tax Digital", "description": "The right scheme, accurate returns, no missed deadlines.", "icon": "Percent", "href": "/services/vat" },
-            { "title": "Payroll & Pensions", "description": "Fully managed RTI payroll and auto-enrolment.", "icon": "Users", "href": "/services/payroll" }
-          ]
-        },
-        {
-          "label": "Tax & Advisory",
-          "icon": "TrendingUp",
-          "items": [
-            { "title": "Tax Planning & Returns", "description": "Forward-looking planning that protects your profit.", "icon": "Receipt", "href": "/services/tax-planning" },
-            { "title": "Business Advisory & Growth", "description": "Management accounts, forecasts and a dedicated adviser.", "icon": "LineChart", "href": "/services/advisory" },
-            { "title": "Company Formation", "description": "Fast set-up, registered office and secretarial.", "icon": "Building2", "href": "/services/company-formation" }
-          ]
-        },
-        {
-          "label": "Industries We Serve",
-          "icon": "Building2",
-          "items": [
-            { "title": "Contractors & Freelancers", "description": "IR35-aware advice and take-home that works.", "icon": "Laptop", "href": "/industries/contractors" },
-            { "title": "Startups & Tech", "description": "Investor-ready accounts and R&D tax relief.", "icon": "Rocket", "href": "/industries/startups" },
-            { "title": "Construction & CIS", "description": "CIS deductions and subcontractor returns handled.", "icon": "HardHat", "href": "/industries/construction" },
-            { "title": "Landlords & Property", "description": "Portfolio structuring and property tax planning.", "icon": "Home", "href": "/industries/landlords" }
-          ]
-        }
-      ]
-    },
-    {
-      "label": "How we help",
-      "href": "/how-we-help",
-      "children": [
-        { "label": "Proactive Tax Planning", "href": "/how-we-help/proactive-tax-planning" },
-        { "label": "Advisory & Growth", "href": "/how-we-help/advisory-partnership" },
-        { "label": "Team", "href": "/team" }
-      ]
-    },
-    {
-      "label": "How We Work",
-      "href": "/how-we-work",
-      "mega": [
-        {
-          "label": "Our process",
+          "label": "Search foundations",
           "icon": "Settings2",
           "items": [
-            { "title": "Free discovery call", "description": "We learn your business and give a clear quote.", "icon": "PhoneCall", "href": "/how-we-work#process" },
-            { "title": "Seamless onboarding", "description": "We handle the switch and set up your software.", "icon": "Settings2", "href": "/how-we-work#process" },
-            { "title": "We manage the numbers", "description": "Bookkeeping, tax and payroll, quietly handled.", "icon": "LineChart", "href": "/how-we-work#process" },
-            { "title": "You grow with insight", "description": "Proactive advice keeps you ahead all year.", "icon": "Sparkles", "href": "/how-we-work#process" }
+            { "title": "Technical SEO & Performance", "description": "Audits, Core Web Vitals, schema, architecture.", "icon": "Settings2", "href": "/services/technical-seo" },
+            { "title": "On-Page SEO & Content", "description": "Keyword mapping, landing pages, metadata.", "icon": "BookOpen", "href": "/services/on-page-seo" },
+            { "title": "Off-Page SEO & Authority", "description": "Editorial links, digital PR, brand mentions.", "icon": "Award", "href": "/services/off-page-seo" }
           ]
         },
         {
-          "label": "Why MMR & support",
-          "icon": "MessagesSquare",
+          "label": "Growth & visibility",
+          "icon": "MapPin",
           "items": [
-            { "title": "Why MMR", "description": "Qualified, fixed-fee and genuinely proactive.", "icon": "Award", "href": "/why-mmr" },
-            { "title": "Switch to MMR", "description": "We move you from your old accountant, paperless.", "icon": "Zap", "href": "/how-we-work#process" },
-            { "title": "Year-round support", "description": "A dedicated accountant, only a call away.", "icon": "MessagesSquare", "href": "/why-mmr#why" }
+            { "title": "Local SEO & Regional Growth", "description": "Google Business, citations, geo pages.", "icon": "MapPin", "href": "/services/local-seo" },
+            { "title": "Reddit & Community Visibility", "description": "Reddit, forums, AEO & AI citations.", "icon": "MessagesSquare", "href": "/services/reddit-community" },
+            { "title": "View all services", "description": "The full five-pillar overview.", "icon": "Sparkles", "href": "/services" }
           ]
         }
       ]
     },
+    { "label": "Case Studies", "href": "/case-studies" },
+    { "label": "Insights", "href": "/blog" },
     {
-      "label": "Case Studies",
-      "href": "/case-studies",
-      "mega": [
-        {
-          "label": "Professional & digital",
-          "icon": "Laptop",
-          "items": [
-            { "title": "Contractors & Freelancers", "description": "IR35-aware advice and take-home that works.", "icon": "Laptop", "href": "/industries/contractors" },
-            { "title": "Startups & Tech", "description": "Investor-ready accounts and R&D tax relief.", "icon": "Rocket", "href": "/industries/startups" },
-            { "title": "Creative & Agencies", "description": "Project profitability and cash flow you can see.", "icon": "Palette", "href": "/industries/creative" },
-            { "title": "Healthcare & Locums", "description": "Specialist support for medical professionals.", "icon": "Stethoscope", "href": "/industries/healthcare" }
-          ]
-        },
-        {
-          "label": "Trade & property",
-          "icon": "Building2",
-          "items": [
-            { "title": "E-commerce & Retail", "description": "Multi-channel sales, stock and VAT, simplified.", "icon": "ShoppingCart", "href": "/industries/ecommerce" },
-            { "title": "Hospitality", "description": "Tight margins managed with clear weekly numbers.", "icon": "UtensilsCrossed", "href": "/industries/hospitality" },
-            { "title": "Construction & CIS", "description": "CIS deductions and subcontractor returns handled.", "icon": "HardHat", "href": "/industries/construction" },
-            { "title": "Landlords & Property", "description": "Portfolio structuring and property tax planning.", "icon": "Home", "href": "/industries/landlords" }
-          ]
-        }
+      "label": "About",
+      "href": "/team",
+      "children": [
+        { "label": "About Alpha", "href": "/team" },
+        { "label": "Our Process", "href": "/how-we-work" },
+        { "label": "Contact", "href": "/contact" }
       ]
-    },
-    { "label": "Blog", "href": "/blog" }
+    }
   ]
 }

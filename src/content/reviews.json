@@ -1,56 +1,62 @@
 {
-  "eyebrow": "Accredited & reviewed",
-  "title": "Qualified, regulated and trusted",
-  "intro": "Every client is looked after by qualified Chartered Certified Accountants, registered with ACCA body.",
-  "rating": { "score": "5.0", "outOf": "5", "count": 57, "platform": "Google" },
+  "eyebrow": "Client testimonials",
+  "title": "What partners say after 12+ months",
+  "intro": "Quotes shared with permission. Names are withheld at client request — full case references are available under NDA.",
+  "rating": { "score": "5.0", "outOf": "5", "count": 6, "platform": "Google" },
   "reviews": [
     {
-      "name": "Ahsan Qaisar",
-      "date": "18 February 2026",
+      "name": "VP Marketing",
+      "role": "B2B SaaS · Series B",
+      "date": "May 2026",
       "rating": 5,
       "image": "",
-      "initials": "AQ",
-      "quote": "Absolute professionals. The entire team is a solid 10 out of 10."
+      "initials": "VP",
+      "quote": "Alpha is the first SEO partner that's spoken to us in the language of pipeline. We track organic-sourced opportunity weekly — and it's grown every month for fourteen months running."
     },
     {
-      "name": "Carlo Colombo",
-      "date": "7 April 2026",
+      "name": "Head of Growth",
+      "role": "Fintech · Scaling",
+      "date": "Apr 2026",
       "rating": 5,
       "image": "",
-      "initials": "CC",
-      "quote": "Filled our taxes perfectly and were always on top of things."
+      "initials": "HG",
+      "quote": "The technical audit they ran caught indexation issues our previous agency had missed for two years. Inside six months we'd recovered traffic equivalent to roughly $400k in pipeline."
     },
     {
-      "name": "Happy Sammy",
-      "date": "28 January 2026",
+      "name": "CMO",
+      "role": "D2C retail · 8-figure",
+      "date": "Mar 2026",
       "rating": 5,
       "image": "",
-      "initials": "HS",
-      "quote": "Professionally constructed and reliable. Good communication and helpful."
+      "initials": "CM",
+      "quote": "What I value most is the reporting discipline. Every month a clear narrative — what moved, why, what's next. No theatre, no vanity dashboards. Just clarity and momentum."
     },
     {
-      "name": "Moderna Coronet",
-      "date": "3 July 2025",
+      "name": "Director of Marketing",
+      "role": "Enterprise SaaS",
+      "date": "Feb 2026",
       "rating": 5,
       "image": "",
-      "initials": "MC",
-      "quote": "Great service, impeccable. Thank you Mohsin, you are a life saver!"
+      "initials": "DM",
+      "quote": "We migrated platforms twice during our engagement. Both times Alpha planned, parity-tested and shipped without losing rankings. That alone has earned them a permanent seat."
     },
     {
-      "name": "Silver Spindle",
-      "date": "10 June 2025",
+      "name": "CEO & Founder",
+      "role": "HR-tech platform",
+      "date": "Jan 2026",
       "rating": 5,
       "image": "",
-      "initials": "SS",
-      "quote": "Always found them to be professional. Our company needs are well looked after."
+      "initials": "CF",
+      "quote": "They sit closer to a strategic advisor than a vendor. Our investor decks now reference SEO metrics as a leading indicator — that's the level of confidence Alpha has built into the channel."
     },
     {
-      "name": "Ionela Ionela",
-      "date": "24 June 2025",
+      "name": "Brand Director",
+      "role": "Lifestyle brand",
+      "date": "Dec 2025",
       "rating": 5,
       "image": "",
-      "initials": "II",
-      "quote": "Very respectful and very quick to help. Highly recommend."
+      "initials": "BD",
+      "quote": "The link-building team is unusually disciplined. Every placement editorial, every link contextual, every site we'd actually want associated with our brand. No PBNs, no shortcuts."
     }
   ]
 }

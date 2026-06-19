@@ -10,9 +10,9 @@ import { CustomSchema } from "@/components/CustomSchema";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
 
 export const metadata: Metadata = buildMetadata("/blog", {
-  defaultTitle: "News & Blog",
+  defaultTitle: "SEO Insights",
   defaultDescription:
-    "Tax, accounting and business insights from MMR Accountants — plain-English guides on limited companies, HMRC, student loans and useful HMRC tools.",
+    "Practitioner-led writing on technical SEO, content strategy, link building, local SEO and the economics of organic growth — from the Alpha Digital Solutions team.",
 });
 
 export default function BlogIndexPage() {
@@ -20,8 +20,8 @@ export default function BlogIndexPage() {
     <>
       <PageHero
         crumb="Blog"
-        title="News & insights"
-        subtitle="Plain-English guides and updates on tax, accounting and running a business in the UK — from the team at MMR Accountants."
+        title="The SEO journal"
+        subtitle="Practitioner-led writing on technical SEO, content strategy, link building and the economics of organic growth — by the team that does the work."
         illus="growth"
       />
 

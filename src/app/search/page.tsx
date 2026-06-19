@@ -4,7 +4,7 @@ import { SearchView } from "@/components/SearchView";
 
 export const metadata: Metadata = {
   title: "Search",
-  description: "Search the MMR Accountants website.",
+  description: "Search the Alpha Digital Solutions website.",
   alternates: { canonical: "/search" },
   // Results pages should not be indexed.
   robots: { index: false, follow: true },

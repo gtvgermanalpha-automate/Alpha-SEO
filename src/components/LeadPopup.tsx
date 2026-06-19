@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/content";
  *  home page. A compact "request a callback" form that posts to the Netlify
  *  `callback` form (see public/__forms.html). sessionStorage keeps it from
  *  re-appearing on refresh; it returns on a fresh visit. */
-const SESSION_KEY = "mmr_callback_popup";
+const SESSION_KEY = "alpha_callback_popup";
 const SHOW_DELAY = 5000;
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -118,10 +118,10 @@ export function LeadPopup() {
                   <PhoneCall className="h-5 w-5" strokeWidth={1.7} aria-hidden />
                 </span>
                 <h2 id="lead-popup-title" className="mt-4 font-display text-2xl font-bold leading-tight">
-                  Speak to an accountant
+                  Speak to an SEO strategist
                 </h2>
                 <p className="mt-1.5 text-sm text-ink/80">
-                  Leave your details and a qualified accountant will call you back within one business day — no obligation.
+                  Leave your details and a senior strategist will call you back within one business day — no obligation.
                 </p>
               </div>
             </div>

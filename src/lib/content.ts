@@ -56,10 +56,10 @@ export const reviewsMeta = {
   rating: reviewsData.rating,
 };
 
-/** Outbound link to the firm's Google Business reviews — redirects to the live
- *  listing, the authoritative source for the current rating + review count. */
+/** Outbound "find us on Google" link. Point this at the real Google Business
+ *  Profile once it exists; until then it runs a brand search (no fabricated listing). */
 export const googleReviewsUrl =
-  "https://www.google.com/maps/place/MMR+%26+CO+Chartered+Certified+Accountants+%26+Tax+Advisors/@53.4919153,-2.2435325,17z/data=!4m8!3m7!1s0x487bb1b7a6fca8ad:0x4a6cca253935cc0a!8m2!3d53.4919121!4d-2.2409576!9m1!1b1!16s%2Fg%2F11c2nhc49h?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D";
+  "https://www.google.com/maps/search/Alpha+Digital+Solutions+Toronto";
 
 export type Faq = {
   question: string;
