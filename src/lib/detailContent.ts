@@ -7,16 +7,13 @@
  * breadcrumb label, internal links). Re-exported from `@/lib/content`.
  */
 import servicesRaw from "@/content/services.json";
-import industries1Raw from "@/content/industries-1.json";
-import industries2Raw from "@/content/industries-2.json";
-import approachRaw from "@/content/approach.json";
 import type { DetailFaq, DetailSection, RawDetail } from "./detailSchema";
 
 // The editable shape (RawDetail) and its validators now live in ./detailSchema
 // so the CMS can validate saves against the same contract. Re-exported here to
 // keep `@/lib/content` the single import surface for the rest of the app.
 export type { DetailFaq, DetailSection } from "./detailSchema";
-export type DetailKind = "service" | "industry" | "approach";
+export type DetailKind = "service";
 
 export type RelatedLink = { label: string; href: string };
 
@@ -34,8 +31,6 @@ const UPDATED = "Last reviewed: June 2026";
 /** URL segment per kind. */
 const SEGMENT: Record<DetailKind, string> = {
   service: "services",
-  industry: "industries",
-  approach: "how-we-help",
 };
 
 export const detailHref = (kind: DetailKind, slug: string) => `/${SEGMENT[kind]}/${slug}`;
@@ -124,13 +119,8 @@ function build(raw: RawDetail[], kind: DetailKind): DetailPage[] {
 }
 
 export const servicePages: DetailPage[] = build(servicesRaw as unknown as RawDetail[], "service");
-export const industryPages: DetailPage[] = build(
-  [...(industries1Raw as unknown as RawDetail[]), ...(industries2Raw as unknown as RawDetail[])],
-  "industry",
-);
-export const approachPages: DetailPage[] = build(approachRaw as unknown as RawDetail[], "approach");
 
-export const allDetailPages: DetailPage[] = [...servicePages, ...industryPages, ...approachPages];
+export const allDetailPages: DetailPage[] = [...servicePages];
 
 export function findDetailPage(kind: DetailKind, slug: string): DetailPage | undefined {
   return allDetailPages.find((p) => p.kind === kind && p.slug === slug);

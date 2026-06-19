@@ -39,8 +39,6 @@ const join = (parts: (string | undefined)[]) => parts.filter(Boolean).join(" ");
 
 const GROUP_BY_KIND: Record<DetailPage["kind"], string> = {
   service: "Services",
-  industry: "Industries",
-  approach: "How we help",
 };
 
 function detailDoc(p: DetailPage): SearchDoc {
@@ -133,21 +131,9 @@ const staticDocs: SearchDoc[] = [
     collection: "copy",
   },
   copyPageDoc("services", "/services"),
-  copyPageDoc("whyMmr", "/why-mmr"),
-  copyPageDoc("industries", "/industries"),
   copyPageDoc("howWeWork", "/how-we-work"),
   copyPageDoc("faq", "/faq"),
   copyPageDoc("contact", "/contact"),
-  {
-    id: "page:how-we-help",
-    title: "How We Help",
-    description: "Proactive tax planning and an advisory partnership beyond compliance.",
-    body: "how we help proactive tax planning advisory partnership growth",
-    url: "/how-we-help",
-    group: "Pages",
-    editorHref: null,
-    collection: null,
-  },
   {
     id: "page:blog",
     title: "News & Blog",

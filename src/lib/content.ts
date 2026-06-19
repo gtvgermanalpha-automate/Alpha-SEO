@@ -37,25 +37,6 @@ export type WhyPoint = {
 
 export const whyPoints: WhyPoint[] = sectionsData.whyPoints as WhyPoint[];
 
-export type ValueProp = {
-  slug: string;
-  art: "tax" | "advisory" | "bookkeeping";
-  title: string;
-  description: string;
-};
-
-/** Illustrated value props (replaces the numeric stats band on the home page) */
-export const valueProps: ValueProp[] = sectionsData.valueProps as ValueProp[];
-
-export type Industry = {
-  slug: string;
-  icon: string;
-  title: string;
-  description: string;
-};
-
-export const industries: Industry[] = sectionsData.industries as Industry[];
-
 export type ProcessStep = {
   step: string;
   title: string;

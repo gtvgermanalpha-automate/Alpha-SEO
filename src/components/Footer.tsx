@@ -9,13 +9,11 @@ import { copy, legalPages, navLinks, services, siteConfig } from "@/lib/content"
 export function Footer() {
   const year = new Date().getFullYear();
 
-  // The header nav is intentionally compact — Why MMR, Industries, Team and FAQ
-  // are nested into dropdowns there. The footer stays a full directory, so it
-  // lists the top-level pages (CMS-driven) plus those nested pages, flat.
+  // The header nav is intentionally compact — Team and FAQ are nested into
+  // dropdowns there. The footer stays a full directory, so it lists the
+  // top-level pages (CMS-driven) plus those nested pages, flat.
   const quickLinks = [
     ...navLinks.map((l) => ({ label: l.label, href: l.href })),
-    { label: "Why MMR", href: "/why-mmr" },
-    { label: "Industries", href: "/industries" },
     { label: "Team", href: "/team" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },

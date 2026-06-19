@@ -5,7 +5,7 @@ import { CaseStudyEditor } from "@/components/admin/CaseStudyEditor";
 
 export const dynamic = "force-dynamic";
 
-const FILES = ["services", "industries-1", "industries-2", "approach", "blog", "case-studies"];
+const FILES = ["services", "blog", "case-studies"];
 
 export default async function EditDetailPage({
   params,

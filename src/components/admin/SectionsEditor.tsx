@@ -7,9 +7,7 @@ import { ArtSelect, IconSelect } from "@/components/admin/pickers";
 
 const NAV = [
   { id: "sec-services", label: "Services" },
-  { id: "sec-industries", label: "Industries" },
-  { id: "sec-why", label: "Why MMR" },
-  { id: "sec-approach", label: "Approach" },
+  { id: "sec-why", label: "Why us" },
   { id: "sec-process", label: "Process" },
   { id: "sec-faqs", label: "FAQs" },
   { id: "sec-partners", label: "Trust badges" },
@@ -94,29 +92,7 @@ function SectionsFields({ data, upd }: { data: SectionsData; upd: (path: Path, v
         </div>
       </Card>
 
-      <Card
-        id="sec-industries"
-        title="Industries"
-        description="The industry cards. Slugs link to detail pages, so they're locked — edit content and reorder only."
-      >
-        <div className="space-y-4">
-          {data.industries.map((it, i) => (
-            <div key={it.slug} className="border border-line bg-cream/30 p-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-muted">/industries/{it.slug}</span>
-                <RowControls index={i} count={data.industries.length} onMove={(to) => upd(["industries"], moveItem(data.industries, i, to))} />
-              </div>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <IconSelect value={it.icon} onChange={(v) => upd(["industries", i, "icon"], v)} />
-                {Text("Title", ["industries", i, "title"])}
-              </div>
-              <div className="mt-3">{Area("Description", ["industries", i, "description"])}</div>
-            </div>
-          ))}
-        </div>
-      </Card>
-
-      <Card id="sec-why" title="Why MMR — reasons" description="The reason-to-choose cards. Add, remove and reorder freely.">
+      <Card id="sec-why" title="Why us — reasons" description="The reason-to-choose cards. Add, remove and reorder freely.">
         <div className="space-y-4">
           {data.whyPoints.map((w, i) => (
             <div key={i} className="border border-line bg-cream/30 p-4">
@@ -141,29 +117,7 @@ function SectionsFields({ data, upd }: { data: SectionsData; upd: (path: Path, v
         <AddButton label="Add reason" onClick={() => upd(["whyPoints"], [...data.whyPoints, { icon: "Award", title: "", description: "" }])} />
       </Card>
 
-      <Card
-        id="sec-approach"
-        title="Approach — value props"
-        description="The three illustrated cards in the Approach section. Slugs link to the “how we help” pages, so they're locked — edit content and reorder only."
-      >
-        <div className="space-y-4">
-          {data.valueProps.map((v, i) => (
-            <div key={v.slug} className="border border-line bg-cream/30 p-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs text-muted">/how-we-help/{v.slug}</span>
-                <RowControls index={i} count={data.valueProps.length} onMove={(to) => upd(["valueProps"], moveItem(data.valueProps, i, to))} />
-              </div>
-              <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <ArtSelect value={v.art} onChange={(val) => upd(["valueProps", i, "art"], val)} />
-                {Text("Title", ["valueProps", i, "title"])}
-              </div>
-              <div className="mt-3">{Area("Description", ["valueProps", i, "description"])}</div>
-            </div>
-          ))}
-        </div>
-      </Card>
-
-      <Card id="sec-process" title="How we work — steps" description="The numbered process steps. Add, remove and reorder freely.">
+      <Card id="sec-process" title="Process — steps" description="The numbered process steps. Add, remove and reorder freely.">
         <div className="space-y-4">
           {data.processSteps.map((p, i) => (
             <div key={i} className="border border-line bg-cream/30 p-4">

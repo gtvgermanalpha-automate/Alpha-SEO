@@ -68,10 +68,8 @@ export type SiteCopy = {
     badge: string;
   };
   trustedBy: { eyebrow: string };
-  approach: { heading: Heading };
   services: { heading: Heading; ctaText: string; ctaButton: string };
   why: { heading: Heading; ctaText: string; ctaButton: string };
-  industries: { heading: Heading };
   process: { heading: Heading };
   faq: { heading: Heading; stillHaveTitle: string; stillHaveText: string; stillHaveCta: string };
   cta: { eyebrow: string; title: string; subtitle: string; primaryCta: string };
@@ -91,8 +89,6 @@ export type SiteCopy = {
   };
   pages: {
     services: PageMeta;
-    whyMmr: PageMeta;
-    industries: PageMeta;
     howWeWork: PageMeta;
     faq: PageMeta;
     contact: PageMeta;
@@ -189,7 +185,7 @@ export function validateSettings(value: unknown): ValidationResult {
 
 /* ---------- copy.json ---------- */
 
-const PAGE_KEYS = ["services", "whyMmr", "industries", "howWeWork", "faq", "contact"] as const;
+const PAGE_KEYS = ["services", "howWeWork", "faq", "contact"] as const;
 
 export function validateCopy(value: unknown): ValidationResult {
   if (!isObj(value)) return { ok: false, errors: ["copy: must be an object"] };
@@ -213,8 +209,6 @@ export function validateCopy(value: unknown): ValidationResult {
 
   reqStr(value, "trustedBy.eyebrow", errors);
 
-  reqHeading(value, "approach.heading", errors);
-
   reqHeading(value, "services.heading", errors);
   reqStr(value, "services.ctaText", errors);
   reqStr(value, "services.ctaButton", errors);
@@ -222,8 +216,6 @@ export function validateCopy(value: unknown): ValidationResult {
   reqHeading(value, "why.heading", errors);
   reqStr(value, "why.ctaText", errors);
   reqStr(value, "why.ctaButton", errors);
-
-  reqHeading(value, "industries.heading", errors);
 
   reqHeading(value, "process.heading", errors);
 

@@ -1,7 +1,7 @@
 /**
  * Shape + runtime validation for the editable section item lists (Phase 3):
- *   sections.json → services, industries, whyPoints, valueProps, processSteps,
- *                   faqs, partners, businessTypes.
+ *   sections.json → services, whyPoints, processSteps, faqs, partners,
+ *                   businessTypes.
  *
  * Icons and illustration keys are validated against the live allow-lists
  * (Icon.tsx / SpotArt.tsx) — a card with an unknown icon would crash the page
@@ -10,16 +10,14 @@
  * Types are reused from content.ts via a type-only import (erased at runtime,
  * and content.ts does not import this module back — so there is no cycle).
  */
-import type { Service, Industry, WhyPoint, ValueProp, ProcessStep, Faq } from "@/lib/content";
+import type { Service, WhyPoint, ProcessStep, Faq } from "@/lib/content";
 import { isIconName } from "@/components/ui/Icon";
 import { isArtName } from "@/components/ui/SpotArt";
 import { lengthError } from "./limits";
 
 export type SectionsData = {
   services: Service[];
-  industries: Industry[];
   whyPoints: WhyPoint[];
-  valueProps: ValueProp[];
   processSteps: ProcessStep[];
   faqs: Faq[];
   partners: string[];
@@ -91,24 +89,10 @@ export function validateSections(value: unknown): ValidationResult {
     listLen(it.points, "points", `${l}.points`, errors);
   });
 
-  checkList(value.industries, "industries", errors, (it, l) => {
-    reqStr(it, "slug", l, errors);
-    reqStr(it, "title", l, errors);
-    reqStr(it, "description", l, errors);
-    reqIcon(it, l, errors);
-  });
-
   checkList(value.whyPoints, "whyPoints", errors, (it, l) => {
     reqStr(it, "title", l, errors);
     reqStr(it, "description", l, errors);
     reqIcon(it, l, errors);
-  });
-
-  checkList(value.valueProps, "valueProps", errors, (it, l) => {
-    reqStr(it, "slug", l, errors);
-    reqStr(it, "title", l, errors);
-    reqStr(it, "description", l, errors);
-    reqArt(it, l, errors);
   });
 
   checkList(value.processSteps, "processSteps", errors, (it, l) => {

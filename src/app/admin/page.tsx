@@ -2,9 +2,6 @@ import Link from "next/link";
 import { Search, Type, LayoutGrid, Menu as MenuIcon, Newspaper, Briefcase, Users, Star, FileText, Settings } from "lucide-react";
 import { githubConfigured } from "@/lib/github";
 import servicesRaw from "@/content/services.json";
-import industries1Raw from "@/content/industries-1.json";
-import industries2Raw from "@/content/industries-2.json";
-import approachRaw from "@/content/approach.json";
 import blogRaw from "@/content/blog.json";
 import caseStudiesRaw from "@/content/case-studies.json";
 import { NewEntryButton } from "@/components/admin/NewBlogButton";
@@ -15,9 +12,6 @@ type ListItem = { slug: string; title: string };
 
 const COLLECTIONS: { file: string; label: string; pages: ListItem[]; anchor?: string }[] = [
   { file: "services", label: "Services", pages: servicesRaw as unknown as ListItem[] },
-  { file: "industries-1", label: "Industries — set A", pages: industries1Raw as unknown as ListItem[] },
-  { file: "industries-2", label: "Industries — set B", pages: industries2Raw as unknown as ListItem[] },
-  { file: "approach", label: "How we help", pages: approachRaw as unknown as ListItem[] },
   { file: "blog", label: "Blog", pages: blogRaw as unknown as ListItem[], anchor: "blog" },
   { file: "case-studies", label: "Case studies", pages: caseStudiesRaw as unknown as ListItem[], anchor: "case-studies" },
 ];
@@ -28,7 +22,7 @@ const csCount = (caseStudiesRaw as unknown[]).length;
 const CARDS = [
   { label: "SEO & search", href: "/admin/seo", icon: Search, sub: "Titles, descriptions, indexing, social" },
   { label: "Page text", href: "/admin/copy", icon: Type, sub: "Headings & copy on every page" },
-  { label: "Sections", href: "/admin/sections", icon: LayoutGrid, sub: "Services, industries, FAQs…" },
+  { label: "Sections", href: "/admin/sections", icon: LayoutGrid, sub: "Services, FAQs…" },
   { label: "Navigation", href: "/admin/nav", icon: MenuIcon, sub: "Menus & mega-menus" },
   { label: "Blog", href: "#blog", icon: Newspaper, sub: `${blogCount} post${blogCount === 1 ? "" : "s"}` },
   { label: "Case studies", href: "#case-studies", icon: Briefcase, sub: `${csCount} case stud${csCount === 1 ? "y" : "ies"}` },

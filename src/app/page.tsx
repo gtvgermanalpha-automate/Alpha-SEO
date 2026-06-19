@@ -6,7 +6,6 @@ import { HeroPremium } from "@/components/HeroPremium";
 import { TrustedBy } from "@/components/TrustedBy";
 import { Services } from "@/components/Services";
 import { WhyChoose } from "@/components/WhyChoose";
-import { Industries } from "@/components/Industries";
 import { HowWeWork } from "@/components/HowWeWork";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
@@ -38,7 +37,6 @@ export default function Home() {
       <TrustedBy />
       <Services />
       <WhyChoose />
-      <Industries />
       <HowWeWork />
       <Testimonials />
       <FAQ />

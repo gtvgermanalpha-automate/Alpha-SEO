@@ -10,10 +10,8 @@ import { Card, EditorHeader, LoadGate, type Path, SaveBtn, setIn, StatusBanners,
 const SECTIONS = [
   { id: "sec-hero", label: "Hero" },
   { id: "sec-trustedby", label: "Trusted by" },
-  { id: "sec-approach", label: "Approach" },
   { id: "sec-services", label: "Services" },
-  { id: "sec-why", label: "Why MMR" },
-  { id: "sec-industries", label: "Industries" },
+  { id: "sec-why", label: "Why us" },
   { id: "sec-process", label: "Process" },
   { id: "sec-faq", label: "FAQ" },
   { id: "sec-cta", label: "CTA band" },
@@ -24,8 +22,6 @@ const SECTIONS = [
 
 const PAGE_ENTRIES: { key: keyof SiteCopy["pages"]; label: string }[] = [
   { key: "services", label: "Services page" },
-  { key: "whyMmr", label: "Why MMR page" },
-  { key: "industries", label: "Industries page" },
   { key: "howWeWork", label: "How We Work page" },
   { key: "faq", label: "FAQ page" },
   { key: "contact", label: "Contact page" },
@@ -142,24 +138,16 @@ function CopyFields({ data, upd }: { data: SiteCopy; upd: (path: Path, value: un
         {Text("Eyebrow", ["trustedBy", "eyebrow"])}
       </Card>
 
-      <Card id="sec-approach" title="Approach" description='The "how we help" value-prop section.'>
-        {heading(["approach", "heading"])}
-      </Card>
-
       <Card id="sec-services" title="Services" description="The services section heading + its call-to-action.">
         {heading(["services", "heading"])}
         {Text("CTA text", ["services", "ctaText"])}
         {Text("CTA button", ["services", "ctaButton"])}
       </Card>
 
-      <Card id="sec-why" title="Why MMR" description="The reasons-to-choose section heading + its call-to-action.">
+      <Card id="sec-why" title="Why us" description="The reasons-to-choose section heading + its call-to-action.">
         {heading(["why", "heading"])}
         {Text("CTA text", ["why", "ctaText"])}
         {Text("CTA button", ["why", "ctaButton"])}
-      </Card>
-
-      <Card id="sec-industries" title="Industries" description="The industries section heading.">
-        {heading(["industries", "heading"])}
       </Card>
 
       <Card id="sec-process" title="Process" description='The "how we work" steps section heading.'>

@@ -13,10 +13,7 @@ import {
 const routes = [
   "",
   "/services",
-  "/why-mmr",
-  "/industries",
   "/how-we-work",
-  "/how-we-help",
   "/case-studies",
   "/team",
   "/blog",

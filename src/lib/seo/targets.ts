@@ -19,7 +19,6 @@ import {
   caseStudyHref,
   type DetailPage,
 } from "@/lib/content";
-import industries1Raw from "@/content/industries-1.json";
 
 export type SeoTarget = {
   route: string;
@@ -35,19 +34,13 @@ export type SeoTarget = {
 /** Title template applied site-wide ("%s | MMR Accountants"). */
 export const brandTitle = (t: string) => `${t} | ${siteConfig.name}`;
 
-const industries1Slugs = new Set((industries1Raw as { slug: string }[]).map((p) => p.slug));
-
 /** Which list-collection file a detail page's content lives in (for editor deep-links). */
-export function detailFileFor(p: DetailPage): string {
-  if (p.kind === "service") return "services";
-  if (p.kind === "approach") return "approach";
-  return industries1Slugs.has(p.slug) ? "industries-1" : "industries-2";
+export function detailFileFor(_p: DetailPage): string {
+  return "services";
 }
 
 const GROUP_BY_KIND: Record<DetailPage["kind"], string> = {
   service: "Services",
-  industry: "Industries",
-  approach: "How we help",
 };
 
 // Static-page defaults. Copy-page values come from copy.json; the three pages
@@ -62,18 +55,7 @@ const staticTargets: SeoTarget[] = [
     editorHref: "/admin/copy",
   },
   { route: "/services", label: "Services", group: "Pages", defaultTitle: brandTitle(copy.pages.services.metaTitle), defaultDescription: copy.pages.services.metaDescription, editorHref: "/admin/copy" },
-  { route: "/why-mmr", label: "Why MMR", group: "Pages", defaultTitle: brandTitle(copy.pages.whyMmr.metaTitle), defaultDescription: copy.pages.whyMmr.metaDescription, editorHref: "/admin/copy" },
-  { route: "/industries", label: "Industries", group: "Pages", defaultTitle: brandTitle(copy.pages.industries.metaTitle), defaultDescription: copy.pages.industries.metaDescription, editorHref: "/admin/copy" },
   { route: "/how-we-work", label: "How We Work", group: "Pages", defaultTitle: brandTitle(copy.pages.howWeWork.metaTitle), defaultDescription: copy.pages.howWeWork.metaDescription, editorHref: "/admin/copy" },
-  {
-    route: "/how-we-help",
-    label: "How We Help",
-    group: "Pages",
-    defaultTitle: brandTitle("How We Help"),
-    defaultDescription:
-      "More than compliance — proactive tax planning, cloud-first accounting and an advisory partnership that turns your numbers into confident decisions.",
-    editorHref: null,
-  },
   {
     route: "/blog",
     label: "News & Blog",

@@ -14,8 +14,6 @@ import { detailHref, type DetailKind, type DetailPage } from "@/lib/detailConten
 
 const SECTION_META: Record<DetailKind, { label: string; href: string }> = {
   service: { label: "Services", href: "/services" },
-  industry: { label: "Industries", href: "/industries" },
-  approach: { label: "How we help", href: "/how-we-help" },
 };
 
 /** Map every detail-page slug to a recoloured header illustration
