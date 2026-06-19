@@ -6,7 +6,7 @@
 
 export function DotCluster({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 60 60" aria-hidden className={className} fill="#1d66ba">
+    <svg viewBox="0 0 60 60" aria-hidden className={className} fill="#8294c2">
       {Array.from({ length: 5 }).flatMap((_, r) =>
         Array.from({ length: 5 }).map((_, c) => (
           <circle key={`${r}-${c}`} cx={6 + c * 12} cy={6 + r * 12} r="2" fillOpacity={0.45 - (r + c) * 0.02} />
@@ -22,7 +22,7 @@ export function Underline({ className = "" }: { className?: string }) {
     <svg viewBox="0 0 200 12" aria-hidden className={className} fill="none" preserveAspectRatio="none">
       <path
         d="M2 8C40 3 70 3 100 6c30 3 60 3 98-2"
-        stroke="#1d66ba"
+        stroke="#c0590a"
         strokeWidth="3"
         strokeLinecap="round"
       />
@@ -33,7 +33,7 @@ export function Underline({ className = "" }: { className?: string }) {
 export function RingAccent({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 80 80" aria-hidden className={className} fill="none">
-      <circle cx="40" cy="40" r="34" stroke="#1d66ba" strokeOpacity="0.35" strokeWidth="2" strokeDasharray="3 9" />
+      <circle cx="40" cy="40" r="34" stroke="#8294c2" strokeOpacity="0.35" strokeWidth="2" strokeDasharray="3 9" />
     </svg>
   );
 }
@@ -41,7 +41,7 @@ export function RingAccent({ className = "" }: { className?: string }) {
 export function PlusMark({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden className={className} fill="none">
-      <path d="M12 4v16M4 12h16" stroke="#1d66ba" strokeWidth="2.4" strokeLinecap="round" />
+      <path d="M12 4v16M4 12h16" stroke="#8294c2" strokeWidth="2.4" strokeLinecap="round" />
     </svg>
   );
 }

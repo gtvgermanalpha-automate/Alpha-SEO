@@ -165,9 +165,9 @@ h4 {
   background: radial-gradient(60% 55% at 70% 30%, rgba(249, 133, 19, 0.12), transparent 70%);
 }
 
-/* Deep brand-blue surfaces (hero · CTA band · footer), matching the blue hero.
-   `.bg-brand-blue` is the vivid hero gradient; `.bg-brand-blue-deep` is a darker
-   variant for the footer so light text keeps enough contrast. */
+/* Aster brand surfaces (hero · CTA band · footer). Both are LIGHT, so content
+   on them carries INK text (M4 contrast inversion). `.bg-brand-blue` is the
+   hero/CTA gradient; `.bg-brand-blue-deep` is a slightly deeper footer variant. */
 .bg-brand-blue {
   background-color: #9bacd8;
   background-image: radial-gradient(85% 120% at 12% 0%, #b6c3e4 0%, #9bacd8 48%, #8a9ccb 100%);

@@ -12,14 +12,15 @@ const sizes = {
 };
 
 const variants: Record<Variant, string> = {
-  // Solid orange fill, white text — primary CTAs (darkens on hover).
-  primary: "bg-bronze text-white hover:bg-bronze-600",
+  // Solid orange fill, ink text — primary CTAs (darkens on hover). White on
+  // Habañero fails AA, so orange CTAs carry ink text.
+  primary: "bg-bronze text-ink hover:bg-bronze-600",
   // Solid orange fill — the prominent CTA.
-  bronze: "bg-bronze text-white hover:bg-bronze-600",
-  // Orange border + white fill + orange text; fills orange on hover — secondary.
-  ghost: "border border-bronze bg-white text-ink hover:bg-bronze hover:text-white",
-  // Secondary on the hero / dark surfaces: same white-fill + orange-border treatment.
-  light: "border border-bronze bg-white text-ink hover:bg-bronze hover:text-white",
+  bronze: "bg-bronze text-ink hover:bg-bronze-600",
+  // Orange border + white fill + ink text; fills orange (ink text) on hover — secondary.
+  ghost: "border border-bronze bg-white text-ink hover:bg-bronze hover:text-ink",
+  // Secondary on the hero / aster surfaces: same white-fill + orange-border treatment.
+  light: "border border-bronze bg-white text-ink hover:bg-bronze hover:text-ink",
 };
 
 type ButtonLinkProps = ComponentProps<"a"> & {

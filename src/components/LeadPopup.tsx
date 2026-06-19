@@ -105,22 +105,22 @@ export function LeadPopup() {
               type="button"
               onClick={close}
               aria-label="Close"
-              className="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full text-white/80 transition-colors hover:bg-white/15 hover:text-white"
+              className="absolute right-3 top-3 z-10 grid h-8 w-8 place-items-center rounded-full text-ink/70 transition-colors hover:bg-ink/10 hover:text-ink"
             >
               <X className="h-4 w-4" />
             </button>
 
             {/* Header band */}
-            <div className="relative overflow-hidden bg-brand-blue-deep px-7 pb-7 pt-8 text-white">
+            <div className="relative overflow-hidden bg-brand-blue-deep px-7 pb-7 pt-8 text-ink">
               <div aria-hidden className="pointer-events-none absolute inset-0 bg-brand-dotgrid opacity-50" />
               <div className="relative">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-white/10 ring-1 ring-white/20">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-white text-accent shadow-sm ring-1 ring-ink/10">
                   <PhoneCall className="h-5 w-5" strokeWidth={1.7} aria-hidden />
                 </span>
                 <h2 id="lead-popup-title" className="mt-4 font-display text-2xl font-bold leading-tight">
                   Speak to an accountant
                 </h2>
-                <p className="mt-1.5 text-sm text-white/75">
+                <p className="mt-1.5 text-sm text-ink/80">
                   Leave your details and a qualified accountant will call you back within one business day — no obligation.
                 </p>
               </div>
@@ -152,7 +152,7 @@ export function LeadPopup() {
                   <button
                     type="submit"
                     disabled={status === "submitting"}
-                    className="flex w-full items-center justify-center gap-2 rounded-md bg-bronze px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-white transition-colors hover:bg-bronze-600 disabled:opacity-70"
+                    className="flex w-full items-center justify-center gap-2 rounded-md bg-bronze px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-ink transition-colors hover:bg-bronze-600 disabled:opacity-70"
                   >
                     {status === "submitting" ? (
                       <>

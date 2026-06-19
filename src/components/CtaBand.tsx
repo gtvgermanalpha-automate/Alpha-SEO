@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { DotCluster, RingAccent } from "@/components/ui/Decorations";
 import { copy, siteConfig } from "@/lib/content";
 
-/** High-contrast conversion band — a blue panel with continuously animated glow + decorations. */
+/** High-contrast conversion band — an aster panel with continuously animated glow + decorations. */
 export function CtaBand() {
   const reduce = useReducedMotion();
   const phoneHref = `tel:${siteConfig.contact.phone.replace(/\s/g, "")}`;
@@ -16,25 +16,25 @@ export function CtaBand() {
     <section className="bg-white py-20 sm:py-28">
       <Container>
         <div className="relative overflow-hidden rounded-3xl bg-brand-blue px-6 py-16 text-center sm:px-12 lg:py-20">
-          {/* Blue-surface decorations — matches the hero (dot-grid, rings, glows, sheen) */}
+          {/* Aster-surface decorations — matches the hero (dot-grid, rings, glows, sheen) */}
           <div aria-hidden className="pointer-events-none absolute inset-0">
-            {/* faint white dot-grid */}
+            {/* faint ink dot-grid */}
             <div className="absolute inset-0 bg-brand-dotgrid" />
             {/* concentric rings */}
-            <div className="absolute -right-24 -top-28 h-[26rem] w-[26rem] rounded-full border border-white/10" />
-            <div className="absolute -left-16 -bottom-24 h-72 w-72 rounded-full border border-white/[0.08]" />
+            <div className="absolute -right-24 -top-28 h-[26rem] w-[26rem] rounded-full border border-ink/10" />
+            <div className="absolute -left-16 -bottom-24 h-72 w-72 rounded-full border border-ink/[0.08]" />
             {/* Static glows — animating large blur surfaces is too GPU-heavy */}
-            <div className="absolute -left-20 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-            <div className="absolute -bottom-28 -right-16 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+            <div className="absolute -left-20 -top-24 h-80 w-80 rounded-full bg-ink/5 blur-3xl" />
+            <div className="absolute -bottom-28 -right-16 h-96 w-96 rounded-full bg-ink/5 blur-3xl" />
             {/* Opacity-only breathing glow (compositor-cheap — no re-rasterising the blur) */}
             <motion.div
-              className="absolute -top-10 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
+              className="absolute -top-10 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-white/40 blur-3xl"
               animate={reduce ? {} : { opacity: [0.4, 0.75, 0.4] }}
               transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
             />
             {/* Sweeping sheen — a thin, un-blurred gradient (cheap) */}
             <motion.div
-              className="absolute inset-y-0 -left-1/3 w-1/3 skew-x-12 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent"
+              className="absolute inset-y-0 -left-1/3 w-1/3 skew-x-12 bg-gradient-to-r from-transparent via-white/30 to-transparent"
               animate={reduce ? {} : { x: ["0%", "420%"] }}
               transition={{ duration: 6, repeat: Infinity, ease: "linear", repeatDelay: 3.5 }}
             />
@@ -59,15 +59,15 @@ export function CtaBand() {
           </motion.div>
 
           <Reveal className="relative mx-auto flex max-w-2xl flex-col items-center">
-            <span className="flex items-center gap-3 text-blue-300">
-              <span className="h-px w-8 bg-blue-300/70" aria-hidden />
+            <span className="flex items-center gap-3 text-accent">
+              <span className="h-px w-8 bg-accent/50" aria-hidden />
               <span className="eyebrow">{copy.cta.eyebrow}</span>
-              <span className="h-px w-8 bg-blue-300/70" aria-hidden />
+              <span className="h-px w-8 bg-accent/50" aria-hidden />
             </span>
-            <h2 className="mt-5 text-3xl text-white sm:text-4xl lg:text-[2.9rem] lg:leading-[1.1]">
+            <h2 className="mt-5 text-3xl text-ink sm:text-4xl lg:text-[2.9rem] lg:leading-[1.1]">
               {copy.cta.title}
             </h2>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{copy.cta.subtitle}</p>
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80">{copy.cta.subtitle}</p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <ButtonLink href="/contact" variant="bronze" size="lg" withArrow>
                 {copy.cta.primaryCta}

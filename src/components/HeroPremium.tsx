@@ -19,33 +19,20 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-navy pt-32 pb-28 text-white sm:pt-36 lg:pt-44 lg:pb-36"
+      className="relative overflow-hidden bg-brand-blue pt-32 pb-28 text-ink sm:pt-36 lg:pt-44 lg:pb-36"
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 5.5rem))" }}
     >
-      {/* Navy → blue gradient + soft glows + faint dot grid */}
+      {/* Aster brand surface + faint ink dot-grid, rings & soft glows */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        {/* base blue gradient */}
-        <div
-          className="absolute inset-0"
-          style={{ backgroundImage: "radial-gradient(85% 120% at 12% 0%, #2f86d8 0%, #1d66ba 46%, #134d92 100%)" }}
-        />
-        {/* subtle white dot-grid pattern, faded toward the edges */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-            WebkitMaskImage: "radial-gradient(ellipse 95% 85% at 50% 35%, #000 25%, transparent 100%)",
-            maskImage: "radial-gradient(ellipse 95% 85% at 50% 35%, #000 25%, transparent 100%)",
-          }}
-        />
+        {/* faint dot-grid pattern, faded toward the edges */}
+        <div className="absolute inset-0 bg-brand-dotgrid" />
         {/* abstract concentric rings (decorative geometry, behind the content) */}
-        <div className="absolute -right-28 -top-24 h-[30rem] w-[30rem] rounded-full border border-white/10" />
-        <div className="absolute -right-10 top-16 h-72 w-72 rounded-full border border-white/[0.08]" />
-        <div className="absolute -left-20 bottom-4 h-64 w-64 rounded-full border border-white/[0.07]" />
+        <div className="absolute -right-28 -top-24 h-[30rem] w-[30rem] rounded-full border border-ink/10" />
+        <div className="absolute -right-10 top-16 h-72 w-72 rounded-full border border-ink/[0.08]" />
+        <div className="absolute -left-20 bottom-4 h-64 w-64 rounded-full border border-ink/[0.07]" />
         {/* soft glows */}
-        <div className="absolute -right-32 -top-28 h-[34rem] w-[34rem] rounded-full bg-white/10 blur-3xl motion-safe:animate-[floatY_15s_ease-in-out_infinite]" />
-        <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -right-32 -top-28 h-[34rem] w-[34rem] rounded-full bg-ink/5 blur-3xl motion-safe:animate-[floatY_15s_ease-in-out_infinite]" />
+        <div className="absolute -left-24 bottom-0 h-80 w-80 rounded-full bg-ink/5 blur-3xl" />
       </div>
 
       <Container className="relative">
@@ -59,13 +46,13 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
           >
             <motion.h1
               variants={item}
-              className="text-[2.7rem] leading-[1.02] text-white sm:text-[3.3rem] lg:text-[4rem] xl:text-[4.7rem]"
+              className="text-[2.7rem] leading-[1.02] text-ink sm:text-[3.3rem] lg:text-[4rem] xl:text-[4.7rem]"
             >
               {copy.hero.headlineLead}{" "}
               <span>{copy.hero.headlineAccent}</span>
             </motion.h1>
 
-            <motion.p variants={item} className="mt-6 max-w-xl text-lg leading-relaxed text-white/75">
+            <motion.p variants={item} className="mt-6 max-w-xl text-lg leading-relaxed text-ink/80">
               {copy.hero.paragraph}
             </motion.p>
 
@@ -91,8 +78,8 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
           >
             {cutoutSrc ? (
               <div className="relative">
-                {/* soft glow so the cut-out sits naturally on the navy */}
-                <div aria-hidden className="absolute inset-x-6 bottom-2 top-8 rounded-[45%] bg-blue/25 blur-3xl" />
+                {/* soft glow so the cut-out sits naturally on the aster */}
+                <div aria-hidden className="absolute inset-x-6 bottom-2 top-8 rounded-[45%] bg-white/40 blur-3xl" />
                 <Image
                   src={cutoutSrc}
                   alt="MMR chartered accountant at work"
@@ -110,7 +97,7 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
                   aria-hidden
                   className="absolute -bottom-4 -right-4 hidden h-full w-full rounded-3xl border border-accent/40 sm:block"
                 />
-                <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl shadow-navy-700/50 ring-1 ring-white/10">
+                <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl shadow-navy-700/20 ring-1 ring-ink/5">
                   <Image
                     src="/hero.jpg"
                     alt="An accountant reviewing financial dashboards at their desk"
@@ -125,15 +112,15 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
             )}
           </motion.div>
 
-          {/* C — review badges (Google + ACCA): beneath the picture on mobile,
+          {/* C — review badges (Google + trust): beneath the picture on mobile,
               under the copy on desktop. */}
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 16 }}
             animate={reduce ? {} : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.5 }}
-            className="flex flex-wrap items-center gap-x-6 gap-y-4 lg:col-start-1 lg:row-start-2 lg:border-t lg:border-white/15 lg:pt-7"
+            className="flex flex-wrap items-center gap-x-6 gap-y-4 lg:col-start-1 lg:row-start-2 lg:border-t lg:border-ink/15 lg:pt-7"
           >
-            {/* Google reviews — white chip behind the G only; text on the blue */}
+            {/* Google reviews — white chip behind the G, text on the aster */}
             <a
               href={googleReviewsUrl}
               target="_blank"
@@ -141,25 +128,25 @@ export function HeroPremium({ cutoutSrc = null }: { cutoutSrc?: string | null })
               aria-label="Read our reviews on Google"
               className="inline-flex items-center gap-2.5 transition-opacity hover:opacity-90"
             >
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white shadow-lg shadow-navy-700/30">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white shadow-lg shadow-navy-700/15">
                 <GoogleG className="h-6 w-6" />
               </span>
               <div className="text-left">
-                <p className="text-[0.78rem] font-semibold leading-none text-white">Google Reviews</p>
+                <p className="text-[0.78rem] font-semibold leading-none text-ink">Google Reviews</p>
                 <div className="mt-1.5 flex items-center gap-1.5">
-                  <span className="text-sm font-bold leading-none text-white">{reviewsMeta.rating.score}</span>
+                  <span className="text-sm font-bold leading-none text-ink">{reviewsMeta.rating.score}</span>
                   <span className="flex items-center gap-0.5" aria-hidden>
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-3.5 w-3.5 fill-[#fbbc05] text-[#fbbc05]" />
+                      <Star key={i} className="h-3.5 w-3.5 fill-[#f59e0b] text-[#f59e0b]" />
                     ))}
                   </span>
-                  <span className="text-xs text-white/70">({reviewsMeta.rating.count})</span>
+                  <span className="text-xs text-ink/60">({reviewsMeta.rating.count})</span>
                 </div>
               </div>
             </a>
-            <span className="hidden h-10 w-px bg-white/20 sm:block" aria-hidden />
-            <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
-              <ShieldCheck className="h-5 w-5 text-blue-300" strokeWidth={1.75} aria-hidden />
+            <span className="hidden h-10 w-px bg-ink/20 sm:block" aria-hidden />
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-ink">
+              <ShieldCheck className="h-5 w-5 text-accent" strokeWidth={1.75} aria-hidden />
               {copy.hero.badge}
             </span>
           </motion.div>
