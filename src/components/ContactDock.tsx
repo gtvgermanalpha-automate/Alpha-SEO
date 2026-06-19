@@ -1,18 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Headset, MessageCircle, Phone, X } from "lucide-react";
+import { Headset, Phone, X } from "lucide-react";
 import { siteConfig } from "@/lib/content";
-import { ChatPanel } from "@/components/ChatPanel";
 
 /**
- * Floating contact speed-dial (bottom-right). Fans out a bronze "Call us" and
- * charcoal "Live chat" on hover (desktop) or tap (touch). Live chat opens the
- * scripted assistant panel.
+ * Floating contact speed-dial (bottom-right). Fans out a "Call us" action on
+ * hover (desktop) or tap (touch).
  */
 export function ContactDock() {
   const [dockOpen, setDockOpen] = useState(false);
-  const [chatOpen, setChatOpen] = useState(false);
   const phoneHref = `tel:${siteConfig.contact.phone.replace(/\s/g, "")}`;
 
   const fanVisible = dockOpen
@@ -26,23 +23,6 @@ export function ContactDock() {
         <div
           className={`mb-3.5 flex flex-col items-end gap-3.5 transition-all duration-300 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${fanVisible}`}
         >
-          {/* Live chat */}
-          <button
-            type="button"
-            onClick={() => {
-              setChatOpen(true);
-              setDockOpen(false);
-            }}
-            className="group/item flex items-center gap-2.5"
-          >
-            <span className="rounded-full border border-line bg-white px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-ink shadow-md">
-              Live chat
-            </span>
-            <span className="grid h-12 w-12 place-items-center rounded-full bg-ink text-white shadow-lg shadow-ink/25 ring-2 ring-white transition-colors duration-300 group-hover/item:bg-ink-soft">
-              <MessageCircle className="h-5 w-5" strokeWidth={1.7} aria-hidden />
-            </span>
-          </button>
-
           {/* Call us — primary, bronze */}
           <a href={phoneHref} className="group/item flex items-center gap-2.5">
             <span className="rounded-full border border-bronze/30 bg-white px-3.5 py-1.5 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-bronze shadow-md">
@@ -74,8 +54,6 @@ export function ContactDock() {
           </button>
         </div>
       </div>
-
-      <ChatPanel open={chatOpen} onClose={() => setChatOpen(false)} />
     </>
   );
 }
