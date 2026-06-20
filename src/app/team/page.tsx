@@ -3,6 +3,7 @@ import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
 import { CustomSchema } from "@/components/CustomSchema";
+import { Icon, type IconName } from "@/components/ui/Icon";
 import { team } from "@/lib/content";
 
 export const metadata: Metadata = buildMetadata("/team", {
@@ -20,10 +21,12 @@ const GUARANTEES = [
   "NDA-ready from day one",
 ];
 
+const DISCIPLINE_ICONS: IconName[] = ["Settings2", "BookOpen", "Award", "MapPin", "MessagesSquare", "TrendingUp"];
+
 export default function TeamPage() {
   return (
     <>
-      <PageHero crumb="About" title={team.heading} subtitle={team.intro} />
+      <PageHero crumb="About" title={team.heading} subtitle={team.intro} image="/hero-team.jpg" imageAlt="The Alpha Digital Solutions team at work" />
 
       <section className="section">
         <div className="container">
@@ -34,6 +37,7 @@ export default function TeamPage() {
           <div className="values-grid values-grid-4">
             {team.members.map((m, i) => (
               <div className="value-card" key={`${m.name}-${i}`}>
+                <div className="value-card-icon"><Icon name={DISCIPLINE_ICONS[i % DISCIPLINE_ICONS.length]} /></div>
                 {m.role ? <span className="slc-pillar">{m.role}</span> : null}
                 <h3>{m.name}</h3>
                 <p>{m.bio}</p>

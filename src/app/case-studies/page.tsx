@@ -17,6 +17,8 @@ export default function CaseStudiesPage() {
     <>
       <PageHero
         crumb="Case Studies"
+        image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=720&q=70&auto=format&fit=crop"
+        imageAlt="Organic growth results on a dashboard"
         title={<>Measurable SEO outcomes, <span className="highlight">documented</span>.</>}
         subtitle="A cross-section of engagements across SaaS, ecommerce, fintech, publishing and local services — numbers verified by our clients' analytics, not ours."
       />

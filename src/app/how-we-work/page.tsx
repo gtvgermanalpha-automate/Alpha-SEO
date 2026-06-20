@@ -15,7 +15,13 @@ export const metadata: Metadata = buildMetadata("/how-we-work", {
 export default function HowWeWorkPage() {
   return (
     <>
-      <PageHero crumb={page.crumb} title={page.title} subtitle={page.subtitle} illus="growth" />
+      <PageHero
+        crumb={page.crumb}
+        title={page.title}
+        subtitle={page.subtitle}
+        image="/hero-architecture.jpg"
+        imageAlt="A structured, methodical SEO process"
+      />
       <HowWeWork />
       <CtaBand />
     </>

@@ -14,7 +14,13 @@ export const metadata: Metadata = buildMetadata("/contact", {
 export default function ContactPage() {
   return (
     <>
-      <PageHero crumb={page.crumb} title={page.title} subtitle={page.subtitle} illus="contact" />
+      <PageHero
+        crumb={page.crumb}
+        title={page.title}
+        subtitle={page.subtitle}
+        image="/hero.jpg"
+        imageAlt="Talk to a senior SEO strategist"
+      />
       <Contact />
     </>
   );

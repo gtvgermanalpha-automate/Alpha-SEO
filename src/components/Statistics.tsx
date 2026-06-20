@@ -9,7 +9,7 @@ const STATS = [
 
 export function Statistics() {
   return (
-    <section className="section section-dark">
+    <section className="section">
       <div className="container">
         <div className="section-head" style={{ textAlign: "center", marginInline: "auto" }}>
           <span className="eyebrow">By the numbers</span>

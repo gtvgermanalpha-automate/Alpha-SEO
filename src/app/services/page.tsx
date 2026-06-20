@@ -15,7 +15,13 @@ export const metadata: Metadata = buildMetadata("/services", {
 export default function ServicesPage() {
   return (
     <>
-      <PageHero crumb={page.crumb} title={page.title} subtitle={page.subtitle} illus="finance" />
+      <PageHero
+        crumb={page.crumb}
+        title={page.title}
+        subtitle={page.subtitle}
+        image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=720&q=70&auto=format&fit=crop"
+        imageAlt="SEO analytics dashboard"
+      />
       <ServicesDetailed />
       <CtaBand />
     </>

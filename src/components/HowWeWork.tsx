@@ -16,6 +16,7 @@ export function HowWeWork() {
                   <h3>{s.title}</h3>
                   <p>{s.description}</p>
                 </div>
+                <div className="process-row-icon" aria-hidden="true"><Icon name={s.icon as IconName} /></div>
               </div>
             ))}
           </div>

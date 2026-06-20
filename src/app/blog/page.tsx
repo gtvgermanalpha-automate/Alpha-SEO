@@ -17,6 +17,8 @@ export default function BlogIndexPage() {
     <>
       <PageHero
         crumb="Insights"
+        image="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=720&q=70&auto=format&fit=crop"
+        imageAlt="Practitioner-led SEO writing"
         title={<>The <span className="highlight">SEO journal</span></>}
         subtitle="Practitioner-led writing on technical SEO, content strategy, link building and the economics of organic growth — by the team that does the work."
       />
