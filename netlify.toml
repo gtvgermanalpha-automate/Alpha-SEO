@@ -1,6 +1,8 @@
-# Netlify configuration for the MMR Accountants Next.js site.
-# Netlify auto-detects Next.js and installs its Next Runtime (@netlify/plugin-nextjs),
-# which handles SSR, next/image optimisation and the generated OG image for you.
+# Netlify configuration for the Alpha Digital Solutions Next.js + CMS site.
+# The Next Runtime is declared EXPLICITLY below (do not remove): auto-detection
+# is unreliable on a Netlify site that was originally created as a static site,
+# and without the runtime the app deploys with no SSR handler so every route 404s.
+# It handles SSR, next/image optimisation and the generated OG image.
 # This file pins the build command and Node version for reproducible builds.
 
 [build]
@@ -8,6 +10,10 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Next.js runtime — required. Leave `publish` unset; the plugin manages it (.next).
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 # Event-triggered + serverless functions. submission-created.mjs sends the
 # contact-form auto-reply (dormant until RESEND_API_KEY is set — see FORMS.md).
