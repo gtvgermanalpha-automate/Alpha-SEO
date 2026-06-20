@@ -1,95 +1,97 @@
-import { Clock, Mail, MapPin, type LucideIcon } from "lucide-react";
-import { Container } from "@/components/ui/Container";
-import { Reveal } from "@/components/ui/Reveal";
 import { ContactForm } from "@/components/ContactForm";
-import { copy, siteConfig } from "@/lib/content";
+import { siteConfig } from "@/lib/content";
 
-type ContactRow = {
-  icon: LucideIcon;
-  label: string;
-  value: string;
-  href?: string;
-  sub?: { text: string; href: string };
-};
+const telHref = (p: string) => `tel:${p.replace(/[^0-9+]/g, "")}`;
+const wa = "16473650782";
 
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+);
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
+);
+const PinIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+);
+const ClockIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><polyline points="12 7 12 12 16 14" /></svg>
+);
+const WhatsAppGlyph = () => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20.52 3.48A11.93 11.93 0 0 0 12.05 0C5.49 0 .14 5.34.14 11.91a11.86 11.86 0 0 0 1.6 5.95L0 24l6.31-1.66a11.93 11.93 0 0 0 5.74 1.46h.01c6.55 0 11.9-5.34 11.9-11.91a11.84 11.84 0 0 0-3.44-8.41z" /></svg>
+);
+const Check = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+);
+
+/** Contact page body — the form + a rich contact-info aside. Ported from the
+ *  original static site (.contact-grid). */
 export function Contact() {
-  const telHref = (p: string) => `tel:${p.replace(/\s/g, "")}`;
-  const details: ContactRow[] = [
-    ...siteConfig.offices.map((o) => ({
-      icon: MapPin,
-      label: `${o.city} office`,
-      value: `${o.addressLine}, ${o.city}, ${o.postcode}`,
-      sub: { text: o.phoneDisplay, href: telHref(o.phone) },
-    })),
-    { icon: Mail, label: copy.contact.labels.email, value: siteConfig.contact.email, href: `mailto:${siteConfig.contact.email}` },
-    { icon: Clock, label: copy.contact.labels.hours, value: siteConfig.contact.hours },
-  ];
+  const office = siteConfig.offices[0];
+  const address = office
+    ? `${office.addressLine}, ${office.city}, ${office.postcode}`
+    : `${siteConfig.contact.addressLine}, ${siteConfig.contact.city}, ${siteConfig.contact.postcode}`;
 
   return (
-    <section id="contact" className="relative scroll-mt-24 border-t border-line bg-white py-20 sm:py-28">
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          {/* Info */}
-          <div>
-            <Reveal>
-              <span className="flex items-center gap-3 text-accent">
-                <span className="h-px w-8 bg-accent" aria-hidden />
-                <span className="eyebrow">{copy.contact.eyebrow}</span>
-              </span>
-              <h2 className="mt-5 text-3xl text-ink sm:text-4xl lg:text-[2.6rem] lg:leading-[1.12]">
-                {copy.contact.title}
-              </h2>
-              <p className="mt-5 max-w-md text-lg leading-relaxed text-muted">{copy.contact.subtitle}</p>
-            </Reveal>
+    <section className="section" id="contact">
+      <div className="container">
+        <div className="contact-grid">
+          <ContactForm />
 
-            <Reveal delay={0.08}>
-              <ul className="mt-9 divide-y divide-line border-y border-line">
-                {details.map((d) => (
-                  <li key={d.label} className="flex items-start gap-4 py-5">
-                    <d.icon className="mt-0.5 h-5 w-5 shrink-0 text-accent" strokeWidth={1.4} aria-hidden />
-                    <div>
-                      <p className="eyebrow text-muted">{d.label}</p>
-                      {d.href ? (
-                        <a
-                          href={d.href}
-                          className="mt-1 block text-base font-semibold text-ink transition-colors hover:text-accent"
-                        >
-                          {d.value}
-                        </a>
-                      ) : (
-                        <p className="mt-1 text-base font-semibold text-ink">{d.value}</p>
-                      )}
-                      {d.sub ? (
-                        <a
-                          href={d.sub.href}
-                          className="mt-1.5 inline-block text-sm font-bold text-accent transition-colors hover:text-ink"
-                        >
-                          {d.sub.text}
-                        </a>
-                      ) : null}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
+          <aside className="contact-info">
+            <h3>Get in touch directly</h3>
 
-            <Reveal delay={0.12}>
-              <div className="mt-8 inline-flex items-center gap-2.5 border border-accent px-4 py-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                </span>
-                <span className="eyebrow text-accent">{copy.contact.accepting}</span>
+            <div className="contact-block-rich">
+              <div className="contact-block-icon"><MailIcon /></div>
+              <div className="contact-block-content">
+                <div className="contact-block-label">Email us</div>
+                <a className="contact-block-value" href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
               </div>
-            </Reveal>
-          </div>
+            </div>
 
-          {/* Form */}
-          <Reveal delay={0.06} y={28}>
-            <ContactForm />
-          </Reveal>
+            <div className="contact-block-rich">
+              <div className="contact-block-icon"><PhoneIcon /></div>
+              <div className="contact-block-content">
+                <div className="contact-block-label">Call us</div>
+                <a className="contact-block-value" href={telHref(siteConfig.contact.phone)}>{siteConfig.contact.phoneDisplay}</a>
+              </div>
+            </div>
+
+            <div className="contact-block-rich">
+              <div className="contact-block-icon"><PinIcon /></div>
+              <div className="contact-block-content">
+                <div className="contact-block-label">Visit us</div>
+                <div className="contact-block-value">{address}</div>
+              </div>
+            </div>
+
+            <div className="contact-block-rich">
+              <div className="contact-block-icon whatsapp"><WhatsAppGlyph /></div>
+              <div className="contact-block-content">
+                <div className="contact-block-label">WhatsApp</div>
+                <a className="contact-block-value" href={`https://wa.me/${wa}`} target="_blank" rel="noopener noreferrer">{siteConfig.contact.phoneDisplay}</a>
+              </div>
+            </div>
+
+            <div className="contact-block-rich">
+              <div className="contact-block-icon"><ClockIcon /></div>
+              <div className="contact-block-content">
+                <div className="contact-block-label">Response time</div>
+                <div className="contact-block-value">{siteConfig.contact.hours}</div>
+              </div>
+            </div>
+
+            <div className="contact-quick-actions">
+              <a className="quick-action" href={`mailto:${siteConfig.contact.email}`} aria-label="Email"><MailIcon /><span>Email</span></a>
+              <a className="quick-action whatsapp" href={`https://wa.me/${wa}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><WhatsAppGlyph /><span>Chat</span></a>
+            </div>
+
+            <div className="contact-trust">
+              <div className="contact-trust-item"><Check /><span>NDA-ready engagements</span></div>
+              <div className="contact-trust-item"><Check /><span>No high-pressure sales process</span></div>
+            </div>
+          </aside>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

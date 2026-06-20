@@ -1,16 +1,19 @@
 import Link from "next/link";
-import { ArrowLeft, Check } from "lucide-react";
-import { PageHero } from "@/components/PageHero";
-import { Container } from "@/components/ui/Container";
-import { BackgroundFX } from "@/components/ui/BackgroundFX";
 import { CtaBand } from "@/components/CtaBand";
-import { MarkdownContent } from "@/components/ui/MarkdownContent";
+import { Md } from "@/components/ArticleBody";
 import { CustomSchema } from "@/components/CustomSchema";
 import { siteConfig, caseStudyHref, type CaseStudy } from "@/lib/content";
 import { jsonLd } from "@/lib/jsonLd";
 
-const PARENT = { label: "Case Studies", href: "/case-studies" };
+/** Split a "Label: value" result into a highlight chip (value is the big number). */
+function splitResult(r: string): { num: string; label: string } {
+  const idx = r.indexOf(":");
+  if (idx === -1) return { num: r.trim(), label: "" };
+  return { label: r.slice(0, idx).trim(), num: r.slice(idx + 1).trim() };
+}
 
+/** Single case-study page. Ported from the original static site
+ *  (.article-page-header + article-hero + highlights + article-body). */
 export function CaseStudyView({ study }: { study: CaseStudy }) {
   const url = `${siteConfig.url}${caseStudyHref(study.slug)}`;
 
@@ -46,55 +49,49 @@ export function CaseStudyView({ study }: { study: CaseStudy }) {
 
   return (
     <>
-      <PageHero crumb={study.title} parent={PARENT} title={study.title} subtitle={study.summary} />
-
-      <section className="relative overflow-hidden bg-white py-16 sm:py-20">
-        <BackgroundFX variant="subtle" />
-        <Container className="relative">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold uppercase tracking-[0.14em] text-muted">
-              <span>
-                Client: <span className="text-ink">{study.client}</span>
-              </span>
-              <span>
-                Industry: <span className="text-ink">{study.industry}</span>
-              </span>
-            </div>
-
-            {study.image ? (
-              <figure className="mt-8 aspect-[16/8] overflow-hidden rounded-2xl border border-line bg-blue/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={study.image} alt={study.imageAlt ?? ""} className="h-full w-full object-contain p-8 sm:p-10" />
-              </figure>
-            ) : null}
-
-            {study.results.length ? (
-              <div className="mt-8 rounded-2xl border border-line bg-cream/50 p-6 sm:p-7">
-                <h2 className="font-display text-lg text-ink">Results</h2>
-                <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {study.results.map((r, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-ink/80">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={3} aria-hidden />
-                      <span>{r}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-
-            {study.body.length ? <MarkdownContent className="mt-10">{study.body.join("\n\n")}</MarkdownContent> : null}
-
-            <div className="mt-12">
-              <Link
-                href={PARENT.href}
-                className="group inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-ink transition-colors hover:text-accent"
-              >
-                <ArrowLeft className="h-4 w-4 text-accent transition-transform duration-300 group-hover:-translate-x-1" aria-hidden />
-                All case studies
-              </Link>
-            </div>
+      <section className="page-header article-page-header">
+        <div className="container">
+          <Link className="btn-back" href="/case-studies">&#8592; Back to case studies</Link>
+          <span className="eyebrow">{study.industry}</span>
+          <h1>{study.title}</h1>
+          <div className="article-meta">
+            <span>Client: {study.client}</span>
+            {study.date ? <span>{study.date}</span> : null}
           </div>
-        </Container>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container container-article">
+          {study.image ? (
+            <div className="article-hero">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={study.image} alt={study.imageAlt ?? ""} loading="lazy" />
+            </div>
+          ) : null}
+
+          {study.results.length ? (
+            <div className="project-detail-highlights">
+              {study.results.slice(0, 3).map((r, i) => {
+                const { num, label } = splitResult(r);
+                return (
+                  <div className="highlight-chip" key={i}>
+                    <span className="highlight-chip-value">{num}</span>
+                    <span>{label}</span>
+                  </div>
+                );
+              })}
+            </div>
+          ) : null}
+
+          <div className="article-body">
+            <Md>{study.body.join("\n\n")}</Md>
+          </div>
+
+          <div className="article-back-footer">
+            <Link className="btn btn-primary" href="/case-studies">&#8592; Back to case studies</Link>
+          </div>
+        </div>
       </section>
 
       <CtaBand />

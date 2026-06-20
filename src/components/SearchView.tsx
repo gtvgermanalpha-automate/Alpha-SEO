@@ -3,11 +3,10 @@
 import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { Search } from "lucide-react";
-import { Container } from "@/components/ui/Container";
 import { scoreSearch } from "@/lib/searchIndex";
 
-/** Public on-site search — client-filtered over the build-time content index. */
+/** Public on-site search — client-filtered over the build-time content index.
+ *  Themed to the original static site (navy/gold tokens). */
 export function SearchView() {
   const params = useSearchParams();
   const router = useRouter();
@@ -16,55 +15,53 @@ export function SearchView() {
   const results = scoreSearch(q);
 
   return (
-    <section className="min-h-[60vh] bg-white py-16 sm:py-20">
-      <Container>
-        <div className="mx-auto max-w-3xl">
-          <h1 className="font-display text-3xl text-ink sm:text-4xl">Search</h1>
+    <>
+      <section className="page-header">
+        <div className="container">
+          <span className="eyebrow">Search</span>
+          <h1>Search the site</h1>
+        </div>
+      </section>
 
+      <section className="section">
+        <div className="container container-narrow">
           <form
-            className="mt-6 flex gap-2"
+            className="field"
+            style={{ flexDirection: "row", gap: ".6rem", alignItems: "stretch" }}
             onSubmit={(e) => {
               e.preventDefault();
               router.replace(`/search?q=${encodeURIComponent(trimmed)}`);
             }}
           >
-            <div className="relative flex-1">
-              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" aria-hidden />
-              <input
-                autoFocus
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                placeholder="Search the site…"
-                aria-label="Search the site"
-                className="w-full rounded-xl border border-line bg-white py-3 pl-10 pr-4 text-sm text-ink placeholder:text-muted focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-              />
-            </div>
-            <button
-              type="submit"
-              className="rounded-xl bg-ink px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent"
-            >
-              Search
-            </button>
+            <input
+              autoFocus
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Search services, insights, case studies…"
+              aria-label="Search the site"
+              style={{ flex: 1 }}
+            />
+            <button type="submit" className="btn btn-primary">Search</button>
           </form>
 
-          <div className="mt-8">
+          <div style={{ marginTop: "2rem" }}>
             {!trimmed ? (
-              <p className="text-sm text-muted">Search across our services, insights and case studies.</p>
+              <p>Search across our services, insights and case studies.</p>
             ) : results.length === 0 ? (
-              <p className="text-sm text-muted">No results for “{trimmed}”. Try a different term.</p>
+              <p>No results for &ldquo;{trimmed}&rdquo;. Try a different term.</p>
             ) : (
               <>
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                <p className="eyebrow" style={{ color: "var(--gold-deep)" }}>
                   {results.length} result{results.length > 1 ? "s" : ""}
                 </p>
-                <ul className="mt-4 divide-y divide-line">
+                <ul>
                   {results.map(({ doc, snippet }) => (
-                    <li key={doc.id} className="py-5">
-                      <span className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-accent">{doc.group}</span>
-                      <Link href={doc.url} className="mt-1 block font-display text-lg text-ink transition-colors hover:text-accent">
+                    <li key={doc.id} style={{ listStyle: "none", padding: "1.25rem 0", borderTop: "var(--bw) solid var(--border)" }}>
+                      <span className="eyebrow" style={{ color: "var(--gold-deep)" }}>{doc.group}</span>
+                      <Link href={doc.url} style={{ display: "block", marginTop: ".2rem", fontFamily: "var(--font-head)", fontSize: "1.25rem", fontWeight: 700, color: "var(--navy)" }}>
                         {doc.title}
                       </Link>
-                      <p className="mt-1 text-sm leading-relaxed text-muted">{snippet}</p>
+                      <p style={{ marginTop: ".3rem", color: "var(--ink-soft)" }}>{snippet}</p>
                     </li>
                   ))}
                 </ul>
@@ -72,7 +69,7 @@ export function SearchView() {
             )}
           </div>
         </div>
-      </Container>
-    </section>
+      </section>
+    </>
   );
 }

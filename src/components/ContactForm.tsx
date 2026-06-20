@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { AlertCircle, Check, Loader2, Send } from "lucide-react";
 import { businessTypes, siteConfig } from "@/lib/content";
 
 type Errors = Partial<Record<"name" | "email" | "message" | "consent", string>>;
@@ -10,9 +9,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /** reCAPTCHA v2 site key. Set NEXT_PUBLIC_RECAPTCHA_SITE_KEY to switch the widget
- *  on; while it's unset the form behaves exactly as before (honeypot only). The
- *  matching SITE_RECAPTCHA_SECRET + data-netlify-recaptcha in __forms.html are what
- *  make Netlify actually reject failed challenges — see FORMS.md. */
+ *  on; while it's unset the form behaves as before (honeypot only). */
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 type Grecaptcha = {
@@ -26,9 +23,10 @@ declare global {
   }
 }
 
-const fieldClass =
-  "w-full rounded-none border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-ink/35 transition-colors focus:border-accent focus-visible:outline-none focus:ring-1 focus:ring-accent";
+const errStyle: React.CSSProperties = { marginTop: ".3rem", fontSize: "var(--small)", color: "var(--error)", fontWeight: 600 };
 
+/** Contact form — original `.contact-form` markup, submitting to Netlify Forms
+ *  via fetch (matching hidden form: public/__forms.html, name="contact"). */
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
@@ -38,14 +36,13 @@ export function ContactForm() {
   const widgetId = useRef<number | null>(null);
 
   // Render the reCAPTCHA v2 widget once Google's script is ready — only when a
-  // site key is configured. Re-runs on `status` so the widget re-appears after the
-  // success screen resets to the form. Polls because the script loads async.
+  // site key is configured. Re-runs on `status` so it re-appears after success.
   useEffect(() => {
     if (!RECAPTCHA_SITE_KEY || status === "success") return;
     let timer: ReturnType<typeof setTimeout>;
     const render = () => {
       const el = recaptchaRef.current;
-      if (!el || el.childElementCount > 0) return; // gone, or already rendered
+      if (!el || el.childElementCount > 0) return;
       if (window.grecaptcha?.render) {
         widgetId.current = window.grecaptcha.render(el, {
           sitekey: RECAPTCHA_SITE_KEY,
@@ -94,7 +91,6 @@ export function ContactForm() {
       return;
     }
 
-    // reCAPTCHA (only when configured): require a completed challenge before we send.
     let token = "";
     if (RECAPTCHA_SITE_KEY) {
       token = window.grecaptcha?.getResponse(widgetId.current ?? undefined) ?? "";
@@ -106,9 +102,6 @@ export function ContactForm() {
       setRecaptchaError(null);
     }
 
-    // Deliver via Netlify Forms (zero-config on Netlify). The matching hidden form
-    // in public/__forms.html lets Netlify detect the fields at deploy time; here we
-    // POST the submission to it over AJAX so the page never reloads.
     setStatus("submitting");
     try {
       const body = new URLSearchParams();
@@ -127,7 +120,6 @@ export function ContactForm() {
       window.grecaptcha?.reset(widgetId.current ?? undefined);
       setStatus("success");
     } catch {
-      // reCAPTCHA tokens are single-use — reset so the visitor can retry.
       window.grecaptcha?.reset(widgetId.current ?? undefined);
       setStatus("error");
     }
@@ -135,23 +127,19 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center justify-center border border-line bg-white p-10 text-center">
-        <span className="grid h-16 w-16 place-items-center rounded-full border border-accent text-accent">
-          <Check className="h-7 w-7" strokeWidth={1.5} aria-hidden />
-        </span>
-        <h3 className="mt-6 font-display text-2xl text-ink">Thank you — message received</h3>
-        <p className="mt-3 max-w-sm text-sm text-muted">
-          A senior strategist will be in touch within one business day. We look forward to
-          helping your organic growth compound.
+      <div className="contact-form" style={{ textAlign: "center" }}>
+        <h3 style={{ color: "var(--navy)" }}>Thank you — message received</h3>
+        <p style={{ margin: ".8rem 0 1.4rem", color: "var(--ink-soft)" }}>
+          A senior strategist will be in touch within one business day. We look forward to helping your organic growth compound.
         </p>
         <button
           type="button"
+          className="btn btn-ghost"
           onClick={() => {
             setStatus("idle");
             setErrors({});
             formRef.current?.reset();
           }}
-          className="mt-7 text-xs font-semibold uppercase tracking-[0.18em] text-accent underline-offset-4 hover:underline"
         >
           Send another message
         </button>
@@ -168,182 +156,71 @@ export function ContactForm() {
       data-netlify="true"
       onSubmit={handleSubmit}
       noValidate
-      className="border border-line bg-white p-7 sm:p-8"
+      className="contact-form"
     >
-      {/* Netlify Forms identifier (supports the no-JS native POST fallback). */}
       <input type="hidden" name="form-name" value="contact" />
-      {/* Honeypot: hidden from real users; bots that fill it are silently rejected. */}
-      <p className="hidden" aria-hidden="true">
-        <label>
-          Leave this field empty
-          <input name="bot-field" tabIndex={-1} autoComplete="off" />
-        </label>
-      </p>
+      {/* Honeypot: hidden from real users; bots that fill it are rejected. */}
+      <p hidden><label>Leave this field empty<input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Full name" htmlFor="name" error={errors.name} required>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autoComplete="name"
-            placeholder="Jane Smith"
-            aria-invalid={!!errors.name}
-            aria-describedby={errors.name ? "name-error" : undefined}
-            className={fieldClass}
-          />
-        </Field>
-
-        <Field label="Email address" htmlFor="email" error={errors.email} required>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="jane@company.com"
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? "email-error" : undefined}
-            className={fieldClass}
-          />
-        </Field>
-
-        <Field label="Phone (optional)" htmlFor="phone">
-          <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+1 647 555 0123" className={fieldClass} />
-        </Field>
-
-        <Field label="Primary focus area" htmlFor="businessType">
-          <select id="businessType" name="businessType" defaultValue="" className={fieldClass}>
-            <option value="" disabled>
-              Select a focus area
-            </option>
-            {businessTypes.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </Field>
+      <div className="field-row">
+        <div className="field">
+          <label htmlFor="name">Full name</label>
+          <input id="name" name="name" type="text" autoComplete="name" placeholder="Jane Smith" aria-invalid={!!errors.name} />
+          {errors.name ? <span style={errStyle}>{errors.name}</span> : null}
+        </div>
+        <div className="field">
+          <label htmlFor="email">Work email</label>
+          <input id="email" name="email" type="email" autoComplete="email" placeholder="jane@company.com" aria-invalid={!!errors.email} />
+          {errors.email ? <span style={errStyle}>{errors.email}</span> : null}
+        </div>
       </div>
 
-      <div className="mt-5">
-        <Field label="How can we help?" htmlFor="message" error={errors.message} required>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            placeholder="Tell us a little about your business and what you need…"
-            aria-invalid={!!errors.message}
-            aria-describedby={errors.message ? "message-error" : undefined}
-            className={`${fieldClass} resize-y`}
-          />
-        </Field>
+      <div className="field">
+        <label htmlFor="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="+1 647 555 0123" />
       </div>
 
-      <div className="mt-5">
-        <label className="flex items-start gap-3 text-sm text-muted">
-          <input
-            name="consent"
-            type="checkbox"
-            value="yes"
-            aria-invalid={!!errors.consent}
-            aria-describedby={errors.consent ? "consent-error" : undefined}
-            className="mt-0.5 h-5 w-5 shrink-0 rounded-none border-line accent-accent focus-visible:outline-none"
-          />
-          <span>
-            I agree to Alpha Digital Solutions contacting me about my enquiry. We&apos;ll never share your details.
-          </span>
-        </label>
-        {errors.consent && (
-          <p id="consent-error" className="mt-1.5 text-xs font-medium text-red-700">
-            {errors.consent}
-          </p>
-        )}
+      <div className="field">
+        <label htmlFor="businessType">Primary focus area</label>
+        <select id="businessType" name="businessType" defaultValue="">
+          <option value="" disabled>Select a focus area</option>
+          {businessTypes.map((b) => (
+            <option key={b} value={b}>{b}</option>
+          ))}
+        </select>
       </div>
 
-      {RECAPTCHA_SITE_KEY && (
-        <div className="mt-5">
+      <div className="field">
+        <label htmlFor="message">How can we help?</label>
+        <textarea id="message" name="message" placeholder="Tell us a little about your business and what you need…" aria-invalid={!!errors.message} />
+        {errors.message ? <span style={errStyle}>{errors.message}</span> : null}
+      </div>
+
+      <label style={{ display: "flex", alignItems: "flex-start", gap: ".6rem", fontSize: "var(--small)", color: "var(--ink-soft)", margin: ".4rem 0" }}>
+        <input name="consent" type="checkbox" value="yes" aria-invalid={!!errors.consent} style={{ width: "1.1rem", height: "1.1rem", marginTop: ".15rem", flex: "0 0 auto", accentColor: "var(--navy)" }} />
+        <span>I agree to Alpha Digital Solutions contacting me about my enquiry. We&apos;ll never share your details.</span>
+      </label>
+      {errors.consent ? <span style={errStyle}>{errors.consent}</span> : null}
+
+      {RECAPTCHA_SITE_KEY ? (
+        <div className="field">
           <div ref={recaptchaRef} className="g-recaptcha" />
-          {recaptchaError && (
-            <p className="mt-1.5 text-xs font-medium text-red-700">{recaptchaError}</p>
-          )}
+          {recaptchaError ? <span style={errStyle}>{recaptchaError}</span> : null}
         </div>
-      )}
+      ) : null}
 
-      {status === "error" && (
-        <div
-          role="alert"
-          className="mt-6 flex items-start gap-3 border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
-        >
-          <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-600" strokeWidth={1.6} aria-hidden />
-          <span>
-            Sorry — we couldn&apos;t send your message just now. Please email{" "}
-            <a
-              href={`mailto:${siteConfig.contact.email}`}
-              className="font-semibold underline underline-offset-2 hover:no-underline"
-            >
-              {siteConfig.contact.email}
-            </a>{" "}
-            or call{" "}
-            <a
-              href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`}
-              className="font-semibold underline underline-offset-2 hover:no-underline"
-            >
-              {siteConfig.contact.phoneDisplay}
-            </a>{" "}
-            and we&apos;ll be glad to help.
-          </span>
+      {status === "error" ? (
+        <div role="alert" style={{ margin: ".6rem 0", padding: ".9rem 1rem", border: "var(--bw) solid var(--error)", borderRadius: "var(--r-sm)", color: "var(--error)", fontSize: "var(--small)" }}>
+          Sorry — we couldn&apos;t send your message just now. Please email{" "}
+          <a href={`mailto:${siteConfig.contact.email}`} style={{ color: "var(--error)", textDecoration: "underline" }}>{siteConfig.contact.email}</a>{" "}
+          or call{" "}
+          <a href={`tel:${siteConfig.contact.phone.replace(/\s/g, "")}`} style={{ color: "var(--error)", textDecoration: "underline" }}>{siteConfig.contact.phoneDisplay}</a>.
         </div>
-      )}
+      ) : null}
 
-      <button
-        type="submit"
-        disabled={status === "submitting"}
-        className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-md bg-bronze px-6 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-white transition-colors duration-300 hover:bg-bronze-600 disabled:cursor-not-allowed disabled:opacity-70"
-      >
-        {status === "submitting" ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-            Sending…
-          </>
-        ) : (
-          <>
-            Send Enquiry
-            <Send className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" aria-hidden />
-          </>
-        )}
+      <button type="submit" className="btn btn-accent" disabled={status === "submitting"}>
+        {status === "submitting" ? "Sending…" : "Send message"}
       </button>
     </form>
-  );
-}
-
-function Field({
-  label,
-  htmlFor,
-  error,
-  required,
-  children,
-}: {
-  label: string;
-  htmlFor: string;
-  error?: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <label
-        htmlFor={htmlFor}
-        className="mb-1.5 block text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-ink"
-      >
-        {label}
-        {required && <span className="ml-0.5 text-accent">*</span>}
-      </label>
-      {children}
-      {error && (
-        <p id={`${htmlFor}-error`} className="mt-1.5 text-xs font-medium text-red-700">
-          {error}
-        </p>
-      )}
-    </div>
   );
 }
