@@ -248,7 +248,7 @@ export function BlogEditor({ slug }: { slug: string }) {
           onChange={(v) => mutate((p) => ({ ...p, metaDescription: v }))}
         />
         <p className="text-xs text-muted">
-          “ | MMR Accountants” is added automatically — no need to include it in the meta title.
+          “ | Alpha Digital Solutions” is added automatically — no need to include it in the meta title.
         </p>
       </Card>
 

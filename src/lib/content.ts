@@ -1,5 +1,5 @@
 /**
- * Central content + configuration for the MMR Accountants site.
+ * Central content + configuration for the Alpha Digital Solutions site.
  * Keeping copy here keeps components clean and lets JSON-LD / nav reuse the same source.
  * All copy below is original.
  */
@@ -78,9 +78,8 @@ export const trustStats = [
   { value: 24, suffix: "h", label: "Response on every email" },
 ] as const;
 
-/** Regulators & software platforms — trust badges under the hero. (Professional-
- *  body accreditations ICAEW / ACCA / AAT are shown in the Testimonials section
- *  instead, so ACCA is not duplicated here.) */
+/** SEO tools & platforms Alpha works in — shown in the "trusted by" strip.
+ *  (Brand logos for these live in TOOL_LOGOS in ui/brands.tsx.) */
 export const partners: string[] = sectionsData.partners;
 
 /** Headline statistics — animated with react-countup on scroll */
@@ -112,8 +111,8 @@ export const copy: SiteCopy = copyData as SiteCopy;
 
 /* ============================================================
    Legal / policy pages — editable content for Privacy, Terms & Cookies.
-   NOTE: standard professional wording for a UK accountancy practice;
-   have it reviewed by the firm's solicitor before going live.
+   NOTE: standard wording for an Ontario SEO / marketing agency (PIPEDA);
+   have it reviewed by a lawyer before going live.
    ============================================================ */
 export type LegalSection = { heading: string; body: string[]; bullets?: string[] };
 export type LegalPage = {
@@ -130,7 +129,7 @@ export type LegalPage = {
 export const legalPages: LegalPage[] = legalData.pages as LegalPage[];
 
 /* ============================================================
-   Detail pages (Services / Industries / How we help)
+   Detail pages (the 5 SEO service pillars)
    SEO-rich, CMS-editable content lives in src/content/*.json,
    is assembled in detailContent.ts, and re-exported here so
    @/lib/content remains the single import surface.

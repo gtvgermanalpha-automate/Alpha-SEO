@@ -1,5 +1,5 @@
 /**
- * Detail-page content for Services, Industries and "How we help".
+ * Detail-page content for the 5 SEO service pillars.
  *
  * The editable copy lives in the JSON files under `src/content/*.json` (so the
  * client — or a future CMS — can edit prose without touching code). This module

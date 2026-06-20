@@ -1,5 +1,5 @@
 /**
- * Blog / News content for MMR Accountants.
+ * Blog / insights content for Alpha Digital Solutions.
  *
  * Editable copy lives in `src/content/blog.json` — a top-level array of slugged
  * posts, the same convention as the Services / Industries detail collections, so

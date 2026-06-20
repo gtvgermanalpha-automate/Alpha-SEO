@@ -194,7 +194,7 @@ export function PageEditor({ file, slug }: { file: string; slug: string }) {
           />
         </Labeled>
         <p className="text-xs text-muted">
-          “ | MMR Accountants” is added automatically — no need to include it in the meta title.
+          “ | Alpha Digital Solutions” is added automatically — no need to include it in the meta title.
         </p>
       </Card>
 

@@ -33,7 +33,7 @@ export function AdminTopBar({ onMenu }: { onMenu: () => void }) {
           <Menu className="h-5 w-5" aria-hidden />
         </button>
         <Link href="/admin" className="shrink-0 font-display text-lg font-extrabold tracking-tight text-ink">
-          MMR <span className="text-bronze">CMS</span>
+          Alpha <span className="text-bronze">CMS</span>
         </Link>
         <div className="ml-2 hidden flex-1 sm:block">
           <GlobalSearch />

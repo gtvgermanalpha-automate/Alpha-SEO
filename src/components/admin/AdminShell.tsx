@@ -94,7 +94,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         <header className="border-b border-line bg-white">
           <div className="mx-auto max-w-5xl px-5 py-3.5">
             <span className="font-display text-lg font-extrabold tracking-tight text-ink">
-              MMR <span className="text-bronze">CMS</span>
+              Alpha <span className="text-bronze">CMS</span>
             </span>
           </div>
         </header>
@@ -129,7 +129,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
             >
               <div className="flex items-center justify-between border-b border-line px-4 py-3">
                 <span className="font-display text-base font-extrabold text-ink">
-                  MMR <span className="text-bronze">CMS</span>
+                  Alpha <span className="text-bronze">CMS</span>
                 </span>
                 <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="text-muted hover:text-ink">
                   <X className="h-5 w-5" />

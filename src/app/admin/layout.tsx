@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminShell } from "@/components/admin/AdminShell";
 
 export const metadata: Metadata = {
-  title: { absolute: "MMR CMS" },
+  title: { absolute: "Alpha CMS" },
   // The admin area must never be indexed.
   robots: { index: false, follow: false, nocache: true },
 };

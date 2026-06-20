@@ -9,7 +9,7 @@
  * Required env vars: ADMIN_PASSWORD, ADMIN_SESSION_SECRET.
  */
 
-export const ADMIN_COOKIE = "mmr_admin";
+export const ADMIN_COOKIE = "alpha_admin";
 export const SESSION_TTL_SECONDS = 60 * 60 * 8; // 8 hours
 
 /** Both secrets must be present for the CMS to accept logins. */

@@ -16,45 +16,24 @@ const SECTION_META: Record<DetailKind, { label: string; href: string }> = {
   service: { label: "Services", href: "/services" },
 };
 
-/** Map every detail-page slug to a recoloured header illustration
- *  (public/illustrations/<key>.svg). */
-const ILLUS_BY_SLUG: Record<string, string> = {
-  // Services
-  bookkeeping: "bookkeeping",
-  "tax-planning": "tax",
-  vat: "vat",
-  payroll: "payroll",
-  "company-formation": "formation",
-  advisory: "advisory",
-  // Industries
-  contractors: "contractors",
-  ecommerce: "ecommerce",
-  startups: "startups",
-  landlords: "property",
-  hospitality: "growth",
-  healthcare: "healthcare",
-  construction: "construction",
-  creative: "creative",
-  // How we help
-  "proactive-tax-planning": "proactive",
-  "advisory-partnership": "advisory",
-};
+/** Optional per-slug header illustration (public/illustrations/<key>.svg).
+ *  Empty for the Alpha pillars — they fall back to the pillar's own lucide icon,
+ *  which is on-theme for SEO. Add an entry here to use an illustration instead. */
+const ILLUS_BY_SLUG: Record<string, string> = {};
 
 /** Pick a relevant icon for a content card from its heading keywords, so the
  *  grid reads like the reference (a distinct icon per card) rather than a wall
  *  of prose. Falls back to the page's own icon. */
 const ICON_RULES: [RegExp, IconName][] = [
-  [/cloud|software|digital|mtd|online|app|dashboard/, "Cloud"],
-  [/deadline|companies house|hmrc|file|filing|penalt|complian|submit|register/, "ShieldCheck"],
-  [/vat|making tax digital/, "Percent"],
-  [/payroll|employee|staff|pension|paye|wage|auto.?enrol/, "Users"],
-  [/director|self.?assessment|self assessment|personal tax/, "UserRound"],
-  [/tax|return|relief|allowance|deduct|cis|ir35/, "Receipt"],
-  [/advis|grow|plan|strateg|decision|forecast|scal|profit|kpi/, "TrendingUp"],
-  [/report|standard|statement|ledger|record|bookkeep|reconcil|account/, "BookOpen"],
-  [/form|incorporat|company|setup|set up|start|structure/, "Building2"],
-  [/cash|fund|invoice|payment|money|fee|price|cost|budget/, "BadgePoundSterling"],
-  [/support|help|advice|partner|relationship|contact|talk/, "MessagesSquare"],
+  [/deliver|receive|report|dashboard|document/, "LineChart"],
+  [/cadence|engagement|sprint|how it works|how we|process/, "Zap"],
+  [/crawl|index|render|schema|architecture|performance|core web|technical/, "Settings2"],
+  [/content|on-page|keyword|topical|metadata|reader|write|brief|snippet/, "BookOpen"],
+  [/link|authority|backlink|digital pr|outreach|domain|vouch|mention/, "Award"],
+  [/local|map|citation|google business|gbp|region|near/, "MapPin"],
+  [/community|reddit|forum|quora|aeo|answer|cite|citation/, "MessagesSquare"],
+  [/cover|included|layer|channel|area|scope|audit/, "ShieldCheck"],
+  [/strateg|grow|scal|result|outcome|engine/, "TrendingUp"],
 ];
 
 function sectionIcon(heading: string, fallback: IconName): IconName {

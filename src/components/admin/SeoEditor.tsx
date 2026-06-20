@@ -9,7 +9,7 @@ import { Field, Checkbox } from "@/components/admin/fields";
 import { ImageField } from "@/components/admin/ImageField";
 import { GoogleSnippetPreview } from "@/components/admin/GoogleSnippetPreview";
 
-const GROUP_ORDER = ["Pages", "Services", "Industries", "How we help", "Case studies", "Blog", "Legal"];
+const GROUP_ORDER = ["Pages", "Services", "Case studies", "Blog", "Legal"];
 
 type SetField = (route: string, field: keyof SeoOverride, value: string | boolean) => void;
 
@@ -110,7 +110,7 @@ function RouteRow({
           value={override.metaTitle ?? ""}
           role="metaTitle"
           placeholder={t.defaultTitle}
-          hint={isHome ? "Leave blank to use the page's own title." : "Leave blank to use the page's own title. “ | MMR Accountants” is added automatically — don't include it."}
+          hint={isHome ? "Leave blank to use the page's own title." : "Leave blank to use the page's own title. “ | Alpha Digital Solutions” is added automatically — don't include it."}
           onChange={(v) => setField(t.route, "metaTitle", v)}
         />
         <Field
