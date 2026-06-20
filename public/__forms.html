@@ -32,5 +32,15 @@
             <input name="phone" type="tel" />
             <input name="bot-field" type="text" />
         </form>
+
+        <!-- Homepage lead-magnet "request a free SEO audit" form. Mirrors AuditForm.tsx field names. -->
+        <form name="audit" data-netlify="true" netlify-honeypot="bot-field" hidden>
+            <input type="hidden" name="form-name" value="audit" />
+            <input name="name" type="text" />
+            <input name="email" type="email" />
+            <input name="website" type="text" />
+            <input name="audit_focus" type="text" />
+            <input name="bot-field" type="text" />
+        </form>
     </body>
 </html>

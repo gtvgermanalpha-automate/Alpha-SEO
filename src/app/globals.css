@@ -686,6 +686,7 @@ header.scrolled .navbar-logo{ height:40px; }
 .review p{ color:var(--ink); font-size:1.18rem; line-height:1.55; flex:1; }
 .review-author{ display:flex; align-items:center; gap:1.1rem; margin-top:auto; }
 .review-avatar img{ width:50px; height:50px; border-radius:50%; object-fit:cover; }
+.review-avatar-initials{ display:grid; place-items:center; width:50px; height:50px; flex-shrink:0; border-radius:50%; background:var(--navy); color:#fff; font-weight:700; font-size:.95rem; letter-spacing:.03em; }
 .review-author-name{ display:block; font-size:var(--small); font-weight:600; color:var(--navy); text-transform:uppercase; letter-spacing:.1em; }
 .review-author-role{ display:block; font-size:var(--xs); color:var(--ink-soft); }
 .reviews-controls{ display:flex; gap:.75rem; justify-content:center; margin-top:1.5rem; }
