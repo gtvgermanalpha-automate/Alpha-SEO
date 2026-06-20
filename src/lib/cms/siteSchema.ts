@@ -23,7 +23,6 @@ export type Office = {
 export type SiteSettings = {
   name: string;
   shortName: string;
-  companyNumber: string;
   pillars: string[];
   url: string;
   description: string;
@@ -148,7 +147,7 @@ export function validateSettings(value: unknown): ValidationResult {
   if (!isObj(value)) return { ok: false, errors: ["settings: must be an object"] };
   const errors: string[] = [];
 
-  for (const p of ["name", "shortName", "companyNumber", "url", "description"]) {
+  for (const p of ["name", "shortName", "url", "description"]) {
     reqStr(value, p, errors);
   }
   // heroImage / logos may be "" (use default) — must still be strings.

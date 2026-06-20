@@ -136,9 +136,9 @@ const staticDocs: SearchDoc[] = [
   copyPageDoc("contact", "/contact"),
   {
     id: "page:blog",
-    title: "News & Blog",
-    description: "Tax, accounting and business insights from MMR Accountants.",
-    body: "news blog insights tax accounting articles",
+    title: "SEO Insights",
+    description: "Practitioner-led writing on technical SEO, content strategy, link building, local SEO and organic growth.",
+    body: "insights blog seo technical content links local growth articles",
     url: "/blog",
     group: "Blog",
     editorHref: null,

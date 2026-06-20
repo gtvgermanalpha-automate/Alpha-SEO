@@ -31,7 +31,7 @@ export type SeoTarget = {
   editorHref: string | null;
 };
 
-/** Title template applied site-wide ("%s | MMR Accountants"). */
+/** Title template applied site-wide ("%s | Alpha Digital Solutions"). */
 export const brandTitle = (t: string) => `${t} | ${siteConfig.name}`;
 
 /** Which list-collection file a detail page's content lives in (for editor deep-links). */
@@ -50,7 +50,7 @@ const staticTargets: SeoTarget[] = [
     route: "/",
     label: "Home",
     group: "Pages",
-    defaultTitle: `${siteConfig.name} — Chartered Accountants for UK Businesses`,
+    defaultTitle: `${siteConfig.name} — Premium SEO Agency in Toronto`,
     defaultDescription: siteConfig.description,
     editorHref: "/admin/copy",
   },
@@ -58,11 +58,11 @@ const staticTargets: SeoTarget[] = [
   { route: "/how-we-work", label: "How We Work", group: "Pages", defaultTitle: brandTitle(copy.pages.howWeWork.metaTitle), defaultDescription: copy.pages.howWeWork.metaDescription, editorHref: "/admin/copy" },
   {
     route: "/blog",
-    label: "News & Blog",
+    label: "Insights",
     group: "Pages",
-    defaultTitle: brandTitle("News & Blog"),
+    defaultTitle: brandTitle("SEO Insights"),
     defaultDescription:
-      "Tax, accounting and business insights from MMR Accountants — plain-English guides on limited companies, HMRC, student loans and useful HMRC tools.",
+      "Practitioner-led writing on technical SEO, content strategy, link building, local SEO and the economics of organic growth — from the Alpha Digital Solutions team.",
     editorHref: null,
   },
   {
@@ -71,15 +71,15 @@ const staticTargets: SeoTarget[] = [
     group: "Pages",
     defaultTitle: brandTitle("Case Studies"),
     defaultDescription:
-      "Real results for UK businesses — see how MMR Accountants has helped clients save tax, stay compliant and grow.",
+      "Measurable SEO outcomes across SaaS, ecommerce, fintech and local services — migrations, technical recoveries, authority and content programmes.",
     editorHref: null,
   },
   {
     route: "/team",
-    label: "Team",
+    label: "About",
     group: "Pages",
-    defaultTitle: brandTitle("Team"),
-    defaultDescription: "Meet the chartered-standard accountants and advisers behind MMR Accountants.",
+    defaultTitle: brandTitle("About Alpha"),
+    defaultDescription: "A senior-led, white-hat SEO agency in Toronto — humble, results-over-hype, NDA-ready, with a 30-day rolling commitment and no lock-in.",
     editorHref: "/admin/team",
   },
   { route: "/faq", label: "FAQ", group: "Pages", defaultTitle: brandTitle(copy.pages.faq.metaTitle), defaultDescription: copy.pages.faq.metaDescription, editorHref: "/admin/copy" },

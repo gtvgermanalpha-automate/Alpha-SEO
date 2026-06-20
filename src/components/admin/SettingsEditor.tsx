@@ -9,8 +9,8 @@ const OFFICE_FIELDS: { key: keyof Office; label: string }[] = [
   { key: "city", label: "City / office name" },
   { key: "addressLine", label: "Address" },
   { key: "postcode", label: "Postcode" },
-  { key: "phone", label: "Phone — for call links (e.g. +44 161 222 3120)" },
-  { key: "phoneDisplay", label: "Phone — shown on the page (e.g. 0161 222 3120)" },
+  { key: "phone", label: "Phone — for call links (e.g. +1 647 365 0782)" },
+  { key: "phoneDisplay", label: "Phone — shown on the page (e.g. +1 647 365 0782)" },
 ];
 
 export function SettingsEditor() {
@@ -36,7 +36,6 @@ export function SettingsEditor() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field label="Business name" value={data.name} onChange={(v) => mutate((d) => ({ ...d, name: v }))} role="name" />
                 <Field label="Short name (logo / abbreviations)" value={data.shortName} onChange={(v) => mutate((d) => ({ ...d, shortName: v }))} role="shortName" />
-                <Field label="Company number" value={data.companyNumber} onChange={(v) => mutate((d) => ({ ...d, companyNumber: v }))} role="companyNumber" hint="UK company number, e.g. 12345678" />
                 <Field label="Website URL" value={data.url} onChange={(v) => mutate((d) => ({ ...d, url: v }))} role="url" hint="https://…" />
               </div>
               <Field label="Description" value={data.description} onChange={(v) => mutate((d) => ({ ...d, description: v }))} role="description" multiline hint="Used for SEO + structured data" />
@@ -87,11 +86,11 @@ export function SettingsEditor() {
 
             <Card
               title="Primary contact"
-              description="Used in the header, the call buttons and search-engine data. This is your main (Manchester) office."
+              description="Used in the header, the call buttons and search-engine data. This is your main (Toronto) office."
             >
               <div className="grid gap-4 sm:grid-cols-2">
-                <Field label="Phone — for call links" value={data.contact.phone} onChange={(v) => setContact("phone", v)} role="phone" hint="e.g. +44 161 222 3120" />
-                <Field label="Phone — shown on the page" value={data.contact.phoneDisplay} onChange={(v) => setContact("phoneDisplay", v)} role="phoneDisplay" hint="e.g. 0161 222 3120" />
+                <Field label="Phone — for call links" value={data.contact.phone} onChange={(v) => setContact("phone", v)} role="phone" hint="e.g. +1 647 365 0782" />
+                <Field label="Phone — shown on the page" value={data.contact.phoneDisplay} onChange={(v) => setContact("phoneDisplay", v)} role="phoneDisplay" hint="e.g. +1 647 365 0782" />
                 <Field label="Email" value={data.contact.email} onChange={(v) => setContact("email", v)} role="email" />
                 <Field label="Opening hours" value={data.contact.hours} onChange={(v) => setContact("hours", v)} role="hours" />
                 <Field label="Address" value={data.contact.addressLine} onChange={(v) => setContact("addressLine", v)} role="addressLine" />

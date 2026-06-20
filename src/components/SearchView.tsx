@@ -49,7 +49,7 @@ export function SearchView() {
 
           <div className="mt-8">
             {!trimmed ? (
-              <p className="text-sm text-muted">Search across our services, industries, guidance and blog.</p>
+              <p className="text-sm text-muted">Search across our services, insights and case studies.</p>
             ) : results.length === 0 ? (
               <p className="text-sm text-muted">No results for “{trimmed}”. Try a different term.</p>
             ) : (
