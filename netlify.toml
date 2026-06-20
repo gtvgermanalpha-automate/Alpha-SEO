@@ -1,17 +1,18 @@
 # Netlify configuration for the Alpha Digital Solutions Next.js + CMS site.
-# The Next Runtime is declared EXPLICITLY below (do not remove): auto-detection
-# is unreliable on a Netlify site that was originally created as a static site,
-# and without the runtime the app deploys with no SSR handler so every route 404s.
-# It handles SSR, next/image optimisation and the generated OG image.
-# This file pins the build command and Node version for reproducible builds.
+# The Next Runtime plugin is declared EXPLICITLY (auto-detection is unreliable on
+# a site that began as static). `publish = ".next"` is set explicitly too, to
+# OVERRIDE a stale UI "Publish directory = ." left over from the static site: the
+# Next runtime requires the publish dir to be the build output (.next), not the
+# repo root, or it fails with "publish directory cannot be the same as base".
 
 [build]
   command = "npm run build"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "22"
 
-# Next.js runtime — required. Leave `publish` unset; the plugin manages it (.next).
+# Next.js runtime — required (do not remove). Without it every route 404s.
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
