@@ -1,54 +1,23 @@
-"use client";
+import { TOOL_LOGOS } from "@/components/ui/brands";
+import { copy } from "@/lib/content";
 
-import { Container } from "@/components/ui/Container";
-import { Reveal } from "@/components/ui/Reveal";
-import { useTapActivate } from "@/components/ui/useTapActivate";
-import { copy, partners } from "@/lib/content";
-
-function PartnerBadge({ name }: { name: string }) {
-  const { active, bind } = useTapActivate();
-  return (
-    <li
-      {...bind}
-      className={`flex items-center justify-center gap-2.5 border bg-white px-4 py-5 transition-all duration-300 ${
-        active ? "-translate-y-0.5 border-accent/40 shadow-sm" : "border-line"
-      }`}
-    >
-      <span
-        className={`h-1.5 w-1.5 shrink-0 bg-accent transition-transform duration-300 ${active ? "scale-150" : ""}`}
-        aria-hidden
-      />
-      <span
-        className={`font-display text-lg font-extrabold tracking-tight transition-colors duration-300 ${
-          active ? "text-ink" : "text-ink/75"
-        }`}
-      >
-        {name}
-      </span>
-    </li>
-  );
-}
-
+/** Tool/logo marquee — the SEO platforms Alpha works in, looping (grayscale →
+ *  brand colour on hover). Ported from the original static site. */
 export function TrustedBy() {
+  const loop = [...TOOL_LOGOS, ...TOOL_LOGOS];
   return (
-    <section
-      id="trusted"
-      className="relative scroll-mt-24 border-y border-line bg-blue py-14 sm:py-16"
-      aria-label="Accreditations and integrations"
-    >
-      <Container>
-        <Reveal className="text-center">
-          <p className="eyebrow text-muted">{copy.trustedBy.eyebrow}</p>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <ul className="mt-9 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-6">
-            {partners.map((p) => (
-              <PartnerBadge key={p} name={p} />
-            ))}
-          </ul>
-        </Reveal>
-      </Container>
+    <section className="tech-marquee" aria-label="Tools we work with">
+      <div className="tech-marquee-label">{copy.trustedBy.eyebrow}</div>
+      <div className="marquee">
+        <div className="marquee-track">
+          {loop.map((logo, i) => (
+            <span className="marquee-item" key={`${logo.name}-${i}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={logo.src} alt={i < TOOL_LOGOS.length ? logo.name : ""} aria-hidden={i >= TOOL_LOGOS.length} loading="lazy" />
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
