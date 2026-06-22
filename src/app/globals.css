@@ -419,9 +419,9 @@ a:focus-visible,button:focus-visible,select:focus-visible,
 @media(max-width:768px){ .topbar{ display:none; } }
 
 /* ════════ HEADER / NAV ════════ */
-header{ position:sticky; top:0; z-index:var(--z-header); background:#fff; border-bottom:var(--bw) solid var(--border);
+header{ position:sticky; top:0; z-index:var(--z-header); background:var(--bg); border-bottom:var(--bw) solid var(--border);
   transition:box-shadow .3s ease, background-color .3s ease; }
-header.scrolled{ box-shadow:var(--shadow-card); background:rgba(255,255,255,.92); backdrop-filter:saturate(140%) blur(8px); }
+header.scrolled{ box-shadow:var(--shadow-card); background:rgba(244,241,236,.92); backdrop-filter:saturate(140%) blur(8px); }
 header .nav{ transition:padding .3s ease; }
 header.scrolled .nav{ padding-block:.6rem; }
 header.scrolled .navbar-logo{ height:40px; }
