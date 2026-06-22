@@ -21,6 +21,16 @@ const CARD_TAG: Record<string, string> = {
   "reddit-community": "Community & AEO",
 };
 
+/** Benefit-led headline per card — distinct from the category tag above (like
+ *  the reference cards: a descriptive outcome, not the discipline name). */
+const CARD_HEADLINE: Record<string, string> = {
+  "technical-seo": "Fix the technical issues holding your rankings back",
+  "on-page-seo": "Pages and content built to rank and convert",
+  "off-page-seo": "Earn editorial links that actually move rankings",
+  "local-seo": "Own the map pack in every market you serve",
+  "reddit-community": "Get cited in communities and AI answer engines",
+};
+
 /** Two honest, service-descriptive highlights per pillar (what the engagement
  *  covers — not client results). Editable here. */
 const CARD_STATS: Record<string, { num: string; label: string }[]> = {
@@ -64,7 +74,7 @@ export function Services() {
                 <img src={bg(s.slug)} alt="" loading="lazy" />
               </div>
               <div className="pillar-card-head">
-                <h3>{s.title}</h3>
+                <h3>{CARD_HEADLINE[s.slug] ?? s.title}</h3>
                 <span className="pillar-tag">{CARD_TAG[s.slug] ?? "SEO"}</span>
               </div>
               <div className="case-mini-stats">
