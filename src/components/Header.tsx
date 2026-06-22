@@ -85,7 +85,7 @@ export function Header() {
         <div className="nav">
           <Link className="logo" href="/" aria-label="Alpha Digital Solutions — Home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="navbar-logo" src="/alpha-logo.png" alt="Alpha Digital Solutions logo" width={180} height={44} />
+            <img className="navbar-logo" src={siteConfig.logoLinear || "/alpha-logo.png"} alt={`${siteConfig.name} logo`} width={180} height={44} />
           </Link>
 
           <ul className={`nav-links${open ? " mobile-open" : ""}`}>

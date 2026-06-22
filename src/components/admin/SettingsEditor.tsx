@@ -67,18 +67,17 @@ export function SettingsEditor() {
 
             <Card
               title="Brand logos"
-              description="The logo shown in the header and footer. Leave empty to use the built-in typographic lockup. A transparent PNG works best — it's auto-trimmed and compressed on upload."
+              description="The logo shown in the header and footer. Leave empty to use the default Alpha logo. A transparent PNG works best — it's auto-trimmed and compressed on upload."
             >
               <ImageField
-                label="Linear logo (header)"
+                label="Header logo"
                 dir="brand"
                 value={data.logoLinear}
                 onChange={(path) => mutate((d) => ({ ...d, logoLinear: path }))}
               />
               <ImageField
-                label="Circular logo (footer)"
+                label="Footer logo"
                 dir="brand"
-                round
                 value={data.logoCircular}
                 onChange={(path) => mutate((d) => ({ ...d, logoCircular: path }))}
               />

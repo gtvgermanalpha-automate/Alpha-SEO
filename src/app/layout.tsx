@@ -81,6 +81,9 @@ const organizationSchema = {
   email: siteConfig.contact.email,
   telephone: siteConfig.contact.phone,
   image: `${siteConfig.url}/opengraph-image`,
+  ...(siteConfig.logoLinear
+    ? { logo: { "@type": "ImageObject", url: `${siteConfig.url}${siteConfig.logoLinear}` } }
+    : {}),
   priceRange: "$$$",
   areaServed: ["CA", "US", "GB", "AU"],
   address: {
