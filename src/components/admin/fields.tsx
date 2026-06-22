@@ -7,7 +7,7 @@ import { limitFor, formatFor, isFormat, formatHint, type FieldFormat } from "@/l
 /** Shared admin form primitives, reused across CMS editors. */
 
 export const fieldClass =
-  "w-full rounded-none border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/30 focus:border-bronze focus-visible:outline-none focus:ring-1 focus:ring-bronze";
+  "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm text-ink shadow-sm placeholder:text-ink/30 transition-colors focus:border-bronze focus-visible:outline-none focus:ring-2 focus:ring-bronze/25";
 export const labelClass = "mb-1 block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-ink";
 
 /** Live character counter — turns red once the value is over the limit. */
@@ -167,7 +167,7 @@ export function MiniBtn({
       aria-label={title}
       onClick={onClick}
       disabled={disabled}
-      className={`grid h-7 w-7 shrink-0 place-items-center border text-xs transition-colors disabled:opacity-25 ${
+      className={`grid h-8 w-8 shrink-0 place-items-center rounded-md border text-xs transition-colors disabled:opacity-25 ${
         danger
           ? "border-line text-red-600 hover:border-red-400 hover:bg-red-50"
           : "border-line text-muted hover:border-bronze hover:text-bronze"
@@ -281,7 +281,7 @@ export function AddButton({ label, onClick }: { label: string; onClick: () => vo
     <button
       type="button"
       onClick={onClick}
-      className="mt-4 border border-dashed border-line px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-bronze transition-colors hover:border-bronze hover:bg-bronze-50"
+      className="mt-4 rounded-lg border border-dashed border-line px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] text-bronze transition-colors hover:border-bronze hover:bg-bronze-50"
     >
       + {label}
     </button>
@@ -332,7 +332,7 @@ export function SaveButton({ saving, onClick }: { saving: boolean; onClick: () =
       type="button"
       onClick={onClick}
       disabled={saving}
-      className="bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
     >
       {saving ? "Saving…" : "Save & publish"}
     </button>
@@ -342,14 +342,14 @@ export function SaveButton({ saving, onClick }: { saving: boolean; onClick: () =
 export function StatusBanner({ saved, error, issues }: { saved: boolean; error: string; issues: string[] }) {
   if (saved) {
     return (
-      <div className="mt-5 border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
+      <div className="mt-5 rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
         Saved. Your changes will be live in about 1–2 minutes, once the site finishes rebuilding.
       </div>
     );
   }
   if (error || issues.length > 0) {
     return (
-      <div className="mt-5 border border-red-300 bg-red-50 p-4 text-sm text-red-800">
+      <div className="mt-5 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-800">
         {error && <p className="font-semibold">{error}</p>}
         {issues.length > 0 && (
           <ul className="mt-2 list-disc space-y-1 pl-5 font-mono text-xs">
@@ -366,9 +366,9 @@ export function StatusBanner({ saved, error, issues }: { saved: boolean; error: 
 
 export function Card({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="mt-6 border border-line bg-white p-5 sm:p-6">
+    <section className="mt-6 rounded-xl border border-line bg-white p-5 shadow-sm sm:p-6">
       <h2 className="font-display text-base font-bold text-ink">{title}</h2>
-      <div className="mt-4 space-y-4">{children}</div>
+      <div className="mt-5 space-y-5">{children}</div>
     </section>
   );
 }

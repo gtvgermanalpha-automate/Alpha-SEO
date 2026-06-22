@@ -125,7 +125,7 @@ export function SaveBtn({ saving, onClick }: { saving: boolean; onClick: () => v
       type="button"
       onClick={onClick}
       disabled={saving}
-      className="bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
+      className="rounded-lg bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
     >
       {saving ? "Saving…" : "Save & publish"}
     </button>
@@ -169,12 +169,12 @@ export function StatusBanners({
   return (
     <>
       {saved && (
-        <div className="mt-5 border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
+        <div className="mt-5 rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
           Saved. Your changes will be live in about 1–2 minutes, once the site rebuilds.
         </div>
       )}
       {(saveError || issues.length > 0) && (
-        <div className="mt-5 border border-red-300 bg-red-50 p-4 text-sm text-red-800">
+        <div className="mt-5 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-800">
           {saveError && <p className="font-semibold">{saveError}</p>}
           {issues.length > 0 && (
             <ul className="mt-2 list-disc space-y-1 pl-5 font-mono text-xs">
@@ -202,10 +202,10 @@ export function Card({
   children: ReactNode;
 }) {
   return (
-    <section id={id} className="mt-6 scroll-mt-24 border border-line bg-white p-5 sm:p-6">
+    <section id={id} className="mt-6 scroll-mt-24 rounded-xl border border-line bg-white p-5 shadow-sm sm:p-6">
       <h2 className="font-display text-base font-bold text-ink">{title}</h2>
       {description && <p className="mt-1 text-xs text-muted">{description}</p>}
-      <div className="mt-4 space-y-4">{children}</div>
+      <div className="mt-5 space-y-5">{children}</div>
     </section>
   );
 }
@@ -225,7 +225,7 @@ export function LoadGate({
     return (
       <div>
         <Back />
-        <div className="mt-4 border border-red-300 bg-red-50 p-4 text-sm text-red-800">{loadError}</div>
+        <div className="mt-4 rounded-lg border border-red-300 bg-red-50 p-4 text-sm text-red-800">{loadError}</div>
       </div>
     );
   }

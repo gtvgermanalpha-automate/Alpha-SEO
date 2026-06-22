@@ -46,7 +46,7 @@ export function AdminTopBar({ onMenu }: { onMenu: () => void }) {
             type="button"
             onClick={logout}
             disabled={busy}
-            className="border border-line px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-bronze hover:text-bronze disabled:opacity-60"
+            className="rounded-md border border-line px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-ink transition-colors hover:border-bronze hover:text-bronze disabled:opacity-60"
           >
             {busy ? "Signing out…" : "Log out"}
           </button>

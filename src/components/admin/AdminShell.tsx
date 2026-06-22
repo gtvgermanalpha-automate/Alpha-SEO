@@ -140,7 +140,10 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
           </div>
         )}
 
-        <main className="min-w-0 flex-1 px-5 py-8 sm:px-8 sm:py-10">{children}</main>
+        <main className="min-w-0 flex-1 px-5 py-8 sm:px-8 sm:py-10">
+          {/* Editors read better at a constrained width; the dashboard keeps full width. */}
+          <div className={pathname === "/admin" ? "" : "mx-auto w-full max-w-4xl"}>{children}</div>
+        </main>
       </div>
     </div>
   );

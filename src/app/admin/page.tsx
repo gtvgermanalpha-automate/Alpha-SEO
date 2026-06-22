@@ -44,7 +44,7 @@ export default function AdminDashboard() {
       </p>
 
       {!canSave && (
-        <div className="mt-6 border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+        <div className="mt-6 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
           <p className="font-semibold">Saving is currently disabled</p>
           <p className="mt-1">
             Set <code className="font-mono">GITHUB_TOKEN</code> and <code className="font-mono">GITHUB_REPO</code>{" "}
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
                 <li key={page.slug}>
                   <Link
                     href={`/admin/edit/${collection.file}/${page.slug}`}
-                    className="flex items-center justify-between gap-3 border border-line bg-white px-4 py-3 text-sm transition-colors hover:border-bronze"
+                    className="flex items-center justify-between gap-3 rounded-lg border border-line bg-white px-4 py-3 text-sm shadow-sm transition-all hover:border-bronze hover:shadow-md"
                   >
                     <span className="font-semibold text-ink">{page.title}</span>
                     <span className="shrink-0 font-mono text-xs text-muted">/{page.slug} →</span>

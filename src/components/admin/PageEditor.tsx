@@ -6,7 +6,7 @@ import { limitFor } from "@/lib/cms/limits";
 import { BackLink, SaveButton, StatusBanner, Card } from "@/components/admin/fields";
 
 const fieldClass =
-  "w-full rounded-none border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink/30 focus:border-bronze focus-visible:outline-none focus:ring-1 focus:ring-bronze";
+  "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm text-ink shadow-sm placeholder:text-ink/30 transition-colors focus:border-bronze focus-visible:outline-none focus:ring-2 focus:ring-bronze/25";
 const labelClass = "mb-1 block text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-ink";
 
 type LoadState = "loading" | "ready" | "error";
