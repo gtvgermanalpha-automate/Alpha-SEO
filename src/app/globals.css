@@ -463,7 +463,7 @@ header.scrolled .navbar-logo{ height:40px; }
 .has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown,.has-dropdown.open .dropdown{
   opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; transition-delay:0s; }
 .dropdown-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; width:100%; max-width:62rem;
-  background:#fff; border:var(--bw) solid var(--border); border-top:3px solid var(--gold); border-radius:var(--r-card); padding:1.4rem; box-shadow:var(--shadow-lift); }
+  background:var(--bg); border:var(--bw) solid var(--border); border-top:3px solid var(--gold); border-radius:var(--r-card); padding:1.4rem; box-shadow:var(--shadow-lift); }
 .dropdown-head{ grid-column:1 / -1; display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding:.15rem .4rem 1rem; margin-bottom:.5rem; border-bottom:var(--bw) solid var(--border); }
 .dropdown-head-title{ font-family:var(--font-head); font-weight:700; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
 .dropdown-head-sub{ font-size:var(--small); color:var(--ink-faint); }
@@ -484,7 +484,7 @@ header.scrolled .navbar-logo{ height:40px; }
 /* compact (non-mega) dropdown — e.g. About */
 .has-dropdown-simple{ position:relative; }
 .dropdown-simple{ left:auto; right:0; justify-content:flex-end; padding:.6rem 0 1.5rem; }
-.dropdown-list{ min-width:14rem; background:#fff; border:var(--bw) solid var(--border); border-radius:var(--r-card);
+.dropdown-list{ min-width:14rem; background:var(--bg); border:var(--bw) solid var(--border); border-radius:var(--r-card);
   padding:.5rem; box-shadow:var(--shadow-lift); display:flex; flex-direction:column; }
 .dropdown-link{ padding:.65rem .9rem; border-radius:.55rem; font-size:.95rem; font-weight:500; color:var(--navy);
   cursor:pointer; transition:background-color var(--t-fast),color var(--t-fast); }
@@ -996,7 +996,7 @@ footer{ background:#fff; border-top:var(--bw) solid var(--border); color:var(--i
 /* ════════ RESPONSIVE — MOBILE NAV ════════ */
 @media(max-width:980px){
   .nav-links{ position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
-    background:#fff; border-bottom:var(--bw) solid var(--border); padding:.5rem 1rem 1.5rem; box-shadow:var(--shadow-card);
+    background:var(--bg); border-bottom:var(--bw) solid var(--border); padding:.5rem 1rem 1.5rem; box-shadow:var(--shadow-card);
     transform:translateY(-12px); opacity:0; visibility:hidden; transition:opacity .25s ease,transform .25s ease,visibility .25s; max-height:80vh; overflow:auto; }
   .nav-links.mobile-open{ transform:none; opacity:1; visibility:visible; }
   .nav-links > li{ position:static; border-bottom:var(--bw) solid var(--border-2); }
