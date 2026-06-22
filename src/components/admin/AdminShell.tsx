@@ -90,7 +90,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   // The login page gets a minimal branded header (no sidebar / search / logout).
   if (pathname === "/admin/login") {
     return (
-      <div className="min-h-screen bg-cream/40 text-ink">
+      <div className="admin-shell min-h-screen bg-cream/40 text-ink">
         <header className="border-b border-line bg-white">
           <div className="mx-auto max-w-5xl px-5 py-3.5">
             <span className="font-display text-lg font-extrabold tracking-tight text-ink">
@@ -104,7 +104,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="min-h-screen bg-cream/40 text-ink">
+    <div className="admin-shell min-h-screen bg-cream/40 text-ink">
       <AdminTopBar onMenu={() => setOpen(true)} />
       <div className="mx-auto flex max-w-7xl">
         {/* Sidebar — desktop */}

@@ -1099,3 +1099,11 @@ footer{ background:#fff; border-top:var(--bw) solid var(--border); color:var(--i
 /* section-dark + cta-band-inner stay Deep Space Royal (--navy) — the dramatic accents */
 .section-dark .stat-num{ color:var(--gold-on-navy); }
 
+/* ════════ /admin CMS — keep the clean Tailwind base; neutralise the ported marcel
+   global element styles that would otherwise leak into the admin UI. `:where()` keeps
+   these at zero specificity so the admin's own Tailwind text-/font- classes still win. ════════ */
+:where(.admin-shell) h1,:where(.admin-shell) h2,:where(.admin-shell) h3,:where(.admin-shell) h4,:where(.admin-shell) h5{ color:inherit; letter-spacing:normal; }
+:where(.admin-shell) p{ color:inherit; }
+:where(.admin-shell) a{ color:inherit; }
+:where(.admin-shell) strong,:where(.admin-shell) b{ color:inherit; }
+
