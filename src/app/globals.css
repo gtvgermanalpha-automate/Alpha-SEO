@@ -595,21 +595,29 @@ header.scrolled .navbar-logo{ height:40px; }
 .service-card.pillar-card::before{ content:""; position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg, rgba(11,31,58,.52) 0%, rgba(17,17,68,.16) 46%, rgba(8,22,40,.74) 100%); transition:background var(--t-base); }
 .pillar-num,.service-icon,.pillar-card p,.pillar-tags,.service-card-cta{ display:none; }
-.pillar-card h3{ position:relative; z-index:2; font-size:clamp(1.4rem,1.15rem + .75vw,1.85rem); font-weight:800; color:#fff; line-height:1.2; margin:0; max-width:15ch; letter-spacing:-.01em; text-shadow:0 2px 16px rgba(8,22,40,.55); }
+.pillar-card h3{ position:relative; z-index:2; font-size:clamp(1.4rem,1.15rem + .75vw,1.85rem); font-weight:800; color:#fff; line-height:1.2; margin:0; max-width:15ch; letter-spacing:-.01em; text-shadow:0 2px 16px rgba(8,22,40,.55); transition:color var(--t-base),text-shadow var(--t-base); }
 .service-card.pillar-card::after{ content:""; position:absolute; top:1.5rem; right:1.5rem; z-index:3; width:3.1rem; height:3.1rem; border-radius:50%;
   background:var(--gold) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'><line x1='7' y1='17' x2='17' y2='7'/><polyline points='8 7 17 7 17 16'/></svg>") center/1.35rem no-repeat;
   opacity:0; transform:scale(.7); transition:opacity .35s ease, transform .35s ease; }
 .service-card.pillar-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lift); }
-.service-card.pillar-card:hover::before{ background:linear-gradient(180deg, rgba(40,57,150,.9) 0%, rgba(34,51,130,.86) 50%, rgba(17,17,68,.95) 100%); }
+.service-card.pillar-card:hover::before{ background:linear-gradient(180deg, rgba(155,172,216,.9) 0%, rgba(155,172,216,.8) 100%); }
 .service-card.pillar-card:hover::after{ opacity:1; transform:scale(1); }
 /* reference-style card content: tag + prominent heading (top) + two stats (bottom) */
 .pillar-card-head{ position:relative; z-index:2; padding-right:3.5rem; }
 .pillar-card-head h3{ max-width:22ch; }
 .pillar-tag{ display:inline-block; margin-top:.85rem; font-size:var(--xs); font-weight:600; letter-spacing:.01em;
-  border:1px solid rgba(255,255,255,.55); border-radius:var(--r-pill); padding:.34rem .9rem; color:#fff; background:rgba(255,255,255,.1); }
+  border:1px solid rgba(255,255,255,.55); border-radius:var(--r-pill); padding:.34rem .9rem; color:#fff; background:rgba(255,255,255,.1); transition:color var(--t-base),background-color var(--t-base),border-color var(--t-base); }
 .pillar-card .case-mini-stats{ position:relative; z-index:2; border-top:1px solid rgba(255,255,255,.24); padding-top:1.1rem; }
 .pillar-card .ms-num{ color:#fff; }
 .pillar-card .mini-stat + .mini-stat{ border-left-color:rgba(255,255,255,.3); }
+.pillar-card .ms-num,.pillar-card .ms-label{ transition:color var(--t-base); }
+/* Hover = the card lights up to a soft Aster panel with deep-navy text (was royal navy) */
+.pillar-card:hover h3{ color:var(--navy); text-shadow:none; }
+.pillar-card:hover .pillar-tag{ color:var(--navy); background:rgba(255,255,255,.5); border-color:rgba(17,17,68,.35); }
+.pillar-card:hover .ms-num{ color:var(--navy); }
+.pillar-card:hover .ms-label{ color:rgba(17,17,68,.82); }
+.pillar-card:hover .case-mini-stats{ border-top-color:rgba(17,17,68,.22); }
+.pillar-card:hover .mini-stat + .mini-stat{ border-left-color:rgba(17,17,68,.22); }
 
 /* ── service-list cards (services overview) ── */
 .services-list{ display:flex; flex-direction:column; gap:1.1rem; }
