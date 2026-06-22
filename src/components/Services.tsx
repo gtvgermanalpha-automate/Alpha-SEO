@@ -10,10 +10,44 @@ const CARD_BG: Record<string, string> = {
   "reddit-community": "photo-1611162617213-7d7a39e9b1d7",
 };
 const bg = (slug: string) =>
-  `https://images.unsplash.com/${CARD_BG[slug] ?? CARD_BG["technical-seo"]}?w=540&q=65&auto=format&fit=crop`;
+  `https://images.unsplash.com/${CARD_BG[slug] ?? CARD_BG["technical-seo"]}?w=720&q=68&auto=format&fit=crop`;
 
-/** Five SEO pillar cards — image background + bold heading; intensifies + gold
- *  arrow on hover. Ported from the original static site. */
+/** Short category tag shown on each card (like the reference thumbnails). */
+const CARD_TAG: Record<string, string> = {
+  "technical-seo": "Technical SEO",
+  "on-page-seo": "On-Page & Content",
+  "off-page-seo": "Off-Page & Authority",
+  "local-seo": "Local SEO",
+  "reddit-community": "Community & AEO",
+};
+
+/** Two honest, service-descriptive highlights per pillar (what the engagement
+ *  covers — not client results). Editable here. */
+const CARD_STATS: Record<string, { num: string; label: string }[]> = {
+  "technical-seo": [
+    { num: "200+", label: "Point technical audit" },
+    { num: "8", label: "Core engineering layers" },
+  ],
+  "on-page-seo": [
+    { num: "47", label: "On-page ranking levers" },
+    { num: "100%", label: "Original, briefed content" },
+  ],
+  "off-page-seo": [
+    { num: "DR60+", label: "Editorial placements" },
+    { num: "0", label: "PBNs — every link earned" },
+  ],
+  "local-seo": [
+    { num: "Top-3", label: "Local-pack targeting" },
+    { num: "GBP", label: "Profile + citations" },
+  ],
+  "reddit-community": [
+    { num: "AEO", label: "Answer-engine ready" },
+    { num: "24/7", label: "Community presence" },
+  ],
+};
+
+/** Five SEO pillar cards — image background + category tag, prominent heading and
+ *  two highlights (reference-style). Lighter accent that deepens on hover. */
 export function Services() {
   return (
     <section id="services" className="section">
@@ -29,7 +63,18 @@ export function Services() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={bg(s.slug)} alt="" loading="lazy" />
               </div>
-              <h3>{s.title}</h3>
+              <div className="pillar-card-head">
+                <h3>{s.title}</h3>
+                <span className="pillar-tag">{CARD_TAG[s.slug] ?? "SEO"}</span>
+              </div>
+              <div className="case-mini-stats">
+                {(CARD_STATS[s.slug] ?? []).map((st, i) => (
+                  <div className="mini-stat" key={i}>
+                    <span className="ms-num">{st.num}</span>
+                    <span className="ms-label">{st.label}</span>
+                  </div>
+                ))}
+              </div>
             </Link>
           ))}
         </div>
