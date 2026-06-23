@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { businessTypes, siteConfig } from "@/lib/content";
 import { FORMSPREE_ENDPOINT, submitToFormspree } from "@/lib/forms";
+import { SuccessTick } from "@/components/ui/SuccessTick";
 
 type Errors = Partial<Record<"name" | "email" | "message" | "consent", string>>;
 type Status = "idle" | "submitting" | "success" | "error";
@@ -65,6 +66,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="contact-form" style={{ textAlign: "center" }}>
+        <SuccessTick />
         <h3 style={{ color: "var(--navy)" }}>Thank you — message received</h3>
         <p style={{ margin: ".8rem 0 1.4rem", color: "var(--ink-soft)" }}>
           A senior strategist will be in touch within one business day. We look forward to helping your organic growth compound.

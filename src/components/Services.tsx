@@ -1,16 +1,9 @@
 import Link from "next/link";
 import { copy, services } from "@/lib/content";
 
-/** Per-pillar background photo (Unsplash, from the original static site). */
-const CARD_BG: Record<string, string> = {
-  "technical-seo": "photo-1551288049-bebda4e38f71",
-  "on-page-seo": "photo-1455390582262-044cdead277a",
-  "off-page-seo": "photo-1518770660439-4636190af475",
-  "local-seo": "photo-1524661135-423995f22d0b",
-  "reddit-community": "photo-1611162617213-7d7a39e9b1d7",
-};
-const bg = (slug: string) =>
-  `https://images.unsplash.com/${CARD_BG[slug] ?? CARD_BG["technical-seo"]}?w=720&q=68&auto=format&fit=crop`;
+// Card background photos removed for now (owner will upload new ones) — the cards
+// show their aster base + gradient. To restore: add a `.service-card-bg` <img> back
+// inside the card (the CSS for it is still in globals.css).
 
 /** Short category tag shown on each card (like the reference thumbnails). */
 const CARD_TAG: Record<string, string> = {
@@ -69,10 +62,6 @@ export function Services() {
         <div className="services-grid services-grid-5">
           {services.map((s) => (
             <Link key={s.slug} href={`/services/${s.slug}`} className="service-card pillar-card">
-              <div className="service-card-bg">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={bg(s.slug)} alt="" loading="lazy" />
-              </div>
               <div className="pillar-card-head">
                 <h3>{CARD_HEADLINE[s.slug] ?? s.title}</h3>
                 <span className="pillar-tag">{CARD_TAG[s.slug] ?? "SEO"}</span>

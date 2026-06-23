@@ -16,10 +16,9 @@ export function CaseStudyCard({ study }: { study: CaseStudy }) {
   const stats = study.results.slice(0, 2).map(toStat);
   return (
     <Link href={caseStudyHref(study.slug)} className="work-card case-detailed">
-      <div className="work-image">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={study.image} alt={study.imageAlt ?? study.title} loading="lazy" />
-      </div>
+      {/* Background photo removed for now (owner will upload new ones) — the card
+          shows its aster base + gradient. To restore: add back a
+          <div className="work-image"><img src={study.image} … /></div> here. */}
       <div className="work-meta">
         <div className="work-meta-head">
           <h3>{study.title}</h3>

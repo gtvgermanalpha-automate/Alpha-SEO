@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FORMSPREE_ENDPOINT, submitToFormspree } from "@/lib/forms";
+import { SuccessTick } from "@/components/ui/SuccessTick";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -39,7 +40,8 @@ export function AuditForm() {
 
   if (status === "success") {
     return (
-      <div className="lm-form">
+      <div className="lm-form" style={{ textAlign: "center" }}>
+        <SuccessTick />
         <h3>Request received</h3>
         <p>Thanks — a senior strategist will review your domain and send your prioritised audit within 48 hours.</p>
       </div>
