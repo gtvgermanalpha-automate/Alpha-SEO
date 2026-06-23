@@ -1,7 +1,7 @@
 /**
  * Minimal GitHub Contents API client used by the CMS to read and commit the
  * `src/content/*.json` files. A commit to the configured branch triggers a
- * Netlify rebuild, which is how CMS edits go live.
+ * Vercel deploy, which is how CMS edits go live.
  *
  * Uses plain `fetch` (no SDK) so there are no extra dependencies.
  * Required env vars: GITHUB_TOKEN, GITHUB_REPO ("owner/name"). Optional: GITHUB_BRANCH (default "main").

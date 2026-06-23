@@ -3,7 +3,7 @@
 A lightweight admin at **`/admin`** lets you edit most of the site's content —
 your site-wide details and text, the home-page reviews, and the detail pages
 (Services, Industries and "How we help"). Saving commits the change to the
-GitHub repo, which triggers a Netlify rebuild — your edit is live in about
+GitHub repo, which triggers a Vercel deploy — your edit is live in about
 **1–2 minutes**.
 
 The public site is unaffected by the CMS: it still reads content at build time,
@@ -102,8 +102,8 @@ Generate a session secret with:
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-**Production (Netlify):** Site configuration → Environment variables → add all five.
-After adding them, trigger a redeploy so they take effect.
+**Production (Vercel):** Project → Settings → Environment Variables → add all five.
+After adding them, redeploy so they take effect.
 
 **Local development:** copy `.env.example` to `.env.local` and fill in the values.
 Tip: for local testing, point `GITHUB_REPO`/`GITHUB_BRANCH` at a branch you don't
@@ -145,10 +145,10 @@ the real artwork, see **`public/brand/README.txt`**.
 
 ## Contact form enquiries
 
-The contact form needs **no database** — Netlify Forms stores every submission and
-can email it to you. To choose **where enquiries are emailed**, and to optionally
-switch on **reCAPTCHA** spam protection or a **visitor auto-reply**, see
-**[`FORMS.md`](FORMS.md)**.
+The contact and audit forms need **no database** — they post to **Formspree**,
+which stores every submission and emails it to you. To set the endpoint, choose
+**where enquiries are emailed**, and optionally switch on **reCAPTCHA** spam
+protection or a **visitor auto-reply**, see **[`FORMS.md`](FORMS.md)**.
 
 ---
 
@@ -159,8 +159,8 @@ switch on **reCAPTCHA** spam protection or a **visitor auto-reply**, see
 - **"Saving is disabled" on the dashboard** → `GITHUB_TOKEN` / `GITHUB_REPO` are missing.
 - **Save fails with a GitHub error** → the token lacks *Contents: Read and write*,
   has expired, or `GITHUB_REPO` / `GITHUB_BRANCH` is wrong.
-- **Edit saved but the site looks unchanged** → the rebuild hasn't finished yet
-  (check Netlify deploys), or you're viewing a cached page — hard-refresh.
+- **Edit saved but the site looks unchanged** → the deploy hasn't finished yet
+  (check Vercel deployments), or you're viewing a cached page — hard-refresh.
 
 ## Scope / future
 

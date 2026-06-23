@@ -1,69 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { businessTypes, siteConfig } from "@/lib/content";
+import { FORMSPREE_ENDPOINT, submitToFormspree } from "@/lib/forms";
 
 type Errors = Partial<Record<"name" | "email" | "message" | "consent", string>>;
 type Status = "idle" | "submitting" | "success" | "error";
 
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** reCAPTCHA v2 site key. Set NEXT_PUBLIC_RECAPTCHA_SITE_KEY to switch the widget
- *  on; while it's unset the form behaves as before (honeypot only). */
-const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-
-type Grecaptcha = {
-  render: (el: HTMLElement, opts: Record<string, unknown>) => number;
-  getResponse: (id?: number) => string;
-  reset: (id?: number) => void;
-};
-declare global {
-  interface Window {
-    grecaptcha?: Grecaptcha;
-  }
-}
-
 const errStyle: React.CSSProperties = { marginTop: ".3rem", fontSize: "var(--small)", color: "var(--error)", fontWeight: 600 };
 
-/** Contact form — original `.contact-form` markup, submitting to Netlify Forms
- *  via fetch (matching hidden form: public/__forms.html, name="contact"). */
+/** Contact form — original `.contact-form` markup, submitting to Formspree via
+ *  fetch (no backend). Spam is handled by the `_gotcha` honeypot + Formspree's
+ *  own filtering; enable reCAPTCHA from the Formspree dashboard if needed. */
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Errors>({});
-  const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
-  const recaptchaRef = useRef<HTMLDivElement>(null);
-  const widgetId = useRef<number | null>(null);
-
-  // Render the reCAPTCHA v2 widget once Google's script is ready — only when a
-  // site key is configured. Re-runs on `status` so it re-appears after success.
-  useEffect(() => {
-    if (!RECAPTCHA_SITE_KEY || status === "success") return;
-    let timer: ReturnType<typeof setTimeout>;
-    const render = () => {
-      const el = recaptchaRef.current;
-      if (!el || el.childElementCount > 0) return;
-      if (window.grecaptcha?.render) {
-        widgetId.current = window.grecaptcha.render(el, {
-          sitekey: RECAPTCHA_SITE_KEY,
-          callback: () => setRecaptchaError(null),
-          "expired-callback": () => setRecaptchaError(null),
-        });
-      } else {
-        timer = setTimeout(render, 250);
-      }
-    };
-    if (!document.getElementById("recaptcha-api")) {
-      const s = document.createElement("script");
-      s.id = "recaptcha-api";
-      s.src = "https://www.google.com/recaptcha/api.js?render=explicit";
-      s.async = true;
-      s.defer = true;
-      document.head.appendChild(s);
-    }
-    render();
-    return () => clearTimeout(timer);
-  }, [status]);
 
   function validate(data: FormData): Errors {
     const next: Errors = {};
@@ -91,36 +45,19 @@ export function ContactForm() {
       return;
     }
 
-    let token = "";
-    if (RECAPTCHA_SITE_KEY) {
-      token = window.grecaptcha?.getResponse(widgetId.current ?? undefined) ?? "";
-      if (!token) {
-        setRecaptchaError("Please confirm you're not a robot.");
-        recaptchaRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
-      }
-      setRecaptchaError(null);
-    }
-
     setStatus("submitting");
     try {
       const body = new URLSearchParams();
       data.forEach((value, key) => body.append(key, typeof value === "string" ? value : ""));
-      body.set("form-name", "contact");
-      if (token) body.set("g-recaptcha-response", token);
+      // Subject line so contact enquiries are easy to spot in the inbox / Formspree.
+      body.set("_subject", "New contact enquiry — alphadigitalsol.com");
 
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (!res.ok) throw new Error(`Submission failed (${res.status})`);
+      const ok = await submitToFormspree(body);
+      if (!ok) throw new Error("Submission rejected");
 
       form.reset();
-      window.grecaptcha?.reset(widgetId.current ?? undefined);
       setStatus("success");
     } catch {
-      window.grecaptcha?.reset(widgetId.current ?? undefined);
       setStatus("error");
     }
   }
@@ -152,15 +89,13 @@ export function ContactForm() {
       ref={formRef}
       name="contact"
       method="POST"
-      action="/__forms.html"
-      data-netlify="true"
+      action={FORMSPREE_ENDPOINT}
       onSubmit={handleSubmit}
       noValidate
       className="contact-form"
     >
-      <input type="hidden" name="form-name" value="contact" />
-      {/* Honeypot: hidden from real users; bots that fill it are rejected. */}
-      <p hidden><label>Leave this field empty<input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
+      {/* Honeypot: hidden from real users; bots that fill it are dropped by Formspree. */}
+      <p hidden><label>Leave this field empty<input name="_gotcha" tabIndex={-1} autoComplete="off" /></label></p>
 
       <div className="field-row">
         <div className="field">
@@ -201,13 +136,6 @@ export function ContactForm() {
         <span>I agree to Alpha Digital Solutions contacting me about my enquiry. We&apos;ll never share your details.</span>
       </label>
       {errors.consent ? <span style={errStyle}>{errors.consent}</span> : null}
-
-      {RECAPTCHA_SITE_KEY ? (
-        <div className="field">
-          <div ref={recaptchaRef} className="g-recaptcha" />
-          {recaptchaError ? <span style={errStyle}>{recaptchaError}</span> : null}
-        </div>
-      ) : null}
 
       {status === "error" ? (
         <div role="alert" style={{ margin: ".6rem 0", padding: ".9rem 1rem", border: "var(--bw) solid var(--error)", borderRadius: "var(--r-sm)", color: "var(--error)", fontSize: "var(--small)" }}>

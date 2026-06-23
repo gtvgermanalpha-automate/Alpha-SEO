@@ -1,142 +1,102 @@
-# Contact form — submissions, notifications, spam & auto-reply
+# Contact + audit forms — submissions, notifications, spam & auto-reply
 
-The contact form is powered by **Netlify Forms**, so **there is no database to run
-and no backend to host**. Every enquiry is captured by Netlify automatically:
-
-- It's **stored** in your Netlify dashboard (and exportable to CSV).
-- It can be **emailed to you** the moment it arrives (one-time setup, below).
-- Optionally, the visitor can get an **auto-reply** confirming you received it.
+The site's two public forms — the **contact** form and the homepage **"free SEO
+audit"** form — post directly to **[Formspree](https://formspree.io)**. There is
+**no backend to host and no database to run**: Formspree captures every enquiry,
+stores it, and emails it to you.
 
 How it's wired (for reference):
 
-- [`src/components/ContactForm.tsx`](src/components/ContactForm.tsx) — the real, styled,
-  validated form. It POSTs over AJAX so the page never reloads.
-- [`public/__forms.html`](public/__forms.html) — a hidden static form Netlify's
-  build bot scans to register the `contact` form and its fields. **Keep its field
-  names in sync with the component.**
-- A built-in **honeypot** (`bot-field`) silently drops basic spam bots.
+- [`src/lib/forms.ts`](src/lib/forms.ts) — the shared endpoint + the AJAX submit
+  helper. Both forms post here; the endpoint comes from
+  `NEXT_PUBLIC_FORMSPREE_ENDPOINT` (falls back to the project's existing form).
+- [`src/components/ContactForm.tsx`](src/components/ContactForm.tsx) — the real,
+  styled, validated contact form. POSTs over AJAX so the page never reloads.
+- [`src/components/AuditForm.tsx`](src/components/AuditForm.tsx) — the lead-magnet
+  audit-request form.
+- Both forms send a distinct **`_subject`** line ("New contact enquiry…" /
+  "New SEO audit request…") so you can tell them apart at a glance.
+- A built-in **`_gotcha` honeypot** (a hidden field) silently drops basic spam bots.
 
-> ⚠️ Netlify processes forms on the **deployed site only** — submissions do **not**
-> work on `npm run dev`. Always test on the live URL.
-
----
-
-## 1. Get submissions emailed to you  ← the important one
-
-By default Netlify *stores* submissions but doesn't email them. Turn on an email
-notification once, in the dashboard:
-
-1. Netlify → your site → **Forms** (top nav).
-2. Open **Form notifications** — in the current UI this is under
-   **Project configuration → Notifications → Form submission notifications**
-   (older sites: **Site settings → Forms → Form notifications**).
-3. **Add notification → Email notification.**
-4. Fill in:
-   - **Event to listen for:** *New form submission*
-   - **Form:** `contact`
-   - **Email to notify:** the address you want enquiries sent to. For more than
-     one recipient, separate addresses with a comma
-     (e.g. `info@mmraccountants.co.uk, owner@mmraccountants.co.uk`).
-5. **Save.**
-
-From now on, every enquiry is emailed there **and** kept in the dashboard as a
-backup. To change the recipient later, edit or delete that same notification.
-
-> Tip: point it at a monitored shared inbox (e.g. `info@…`) rather than a personal
-> address, so cover is maintained when someone's on leave.
+> Unlike the old Netlify Forms setup, submissions **do** work from any deployed
+> URL (preview or production) the moment the endpoint is live — there's no
+> build-time form registration step.
 
 ---
 
-## 2. Read & export past submissions
+## 1. One-time setup
 
-Netlify → your site → **Forms → `contact`**. You'll see every submission with its
-fields. Use **Export to CSV** for a spreadsheet, or delete spam entries here.
+1. Create a free **Formspree** account at <https://formspree.io>.
+2. **+ New form** → name it (e.g. "Alpha — website"). Copy its endpoint URL — it
+   looks like `https://formspree.io/f/xxxxxxx`.
+3. In **Vercel → Project → Settings → Environment Variables**, add:
 
-**Free plan:** 100 submissions/month + 10 MB of stored uploads, with spam
-filtering included. Beyond that, Netlify prompts you to upgrade the Forms level.
+   | Variable | Value |
+   |---|---|
+   | `NEXT_PUBLIC_FORMSPREE_ENDPOINT` | `https://formspree.io/f/xxxxxxx` (your endpoint) |
+
+   Apply it to **Production** (and Preview if you want forms to work on previews),
+   then **redeploy** — `NEXT_PUBLIC_*` values are baked in at build time.
+4. **Confirm the form on first use.** The very first time the form receives a
+   submission, Formspree emails the form owner a one-click **confirmation** link.
+   Click it once and every future submission flows through automatically. Send a
+   test enquiry on the deployed site to trigger it.
+
+> Both forms can share one endpoint (they're tagged by `_subject`). If you'd
+> rather keep them fully separate — e.g. different recipients — create a second
+> Formspree form and split the components onto two endpoints.
+
+---
+
+## 2. Where enquiries go
+
+- **Email:** Formspree emails each submission to the address on your Formspree
+  account by default. Add or change recipients under the form's **Settings →
+  Emails / Notifications** (a shared inbox like a team address is best).
+- **Dashboard:** every submission is also kept in the Formspree dashboard and
+  exportable to CSV.
+- The visitor's **`email`** field is used as the email **reply-to**, so you can
+  reply to an enquiry straight from your inbox.
+
+**Free plan:** ~50 submissions/month with spam filtering included. Beyond that,
+Formspree prompts you to upgrade.
 
 ---
 
 ## 3. Spam protection
 
-**Already on — honeypot.** A hidden `bot-field` that humans never see. Bots that
+**Already on — honeypot.** The hidden `_gotcha` field humans never see; bots that
 auto-fill every field trip it and are silently discarded. Zero friction, no setup.
+Formspree also runs its own spam filtering on top.
 
-**Optional — reCAPTCHA v2.** A stronger layer (the *"I'm not a robot"* checkbox)
-for the smarter bots a honeypot misses. The code is already in place but **dormant
-until you add keys** — so add it only **if spam actually starts getting through**
-(it adds a small step for every real visitor too).
-
-To activate:
-
-1. Go to <https://www.google.com/recaptcha/admin> and register a site:
-   - **Type:** reCAPTCHA **v2** → *"I'm not a robot" Checkbox*.
-   - **Domains:** add `mmruk.netlify.app` **and** your custom domain (and
-     `localhost` if you want to test locally).
-   - Copy the **Site key** and the **Secret key**.
-2. In Netlify → **Site configuration → Environment variables**, add three
-   (Site key and `SITE_RECAPTCHA_KEY` are the *same* value):
-   | Variable | Value |
-   |---|---|
-   | `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | your Site key |
-   | `SITE_RECAPTCHA_KEY` | your Site key |
-   | `SITE_RECAPTCHA_SECRET` | your Secret key |
-3. In [`public/__forms.html`](public/__forms.html), add `data-netlify-recaptcha="true"`
-   to the `<form>` tag (there's a comment there showing exactly where).
-4. **Redeploy.** The checkbox now appears on the form, and Netlify rejects any
-   submission that fails the challenge.
-
-> Both halves are required: the env vars draw & key the widget, and the
-> `data-netlify-recaptcha` attribute is what makes Netlify actually *enforce* it.
-> For UK/GDPR, mention reCAPTCHA (a Google service) in your privacy policy.
+**Optional — reCAPTCHA / hCaptcha.** For stubborn spam, turn on a challenge in
+**Formspree → your form → Settings → Spam protection**. It's handled entirely on
+Formspree's side — **no code change and no env vars** (unlike the old setup).
 
 ---
 
 ## 4. Auto-reply to the visitor
 
-Netlify's own notifications only email **you**. To send the **person who filled in
-the form** an instant branded confirmation, this site includes a Netlify function,
-[`netlify/functions/submission-created.mjs`](netlify/functions/submission-created.mjs),
-that fires on every submission and sends the email via **[Resend](https://resend.com)**.
-It's **dormant until you add an API key** — without one it does nothing, so the
-form is unaffected.
+To send the person who submitted the form an instant confirmation email, enable
+Formspree's **Autoresponse** (form → **Settings → Autoresponse**): set the subject
+and message and Formspree sends it automatically. This is a **paid-plan** feature
+on Formspree.
 
-To activate:
-
-1. Create a free **Resend** account and **verify your sending domain**
-   (Resend → *Domains* → add `mmraccountants.co.uk` and add the DNS records it
-   gives you). This lets you send *from* your own domain.
-2. Resend → **API Keys** → create one, copy it.
-3. In Netlify → **Site configuration → Environment variables**, add:
-   | Variable | Value | Notes |
-   |---|---|---|
-   | `RESEND_API_KEY` | your Resend key | **Required** to send. |
-   | `AUTOREPLY_FROM` | `MMR Accountants <hello@mmraccountants.co.uk>` | Must be on the verified domain. |
-   | `AUTOREPLY_REPLY_TO` | `info@mmraccountants.co.uk` | Where the visitor's reply lands. |
-   | `AUTOREPLY_BCC` | `info@mmraccountants.co.uk` | *Optional* — copy the firm on each auto-reply. |
-4. **Redeploy.**
-
-Now each visitor gets a styled "message received" email (brand colours, their own
-message quoted back, your phone number). The wording lives in the function's
-`renderHtml()` / `text` — edit there to change it.
-
-> **Before you verify a domain**, leave `AUTOREPLY_FROM` unset: the function falls
-> back to Resend's shared test sender so you can trial it end-to-end first.
-> A failed send is logged and **never** blocks or fails the actual submission.
+> The previous Netlify function that sent a branded Resend auto-reply
+> (`netlify/functions/submission-created.mjs`) was removed in the Vercel
+> migration. If you'd prefer a fully branded, free auto-reply instead of
+> Formspree's paid one, we can add a small Next.js API route that sends it via
+> Resend — ask and we'll wire it up.
 
 ---
 
 ## Troubleshooting
 
-- **No emails arriving** → confirm the **Email notification** (section 1) exists and
-  the address is right; check spam. Remember it only works on the **deployed** site.
-- **Form not in the dashboard** → the build bot didn't detect it. Confirm
-  `public/__forms.html` deployed and its field names match the component, then
-  redeploy.
-- **reCAPTCHA shows but spam still gets through** → you set the env vars but didn't
-  add `data-netlify-recaptcha="true"` to `__forms.html` (step 3).
-- **reCAPTCHA "ERROR for site owner: Invalid site key"** → the domain isn't listed
-  in the reCAPTCHA admin console, or the site key is wrong.
-- **Auto-reply not sending** → check the function log (Netlify → **Logs → Functions
-  → submission-created**). Usual causes: missing `RESEND_API_KEY`, or `AUTOREPLY_FROM`
-  not on a verified domain.
+- **No emails arriving** → check you clicked the **confirmation link** Formspree
+  emailed on the first submission (§1.4); check the recipient under the form's
+  Settings; check spam.
+- **Submissions fail / "form not found"** → `NEXT_PUBLIC_FORMSPREE_ENDPOINT` is
+  unset or wrong, or the project wasn't redeployed after setting it. Confirm the
+  endpoint in the Formspree dashboard and redeploy.
+- **Hit the monthly limit** → the free plan caps submissions (~50/mo); upgrade the
+  Formspree plan or reduce spam.

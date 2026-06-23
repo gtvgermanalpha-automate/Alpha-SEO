@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FORMSPREE_ENDPOINT, submitToFormspree } from "@/lib/forms";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -12,8 +13,8 @@ const FOCUS = [
   "Full-funnel organic strategy",
 ];
 
-/** Lead-magnet "request a free SEO audit" form. Submits to Netlify Forms via
- *  fetch (matching hidden form: public/__forms.html, name="audit"). */
+/** Lead-magnet "request a free SEO audit" form. Submits to Formspree via fetch
+ *  (no backend); spam is handled by the `_gotcha` honeypot + Formspree filtering. */
 export function AuditForm() {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -25,13 +26,10 @@ export function AuditForm() {
     try {
       const body = new URLSearchParams();
       data.forEach((value, key) => body.append(key, typeof value === "string" ? value : ""));
-      body.set("form-name", "audit");
-      const res = await fetch("/__forms.html", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
-      });
-      if (!res.ok) throw new Error(`Submission failed (${res.status})`);
+      // Subject line so audit requests are easy to spot in the inbox / Formspree.
+      body.set("_subject", "New SEO audit request — alphadigitalsol.com");
+      const ok = await submitToFormspree(body);
+      if (!ok) throw new Error("Submission rejected");
       form.reset();
       setStatus("success");
     } catch {
@@ -49,11 +47,10 @@ export function AuditForm() {
   }
 
   return (
-    <form className="lm-form" name="audit" method="POST" action="/__forms.html" data-netlify="true" onSubmit={handleSubmit} noValidate>
+    <form className="lm-form" name="audit" method="POST" action={FORMSPREE_ENDPOINT} onSubmit={handleSubmit} noValidate>
       <h3>Request your audit</h3>
-      <input type="hidden" name="form-name" value="audit" />
-      {/* Honeypot: hidden from real users; bots that fill it are rejected. */}
-      <p hidden><label>Leave this field empty<input name="bot-field" tabIndex={-1} autoComplete="off" /></label></p>
+      {/* Honeypot: hidden from real users; bots that fill it are dropped by Formspree. */}
+      <p hidden><label>Leave this field empty<input name="_gotcha" tabIndex={-1} autoComplete="off" /></label></p>
       <div className="field"><input type="text" name="name" placeholder="Your name" required /></div>
       <div className="field"><input type="email" name="email" placeholder="Work email" required /></div>
       <div className="field"><input type="text" name="website" placeholder="Domain to audit (e.g. company.com)" required /></div>

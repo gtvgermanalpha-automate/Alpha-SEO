@@ -42,7 +42,7 @@ npm run lint       # ESLint
 ## CMS
 
 Most copy + content is editable at **`/admin`** (password-gated). Saving commits the
-change to this GitHub repo, which triggers a Netlify rebuild — live in ~1–2 minutes.
+change to this GitHub repo, which triggers a Vercel deploy — live in ~1–2 minutes.
 Content lives in `src/content/*.json`; see **`ADMIN.md`**. Env vars in **`.env.example`**.
 
 ## Project structure
@@ -62,9 +62,8 @@ src/
 
 ## Notes
 
-- Contact/audit forms use **Netlify Forms** (`public/__forms.html` + AJAX), with an
-  optional Resend visitor auto-reply — see **`FORMS.md`**.
+- Contact/audit forms post to **Formspree** (AJAX, no backend) — see **`FORMS.md`**.
 - All animations respect `prefers-reduced-motion`; the site is static-prerendered.
-- Deploy: GitHub → Netlify (auto-deploy on push) → `alphadigitalsol.com`. Handover
-  steps in **`HANDOVER.md`**.
+- Deploy: GitHub → Vercel (auto-deploy on push to the production branch) →
+  `alphadigitalsol.com`. Migration + deploy notes in **`VERCEL.md`**.
 ```

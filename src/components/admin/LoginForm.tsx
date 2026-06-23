@@ -44,7 +44,7 @@ export function LoginForm({ configured }: { configured: boolean }) {
             <p className="font-semibold">CMS not configured</p>
             <p className="mt-1">
               Set <code className="font-mono">ADMIN_PASSWORD</code> and{" "}
-              <code className="font-mono">ADMIN_SESSION_SECRET</code> in the environment (Netlify or{" "}
+              <code className="font-mono">ADMIN_SESSION_SECRET</code> in the environment (Vercel or{" "}
               <code className="font-mono">.env.local</code>), then reload. See{" "}
               <code className="font-mono">ADMIN.md</code>.
             </p>
