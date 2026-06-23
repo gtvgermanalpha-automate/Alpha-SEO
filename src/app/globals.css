@@ -427,7 +427,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,
 @media(max-width:768px){ .topbar{ display:none; } }
 
 /* ════════ HEADER / NAV ════════ */
-header{ position:sticky; top:0; z-index:var(--z-header); background:#cfd8ee; border-bottom:var(--bw) solid rgba(17,17,68,.10);
+header{ position:sticky; top:0; z-index:var(--z-header); background:linear-gradient(135deg, var(--aster) 0%, #cfd8ee 34%, var(--bg) 100%); border-bottom:0;
   transition:box-shadow .3s ease, background-color .3s ease; }
 header.scrolled{ box-shadow:var(--shadow-card); background:rgba(207,216,238,.9); -webkit-backdrop-filter:saturate(140%) blur(8px); backdrop-filter:saturate(140%) blur(8px); }
 header .nav{ transition:padding .3s ease; }
@@ -1138,5 +1138,8 @@ footer{ background:#fff; border-top:var(--bw) solid var(--border); color:var(--i
    aster gradient, so the space behind the floating navbar flows into the hero. */
 @media(min-width:981px){
   header,.hero,.hero-seo,.page-header{ background-attachment:fixed; }
+  /* Overlap the hero/page-header 1px under the navbar so no sub-pixel hairline
+     (cream body bg) shows at the boundary — keeps the shared gradient fully even. */
+  .hero,.hero-seo,.page-header{ margin-top:-1px; }
 }
 
