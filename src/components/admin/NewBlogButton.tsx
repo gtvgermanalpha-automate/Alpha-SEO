@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { notifyCmsChanged } from "@/components/admin/PendingChanges";
 
 /** Creates a draft entry in a list collection (server assigns a unique slug) and opens its editor. */
 export function NewEntryButton({ file, noun }: { file: string; noun: string }) {
@@ -29,6 +30,7 @@ export function NewEntryButton({ file, noun }: { file: string; noun: string }) {
       }
       const data = (await res.json().catch(() => ({}))) as { slug?: string; message?: string };
       if (res.ok && data.slug) {
+        notifyCmsChanged();
         router.push(`/admin/edit/${file}/${data.slug}`);
         return;
       }

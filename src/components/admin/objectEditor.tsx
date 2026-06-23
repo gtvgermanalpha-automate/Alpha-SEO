@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState, type ReactNode } from "react";
+import { notifyCmsChanged } from "@/components/admin/PendingChanges";
 
 /**
  * Shared scaffold for "object-mode" CMS editors (a single JSON file edited whole):
@@ -93,6 +94,7 @@ export function useObjectEditor<T>(id: string) {
       const d = (await res.json().catch(() => ({}))) as { message?: string; errors?: string[] };
       if (res.ok) {
         setSaved(true);
+        notifyCmsChanged();
         return;
       }
       if (res.status === 422 && Array.isArray(d.errors)) {
@@ -127,7 +129,7 @@ export function SaveBtn({ saving, onClick }: { saving: boolean; onClick: () => v
       disabled={saving}
       className="rounded-lg bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {saving ? "Saving…" : "Save & publish"}
+      {saving ? "Saving…" : "Save draft"}
     </button>
   );
 }
@@ -170,7 +172,8 @@ export function StatusBanners({
     <>
       {saved && (
         <div className="mt-5 rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
-          Saved. Your changes will be live in about 1–2 minutes, once the site rebuilds.
+          Saved as a draft. It’s <strong>not live yet</strong> — click <strong>Publish changes</strong> on the
+          dashboard when you’re ready to push your edits to the live site.
         </div>
       )}
       {(saveError || issues.length > 0) && (

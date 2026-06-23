@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import type { BlogPost, BlogSection, BlogLink } from "@/lib/blog";
 import { ImageField } from "@/components/admin/ImageField";
+import { notifyCmsChanged } from "@/components/admin/PendingChanges";
 import {
   Field,
   StringList,
@@ -130,6 +131,7 @@ export function BlogEditor({ slug }: { slug: string }) {
       const data = (await res.json().catch(() => ({}))) as { message?: string; errors?: string[] };
       if (res.ok) {
         setSaved(true);
+        notifyCmsChanged();
         return;
       }
       if (res.status === 422 && Array.isArray(data.errors)) {

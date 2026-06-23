@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { DetailFaq, DetailSection, RawDetail } from "@/lib/detailSchema";
 import { limitFor } from "@/lib/cms/limits";
 import { BackLink, SaveButton, StatusBanner, Card } from "@/components/admin/fields";
+import { notifyCmsChanged } from "@/components/admin/PendingChanges";
 
 const fieldClass =
   "w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm text-ink shadow-sm placeholder:text-ink/30 transition-colors focus:border-bronze focus-visible:outline-none focus:ring-2 focus:ring-bronze/25";
@@ -104,6 +105,7 @@ export function PageEditor({ file, slug }: { file: string; slug: string }) {
       const data = (await res.json().catch(() => ({}))) as { message?: string; errors?: string[] };
       if (res.ok) {
         setSaved(true);
+        notifyCmsChanged();
         return;
       }
       if (res.status === 422 && Array.isArray(data.errors)) {

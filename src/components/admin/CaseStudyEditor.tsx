@@ -13,6 +13,7 @@ import {
   StatusBanner,
   Card,
 } from "@/components/admin/fields";
+import { notifyCmsChanged } from "@/components/admin/PendingChanges";
 
 const FILE = "case-studies";
 type LoadState = "loading" | "ready" | "error";
@@ -111,6 +112,7 @@ export function CaseStudyEditor({ slug }: { slug: string }) {
       const data = (await res.json().catch(() => ({}))) as { message?: string; errors?: string[] };
       if (res.ok) {
         setSaved(true);
+        notifyCmsChanged();
         return;
       }
       if (res.status === 422 && Array.isArray(data.errors)) {

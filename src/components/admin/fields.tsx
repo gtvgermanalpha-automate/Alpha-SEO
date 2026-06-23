@@ -334,7 +334,7 @@ export function SaveButton({ saving, onClick }: { saving: boolean; onClick: () =
       disabled={saving}
       className="rounded-lg bg-ink px-6 py-3 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white shadow-sm transition-colors hover:bg-bronze disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {saving ? "Saving…" : "Save & publish"}
+      {saving ? "Saving…" : "Save draft"}
     </button>
   );
 }
@@ -343,7 +343,8 @@ export function StatusBanner({ saved, error, issues }: { saved: boolean; error: 
   if (saved) {
     return (
       <div className="mt-5 rounded-lg border border-emerald-300 bg-emerald-50 p-4 text-sm text-emerald-900">
-        Saved. Your changes will be live in about 1–2 minutes, once the site finishes rebuilding.
+        Saved as a draft. It’s <strong>not live yet</strong> — click <strong>Publish changes</strong> on the
+        dashboard when you’re ready to push your edits to the live site.
       </div>
     );
   }

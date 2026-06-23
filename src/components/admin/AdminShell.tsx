@@ -18,6 +18,7 @@ import {
   X,
 } from "lucide-react";
 import { AdminTopBar } from "@/components/admin/AdminTopBar";
+import { PendingChangesProvider } from "@/components/admin/PendingChanges";
 
 type NavItem = { label: string; href: string; icon: ComponentType<{ className?: string }>; match?: string };
 
@@ -104,6 +105,7 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
+    <PendingChangesProvider>
     <div className="admin-shell min-h-screen bg-cream/40 text-ink">
       <AdminTopBar onMenu={() => setOpen(true)} />
       <div className="mx-auto flex max-w-7xl">
@@ -146,5 +148,6 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
         </main>
       </div>
     </div>
+    </PendingChangesProvider>
   );
 }

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getFileSha, githubConfigured, putRawFile } from "@/lib/github";
+import { ensureDraftBranch, getDraftBranch, getFileSha, githubConfigured, putRawFile } from "@/lib/github";
 import { IMAGE_LIMITS, humanSize } from "@/lib/cms/limits";
 
 export const runtime = "nodejs";
@@ -95,8 +95,11 @@ export async function POST(request: Request) {
   }
 
   try {
-    const sha = await getFileSha(repoPath); // normally null (unique name)
-    await putRawFile(repoPath, outBase64, `CMS: upload ${dir}/${base}.${format}`, sha);
+    // Uploads commit to the draft branch alongside content edits, so they publish together.
+    await ensureDraftBranch();
+    const draft = getDraftBranch();
+    const sha = await getFileSha(repoPath, draft); // normally null (unique name)
+    await putRawFile(repoPath, outBase64, `CMS: upload ${dir}/${base}.${format}`, sha, draft);
     return NextResponse.json({ ok: true, path: publicPath });
   } catch (error) {
     return NextResponse.json(

@@ -1,6 +1,15 @@
 import { NextResponse } from "next/server";
 import { getCollection } from "@/lib/cms/registry";
-import { getFileSha, getJsonFile, githubConfigured, putJsonFile } from "@/lib/github";
+import {
+  branchExists,
+  ensureDraftBranch,
+  getDraftBranch,
+  getFileSha,
+  getJsonFile,
+  getProdBranch,
+  githubConfigured,
+  putJsonFile,
+} from "@/lib/github";
 import { defaultEntryFor, slugify } from "@/lib/cms/templates";
 
 export const runtime = "nodejs";
@@ -33,7 +42,11 @@ export async function GET(_request: Request, { params }: { params: Promise<{ fil
     );
   }
   try {
-    const { data, sha } = await getJsonFile(col.file);
+    // Edit against the draft branch so editors reflect unpublished changes;
+    // before any draft exists, read the live (production) content.
+    const draft = getDraftBranch();
+    const ref = (await branchExists(draft)) ? draft : getProdBranch();
+    const { data, sha } = await getJsonFile(col.file, ref);
     return NextResponse.json({ id: col.id, mode: col.mode, data, sha });
   } catch (error) {
     return githubError(error);
@@ -57,11 +70,16 @@ export async function PUT(request: Request, { params }: { params: Promise<{ file
   }
 
   try {
+    // Saves commit to the draft branch — production (and the deploy) stays untouched
+    // until the editor clicks Publish.
+    await ensureDraftBranch();
+    const draft = getDraftBranch();
+
     if (col.mode === "object") {
       const result = col.validate(body.data);
       if (!result.ok) return NextResponse.json({ error: "invalid", errors: result.errors }, { status: 422 });
-      const sha = await getFileSha(col.file);
-      const commit = await putJsonFile(col.file, body.data, sha, `CMS: update ${fileName(col.file)}`);
+      const sha = await getFileSha(col.file, draft);
+      const commit = await putJsonFile(col.file, body.data, sha, `CMS: update ${fileName(col.file)}`, draft);
       return NextResponse.json({ ok: true, commitSha: commit.commitSha });
     }
 
@@ -70,7 +88,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ file
     if (!page || typeof page !== "object" || typeof page.slug !== "string" || page.slug.trim() === "") {
       return NextResponse.json({ error: "bad_request", message: "Expected a { page } with a slug." }, { status: 400 });
     }
-    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file);
+    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file, draft);
     if (!Array.isArray(data)) {
       return NextResponse.json({ error: "github_error", message: "Collection file is not a list." }, { status: 502 });
     }
@@ -83,7 +101,7 @@ export async function PUT(request: Request, { params }: { params: Promise<{ file
     const result = col.validate(next);
     if (!result.ok) return NextResponse.json({ error: "invalid", errors: result.errors }, { status: 422 });
     const title = typeof page.title === "string" ? page.title : page.slug;
-    const commit = await putJsonFile(col.file, next, sha, `CMS: update ${fileName(col.file)} (${title})`);
+    const commit = await putJsonFile(col.file, next, sha, `CMS: update ${fileName(col.file)} (${title})`, draft);
     return NextResponse.json({ ok: true, commitSha: commit.commitSha });
   } catch (error) {
     return githubError(error);
@@ -112,7 +130,9 @@ export async function POST(request: Request, { params }: { params: Promise<{ fil
   if (!title) return NextResponse.json({ error: "bad_request", message: "A title is required." }, { status: 400 });
 
   try {
-    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file);
+    await ensureDraftBranch();
+    const draft = getDraftBranch();
+    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file, draft);
     if (!Array.isArray(data)) {
       return NextResponse.json({ error: "github_error", message: "Collection file is not a list." }, { status: 502 });
     }
@@ -134,7 +154,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ fil
     const next = [entry, ...data];
     const result = col.validate(next);
     if (!result.ok) return NextResponse.json({ error: "invalid", errors: result.errors }, { status: 422 });
-    const commit = await putJsonFile(col.file, next, sha, `CMS: create ${fileName(col.file)} (${slug})`);
+    const commit = await putJsonFile(col.file, next, sha, `CMS: create ${fileName(col.file)} (${slug})`, draft);
     return NextResponse.json({ ok: true, slug, commitSha: commit.commitSha });
   } catch (error) {
     return githubError(error);
@@ -156,7 +176,9 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ f
   if (!slug) return NextResponse.json({ error: "bad_request", message: "A ?slug= is required." }, { status: 400 });
 
   try {
-    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file);
+    await ensureDraftBranch();
+    const draft = getDraftBranch();
+    const { data, sha } = await getJsonFile<Array<{ slug: string }>>(col.file, draft);
     if (!Array.isArray(data)) {
       return NextResponse.json({ error: "github_error", message: "Collection file is not a list." }, { status: 502 });
     }
@@ -167,7 +189,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ f
     const next = data.filter((_, i) => i !== index);
     const result = col.validate(next);
     if (!result.ok) return NextResponse.json({ error: "invalid", errors: result.errors }, { status: 422 });
-    const commit = await putJsonFile(col.file, next, sha, `CMS: delete ${fileName(col.file)} (${slug})`);
+    const commit = await putJsonFile(col.file, next, sha, `CMS: delete ${fileName(col.file)} (${slug})`, draft);
     return NextResponse.json({ ok: true, commitSha: commit.commitSha });
   } catch (error) {
     return githubError(error);

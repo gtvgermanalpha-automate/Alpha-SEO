@@ -2,9 +2,9 @@
 
 A lightweight admin at **`/admin`** lets you edit most of the site's content —
 your site-wide details and text, the home-page reviews, and the detail pages
-(Services, Industries and "How we help"). Saving commits the change to the
-GitHub repo, which triggers a Vercel deploy — your edit is live in about
-**1–2 minutes**.
+(Services, Industries and "How we help"). **Saving keeps changes as drafts** (no
+deploy); when you click **Publish changes** on the dashboard, all your drafts go
+live together — the site rebuilds in about **1–2 minutes**.
 
 The public site is unaffected by the CMS: it still reads content at build time,
 so if the CMS is not configured the marketing site builds and runs exactly as
@@ -117,11 +117,20 @@ mind test commits landing on.
 2. Pick a page from the dashboard.
 3. Edit the fields. Use the ↑ / ↓ buttons to reorder list items, ✕ to remove,
    and the "+ Add" buttons to add.
-4. Click **Save & publish**.
-5. Wait ~1–2 minutes for the rebuild, then refresh the live page.
+4. Click **Save draft**. Your change is saved but **not live yet**. Keep saving as
+   many edits across as many pages as you like.
+5. When you're ready, return to the dashboard and click **Publish changes**. All
+   your drafts go live together; the site rebuilds in ~1–2 minutes.
 
-Each save creates a commit named `CMS: update <file>.json (<page title>)`, so
-there's a full history and any change can be reverted in GitHub if needed.
+The dashboard and the top bar show a badge with **how many unpublished changes**
+are waiting. If you try to log out with unpublished drafts, you're asked whether to
+**publish**, **keep them as drafts**, or **discard** them.
+
+Behind the scenes: saves commit to a draft branch (`cms-draft`), so they never
+trigger a deploy. Publishing merges that branch into `main` — the single action
+that deploys, named `CMS: publish draft changes`. Every edit is an ordinary Git
+commit, so the full history is in GitHub and anything can be reverted. **Discard**
+resets the draft branch to the live site, throwing away all unpublished edits.
 
 ---
 
@@ -159,8 +168,10 @@ protection or a **visitor auto-reply**, see **[`FORMS.md`](FORMS.md)**.
 - **"Saving is disabled" on the dashboard** → `GITHUB_TOKEN` / `GITHUB_REPO` are missing.
 - **Save fails with a GitHub error** → the token lacks *Contents: Read and write*,
   has expired, or `GITHUB_REPO` / `GITHUB_BRANCH` is wrong.
-- **Edit saved but the site looks unchanged** → the deploy hasn't finished yet
-  (check Vercel deployments), or you're viewing a cached page — hard-refresh.
+- **Edit saved but the site looks unchanged** → saving only creates a **draft** —
+  click **Publish changes** on the dashboard to push it live. If you already
+  published, the deploy may still be running (check Vercel deployments) or you're
+  viewing a cached page — hard-refresh.
 
 ## Scope / future
 

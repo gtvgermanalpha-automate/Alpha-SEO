@@ -64,13 +64,22 @@ The domain currently resolves to Netlify. To cut over:
 > URL **before** switching DNS. The old Netlify deploy keeps serving until DNS
 > moves, so there's no downtime — flip DNS only once Vercel looks correct.
 
-## Note on builds
+## Builds & the draft/publish CMS workflow
 
-On Vercel, every push to `main` (including each CMS save) triggers a production
-deploy. The free (Hobby) tier allows ~100 deploys/day, so frequent edits are far
-less constrained than Netlify's monthly build-minute pool. A **draft/publish CMS
-workflow** (save batches edits without deploying; one explicit "Publish" deploys)
-is planned next to cut deploys further and add editorial control.
+CMS saves do **not** deploy. Each save commits to a draft branch (`cms-draft`);
+clicking **Publish changes** in `/admin` merges that branch into `main` — the one
+action that triggers a production deploy. Deploys stay deliberate (one per publish,
+not one per edit), which is the whole point of leaving Netlify's build-minute wall.
+
+Two things make this work, both already in the repo:
+
+- **`vercel.json`** disables automatic deployments for the `cms-draft` branch, so
+  saves never build. (Belt-and-suspenders: you can also disable that branch under
+  Vercel → Settings → Git.)
+- **`GITHUB_DRAFT_BRANCH`** (optional env var, default `cms-draft`) names the draft
+  branch — you don't need to create it; the CMS creates it on the first save.
+
+Normal pushes to `main` (e.g. code changes) still deploy as usual.
 
 > ⚠ Vercel's **Hobby** tier is for non-commercial use. For a business site, use
 > **Vercel Pro** (~$20/mo) to be compliant.
