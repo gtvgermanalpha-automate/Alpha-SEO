@@ -7,7 +7,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard";
 export function Work() {
   const featured = caseStudies.slice(0, 3);
   return (
-    <section className="section section-soft">
+    <section className="section section-soft" id="work">
       <div className="container">
         <div className="section-head">
           <span className="eyebrow">Selected work</span>
