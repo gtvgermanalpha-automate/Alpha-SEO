@@ -4,7 +4,6 @@ import { HeroPremium } from "@/components/HeroPremium";
 import { TrustedBy } from "@/components/TrustedBy";
 import { Services } from "@/components/Services";
 import { Work } from "@/components/Work";
-import { Statistics } from "@/components/Statistics";
 import { Insights } from "@/components/Insights";
 import { Testimonials } from "@/components/Testimonials";
 import { LeadMagnet } from "@/components/LeadMagnet";
@@ -25,7 +24,6 @@ export default function Home() {
       <TrustedBy />
       <Services />
       <Work />
-      <Statistics />
       <Insights />
       <Testimonials />
       <LeadMagnet />

@@ -430,14 +430,16 @@ a:focus-visible,button:focus-visible,select:focus-visible,
 /* ════════ HEADER / NAV ════════ */
 header{ position:sticky; top:0; z-index:var(--z-header); background:linear-gradient(135deg, var(--aster) 0%, #cfd8ee 34%, var(--bg) 100%); border-bottom:0;
   transition:box-shadow .3s ease, background-color .3s ease; }
-header.scrolled{ box-shadow:var(--shadow-card); background:rgba(207,216,238,.9); -webkit-backdrop-filter:saturate(140%) blur(8px); backdrop-filter:saturate(140%) blur(8px); }
+/* On scroll the nav goes near-transparent with a glass blur (keeps prominence via
+   the blur + a soft shadow), instead of the previous solid frosted bar. */
+header.scrolled{ background:rgba(244,241,236,.45); -webkit-backdrop-filter:saturate(150%) blur(14px); backdrop-filter:saturate(150%) blur(14px); box-shadow:0 6px 24px -10px rgba(11,31,58,.22); border-bottom:1px solid rgba(255,255,255,.35); }
 header .nav{ transition:padding .3s ease; }
 header.scrolled .nav{ padding-block:.6rem; }
-header.scrolled .navbar-logo{ height:40px; }
+header.scrolled .navbar-logo{ height:50px; }
 @media (prefers-reduced-motion:reduce){ header .nav,.navbar-logo{ transition:none; } }
 .nav{ position:relative; display:flex; align-items:center; gap:2rem; max-width:var(--container); margin-inline:auto; padding:.9rem var(--gutter); }
 .logo{ display:inline-flex; align-items:center; margin-right:auto; cursor:pointer; }
-.navbar-logo{ height:46px; width:auto; transition:transform var(--t-base); }
+.navbar-logo{ height:62px; width:auto; transition:transform var(--t-base); }
 .logo:hover .navbar-logo{ transform:scale(1.03); }
 .nav-links{ display:flex; align-items:center; gap:1.85rem; }
 .nav-links > li{ position:relative; }
@@ -938,20 +940,21 @@ a.contact-block-value:hover{ color:var(--gold-deep); }
 .faq-answer-inner{ padding:0 1.5rem 1.25rem; color:var(--ink-soft); font-size:var(--small); }
 
 /* ════════ FOOTER ════════ */
-footer{ background:#fff; border-top:var(--bw) solid var(--border); color:var(--ink-soft); }
+footer{ background:var(--navy); border-top:0; color:rgba(255,255,255,.72); }
 .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; padding:var(--py-l) 0 2.5rem; }
 @media(min-width:768px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
-.footer-logo{ height:42px; width:auto; margin-bottom:1rem; }
-.footer-brand p{ max-width:24rem; font-size:var(--small); }
+/* White chip behind the footer logo so the navy "DIGITAL SOLUTIONS" wordmark reads on the navy footer. */
+.footer-logo{ height:54px; width:auto; display:inline-block; margin-bottom:1.2rem; background:#fff; padding:.7rem .9rem; border-radius:.7rem; box-shadow:0 4px 14px -6px rgba(0,0,0,.35); }
+.footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(255,255,255,.66); }
 .footer-contact{ display:grid; gap:.7rem; margin-top:1.2rem; }
 .footer-contact li{ display:flex; gap:.6rem; align-items:flex-start; font-size:var(--small); }
-.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-deep); margin-top:.15rem; }
-.footer-contact a:hover{ color:var(--navy); }
-.footer-col h4{ color:var(--navy); font-weight:700; font-size:1rem; margin-bottom:1rem; }
+.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-on-navy); margin-top:.15rem; }
+.footer-contact a:hover{ color:var(--gold-on-navy); }
+.footer-col h4{ color:#fff; font-weight:700; font-size:1rem; margin-bottom:1rem; }
 .footer-col ul{ display:grid; gap:.55rem; }
-.footer-col li,.footer-col a{ font-size:var(--small); color:var(--ink-soft); cursor:pointer; transition:color var(--t-fast); }
-.footer-col li:hover,.footer-col a:hover{ color:var(--navy); }
-.footer-bottom{ border-top:var(--bw) solid var(--border); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
+.footer-col li,.footer-col a{ font-size:var(--small); color:rgba(255,255,255,.7); cursor:pointer; transition:color var(--t-fast); }
+.footer-col li:hover,.footer-col a:hover{ color:var(--gold-on-navy); }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,.12); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
   align-items:center; justify-content:space-between; font-size:var(--xs); color:var(--ink-faint); }
 .social-links{ display:flex; gap:1rem; }
 .social-links a{ display:inline-flex; color:var(--ink-soft); transition:color var(--t-fast); }

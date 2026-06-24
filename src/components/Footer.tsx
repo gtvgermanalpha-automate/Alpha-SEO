@@ -19,7 +19,7 @@ export function Footer() {
           <div className="footer-brand">
             <div className="logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className="navbar-logo footer-logo" src={siteConfig.logoCircular || siteConfig.logoLinear || "/alpha-logo.png"} alt={`${siteConfig.name} logo`} width={200} height={48} loading="lazy" />
+              <img className="navbar-logo footer-logo" src={siteConfig.logoCircular || siteConfig.logoLinear || "/alpha-logo.png"} alt={`${siteConfig.name} logo`} width={149} height={54} loading="lazy" />
             </div>
             <p>{copy.footer.blurb}</p>
             <ul className="footer-contact">
