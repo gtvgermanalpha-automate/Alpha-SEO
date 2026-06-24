@@ -940,22 +940,22 @@ a.contact-block-value:hover{ color:var(--gold-deep); }
 .faq-answer-inner{ padding:0 1.5rem 1.25rem; color:var(--ink-soft); font-size:var(--small); }
 
 /* ════════ FOOTER ════════ */
-footer{ background:var(--navy); border-top:0; color:rgba(255,255,255,.72); }
+footer{ background:var(--aster); border-top:0; color:var(--navy); }
 .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; padding:var(--py-l) 0 2.5rem; }
 @media(min-width:768px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
-/* White chip behind the footer logo so the navy "DIGITAL SOLUTIONS" wordmark reads on the navy footer. */
-.footer-logo{ height:54px; width:auto; display:inline-block; margin-bottom:1.2rem; background:#fff; padding:.7rem .9rem; border-radius:.7rem; box-shadow:0 4px 14px -6px rgba(0,0,0,.35); }
-.footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(255,255,255,.66); }
+/* White chip behind the footer logo keeps the wordmark crisp on the aster footer. */
+.footer-logo{ height:54px; width:auto; display:inline-block; margin-bottom:1.2rem; background:#fff; padding:.7rem .9rem; border-radius:.7rem; box-shadow:0 4px 14px -6px rgba(17,17,68,.18); }
+.footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(17,17,68,.8); }
 .footer-contact{ display:grid; gap:.7rem; margin-top:1.2rem; }
 .footer-contact li{ display:flex; gap:.6rem; align-items:flex-start; font-size:var(--small); }
-.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-on-navy); margin-top:.15rem; }
-.footer-contact a:hover{ color:var(--gold-on-navy); }
-.footer-col h4{ color:#fff; font-weight:700; font-size:1rem; margin-bottom:1rem; }
+.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-deep); margin-top:.15rem; }
+.footer-contact a:hover{ color:var(--gold-deep); }
+.footer-col h4{ color:var(--navy); font-weight:700; font-size:1rem; margin-bottom:1rem; }
 .footer-col ul{ display:grid; gap:.55rem; }
-.footer-col li,.footer-col a{ font-size:var(--small); color:rgba(255,255,255,.7); cursor:pointer; transition:color var(--t-fast); }
-.footer-col li:hover,.footer-col a:hover{ color:var(--gold-on-navy); }
-.footer-bottom{ border-top:1px solid rgba(255,255,255,.12); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
-  align-items:center; justify-content:space-between; font-size:var(--xs); color:var(--ink-faint); }
+.footer-col li,.footer-col a{ font-size:var(--small); color:rgba(17,17,68,.78); cursor:pointer; transition:color var(--t-fast); }
+.footer-col li:hover,.footer-col a:hover{ color:var(--gold-deep); }
+.footer-bottom{ border-top:1px solid rgba(17,17,68,.14); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
+  align-items:center; justify-content:space-between; font-size:var(--xs); color:rgba(17,17,68,.7); }
 .social-links{ display:flex; gap:1rem; }
 .social-links a{ display:inline-flex; color:var(--ink-soft); transition:color var(--t-fast); }
 .social-links a svg{ width:1.3rem; height:1.3rem; }
