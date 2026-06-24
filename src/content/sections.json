@@ -6,7 +6,12 @@
       "icon": "Settings2",
       "title": "Technical SEO & Performance",
       "description": "We fix the hidden technical issues that hold your site back from ranking — Core Web Vitals, crawl architecture, indexation and schema. The engineering foundation every other ranking signal depends on.",
-      "points": ["Full site audits", "Core Web Vitals", "Schema markup", "Site architecture"]
+      "points": [
+        "Full site audits",
+        "Core Web Vitals",
+        "Schema markup",
+        "Site architecture"
+      ]
     },
     {
       "slug": "on-page-seo",
@@ -14,7 +19,12 @@
       "icon": "BookOpen",
       "title": "On-Page SEO & Content Strategy",
       "description": "Content that ranks well and actually converts. Bring your own keywords or commission the full strategy — keyword mapping, content-gap analysis, optimised landing pages and metadata.",
-      "points": ["Keyword mapping", "Content gap analysis", "Landing pages", "Metadata & titles"]
+      "points": [
+        "Keyword mapping",
+        "Content gap analysis",
+        "Landing pages",
+        "Metadata & titles"
+      ]
     },
     {
       "slug": "off-page-seo",
@@ -22,7 +32,12 @@
       "icon": "Award",
       "title": "Off-Page SEO & Authority",
       "description": "Authority earned the durable way — editorial backlinks from real publications, data-led digital PR and brand mentions across the open web. No PBNs; every link earned and defensible.",
-      "points": ["Editorial backlinks", "Digital PR", "Brand mentions", "Link-gap analysis"]
+      "points": [
+        "Editorial backlinks",
+        "Digital PR",
+        "Brand mentions",
+        "Link-gap analysis"
+      ]
     },
     {
       "slug": "local-seo",
@@ -30,15 +45,25 @@
       "icon": "MapPin",
       "title": "Local SEO & Regional Growth",
       "description": "Be the first business people see when they search nearby. Google Business Profile, local citations, geo-targeted pages and review velocity — own the local pack in every market you serve.",
-      "points": ["Google Business Profile", "Local citations", "Geo-targeted pages", "Review velocity"]
+      "points": [
+        "Google Business Profile",
+        "Local citations",
+        "Geo-targeted pages",
+        "Review velocity"
+      ]
     },
     {
       "slug": "reddit-community",
       "art": "tax",
       "icon": "MessagesSquare",
-      "title": "Reddit & Community Visibility",
+      "title": "AEO & Community Search Authority",
       "description": "Buyers research on Reddit, Quora and niche forums long before Google — and AI assistants quote those threads back. We earn your brand an authentic presence there, plus Answer Engine Optimisation.",
-      "points": ["Reddit & forums", "Quora answers", "Community building", "AEO / AI citations"]
+      "points": [
+        "Reddit & forums",
+        "Quora answers",
+        "Community building",
+        "AEO / AI citations"
+      ]
     }
   ],
   "whyPoints": [
