@@ -1087,7 +1087,7 @@ footer{ background:var(--navy); border-top:0; color:rgba(255,255,255,.72); }
 
 /* ════════ ALPHA LIGHTER-THEME OVERRIDES (re-theme of the navy+gold base) ════════ */
 /* Hero -> light (Luster White / aster glow, ink text, Habanero accents) */
-.hero,.hero-seo{ background:linear-gradient(135deg, var(--aster) 0%, #cfd8ee 34%, var(--bg) 100%); color:var(--navy); border-bottom:1px solid var(--border); }
+.hero,.hero-seo{ background:var(--bg); color:var(--navy); border-bottom:1px solid var(--border); }
 .hero-text h1{ color:var(--navy); }
 .hero-text .lead{ color:var(--ink-soft); }
 .hero-text .lead strong{ color:var(--gold-deep); }
