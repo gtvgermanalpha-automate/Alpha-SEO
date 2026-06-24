@@ -476,7 +476,7 @@ header.scrolled .navbar-logo{ height:50px; }
 .has-dropdown:hover .dropdown,.has-dropdown:focus-within .dropdown,.has-dropdown.open .dropdown{
   opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; transition-delay:0s; }
 .dropdown-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.6rem; width:100%; max-width:62rem;
-  background:linear-gradient(135deg, var(--aster) 0%, #cfd8ee 34%, var(--bg) 100%); border:var(--bw) solid var(--border); border-top:3px solid var(--gold); border-radius:var(--r-card); padding:1.4rem; box-shadow:var(--shadow-lift); }
+  background:var(--bg); border:var(--bw) solid var(--border); border-top:3px solid var(--gold); border-radius:var(--r-card); padding:1.4rem; box-shadow:var(--shadow-lift); }
 .dropdown-head{ grid-column:1 / -1; display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding:.15rem .4rem 1rem; margin-bottom:.5rem; border-bottom:var(--bw) solid var(--border); }
 .dropdown-head-title{ font-family:var(--font-head); font-weight:700; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); }
 .dropdown-head-sub{ font-size:var(--small); color:var(--ink-faint); }
@@ -497,7 +497,7 @@ header.scrolled .navbar-logo{ height:50px; }
 /* compact (non-mega) dropdown — e.g. About */
 .has-dropdown-simple{ position:relative; }
 .dropdown-simple{ left:auto; right:0; justify-content:flex-end; padding:.6rem 0 1.5rem; }
-.dropdown-list{ min-width:14rem; background:linear-gradient(135deg, var(--aster) 0%, #cfd8ee 34%, var(--bg) 100%); border:var(--bw) solid var(--border); border-radius:var(--r-card);
+.dropdown-list{ min-width:14rem; background:var(--bg); border:var(--bw) solid var(--border); border-radius:var(--r-card);
   padding:.5rem; box-shadow:var(--shadow-lift); display:flex; flex-direction:column; }
 .dropdown-link{ padding:.65rem .9rem; border-radius:.55rem; font-size:.95rem; font-weight:500; color:var(--navy);
   cursor:pointer; transition:background-color var(--t-fast),color var(--t-fast); }
@@ -606,7 +606,7 @@ header.scrolled .navbar-logo{ height:50px; }
 .service-card-bg{ display:block; position:absolute; inset:0; z-index:0; }
 .service-card-bg img{ width:100%; height:100%; object-fit:cover; }
 .service-card.pillar-card::before{ content:""; position:absolute; inset:0; z-index:1;
-  background:linear-gradient(180deg, rgba(11,31,58,.52) 0%, rgba(17,17,68,.16) 46%, rgba(8,22,40,.74) 100%); transition:background var(--t-base); }
+  background:linear-gradient(145deg, rgba(20,43,90,.58) 0%, rgba(11,31,58,.86) 55%, rgba(8,22,40,.95) 100%); transition:background var(--t-base); }
 .pillar-num,.service-icon,.pillar-card p,.pillar-tags,.service-card-cta{ display:none; }
 .pillar-card h3{ position:relative; z-index:2; font-size:clamp(1.4rem,1.15rem + .75vw,1.85rem); font-weight:800; color:#fff; line-height:1.2; margin:0; max-width:15ch; letter-spacing:-.01em; text-shadow:0 2px 16px rgba(8,22,40,.55); transition:color var(--t-base),text-shadow var(--t-base); }
 .service-card.pillar-card::after{ content:""; position:absolute; top:1.5rem; right:1.5rem; z-index:3; width:3.1rem; height:3.1rem; border-radius:50%;
@@ -943,8 +943,7 @@ a.contact-block-value:hover{ color:var(--gold-deep); }
 footer{ background:var(--aster); border-top:0; color:var(--navy); }
 .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; padding:var(--py-l) 0 2.5rem; }
 @media(min-width:768px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
-/* White chip behind the footer logo keeps the wordmark crisp on the aster footer. */
-.footer-logo{ height:54px; width:auto; display:inline-block; margin-bottom:1.2rem; background:#fff; padding:.7rem .9rem; border-radius:.7rem; box-shadow:0 4px 14px -6px rgba(17,17,68,.18); }
+.footer-logo{ height:66px; width:auto; margin-bottom:1.2rem; }
 .footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(17,17,68,.8); }
 .footer-contact{ display:grid; gap:.7rem; margin-top:1.2rem; }
 .footer-contact li{ display:flex; gap:.6rem; align-items:flex-start; font-size:var(--small); }
