@@ -940,25 +940,29 @@ a.contact-block-value:hover{ color:var(--gold-deep); }
 .faq-answer-inner{ padding:0 1.5rem 1.25rem; color:var(--ink-soft); font-size:var(--small); }
 
 /* ════════ FOOTER ════════ */
-footer{ background:var(--aster); border-top:0; color:var(--navy); }
+/* Footer uses the same dark overlay gradient as the service/case-study cards. */
+footer{ background:linear-gradient(145deg, rgba(20,43,90,.58) 0%, rgba(11,31,58,.86) 55%, rgba(8,22,40,.95) 100%), var(--navy-500); border-top:0; color:rgba(255,255,255,.78); }
 .footer-grid{ display:grid; grid-template-columns:1fr; gap:2.5rem; padding:var(--py-l) 0 2.5rem; }
 @media(min-width:768px){ .footer-grid{ grid-template-columns:2fr 1fr 1fr 1fr; } }
-.footer-logo{ height:66px; width:auto; margin-bottom:1.2rem; }
-.footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(17,17,68,.8); }
+/* White chip behind the footer logo so the wordmark reads on the dark gradient. */
+.footer-logo{ height:66px; width:auto; display:inline-block; margin-bottom:1.2rem; background:#fff; padding:.7rem .95rem; border-radius:.7rem; box-shadow:0 6px 18px -8px rgba(0,0,0,.45); }
+.footer-brand p{ max-width:24rem; font-size:var(--small); color:rgba(255,255,255,.74); }
 .footer-contact{ display:grid; gap:.7rem; margin-top:1.2rem; }
 .footer-contact li{ display:flex; gap:.6rem; align-items:flex-start; font-size:var(--small); }
-.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-deep); margin-top:.15rem; }
-.footer-contact a:hover{ color:var(--gold-deep); }
-.footer-col h4{ color:var(--navy); font-weight:700; font-size:1rem; margin-bottom:1rem; }
+.footer-contact svg{ flex:0 0 auto; width:1.05rem; height:1.05rem; color:var(--gold-on-navy); margin-top:.15rem; }
+.footer-contact a:hover{ color:var(--gold-on-navy); }
+.footer-col h4{ color:#fff; font-weight:700; font-size:1rem; margin-bottom:1rem; }
 .footer-col ul{ display:grid; gap:.55rem; }
-.footer-col li,.footer-col a{ font-size:var(--small); color:rgba(17,17,68,.78); cursor:pointer; transition:color var(--t-fast); }
-.footer-col li:hover,.footer-col a:hover{ color:var(--gold-deep); }
-.footer-bottom{ border-top:1px solid rgba(17,17,68,.14); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
-  align-items:center; justify-content:space-between; font-size:var(--xs); color:rgba(17,17,68,.7); }
+.footer-col li,.footer-col a{ font-size:var(--small); color:rgba(255,255,255,.78); cursor:pointer; transition:color var(--t-fast); }
+.footer-col li:hover,.footer-col a:hover{ color:var(--gold-on-navy); }
+.footer-bottom{ border-top:1px solid rgba(255,255,255,.15); padding:1.4rem 0; display:flex; flex-wrap:wrap; gap:.75rem;
+  align-items:center; justify-content:space-between; font-size:var(--xs); color:rgba(255,255,255,.62); }
 .social-links{ display:flex; gap:1rem; }
 .social-links a{ display:inline-flex; color:var(--ink-soft); transition:color var(--t-fast); }
 .social-links a svg{ width:1.3rem; height:1.3rem; }
 .social-links a:hover{ color:var(--navy); }
+footer .social-links a{ color:rgba(255,255,255,.72); }
+footer .social-links a:hover{ color:#fff; }
 
 /* ════════ AUDIT MODAL ════════ */
 .audit-modal{ position:fixed; inset:0; z-index:2000; display:none; align-items:center; justify-content:center; padding:1.5rem; }
