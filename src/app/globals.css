@@ -1115,7 +1115,7 @@ footer{ background:var(--aster); border-top:0; color:var(--navy); }
 /* Lead magnet -> light */
 .lead-magnet{ background:var(--bg); color:var(--ink); }
 .lm-text .eyebrow{ color:var(--gold-deep); }
-.lm-text h2{ color:var(--ink); }
+.lm-text h2{ color:var(--navy); }
 .lm-text .lead{ color:var(--ink-soft); }
 .lm-perk{ color:var(--ink-soft); }
 .lm-perk svg{ color:var(--gold-deep); }
