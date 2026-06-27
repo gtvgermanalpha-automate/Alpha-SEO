@@ -5,7 +5,7 @@
       "art": "bookkeeping",
       "icon": "Settings2",
       "title": "Technical SEO & Performance",
-      "description": "We fix the hidden technical issues that hold your site back from ranking — Core Web Vitals, crawl architecture, indexation and schema. The engineering foundation every other ranking signal depends on.",
+      "description": "We fix the technical backend errors that stop your site from ranking. By optimizing your Core Web Vitals, site architecture, and schema, we ensure Google can easily crawl and index your content.",
       "points": [
         "Full site audits",
         "Core Web Vitals",
@@ -18,7 +18,7 @@
       "art": "advisory",
       "icon": "BookOpen",
       "title": "On-Page SEO & Content Strategy",
-      "description": "Content that ranks well and actually converts. Bring your own keywords or commission the full strategy — keyword mapping, content-gap analysis, optimised landing pages and metadata.",
+      "description": "Content built to rank high and convert readers into buyers. Bring your own keywords or comission the complete strategy, including keyword mapping, content gap analysis, landing page optimization, and metadata.",
       "points": [
         "Keyword mapping",
         "Content gap analysis",
@@ -31,7 +31,7 @@
       "art": "vat",
       "icon": "Award",
       "title": "Off-Page SEO & Authority",
-      "description": "Authority earned the durable way — editorial backlinks from real publications, data-led digital PR and brand mentions across the open web. No PBNs; every link earned and defensible.",
+      "description": "Authority built the durable way. We deliver premium editorial backlinks, data-driven digital PR, and strategic brand mentions. Zero PBNs; every asset is earned and defensible.",
       "points": [
         "Editorial backlinks",
         "Digital PR",
@@ -44,7 +44,7 @@
       "art": "formation",
       "icon": "MapPin",
       "title": "Local SEO & Regional Growth",
-      "description": "Be the first business people see when they search nearby. Google Business Profile, local citations, geo-targeted pages and review velocity — own the local pack in every market you serve.",
+      "description": "Own the local pack in every market you serve. We drive hyper local visibility through advanced Google Business Profile optimization, local citations, geo targeted landing pages, and strategic review velocity.",
       "points": [
         "Google Business Profile",
         "Local citations",
@@ -57,7 +57,7 @@
       "art": "tax",
       "icon": "MessagesSquare",
       "title": "AEO & Community Search Authority",
-      "description": "Buyers research on Reddit, Quora and niche forums long before Google — and AI assistants quote those threads back. We earn your brand an authentic presence there, plus Answer Engine Optimisation.",
+      "description": "Dominate the modern search landscape where AI engines generate real-time answers. We position your brand as the leading authority within trusted information ecosystems, maximizing your visibility in premium Answer Engine Optimization citations.",
       "points": [
         "Reddit & forums",
         "Quora answers",
