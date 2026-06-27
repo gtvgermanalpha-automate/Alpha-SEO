@@ -8,31 +8,76 @@
           "label": "Search foundations",
           "icon": "Settings2",
           "items": [
-            { "title": "Technical SEO & Performance", "description": "Audits, Core Web Vitals, schema, architecture.", "icon": "Settings2", "href": "/services/technical-seo" },
-            { "title": "On-Page SEO & Content", "description": "Keyword mapping, landing pages, metadata.", "icon": "BookOpen", "href": "/services/on-page-seo" },
-            { "title": "Off-Page SEO & Authority", "description": "Editorial links, digital PR, brand mentions.", "icon": "Award", "href": "/services/off-page-seo" }
+            {
+              "title": "Technical SEO & Performance",
+              "description": "Audits, Core Web Vitals, schema, architecture.",
+              "icon": "Settings2",
+              "href": "/services/technical-seo"
+            },
+            {
+              "title": "On-Page SEO & Content",
+              "description": "Keyword mapping, landing pages, metadata.",
+              "icon": "BookOpen",
+              "href": "/services/on-page-seo"
+            },
+            {
+              "title": "Off-Page SEO & Authority",
+              "description": "Editorial links, digital PR, brand mentions.",
+              "icon": "Award",
+              "href": "/services/off-page-seo"
+            }
           ]
         },
         {
           "label": "Growth & visibility",
           "icon": "MapPin",
           "items": [
-            { "title": "Local SEO & Regional Growth", "description": "Google Business, citations, geo pages.", "icon": "MapPin", "href": "/services/local-seo" },
-            { "title": "Reddit & Community Visibility", "description": "Reddit, forums, AEO & AI citations.", "icon": "MessagesSquare", "href": "/services/reddit-community" },
-            { "title": "View all services", "description": "The full five-pillar overview.", "icon": "Sparkles", "href": "/services" }
+            {
+              "title": "Local SEO & Regional Growth",
+              "description": "Google Business, citations, geo pages.",
+              "icon": "MapPin",
+              "href": "/services/local-seo"
+            },
+            {
+              "title": "AEO & Community Authority",
+              "description": "Reddit, forums, AEO & AI search citations.",
+              "icon": "MessagesSquare",
+              "href": "/services/reddit-community"
+            },
+            {
+              "title": "View all services",
+              "description": "The full five-pillar overview.",
+              "icon": "Sparkles",
+              "href": "/services"
+            }
           ]
         }
       ]
     },
-    { "label": "Case Studies", "href": "/case-studies" },
-    { "label": "Insights", "href": "/blog" },
+    {
+      "label": "Case Studies",
+      "href": "/case-studies"
+    },
+    {
+      "label": "Insights",
+      "href": "/blog"
+    },
     {
       "label": "About",
       "href": "/team",
       "children": [
-        { "label": "About Alpha", "href": "/team" },
-        { "label": "Our Process", "href": "/how-we-work" },
-        { "label": "Contact", "href": "/contact" }
+        {
+          "label": "About Alpha",
+          "href": "/team"
+        },
+        {
+          "label": "Our Process",
+          "href": "/how-we-work"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
       ]
     }
   ]
