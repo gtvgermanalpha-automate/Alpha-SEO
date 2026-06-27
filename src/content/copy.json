@@ -1,15 +1,20 @@
 {
   "hero": {
-    "eyebrow": "Better rankings, measured",
-    "headlineLead": "Better rankings.",
-    "headlineAccent": "More traffic.",
-    "paragraph": "We're a full-service SEO agency: on-page, off-page, link placements, local SEO and Reddit visibility. Results-driven work, delivered with weekly reporting.",
-    "pillars": ["White-hat only", "Senior-led team", "Weekly reporting", "No lock-in"],
+    "eyebrow": "Full-Service SEO Agency",
+    "headlineLead": "Expand your search footprint,",
+    "headlineAccent": "Capture high-intent market share.",
+    "paragraph": "We’re a full service SEO agency that goes beyond standard keywords. We optimize your brand for top Google rankings while secretly positioning you inside the trusted, high intent online communities where your customers actually go for recommendations.",
+    "pillars": [
+      "White-hat only",
+      "Senior-led team",
+      "Weekly reporting",
+      "No lock-in"
+    ],
     "primaryCta": "Explore services",
     "secondaryCta": "See case studies",
     "ratingScore": "5.0",
     "ratingLabel": "client-rated",
-    "badge": "White-hat, senior-led"
+    "badge": "Strategic Search Solutions"
   },
   "trustedBy": {
     "eyebrow": "Operating across the industry's leading SEO stack"
@@ -60,14 +65,27 @@
     "title": "Let's talk about your organic growth",
     "subtitle": "Tell us about your domain, your goals and where you are today. A senior strategist responds within 24 business hours.",
     "accepting": "Booking new engagements this quarter",
-    "labels": { "call": "Call us", "email": "Email us", "visit": "Visit us", "hours": "Opening hours" }
+    "labels": {
+      "call": "Call us",
+      "email": "Email us",
+      "visit": "Visit us",
+      "hours": "Opening hours"
+    }
   },
   "footer": {
     "blurb": "A focused SEO partner for ambitious brands — technical engineering, content authority and editorial link development, under one accountable team.",
     "cta": "Get a free audit",
-    "columns": { "services": "SEO Pillars", "quickLinks": "Company", "contact": "Get in touch" },
+    "columns": {
+      "services": "SEO Pillars",
+      "quickLinks": "Company",
+      "contact": "Get in touch"
+    },
     "disclaimer": "Alpha Digital Solutions is an SEO & digital marketing agency based in Toronto, Ontario. Content on this website is for general guidance only and does not constitute professional advice.",
-    "legal": ["Privacy Policy", "Terms", "Cookies"]
+    "legal": [
+      "Privacy Policy",
+      "Terms",
+      "Cookies"
+    ]
   },
   "pages": {
     "services": {
