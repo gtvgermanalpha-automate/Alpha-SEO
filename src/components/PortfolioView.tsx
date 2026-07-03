@@ -8,7 +8,7 @@ const Check = () => (
   </svg>
 );
 
-/** /portfolio — social-media + brand design projects (details only, no attribution). */
+/** /portfolio — social-media + brand design projects (details + visuals, no attribution). */
 export function PortfolioView() {
   return (
     <>
@@ -28,27 +28,34 @@ export function PortfolioView() {
           <div className="portfolio-list">
             {portfolioProjects.map((p) => (
               <article className="portfolio-card" key={p.slug}>
-                <div className="portfolio-card-head">
-                  <span className="portfolio-tag">{p.category}</span>
-                  <h3>{p.title}</h3>
+                <div className="portfolio-media">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.image} alt={p.imageAlt} loading="lazy" width={560} height={700} />
                 </div>
 
-                <div className="portfolio-stats">
-                  {p.metrics.map((m, i) => (
-                    <div className="p-stat" key={i}>
-                      <span className="p-stat-num">{m.value}</span>
-                      <span className="p-stat-label">{m.label}</span>
-                    </div>
-                  ))}
+                <div className="portfolio-body">
+                  <div className="portfolio-card-head">
+                    <span className="portfolio-tag">{p.category}</span>
+                    <h3>{p.title}</h3>
+                  </div>
+
+                  <div className="portfolio-stats">
+                    {p.metrics.map((m, i) => (
+                      <div className="p-stat" key={i}>
+                        <span className="p-stat-num">{m.value}</span>
+                        <span className="p-stat-label">{m.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="portfolio-summary">{p.summary}</p>
+
+                  <ul className="portfolio-highlights">
+                    {p.highlights.map((h) => (
+                      <li key={h}><Check />{h}</li>
+                    ))}
+                  </ul>
                 </div>
-
-                <p className="portfolio-summary">{p.summary}</p>
-
-                <ul className="portfolio-highlights">
-                  {p.highlights.map((h) => (
-                    <li key={h}><Check />{h}</li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>

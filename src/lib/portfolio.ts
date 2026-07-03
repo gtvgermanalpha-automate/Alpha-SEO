@@ -1,7 +1,7 @@
 /**
  * Portfolio projects shown on /portfolio. Social-media + brand design work,
- * sourced from the supplied portfolio deck (project details only — no personal
- * attribution). Plain data module (not CMS-managed yet).
+ * sourced from the supplied portfolio deck (project details + design visuals
+ * only — no personal attribution). Plain data module (not CMS-managed yet).
  */
 export type PortfolioMetric = { value: string; label: string };
 
@@ -9,6 +9,8 @@ export type PortfolioProject = {
   slug: string;
   title: string;
   category: string;
+  image: string;
+  imageAlt: string;
   summary: string;
   metrics: PortfolioMetric[];
   highlights: string[];
@@ -19,6 +21,8 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "evolution-magazine",
     title: "Evolution Magazine",
     category: "Social Media Design & Content",
+    image: "/portfolio/evolution-magazine.webp",
+    imageAlt: "Evolution Magazine social post — a dark, editorial 'Business · Evolution' design",
     summary:
       "End-to-end social for a gaming magazine — every post designed from scratch, and every caption researched and written in-house, all aligned to the brand's aesthetic and the world its readers live in.",
     metrics: [
@@ -36,6 +40,8 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "elevon-pakistan",
     title: "Elevon Pakistan",
     category: "Social Media Design",
+    image: "/portfolio/elevon-pakistan.webp",
+    imageAlt: "Elevon social post — a bold cricket World Cup design",
     summary:
       "Full social media design for a community brand — ideation, colour tones and a grid built from scratch to match the brand's energy and make the feed instantly recognisable.",
     metrics: [
@@ -52,6 +58,8 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "pstve-glo",
     title: "Pstve Glo",
     category: "Brand Design",
+    image: "/portfolio/pstve-glo.webp",
+    imageAlt: "Pstve Glo scented-candle post carrying the brand's 'you need a reset' line",
     summary:
       "A full brand identity and aesthetic Instagram grid for a candle brand — highlights, layout and visuals all aligned to a calm 'a need to reset' feeling, and tuned for strong engagement.",
     metrics: [
