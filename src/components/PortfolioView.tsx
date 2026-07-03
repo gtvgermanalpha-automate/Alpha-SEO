@@ -1,68 +1,96 @@
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
-import { portfolioProjects } from "@/lib/portfolio";
+import { Icon, type IconName } from "@/components/ui/Icon";
+import { PillarIllustration, type PillarIllustName } from "@/components/ui/PillarIllustration";
+import { services } from "@/lib/content";
 
-const Check = () => (
+const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-    <polyline points="20 6 9 17 4 12" />
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
   </svg>
 );
 
-/** /portfolio — social-media + brand design projects (details + visuals, no attribution). */
+/** Concise category tag per pillar (matches the breadcrumb labels used elsewhere). */
+const CATEGORY_TAG: Record<string, string> = {
+  "technical-seo": "Technical SEO",
+  "on-page-seo": "On-Page & Content",
+  "social-media-marketing": "Social Media",
+  "local-seo": "Local SEO",
+  "reddit-community": "Community & AEO",
+};
+
+/** Where each category's "Explore projects" link goes. Social Media Marketing has
+ *  its own project deep-dive (real, supplied work); the others point to our
+ *  documented case studies until pillar-specific project decks exist. */
+const CATEGORY_HREF: Record<string, string> = {
+  "technical-seo": "/case-studies",
+  "on-page-seo": "/case-studies",
+  "social-media-marketing": "/portfolio/social-media-marketing",
+  "local-seo": "/case-studies",
+  "reddit-community": "/case-studies",
+};
+
+/** Bespoke illustration per non-SMM category (SMM uses a real supplied project photo). */
+const CATEGORY_ILLUS: Record<string, PillarIllustName> = {
+  "technical-seo": "engineering-layers",
+  "on-page-seo": "content-map",
+  "local-seo": "storefront-profile",
+  "reddit-community": "ai-citation",
+};
+
+/** /portfolio — a hub showcasing real work across every service pillar; Social
+ *  Media Marketing's card links through to a full project-by-project deep-dive. */
 export function PortfolioView() {
   return (
     <>
       <PageHero
         crumb="Portfolio"
-        title="Social & brand design work that earns attention."
-        subtitle="A selection of social media and brand design projects — cohesive grids, on-brand content and communities built from the ground up."
+        title="Real work, across every growth channel."
+        subtitle="Explore projects behind each of our five service pillars — from technical SEO recoveries to the social and brand design work we showcase in full."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow">Selected work</span>
-            <h2>Projects, <span className="highlight">start to finish</span>.</h2>
+            <span className="eyebrow">Every pillar</span>
+            <h2>Pick a discipline, <span className="highlight">see the work</span>.</h2>
           </div>
 
-          <div className="portfolio-list">
-            {portfolioProjects.map((p) => (
-              <article className="portfolio-card" key={p.slug}>
-                <div className="portfolio-media">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt={p.imageAlt} loading="lazy" width={560} height={700} />
-                </div>
-
-                <div className="portfolio-body">
-                  <div className="portfolio-card-head">
-                    <span className="portfolio-tag">{p.category}</span>
-                    <h3>{p.title}</h3>
+          <div className="portfolio-hub-grid">
+            {services.map((s) => {
+              const href = CATEGORY_HREF[s.slug] ?? "/case-studies";
+              const illus = CATEGORY_ILLUS[s.slug];
+              const isSocial = s.slug === "social-media-marketing";
+              return (
+                <article className="portfolio-hub-card" key={s.slug} data-reveal>
+                  <div className="portfolio-hub-media">
+                    {isSocial ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src="/portfolio/evolution-magazine.webp"
+                        alt="Evolution Magazine — a social media design project"
+                        loading="lazy"
+                        width={560}
+                        height={420}
+                      />
+                    ) : (
+                      <PillarIllustration name={illus ?? "report"} accentIcon={s.icon as IconName} />
+                    )}
                   </div>
-
-                  <div className="portfolio-stats">
-                    {p.metrics.map((m, i) => (
-                      <div className="p-stat" key={i}>
-                        <span className="p-stat-num">{m.value}</span>
-                        <span className="p-stat-label">{m.label}</span>
-                      </div>
-                    ))}
+                  <div className="portfolio-hub-body">
+                    <span className="portfolio-hub-tag">{CATEGORY_TAG[s.slug] ?? "SEO"}</span>
+                    <h3>{s.title}</h3>
+                    <p>{s.description}</p>
+                    <Link href={href} className="portfolio-hub-link">
+                      Explore projects <Arrow />
+                    </Link>
                   </div>
-
-                  <p className="portfolio-summary">{p.summary}</p>
-
-                  <ul className="portfolio-highlights">
-                    {p.highlights.map((h) => (
-                      <li key={h}><Check />{h}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
-
-          <p className="portfolio-note">
-            More social, brand and design work is available on request — <a href="/contact">get in touch</a> to see the full set.
-          </p>
         </div>
       </section>
 

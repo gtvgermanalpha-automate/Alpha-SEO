@@ -3,9 +3,9 @@ import { PortfolioView } from "@/components/PortfolioView";
 import { buildMetadata } from "@/lib/seo/buildMetadata";
 
 export const metadata: Metadata = buildMetadata("/portfolio", {
-  defaultTitle: "Portfolio — Social & Brand Design Work",
+  defaultTitle: "Portfolio — Real Work Across Every Service",
   defaultDescription:
-    "Selected social media and brand design projects: cohesive Instagram grids, on-brand content and communities built from the ground up.",
+    "Explore projects behind each of our five service pillars — technical SEO, content, social media marketing, local SEO and community & AEO.",
 });
 
 export default function PortfolioPage() {

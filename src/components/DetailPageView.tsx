@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { Icon, type IconName } from "@/components/ui/Icon";
+import { PillarIllustration } from "@/components/ui/PillarIllustration";
 import { FaqList } from "@/components/FaqList";
 import { CustomSchema } from "@/components/CustomSchema";
 import { jsonLd } from "@/lib/jsonLd";
 import { siteConfig, services } from "@/lib/content";
 import { detailHref, type DetailPage } from "@/lib/detailContent";
+import { SECTION_ILLUSTRATIONS } from "@/lib/detailIllustrations";
 
 /** Cadence bullets are written "01 Label — description". */
 const STEP_RE = /^(\d{2})\s+([\s\S]*)$/;
@@ -68,58 +70,73 @@ export function DetailPageView({ page }: { page: DetailPage }) {
   return (
     <>
       <section className="page-header service-detail-hero">
-        <div className="container">
-          <Link className="btn-back" href="/services">&#8592; Back to all services</Link>
-          <div className="detail-hero-icon"><Icon name={pageIcon} /></div>
-          {pillarNum ? <span className="pillar-eyebrow">Pillar {pillarNum} · {page.crumb}</span> : null}
-          <h1>{page.title}</h1>
-          <p>{page.intro}</p>
-          {page.highlights.length ? (
-            <ul className="detail-chips">
-              {page.highlights.map((h) => <li className="detail-chip" key={h}>{h}</li>)}
-            </ul>
+        <div className={`container${page.slug === "social-media-marketing" ? " page-header-grid" : ""}`}>
+          <div className="page-header-text">
+            <Link className="btn-back" href="/services">&#8592; Back to all services</Link>
+            <div className="detail-hero-icon"><Icon name={pageIcon} /></div>
+            {pillarNum ? <span className="pillar-eyebrow">Pillar {pillarNum} · {page.crumb}</span> : null}
+            <h1>{page.title}</h1>
+            <p>{page.intro}</p>
+            {page.highlights.length ? (
+              <ul className="detail-chips">
+                {page.highlights.map((h) => <li className="detail-chip" key={h}>{h}</li>)}
+              </ul>
+            ) : null}
+          </div>
+          {page.slug === "social-media-marketing" ? (
+            <div className="page-header-art">
+              <PillarIllustration name="social-hero" />
+            </div>
           ) : null}
         </div>
       </section>
 
       <section className="section">
         <div className="container detail-body">
-          {page.sections.map((s) => {
+          {page.sections.map((s, i) => {
             const bullets = s.bullets ?? [];
             const isSteps = bullets.some((b) => STEP_RE.test(b));
+            const illus = SECTION_ILLUSTRATIONS[page.slug]?.[i];
             return (
-              <div className="detail-section" key={s.heading}>
-                <h2>{s.heading}</h2>
-                {s.body.map((para, i) => <p key={i}>{para}</p>)}
+              <div className="detail-section-row" data-reveal key={s.heading}>
+                <div className="detail-section">
+                  <h2>{s.heading}</h2>
+                  {s.body.map((para, bi) => <p key={bi}>{para}</p>)}
 
-                {bullets.length ? (
-                  isSteps ? (
-                    <ol className="detail-steps">
-                      {bullets.map((b) => {
-                        const m = b.match(STEP_RE);
-                        const num = m ? m[1] : "•";
-                        const { label, desc } = splitLabel(m ? m[2] : b);
-                        return (
-                          <li key={b}>
-                            <span className="step-num">{num}</span>
-                            <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
-                          </li>
-                        );
-                      })}
-                    </ol>
-                  ) : (
-                    <ul className="detail-features">
-                      {bullets.map((b) => {
-                        const { label, desc } = splitLabel(b);
-                        return (
-                          <li key={b}>
-                            <span className="df-marker" aria-hidden />
-                            <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )
+                  {bullets.length ? (
+                    isSteps ? (
+                      <ol className="detail-steps">
+                        {bullets.map((b) => {
+                          const m = b.match(STEP_RE);
+                          const num = m ? m[1] : "•";
+                          const { label, desc } = splitLabel(m ? m[2] : b);
+                          return (
+                            <li key={b}>
+                              <span className="step-num">{num}</span>
+                              <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
+                            </li>
+                          );
+                        })}
+                      </ol>
+                    ) : (
+                      <ul className="detail-features">
+                        {bullets.map((b) => {
+                          const { label, desc } = splitLabel(b);
+                          return (
+                            <li key={b}>
+                              <span className="df-marker" aria-hidden />
+                              <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )
+                  ) : null}
+                </div>
+                {illus ? (
+                  <div className="detail-media">
+                    <PillarIllustration name={illus} accentIcon={pageIcon} />
+                  </div>
                 ) : null}
               </div>
             );
