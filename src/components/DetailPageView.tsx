@@ -7,28 +7,18 @@ import { jsonLd } from "@/lib/jsonLd";
 import { siteConfig, services } from "@/lib/content";
 import { detailHref, type DetailPage } from "@/lib/detailContent";
 
-/** Pick a relevant icon for a content card from its heading keywords, so the
- *  grid reads with a distinct icon per card rather than a wall of prose. */
-const ICON_RULES: [RegExp, IconName][] = [
-  [/deliver|receive|report|dashboard|document/, "LineChart"],
-  [/cadence|engagement|sprint|how it works|how we|process/, "Zap"],
-  [/crawl|index|render|schema|architecture|performance|core web|technical/, "Settings2"],
-  [/content|on-page|keyword|topical|metadata|reader|write|brief|snippet/, "BookOpen"],
-  [/link|authority|backlink|digital pr|outreach|domain|vouch|mention/, "Award"],
-  [/local|map|citation|google business|gbp|region|near/, "MapPin"],
-  [/community|reddit|forum|quora|aeo|answer|cite|citation/, "MessagesSquare"],
-  [/cover|included|layer|channel|area|scope|audit/, "ShieldCheck"],
-  [/strateg|grow|scal|result|outcome|engine/, "TrendingUp"],
-];
+/** Cadence bullets are written "01 Label — description". */
+const STEP_RE = /^(\d{2})\s+([\s\S]*)$/;
 
-function sectionIcon(heading: string, fallback: IconName): IconName {
-  const h = heading.toLowerCase();
-  for (const [re, name] of ICON_RULES) if (re.test(h)) return name;
-  return fallback;
+/** Scope/deliverable bullets are written "Label — description" (or plain text). */
+function splitLabel(text: string): { label: string; desc: string } {
+  const i = text.indexOf(" — ");
+  return i === -1 ? { label: "", desc: text } : { label: text.slice(0, i), desc: text.slice(i + 3) };
 }
 
-/** Shared renderer for a service-pillar detail page. Ported from the original
- *  static site (.service-detail-hero + features-deep-grid + deliverables + FAQ). */
+/** Shared renderer for a service-pillar detail page — an article-style layout that
+ *  renders each section's full prose + bullets (as feature lists or a numbered
+ *  cadence), a highlight-chip hero, related links and FAQ. */
 export function DetailPageView({ page }: { page: DetailPage }) {
   const url = `${siteConfig.url}${detailHref(page.kind, page.slug)}`;
   const pageIcon = page.icon as IconName;
@@ -80,44 +70,62 @@ export function DetailPageView({ page }: { page: DetailPage }) {
       <section className="page-header service-detail-hero">
         <div className="container">
           <Link className="btn-back" href="/services">&#8592; Back to all services</Link>
-          {pillarNum ? <span className="pillar-eyebrow">Pillar {pillarNum}</span> : null}
-          <span className="eyebrow">{page.crumb}</span>
+          <div className="detail-hero-icon"><Icon name={pageIcon} /></div>
+          {pillarNum ? <span className="pillar-eyebrow">Pillar {pillarNum} · {page.crumb}</span> : null}
           <h1>{page.title}</h1>
           <p>{page.intro}</p>
-        </div>
-      </section>
-
-      <section className="section section-soft">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">{page.eyebrow}</span>
-            <h2>What&apos;s included</h2>
-          </div>
-          <div className="features-deep-grid">
-            {page.sections.map((s) => (
-              <div className="feature-deep" key={s.heading}>
-                <div className="feature-deep-icon"><Icon name={sectionIcon(s.heading, pageIcon)} /></div>
-                <h4>{s.heading}</h4>
-                <p>{s.body[0]}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {page.highlights.length ? (
-        <section className="section">
-          <div className="container container-narrow">
-            <div className="section-head">
-              <span className="eyebrow">What you receive</span>
-              <h2>Concrete deliverables</h2>
-            </div>
-            <ul className="deliverables-list">
-              {page.highlights.map((h) => <li key={h}>{h}</li>)}
+          {page.highlights.length ? (
+            <ul className="detail-chips">
+              {page.highlights.map((h) => <li className="detail-chip" key={h}>{h}</li>)}
             </ul>
-          </div>
-        </section>
-      ) : null}
+          ) : null}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container detail-body">
+          {page.sections.map((s) => {
+            const bullets = s.bullets ?? [];
+            const isSteps = bullets.some((b) => STEP_RE.test(b));
+            return (
+              <div className="detail-section" key={s.heading}>
+                <h2>{s.heading}</h2>
+                {s.body.map((para, i) => <p key={i}>{para}</p>)}
+
+                {bullets.length ? (
+                  isSteps ? (
+                    <ol className="detail-steps">
+                      {bullets.map((b) => {
+                        const m = b.match(STEP_RE);
+                        const num = m ? m[1] : "•";
+                        const { label, desc } = splitLabel(m ? m[2] : b);
+                        return (
+                          <li key={b}>
+                            <span className="step-num">{num}</span>
+                            <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
+                          </li>
+                        );
+                      })}
+                    </ol>
+                  ) : (
+                    <ul className="detail-features">
+                      {bullets.map((b) => {
+                        const { label, desc } = splitLabel(b);
+                        return (
+                          <li key={b}>
+                            <span className="df-marker" aria-hidden />
+                            <div>{label ? <strong>{label} — </strong> : null}{desc}</div>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {page.related.length ? (
         <section className="section section-soft">
@@ -126,9 +134,12 @@ export function DetailPageView({ page }: { page: DetailPage }) {
               <span className="eyebrow">Explore</span>
               <h2>Related services</h2>
             </div>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+            <div className="detail-related">
               {page.related.map((r) => (
-                <Link key={r.href} href={r.href} className="btn btn-ghost">{r.label}</Link>
+                <Link key={r.href} href={r.href} className="detail-related-card">
+                  <span>{r.label}</span>
+                  <span aria-hidden className="detail-related-arrow">&#8594;</span>
+                </Link>
               ))}
             </div>
           </div>

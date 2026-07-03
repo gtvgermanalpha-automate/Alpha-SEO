@@ -9,7 +9,7 @@ import { copy, services } from "@/lib/content";
 const CARD_TAG: Record<string, string> = {
   "technical-seo": "Technical SEO",
   "on-page-seo": "On-Page & Content",
-  "off-page-seo": "Off-Page & Authority",
+  "social-media-marketing": "Social Media",
   "local-seo": "Local SEO",
   "reddit-community": "Community & AEO",
 };
@@ -19,7 +19,7 @@ const CARD_TAG: Record<string, string> = {
 const CARD_HEADLINE: Record<string, string> = {
   "technical-seo": "Fix the technical issues holding your rankings back",
   "on-page-seo": "Pages and content built to rank and convert",
-  "off-page-seo": "Earn editorial links that actually move rankings",
+  "social-media-marketing": "Turn your social channels into a growth engine",
   "local-seo": "Own the map pack in every market you serve",
   "reddit-community": "Get cited in communities and AI answer engines",
 };
@@ -35,9 +35,9 @@ const CARD_STATS: Record<string, { num: string; label: string }[]> = {
     { num: "47", label: "On-page ranking levers" },
     { num: "100%", label: "Original, briefed content" },
   ],
-  "off-page-seo": [
-    { num: "DR60+", label: "Editorial placements" },
-    { num: "0", label: "PBNs — every link earned" },
+  "social-media-marketing": [
+    { num: "Grid", label: "Cohesive brand design" },
+    { num: "24/7", label: "Community management" },
   ],
   "local-seo": [
     { num: "Top-3", label: "Local-pack targeting" },

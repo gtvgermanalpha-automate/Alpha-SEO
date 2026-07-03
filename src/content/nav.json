@@ -10,7 +10,7 @@
           "items": [
             { "title": "Technical SEO & Performance", "description": "Audits, Core Web Vitals, schema, architecture.", "icon": "Settings2", "href": "/services/technical-seo" },
             { "title": "On-Page SEO & Content", "description": "Keyword mapping, landing pages, metadata.", "icon": "BookOpen", "href": "/services/on-page-seo" },
-            { "title": "Off-Page SEO & Authority", "description": "Editorial links, digital PR, brand mentions.", "icon": "Award", "href": "/services/off-page-seo" }
+            { "title": "Social Media Marketing", "description": "Strategy, content & grid design, community.", "icon": "Share2", "href": "/services/social-media-marketing" }
           ]
         },
         {

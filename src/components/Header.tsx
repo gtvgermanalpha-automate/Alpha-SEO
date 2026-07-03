@@ -128,6 +128,7 @@ export function Header() {
             </li>
 
             <li><Link href="/case-studies" className={isActive("/case-studies") ? "active" : undefined}>Case Studies</Link></li>
+            <li><Link href="/portfolio" className={isActive("/portfolio") ? "active" : undefined}>Portfolio</Link></li>
             <li><Link href="/blog" className={isActive("/blog") ? "active" : undefined}>Insights</Link></li>
 
             {/* About dropdown (compact) */}

@@ -53,6 +53,7 @@ export function Footer() {
               <li><Link href="/team">About</Link></li>
               <li><Link href="/how-we-work">Process</Link></li>
               <li><Link href="/case-studies">Case Studies</Link></li>
+              <li><Link href="/portfolio">Portfolio</Link></li>
               <li><Link href="/blog">Insights</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

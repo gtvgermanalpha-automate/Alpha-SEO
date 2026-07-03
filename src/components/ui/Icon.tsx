@@ -26,6 +26,7 @@ import {
   Award,
   Zap,
   MapPin,
+  Share2,
   type LucideProps,
 } from "lucide-react";
 
@@ -58,6 +59,7 @@ const map = {
   Award,
   Zap,
   MapPin,
+  Share2,
 } as const;
 
 export type IconName = keyof typeof map;

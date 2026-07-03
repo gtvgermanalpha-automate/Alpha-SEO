@@ -39,7 +39,7 @@ export const detailHref = (kind: DetailKind, slug: string) => `/${SEGMENT[kind]}
 const ICONS: Record<string, string> = {
   "technical-seo": "Settings2",
   "on-page-seo": "BookOpen",
-  "off-page-seo": "Award",
+  "social-media-marketing": "Share2",
   "local-seo": "MapPin",
   "reddit-community": "MessagesSquare",
 };
@@ -48,18 +48,18 @@ const ICONS: Record<string, string> = {
 const SHORT_LABEL: Record<string, string> = {
   "technical-seo": "Technical SEO",
   "on-page-seo": "On-Page SEO",
-  "off-page-seo": "Off-Page SEO",
+  "social-media-marketing": "Social Media",
   "local-seo": "Local SEO",
   "reddit-community": "Community & AEO",
 };
 
 /** Internal links per page (SEO + navigation). Hrefs resolve to real detail pages. */
 const RELATED: Record<string, string[]> = {
-  "technical-seo": ["/services/on-page-seo", "/services/off-page-seo"],
-  "on-page-seo": ["/services/technical-seo", "/services/off-page-seo"],
-  "off-page-seo": ["/services/on-page-seo", "/services/reddit-community"],
+  "technical-seo": ["/services/on-page-seo", "/services/local-seo"],
+  "on-page-seo": ["/services/technical-seo", "/services/social-media-marketing"],
+  "social-media-marketing": ["/services/on-page-seo", "/services/reddit-community"],
   "local-seo": ["/services/technical-seo", "/services/on-page-seo"],
-  "reddit-community": ["/services/off-page-seo", "/services/on-page-seo"],
+  "reddit-community": ["/services/social-media-marketing", "/services/on-page-seo"],
 };
 
 /** slug → concise label, used to label related links by their href. */
