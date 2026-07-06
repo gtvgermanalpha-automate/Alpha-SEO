@@ -65,16 +65,18 @@ export function PortfolioView() {
               const isSocial = s.slug === "social-media-marketing";
               return (
                 <article className="portfolio-hub-card" key={s.slug} data-reveal>
-                  <div className="portfolio-hub-media">
+                  <div className={`portfolio-hub-media${isSocial ? " portfolio-hub-collage" : ""}`}>
                     {isSocial ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src="/portfolio/evolution-magazine.webp"
-                        alt="Evolution Magazine — a social media design project"
-                        loading="lazy"
-                        width={560}
-                        height={420}
-                      />
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/portfolio/evolution-magazine.webp" alt="Evolution Magazine — dark editorial social design" loading="lazy" width={324} height={405} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/portfolio/elevon-pakistan.webp" alt="Elevon Pakistan — cricket World Cup social design" loading="lazy" width={324} height={405} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/portfolio/pstve-glo.webp" alt="Pstve Glo — scented-candle brand design" loading="lazy" width={324} height={405} />
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/portfolio/evolution-tile-02.webp" alt="Evolution Magazine — AI story social design" loading="lazy" width={324} height={405} />
+                      </>
                     ) : (
                       <PillarIllustration name={illus ?? "report"} accentIcon={s.icon as IconName} />
                     )}

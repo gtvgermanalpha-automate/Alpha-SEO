@@ -9,6 +9,16 @@ const Check = () => (
   </svg>
 );
 
+/** Aggregate, real numbers only — sums of the per-project deck metrics
+ *  (23.7K + 3,550 followers; 949 + 193 posts) and the Pstve Glo analytics
+ *  screenshot (41,177 views, 98.7% non-followers — shown in its gallery). */
+const RESULTS: { value: string; label: string }[] = [
+  { value: "27K+", label: "Followers grown across client accounts" },
+  { value: "1,140+", label: "Posts designed & written in-house" },
+  { value: "41K+", label: "Organic views in one tracked window" },
+  { value: "98.7%", label: "Of that reach from non-followers" },
+];
+
 /** /portfolio/social-media-marketing — the SMM pillar's own project deep-dive:
  *  every social + brand design project, in full (details + visuals, no attribution). */
 export function SocialPortfolioView() {
@@ -32,6 +42,18 @@ export function SocialPortfolioView() {
             <span className="eyebrow">Selected work</span>
             <h2>Projects, <span className="highlight">start to finish</span>.</h2>
           </div>
+
+          <div className="portfolio-results" data-reveal>
+            {RESULTS.map((r) => (
+              <div className="highlight-chip" key={r.label}>
+                <span className="highlight-chip-value">{r.value}</span>
+                <span className="highlight-chip-label">{r.label}</span>
+              </div>
+            ))}
+          </div>
+          <p className="portfolio-results-note">
+            Numbers from the client accounts&apos; own analytics — the tracked-window screenshot is in the Pstve Glo gallery below.
+          </p>
 
           <div className="portfolio-list">
             {portfolioProjects.map((p) => (
@@ -64,6 +86,17 @@ export function SocialPortfolioView() {
                     ))}
                   </ul>
                 </div>
+
+                {p.designs.length ? (
+                  <div className="pf-gallery">
+                    {p.designs.map((d) => (
+                      <figure className={`pf-tile${d.layout ? ` pf-tile-${d.layout}` : ""}`} key={d.src}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={d.src} alt={d.alt} loading="lazy" />
+                      </figure>
+                    ))}
+                  </div>
+                ) : null}
               </article>
             ))}
           </div>

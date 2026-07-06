@@ -1,9 +1,19 @@
 /**
- * Portfolio projects shown on /portfolio. Social-media + brand design work,
- * sourced from the supplied portfolio deck (project details + design visuals
- * only — no personal attribution). Plain data module (not CMS-managed yet).
+ * Portfolio projects shown on /portfolio/social-media-marketing. Social-media +
+ * brand design work, sourced from the supplied portfolio deck (project details +
+ * design visuals only — no personal attribution). Plain data module (not
+ * CMS-managed yet). All metrics are real numbers from the deck / client
+ * analytics — never invent new ones.
  */
 export type PortfolioMetric = { value: string; label: string };
+
+/** One design visual in a project's gallery grid. Default tiles are 4:5;
+ *  "tall" = full-feed phone screenshot (spans two rows); "wide" = landscape. */
+export type PortfolioDesign = {
+  src: string;
+  alt: string;
+  layout?: "tall" | "wide";
+};
 
 export type PortfolioProject = {
   slug: string;
@@ -14,6 +24,8 @@ export type PortfolioProject = {
   summary: string;
   metrics: PortfolioMetric[];
   highlights: string[];
+  /** Gallery of real designs from the deck, shown as a grid under the details. */
+  designs: PortfolioDesign[];
 };
 
 export const portfolioProjects: PortfolioProject[] = [
@@ -35,6 +47,19 @@ export const portfolioProjects: PortfolioProject[] = [
       "Clean, on-aesthetic backgrounds that give a true video-game feel",
       "Research and copywriting for every post — not just the design",
     ],
+    designs: [
+      { src: "/portfolio/evolution-tile-01.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-tile-02.webp", alt: "Evolution Magazine 'AI · Evolution' post — Pakistan joins the global AI race" },
+      { src: "/portfolio/evolution-post-01.webp", alt: "Evolution Magazine editorial social post design" },
+      { src: "/portfolio/evolution-tile-03.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-tile-04.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-post-02.webp", alt: "Evolution Magazine editorial social post design" },
+      { src: "/portfolio/evolution-tile-05.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-tile-06.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-tile-07.webp", alt: "Evolution Magazine social post design" },
+      { src: "/portfolio/evolution-post-03.webp", alt: "Evolution Magazine editorial social post design" },
+      { src: "/portfolio/evolution-tile-08.webp", alt: "Evolution Magazine social post design" },
+    ],
   },
   {
     slug: "elevon-pakistan",
@@ -53,6 +78,21 @@ export const portfolioProjects: PortfolioProject[] = [
       "Bold, attention-grabbing posts that pull the eye straight to the message",
       "Grid sequencing designed to make people want to see what's next",
     ],
+    designs: [
+      { src: "/portfolio/elevon-feed-01.webp", alt: "Elevon Pakistan Instagram feed — the cohesive custom grid, zoomed out", layout: "tall" },
+      { src: "/portfolio/elevon-tile-01.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-02.webp", alt: "Elevon Pakistan post — 4 most dreamiest cafes in Islamabad" },
+      { src: "/portfolio/elevon-post-01.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-03.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-04.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-feed-02.webp", alt: "Elevon Pakistan Instagram feed — grid sequencing across rows", layout: "tall" },
+      { src: "/portfolio/elevon-post-02.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-05.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-06.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-post-03.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-07.webp", alt: "Elevon Pakistan social post design" },
+      { src: "/portfolio/elevon-tile-08.webp", alt: "Elevon Pakistan social post design" },
+    ],
   },
   {
     slug: "pstve-glo",
@@ -61,15 +101,42 @@ export const portfolioProjects: PortfolioProject[] = [
     image: "/portfolio/pstve-glo.webp",
     imageAlt: "Pstve Glo scented-candle post carrying the brand's 'you need a reset' line",
     summary:
-      "A full brand identity and aesthetic Instagram grid for a candle brand — highlights, layout and visuals all aligned to a calm 'a need to reset' feeling, and tuned for strong engagement.",
+      "A full brand identity and aesthetic Instagram grid for a candle brand — highlights, layout and visuals all aligned to a calm 'a need to reset' feeling. Organic content reached far beyond the brand's own followers: 41K+ views, 98.7% of them from non-followers.",
     metrics: [
-      { value: "Full", label: "Brand identity + grid" },
-      { value: "High", label: "Performing analytics" },
+      { value: "41K+", label: "Views · 98.7% non-followers" },
+      { value: "19.9K", label: "Accounts reached" },
     ],
     highlights: [
       "Highlight covers designed and aligned to the brand's identity",
       "A fully set, cohesive Instagram grid for the brand",
       "Calm, considered visuals that carry the 'need to reset' message",
+      "Discovery-driven reach — 98.7% of tracked views came from non-followers",
+    ],
+    designs: [
+      { src: "/portfolio/pstve-feed-01.webp", alt: "Pstve Glo Instagram profile — cohesive brand grid and highlight covers", layout: "tall" },
+      { src: "/portfolio/pstve-analytics-01.webp", alt: "Instagram analytics — 41,177 views, 98.7% from non-followers, 19,913 accounts reached" },
+      { src: "/portfolio/pstve-feed-02.webp", alt: "Pstve Glo Instagram feed — the full grid, zoomed out", layout: "tall" },
+    ],
+  },
+  {
+    slug: "glow-workshop",
+    title: "Glow Workshop",
+    category: "Event & Promo Design",
+    image: "/portfolio/glow-01.webp",
+    imageAlt: "Glow Workshop event promo — neon glow-paint visuals with date, session slots and venue",
+    summary:
+      "Promotional campaign design for a glow-paint art workshop — a neon visual language built from the event's own artwork, a clear date / slots / venue hierarchy, and a consistent call-to-action carried across formats.",
+    metrics: [
+      { value: "Event", label: "Campaign design" },
+      { value: "2", label: "Promo formats" },
+    ],
+    highlights: [
+      "Neon visual language built from the workshop's own glow artwork",
+      "Date, session-slot and venue hierarchy designed for fast scanning",
+      "Consistent CTA treatment across every placement",
+    ],
+    designs: [
+      { src: "/portfolio/glow-02.webp", alt: "Glow Workshop promo variant — session details and inclusions over neon artwork", layout: "wide" },
     ],
   },
 ];
