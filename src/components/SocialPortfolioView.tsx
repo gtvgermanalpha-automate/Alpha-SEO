@@ -138,7 +138,10 @@ export function SocialPortfolioView() {
               const duo = p.designs.length > 0;
               return (
                 <article className="compact-card" key={p.slug} data-reveal>
-                  <div className={`compact-media${duo ? " compact-media-duo" : ""}`}>
+                  <div
+                    className={`compact-media${duo ? " compact-media-duo" : " compact-media-contain"}`}
+                    style={duo ? undefined : ({ "--thumb": `url(${p.image})` } as React.CSSProperties)}
+                  >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={p.image} alt={p.imageAlt} loading="lazy" />
                     {duo

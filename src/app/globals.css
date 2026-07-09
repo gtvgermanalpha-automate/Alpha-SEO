@@ -1312,6 +1312,12 @@ footer .social-links a:hover{ color:#fff; }
 /* Duo (Glow Workshop): both source designs are 846x710 landscape — size the strip
    to their combined ratio and pin the row so each shows whole, no crop/overflow. */
 .compact-media-duo{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:100%; gap:3px; aspect-ratio:1692/710; }
+/* Single portrait thumbnail (Pstve Glo, 4:5): show the WHOLE post contained over a
+   blurred copy of itself (--thumb, set inline) so nothing important gets cropped. */
+.compact-media-contain{ position:relative; }
+.compact-media-contain::before{ content:""; position:absolute; inset:0; background-image:var(--thumb);
+  background-size:cover; background-position:center; filter:blur(22px) saturate(1.1) brightness(.5); transform:scale(1.15); }
+.compact-media-contain img{ position:relative; object-fit:contain; }
 .compact-body{ display:flex; flex-direction:column; gap:.6rem; padding:1.5rem; flex:1; }
 .compact-body h3{ font-size:1.25rem; color:var(--ink); margin:0; }
 .compact-body > p{ font-size:var(--small); color:var(--ink-soft); }
