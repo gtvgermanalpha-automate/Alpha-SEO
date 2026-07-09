@@ -1309,7 +1309,9 @@ footer .social-links a:hover{ color:#fff; }
   border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--shadow-card); }
 .compact-media{ aspect-ratio:16/9; overflow:hidden; background:var(--surface-2); }
 .compact-media img{ width:100%; height:100%; object-fit:cover; display:block; }
-.compact-media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+/* Duo (Glow Workshop): both source designs are 846x710 landscape — size the strip
+   to their combined ratio and pin the row so each shows whole, no crop/overflow. */
+.compact-media-duo{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:100%; gap:3px; aspect-ratio:1692/710; }
 .compact-body{ display:flex; flex-direction:column; gap:.6rem; padding:1.5rem; flex:1; }
 .compact-body h3{ font-size:1.25rem; color:var(--ink); margin:0; }
 .compact-body > p{ font-size:var(--small); color:var(--ink-soft); }
