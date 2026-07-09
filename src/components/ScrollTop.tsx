@@ -19,7 +19,7 @@ export function ScrollTop() {
       type="button"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       aria-label="Back to top"
-      className={`fixed bottom-6 left-6 z-40 hidden h-11 w-11 place-items-center border border-ink bg-white text-ink shadow-sm transition-all duration-300 hover:bg-ink hover:text-white sm:grid ${
+      className={`fixed bottom-6 left-6 z-40 hidden h-11 w-11 place-items-center border border-ink bg-white text-ink shadow-sm transition-all duration-300 hover:border-bronze hover:bg-bronze hover:text-ink sm:grid ${
         show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >

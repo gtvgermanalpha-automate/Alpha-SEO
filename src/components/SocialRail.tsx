@@ -33,7 +33,7 @@ const socials = [
 export function SocialRail() {
   return (
     <div className="fixed left-2.5 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-4 xl:flex">
-      <span className="h-14 w-px bg-line" aria-hidden />
+      <span className="h-14 w-px bg-white/20" aria-hidden />
       {socials.map((s) => (
         <a
           key={s.label}
@@ -41,12 +41,12 @@ export function SocialRail() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={s.label}
-          className="text-ink/55 transition-colors duration-300 hover:text-accent"
+          className="text-white/60 transition-colors duration-300 hover:text-bronze"
         >
           <s.icon className="h-4 w-4" aria-hidden />
         </a>
       ))}
-      <span className="h-14 w-px bg-line" aria-hidden />
+      <span className="h-14 w-px bg-white/20" aria-hidden />
     </div>
   );
 }

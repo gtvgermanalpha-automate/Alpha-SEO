@@ -1444,6 +1444,9 @@ header.scrolled{ background:rgba(11,11,38,.55); border-bottom:1px solid rgba(255
 .portfolio-tag,.portfolio-hub-tag{ color:#c0590a; }
 .detail-related-card{ color:var(--ink); }
 .btn-back:hover{ color:#fff; }
+/* Hover states that used to darken to navy now brighten to white on the dark cards. */
+.portfolio-hub-card:hover .portfolio-hub-link{ color:#fff; }
+.audit-modal-close:hover{ color:#fff; }
 
 /* ── Marquee logos on white chips so every mark reads on the dark strip ── */
 .marquee-item img{ background:#fff; padding:.55rem .8rem; border-radius:.7rem; height:3.9rem; }

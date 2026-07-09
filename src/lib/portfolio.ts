@@ -110,12 +110,10 @@ export const portfolioProjects: PortfolioProject[] = [
       "Grid sequencing designed to make people want to see what's next",
     ],
     designs: [
-      { src: "/portfolio/elevon-feed-01.webp", alt: "Elevon Pakistan Instagram feed — the cohesive custom grid, zoomed out", layout: "tall" },
       { src: "/portfolio/elevon-tile-01.webp", alt: "Elevon Pakistan social post design" },
       { src: "/portfolio/elevon-tile-02.webp", alt: "Elevon Pakistan post — 4 most dreamiest cafes in Islamabad" },
       { src: "/portfolio/elevon-post-01.webp", alt: "Elevon Pakistan social post design" },
       { src: "/portfolio/elevon-tile-04.webp", alt: "Elevon Pakistan social post design" },
-      { src: "/portfolio/elevon-feed-02.webp", alt: "Elevon Pakistan Instagram feed — grid sequencing across rows", layout: "tall" },
       { src: "/portfolio/elevon-post-02.webp", alt: "Elevon Pakistan social post design" },
       { src: "/portfolio/elevon-tile-06.webp", alt: "Elevon Pakistan social post design" },
       { src: "/portfolio/elevon-post-03.webp", alt: "Elevon Pakistan social post design" },
