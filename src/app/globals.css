@@ -1172,6 +1172,8 @@ footer .social-links a:hover{ color:#fff; }
 @media(prefers-reduced-motion:reduce){ .skip-link{ transition:none; } }
 
 
+
+
 /* ── HERO AUDIT LINK (opens audit modal) ── */
 .hero-audit-link{ display:inline-flex; align-items:center; gap:.45rem; margin:-.6rem 0 1.7rem; background:none; border:none;
   color:var(--gold-on-navy); font-weight:600; font-size:var(--small); cursor:pointer; transition:color var(--t-fast),gap var(--t-fast); }
@@ -1259,3 +1261,205 @@ footer .social-links a:hover{ color:#fff; }
   .hero,.hero-seo,.page-header{ margin-top:-1px; }
 }
 
+/* ════════ PROOF PANEL (SMM portfolio — animated insights & receipts) ════════ */
+.proof-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:2.5rem; align-items:start; }
+@media(max-width:1024px){ .proof-grid{ grid-template-columns:1fr; } }
+.proof-panel{ display:grid; gap:1.9rem; background:var(--surface); border:var(--bw) solid var(--border);
+  border-radius:var(--r-card-lg); padding:2rem; box-shadow:var(--shadow-card); }
+.proof-tiles{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+@media(max-width:600px){ .proof-tiles{ grid-template-columns:1fr; } }
+.proof-tile{ background:var(--surface-2); border:var(--bw) solid var(--border-2); border-radius:var(--r-card); padding:1.15rem 1.3rem; }
+.proof-tile-num{ display:block; font-family:var(--font-head); font-weight:800; font-size:clamp(1.9rem,1.5rem + 1.2vw,2.5rem); line-height:1.1; }
+.proof-tile-label{ display:block; margin-top:.35rem; font-size:var(--xs); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); }
+.proof-ring-row{ display:flex; gap:1.6rem; align-items:center; }
+@media(max-width:600px){ .proof-ring-row{ flex-direction:column; text-align:center; } }
+.proof-ring{ flex:0 0 auto; width:8.75rem; height:8.75rem; }
+.proof-ring-track{ fill:none; stroke:rgba(255,255,255,.12); stroke-width:10; }
+.proof-ring-fg{ fill:none; stroke:var(--gold); stroke-width:10; stroke-linecap:round; transition:stroke-dashoffset 1.4s var(--ease) .2s; }
+.proof-ring-num{ fill:var(--ink); font-family:var(--font-head); font-weight:800; font-size:1.3rem; }
+.proof-ring-sub{ fill:var(--ink-faint); font-size:.58rem; letter-spacing:.1em; text-transform:uppercase; }
+.proof-ring-copy{ font-size:var(--small); color:var(--ink-soft); max-width:26rem; }
+.proof-ring-copy strong{ color:var(--ink); }
+.proof-chart h4{ font-size:.8rem; text-transform:uppercase; letter-spacing:.1em; color:var(--ink-faint); margin-bottom:.75rem; }
+.proof-bar-row{ display:grid; grid-template-columns:11.5rem 1fr auto; gap:.9rem; align-items:center; padding:.3rem 0; }
+@media(max-width:600px){ .proof-bar-row{ grid-template-columns:1fr auto; } .proof-bar-label{ grid-column:1 / -1; } }
+.proof-bar-label{ display:inline-flex; align-items:center; gap:.5rem; font-size:var(--small); color:var(--ink-soft); }
+.proof-dot{ flex:0 0 auto; width:.6rem; height:.6rem; border-radius:50%; }
+.proof-bar-track{ display:block; height:.75rem; border-radius:var(--r-pill); background:rgba(255,255,255,.09); overflow:hidden; }
+.proof-bar-fill{ display:block; height:100%; width:0; border-radius:inherit; transition:width .9s var(--ease); }
+.proof-bar-value{ font-family:var(--font-mono); font-weight:700; font-size:var(--small); color:var(--ink); }
+.proof-footnote{ font-size:var(--xs); color:var(--ink-faint); }
+.proof-receipts{ display:grid; gap:1.5rem; }
+@media(max-width:1024px){ .proof-receipts{ grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .proof-receipts{ grid-template-columns:1fr; } }
+.phone-frame{ position:relative; margin:0; max-width:22rem; width:100%; justify-self:center;
+  background:var(--surface); border:1.5px solid rgba(255,255,255,.18); border-radius:1.9rem; padding:1.5rem .6rem .6rem; box-shadow:var(--shadow-lift); }
+.phone-frame-notch{ position:absolute; top:.62rem; left:50%; transform:translateX(-50%); width:5.25rem; height:.42rem; border-radius:var(--r-pill); background:rgba(255,255,255,.16); }
+.phone-frame img{ width:100%; border-radius:1.3rem; display:block; }
+.phone-frame figcaption{ padding:.7rem .5rem .35rem; font-size:var(--xs); color:var(--ink-faint); text-align:center; }
+@media (prefers-reduced-motion:reduce){
+  .proof-ring-fg{ transition:none; }
+  .proof-bar-fill{ transition:none; }
+}
+
+/* Compact cards — the smaller brand/campaign projects (Pstve Glo, Glow Workshop). */
+.compact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.75rem; }
+@media(max-width:860px){ .compact-grid{ grid-template-columns:1fr; } }
+.compact-card{ display:flex; flex-direction:column; background:var(--surface); border:var(--bw) solid var(--border);
+  border-radius:var(--r-card-lg); overflow:hidden; box-shadow:var(--shadow-card); }
+.compact-media{ aspect-ratio:16/9; overflow:hidden; background:var(--surface-2); }
+.compact-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+.compact-media-duo{ display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+.compact-body{ display:flex; flex-direction:column; gap:.6rem; padding:1.5rem; flex:1; }
+.compact-body h3{ font-size:1.25rem; color:var(--ink); margin:0; }
+.compact-body > p{ font-size:var(--small); color:var(--ink-soft); }
+.compact-metrics{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:auto; padding-top:.7rem; }
+.compact-metric{ font-size:var(--xs); color:var(--ink-soft); background:rgba(255,255,255,.07);
+  border:var(--bw) solid var(--border-2); border-radius:var(--r-pill); padding:.35rem .8rem; }
+.compact-metric strong{ color:var(--gold-deep); font-weight:700; }
+
+/* ════════════════════════════════════════════════════════════════════════
+   DARK THEME (owner request 2026-07-06) — deep-navy canvas, light ink,
+   brand-gradient display text. The base navy+gold system is dark-native;
+   this block flips the canvas tokens, re-asserts the native dark hero /
+   page-header / lead-magnet (undoing the lighter-theme overrides above),
+   and repaints the white card surfaces. /admin is guarded at the end.
+   ════════════════════════════════════════════════════════════════════════ */
+:root{
+  --bg:#0b0b26;
+  --surface:#15154a; --surface-2:#1b1b55;
+  --ink:#f1eee7; --ink-soft:#c6c2b8; --ink-faint:#98948a;
+  --border:rgba(255,255,255,.14); --border-2:rgba(255,255,255,.09);
+  --navy-tint:#181848; --navy-tint-2:#141440;
+  --gold-deep:#fba04d; /* accent-as-text now sits on dark */
+  --shadow-card:0 12px 34px -14px rgba(0,0,0,.55);
+  --shadow-lift:0 20px 55px -18px rgba(0,0,0,.65);
+  --background:#0b0b26; --foreground:#f1eee7;
+  --grad-text:linear-gradient(94deg,#f98513 0%,#fbbf6b 55%,#9bacd8 112%);
+}
+body{ background:var(--bg); color:var(--foreground); }
+
+/* Display text in brand-gradient (owner: "more gradient coloured text"). */
+h1,h2,h3,h4,h5{ color:var(--ink); }
+.highlight{ background-image:var(--grad-text); background-size:100% 100%; background-position:0 0;
+  padding-bottom:0; -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+/* …except on the light aster panels, where the original gold underline stays readable. */
+.cta-band-inner h2 .highlight,.blog-newsletter .highlight,.aeo-callout .highlight{
+  background-image:linear-gradient(var(--gold),var(--gold)); background-size:100% .1em; background-position:0 100%;
+  padding-bottom:.04em; -webkit-background-clip:border-box; background-clip:border-box; color:inherit; -webkit-text-fill-color:currentColor; }
+.grad-num,.stat-num,.p-stat-num,.highlight-chip-value{
+  background-image:linear-gradient(94deg,#f98513 0%,#fbbf6b 90%);
+  -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent; }
+
+/* ── Nav / header: dark bar, dark glass on scroll, white logo chip ── */
+header.scrolled{ background:rgba(11,11,38,.55); border-bottom:1px solid rgba(255,255,255,.1); box-shadow:0 6px 24px -10px rgba(0,0,0,.5); }
+.navbar-logo{ background:#fff; padding:.42rem .66rem; border-radius:.65rem; }
+.nav-links > li > a{ color:var(--ink); }
+.menu-toggle span{ background:var(--ink); }
+.dropdown-item-title,.dropdown-link{ color:var(--ink); }
+.dropdown-item-icon{ color:var(--ink); }
+.dropdown-item-sub{ color:var(--ink-soft); }
+@media(max-width:980px){
+  .nav-links{ background:linear-gradient(160deg, var(--surface) 0%, var(--bg) 100%); }
+  .nav-links > li > a{ color:var(--ink); }
+}
+
+/* ── Hero + page headers + lead magnet: back to their native dark designs ── */
+.hero,.hero-seo{ background:var(--navy); color:#fff; border-bottom:1px solid rgba(255,255,255,.08); }
+.hero-text h1{ color:#fff; }
+.hero-text .lead{ color:rgba(255,255,255,.86); }
+.hero-text .lead strong{ color:var(--gold-on-navy); }
+.hero-cta .btn-primary{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold); }
+.hero-cta .btn-ghost{ color:#fff; border-color:rgba(255,255,255,.55); }
+.hero-cta .btn-ghost:hover{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold); }
+.hero-trust-item{ color:rgba(255,255,255,.9); }
+.hero-trust-item svg{ color:var(--gold); }
+.hero-audit-link{ color:var(--gold-on-navy); }
+.hero-audit-link:hover{ color:#fff; }
+.hero-badge{ background:rgba(255,255,255,.06); border-color:rgba(255,255,255,.18); color:rgba(255,255,255,.85); }
+.hero-badge svg{ color:var(--gold-on-navy); }
+.page-header{ background:var(--navy); color:#fff; }
+.page-header h1{ color:#fff; }
+.page-header p{ color:rgba(255,255,255,.82); }
+.lead-magnet{ background:var(--navy); color:#fff; }
+.lm-text h2{ color:#fff; }
+.lm-text .lead{ color:rgba(255,255,255,.82); }
+.lm-perk{ color:rgba(255,255,255,.9); }
+.lm-perk svg{ color:var(--gold); }
+.lm-form{ background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.14); }
+.lm-note{ color:rgba(255,255,255,.5); }
+
+/* ── Card surfaces: white → dark surface, with their heading/text pins ── */
+.service-list-card,.feature-deep,.dual-path-card,.review,.blog-featured,.blog-card,.process-row,
+.value-card,.detail-features li,.detail-related-card,.portfolio-card,.portfolio-hub-card,
+.portfolio-results,.faq-item,.quick-action,.audit-modal-card{ background:var(--surface); }
+.reviews-controls button{ background:var(--surface); color:var(--ink); }
+.contact-block-icon{ background:var(--surface-2); }
+.section-dark h1,.section-dark h2,.section-dark h3{ color:var(--ink); }
+.section-dark .stat-label{ color:var(--ink-soft); }
+.slc-content h3,.slc-cta,.slc-icon{ color:var(--ink); }
+.feature-deep h4,.methodology-step h4,.dual-path-card h4,.process-row h3,.value-card h3{ color:var(--ink); }
+.blog-featured-content h2,.blog-toolbar-title,.blog-content h3,.blog-author-name{ color:var(--ink); }
+.blog-category-pill{ color:var(--ink); }
+.review-author-name{ color:var(--ink); }
+.faq-question{ color:var(--ink); }
+.contact-info h3,.contact-block-value{ color:var(--ink); }
+.field label{ color:var(--ink); }
+.quick-action{ color:var(--ink); }
+.article-body{ color:var(--ink-soft); }
+.article-body p{ color:var(--ink-soft); }
+.article-body h2,.article-body h3,.article-body strong,.article-body th{ color:var(--ink); }
+.detail-section h2{ color:var(--ink); }
+.detail-features li strong,.detail-steps li strong{ color:var(--ink); }
+.detail-steps .step-num{ background:var(--gold); color:#1c1a17; }
+.review-avatar-initials{ border:1px solid rgba(255,255,255,.25); }
+.portfolio-card-head h3,.portfolio-hub-body h3{ color:var(--ink); }
+.audit-modal-header h2,.audit-success h3{ color:var(--ink); }
+.audit-modal-close:hover{ color:var(--ink); }
+.btn-ghost{ color:var(--ink); border-color:rgba(255,255,255,.55); }
+.section-dark .btn-ghost{ color:var(--ink); border-color:rgba(255,255,255,.55); }
+.section-dark .btn-ghost:hover{ background:var(--gold); color:var(--navy-deep); border-color:var(--gold); }
+
+/* ── Inputs stay white fields — pin their text dark (tokens flipped light) ── */
+.field input,.field textarea,.field select,.contact-form input,.contact-form textarea,.contact-form select,
+.lm-form .field input,.lm-form .field select,.audit-form input,.audit-form select,.blog-newsletter-form input{
+  color:#1c1a17; caret-color:#111144; }
+.field input::placeholder,.field textarea::placeholder,.contact-form input::placeholder,
+.contact-form textarea::placeholder,.lm-form .field input::placeholder,.blog-newsletter-form input::placeholder{ color:#6b6459; }
+.lm-form .field select option,.audit-form select option{ color:#1c1a17; }
+
+/* ── Gold fills keep dark ink; light aster panels keep their deep-gold text ── */
+.btn-primary,.btn-accent,.lm-form button,.audit-submit{ background:var(--gold); color:#1c1a17; border-color:var(--gold); }
+.btn-primary:hover,.btn-accent:hover,.lm-form button:hover,.audit-submit:hover{ background:var(--gold-soft); color:#1c1a17; }
+.dual-path-tag{ color:#c0590a; }
+.aeo-callout-head{ color:#c0590a; }
+.audit-success-icon{ color:#c0590a; }
+.deliverables-list li::after{ border-color:#c0590a; }
+.cta-band-inner h2,.cta-band-inner p{ color:var(--navy-deep); }
+.blog-newsletter h3,.blog-newsletter p{ color:var(--navy-deep); }
+.aeo-callout h2,.aeo-callout h3,.aeo-callout h4,.aeo-callout p{ color:var(--navy-deep); }
+.detail-chip,.dropdown-item:hover .dropdown-item-title,.dropdown-link:hover{ color:var(--navy); }
+.blog-category{ color:#111144; }
+/* Tag chips keep a LIGHT aster-tint fill — their text stays deep gold, not the flipped light gold. */
+.portfolio-tag,.portfolio-hub-tag{ color:#c0590a; }
+.detail-related-card{ color:var(--ink); }
+.btn-back:hover{ color:#fff; }
+
+/* ── Marquee logos on white chips so every mark reads on the dark strip ── */
+.marquee-item img{ background:#fff; padding:.55rem .8rem; border-radius:.7rem; height:3.9rem; }
+
+/* ── Focus + progress on dark ── */
+a:focus-visible,button:focus-visible,select:focus-visible,
+.nav-links > li > a:focus-visible,.dropdown-item:focus-visible,.dropdown-link:focus-visible,
+.btn-link:focus-visible,.btn-back:focus-visible,.faq-question:focus-visible,.menu-toggle:focus-visible,
+.announce-close:focus-visible,.reviews-controls button:focus-visible,.quick-action:focus-visible,
+.social-links a:focus-visible,.footer-col li:focus-visible,.whatsapp-fab:focus-visible,
+.audit-modal-close:focus-visible,[tabindex]:focus-visible{ outline-color:var(--gold); }
+.section-dark a:focus-visible,.section-dark button:focus-visible,.lead-magnet :focus-visible,
+.hero a:focus-visible,.hero button:focus-visible,
+.page-header a:focus-visible,.page-header button:focus-visible,.btn-back:focus-visible{ outline-color:var(--gold); }
+.scroll-progress{ background:linear-gradient(90deg,var(--gold-soft),var(--gold)); }
+.skip-link{ border:1px solid rgba(255,255,255,.3); }
+
+/* ── /admin guard: the CMS keeps its light Tailwind look on the dark body ── */
+.admin-shell{ background:#f5f5f4; color:#18181b; }

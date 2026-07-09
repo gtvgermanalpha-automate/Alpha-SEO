@@ -26,6 +26,37 @@ export type PortfolioProject = {
   highlights: string[];
   /** Gallery of real designs from the deck, shown as a grid under the details. */
   designs: PortfolioDesign[];
+  /** "featured" = full card + design-grid gallery; "compact" = small card in the
+   *  "More brand & campaign work" strip (for projects with few visuals). */
+  tier: "featured" | "compact";
+};
+
+/**
+ * Aggregated proof for the animated "Insights & engagement" panel. Every value
+ * is real: follower/post totals from the project decks, views/reach/percentage
+ * from the Pstve Glo Instagram analytics screenshot (shown beside the charts).
+ * Bar colors are the brand pair validated for the dark surface (CVD-safe).
+ */
+export const smmProof = {
+  views: 41177,
+  reached: 19913,
+  nonFollowerPct: 98.7,
+  perBrand: [
+    { name: "Evolution Magazine", color: "#e0700a", followers: 23700, followersLabel: "23.7K", posts: 949 },
+    { name: "Elevon Pakistan", color: "#6b86cf", followers: 3550, followersLabel: "3,550", posts: 193 },
+  ],
+  receipts: [
+    {
+      src: "/portfolio/pstve-analytics-01.webp",
+      alt: "Instagram analytics — 41,177 views, 98.7% from non-followers, 19,913 accounts reached",
+      caption: "Instagram analytics from one tracked window (Pstve Glo)",
+    },
+    {
+      src: "/portfolio/pstve-feed-01.webp",
+      alt: "Pstve Glo Instagram profile — the cohesive brand grid and highlight covers those views landed on",
+      caption: "The profile those views landed on",
+    },
+  ],
 };
 
 export const portfolioProjects: PortfolioProject[] = [
@@ -33,6 +64,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "evolution-magazine",
     title: "Evolution Magazine",
     category: "Social Media Design & Content",
+    tier: "featured",
     image: "/portfolio/evolution-magazine.webp",
     imageAlt: "Evolution Magazine social post — a dark, editorial 'Business · Evolution' design",
     summary:
@@ -63,6 +95,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "elevon-pakistan",
     title: "Elevon Pakistan",
     category: "Social Media Design",
+    tier: "featured",
     image: "/portfolio/elevon-pakistan.webp",
     imageAlt: "Elevon social post — a bold cricket World Cup design",
     summary:
@@ -93,6 +126,7 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "pstve-glo",
     title: "Pstve Glo",
     category: "Brand Design",
+    tier: "compact",
     image: "/portfolio/pstve-glo.webp",
     imageAlt: "Pstve Glo scented-candle post carrying the brand's 'you need a reset' line",
     summary:
@@ -107,16 +141,13 @@ export const portfolioProjects: PortfolioProject[] = [
       "Calm, considered visuals that carry the 'need to reset' message",
       "Discovery-driven reach — 98.7% of tracked views came from non-followers",
     ],
-    designs: [
-      { src: "/portfolio/pstve-feed-01.webp", alt: "Pstve Glo Instagram profile — cohesive brand grid and highlight covers", layout: "tall" },
-      { src: "/portfolio/pstve-analytics-01.webp", alt: "Instagram analytics — 41,177 views, 98.7% from non-followers, 19,913 accounts reached" },
-      { src: "/portfolio/pstve-feed-02.webp", alt: "Pstve Glo Instagram feed — the full grid, zoomed out", layout: "tall" },
-    ],
+    designs: [],
   },
   {
     slug: "glow-workshop",
     title: "Glow Workshop",
     category: "Event & Promo Design",
+    tier: "compact",
     image: "/portfolio/glow-01.webp",
     imageAlt: "Glow Workshop event promo — neon glow-paint visuals with date, session slots and venue",
     summary:
